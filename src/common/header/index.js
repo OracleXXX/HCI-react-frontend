@@ -1,107 +1,71 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {CSSTransition} from "react-transition-group";
+import Banner from './Banner';
 import {actionCreators} from './store';
+import {actionCreators as loginActionCreators} from '../../pages/login/store';
 import {
     HeaderWrapper,
     Logo,
     Nav,
     NavItem,
-    NavSearch,
-    Addition,
-    Button,
-    SearchWrapper,
-    SearchInfo,
-    SearchInfoTitle,
-    SearchInfoSwitch,
-    SearchInfoItem,
-    SearchInfoList,
+    DropDownServices,
 } from "./style";
+import triangle from '../../statics/imgs/triangle.svg';
+import './addtionStyle.css';
+import {Link} from "react-router-dom";
 
 
 class Header extends Component {
-    getListArea() {
-        const {
-            focused, list, page, totalPage, mouseIn,
-            handleMouseEnter, handleMouseLeave, handleChangePage, handleMouseHover, handleMouseOut
-        } = this.props;
-        const pageList = [];
-        const newList = list.toJS();
-        if (newList.length) {
-            for (let i = (page - 1) * 10; i < page * 10; i++) {
-                pageList.push(
-                    <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
-                )
-            }
-        }
-        if (mouseIn || focused) {
+
+    getDropDown() {
+        const {displayMenu} = this.props;
+        if (displayMenu) {
             return (
-                <SearchInfo
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <SearchInfoTitle>
-                        热门搜索
-                        <SearchInfoSwitch
-                            ref={(hoverTarget) => {
-                                this.hoverTarget = hoverTarget
-                            }}
-                            onClick={() => handleChangePage(page, totalPage, this.spinIcon)}
-                            onMouseEnter={() => handleMouseHover(this.hoverTarget)}
-                            onMouseLeave={() => handleMouseOut(this.hoverTarget)}
-                        >
-                            {/*ref 可以获得dom节点*/}
-                            <i ref={(icon) => {
-                                this.spinIcon = icon
-                            }} className="iconfont spin">&#xe851;</i>
-                            换一批</SearchInfoSwitch>
-                    </SearchInfoTitle>
-                    <SearchInfoList>
-                        {pageList}
-                    </SearchInfoList>
-                </SearchInfo>
+                <DropDownServices>
+                    <ul>
+                        <li className='dropDownItem'>一站式房屋管理</li>
+                        <li className='dropDownItem'>一站式房屋买卖</li>
+                        <li className='dropDownItem'>平台活动</li>
+                    </ul>
+                </DropDownServices>
             )
         } else {
             return null;
         }
-    }
+
+    };
+
 
     render() {
-        const {focused, handleInputFocus, handleInputBlur, list} = this.props;
+        const {handleDropDown, displayMenu} = this.props;
         return (
-            <HeaderWrapper>
-                <Logo/>
-                <Nav>
-                    <NavItem className='left'>首页</NavItem>
-                    <NavItem className='left'>下载App</NavItem>
-                    <NavItem className='right'>登录</NavItem>
-                    <NavItem className='right'>
-                        <i className="iconfont">&#xe636;</i>
-                    </NavItem>
-                    <SearchWrapper>
-                        <CSSTransition
-                            in={focused}
-                            timeout={200}
-                            classNames="slide"
-                        >
-                            <NavSearch
-                                className={focused ? 'focused' : ''}
-                                onFocus={() => handleInputFocus(list)}
-                                onBlur={handleInputBlur}
-                            >{}</NavSearch>
-                        </CSSTransition>
-                        <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe69d;</i>
-                        {this.getListArea()}
-                    </SearchWrapper>
-                </Nav>
-                <Addition>
-                    <Button className='writing'>
-                        <i className="iconfont">&#xe678;</i>
-                        写文章</Button>
-                    <Button className='reg'>注册</Button>
+            <div>
+                <HeaderWrapper>
+                    <Link to='/'>
+                        <Logo/>
+                    </Link>
 
-                </Addition>
-            </HeaderWrapper>
+                    <Nav>
+                        <NavItem className='CompName'>HomeCap INC</NavItem>
+                        <NavItem className='left'>精选房源</NavItem>
+                        <NavItem className='left' onClick={() => {
+                            handleDropDown(displayMenu)
+                        }}>
+                            一站式服务
+                            <img src={triangle} alt="" className='triangle'/>
+                            {this.getDropDown()}
+                        </NavItem>
+                        <NavItem className='left'>房屋私人贷款</NavItem>
+                        <NavItem className='left'>项目展示</NavItem>
+                        <NavItem className='left'>团队背景</NavItem>
+                        <NavItem className='left'>美房投资攻略</NavItem>
+                        <NavItem className='left'>联系我们</NavItem>
+                    </Nav>
+
+                </HeaderWrapper>
+                <Banner/>
+            </div>
         )
 
     }
@@ -110,11 +74,12 @@ class Header extends Component {
 const mapStateToProps = (state) => {
     return {
         focused: state.getIn(['header', 'focused']),
-        /*focused: state.get('header').get('focused')*/
         list: state.getIn(['header', 'list']),
         page: state.getIn(['header', 'page']),
         mouseIn: state.getIn(['header', 'mouseIn']),
-        totalPage: state.getIn(['header', 'totalPage'])
+        totalPage: state.getIn(['header', 'totalPage']),
+        login: state.getIn(['login', 'login']),
+        displayMenu: state.getIn(['header', 'displayMenu'])
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -153,8 +118,16 @@ const mapDispatchToProps = (dispatch) => {
             } else {
                 dispatch(actionCreators.changePage(1));
             }
+        },
+        logout() {
+            dispatch(loginActionCreators.logout());
+        },
+        handleDropDown(displayMenu) {
+            dispatch(actionCreators.changeDropDow(displayMenu));
         }
+
+
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -6,7 +6,8 @@ const defaultState = fromJS({
     mouseIn:false,
     list:[],
     page: 1,
-    totalPage:1
+    totalPage:1,
+    displayMenu: false
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -27,6 +28,8 @@ export default (state=defaultState, action) => {
             return state.set('mouseIn', false);
         case constants.CHANGE_PAGE:
             return state.set('page', action.page);
+        case constants.CHANGE_DROPDOWN:
+            return state.set('displayMenu', !action.dropped);
         default:
             return state;
     }

@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 
+
 //----------------------------------
 const changeList = (data) => ({
     type: constants.CHANGE_LIST,
@@ -33,6 +34,11 @@ export const changePage = (page) => ({
    type:constants.CHANGE_PAGE,
     page
 });
+export const changeDropDow= (dropped)=> ({
+    type:constants.CHANGE_DROPDOWN,
+    dropped
+
+});
 //派发异步请求
 export const getList = () => {
     return (dispatch) => {
@@ -47,3 +53,4 @@ export const getList = () => {
 
     }
 };
+

@@ -2,14 +2,13 @@ import styled from "styled-components";
 import logoPic from '../../statics/Inc-Logo.jpg';
 
 export const HeaderWrapper = styled.div`
-    height: 58px;
-    border-bottom: 1px solid #F0F0F0; 
+    z-index: 100;
+    background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
+    height: 60px; 
 `;
 
 
-export const Logo = styled.a.attrs({
-    href: '/'
-})`
+export const Logo = styled.div`
     position: absolute;
     top:0;
     left:0;
@@ -18,165 +17,165 @@ export const Logo = styled.a.attrs({
     height:56px;
     background: url(${logoPic}) no-repeat;
     background-size: contain;
-
 `;
 
 export const Nav = styled.div`
-  width: 960px;
-  height: 100%;
-  padding-right: 70px;
-  box-sizing: border-box;
-  margin: 0 auto;
+    width: 1120px;
+    height: 100%;
+
+    box-sizing: border-box;
+    margin: 0 auto;
   
 `;
 
 export const NavItem = styled.div`
-line-height: 56px;
-padding: 0 15px;
-font-size: 17px;
-color: #333;
-  &.left{
-    float: left;
-  }
-  &.right {
-    float: right;
-    color: #969696;
-  }
-  &.active {
-  color: #ea6f5a;
-  }
+    position: relative;
+    cursor: pointer;
+    line-height: 56px;
+    padding: 0 27px;
+    font-family: SourceHanSansSC-Regular,sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+      &.CompName {
+        float: left;
+        font-family: 'Lobster', cursive;
+        font-size: 20px;   
+      }
+      &.CompName:hover {
+         border: 1px solid #FFFFFF;
+         font-weight: bold;
+      }
+      &.left{
+        float: left;
 
-`;
-export const SearchWrapper = styled.div`
-  position: relative;
-  float: left;
- 
-  .zoom {
-  position: absolute;
-  right: 5px;
-  width: 30px;
-  line-height: 30px;
-  border-radius: 15px;
-  bottom: 5px;
-  text-align: center;
-  //background-color: red;
-  &.focused {
-  background-color: #777;
-  color: #fff;
-  }
-  }
-`
-export const NavSearch = styled.input.attrs({
-    placeholder: '搜索'
-})`
-  width: 160px;
-  height: 38px;
-  padding: 0 30px 0 20px;
-  box-sizing: border-box;
-  margin-top: 9px;
-  margin-left: 20px;
-  border: none;
-  outline: none;
-  border-radius: 19px;
-  background-color: #eee;
-  font-size: 14px;
-  color: #666;
-  &::placeholder {
-  color: #999;
-  }
-  &.focused {
-    width: 240px;
-  }
-  &.slide-enter {
-  transition: all 0.2s ease-out;
-  }
-  &.slide-enter-active {
-    width: 240px;
-  }
-  &.slide-exit {
-  transition: all 0.2s ease-out;
-  }
-  &.slide-exit-active {
-  width: 160px;
-  }  
+      }
+      &.left:hover{
+        border: 1px solid #FFFFFF;
+        border-radius: 2px;
+        font-weight: bold;
+      }
+/*      &.right {
+        float: right;
+        color: #969696;
+      }*/
+      &.active {
+        color: #ea6f5a;
+      } 
 `;
 
-export const SearchInfo = styled.div`
+export const DropDownServices = styled.div`
+  z-index: 100;
   position: absolute;
   left: 0;
   top: 58px;
-  width: 240px;
-  padding: 0 20px;
+  height: 174px;
+  width: 126px;
 
-
-  /*
-  background-color: ; 
-  */
-  box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-  
-`;
-export const SearchInfoTitle = styled.div`
-  margin-top: 20px;
-  margin-bottom: 15px;
-  line-height: 20px;
-  font-size: 14px;
-  color: #969696;
-
-`;
-
-export const SearchInfoSwitch = styled.span`
-  float: right;
+  background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
   font-size: 13px;
-  cursor: pointer;
-  .spin {
-    display: block;
-    float: left;
-    font-size: 12px;
-    margin-right: 2px;
-    transition: all .2s ease-in;
-    transform-origin: center center;
+  & .dropDownItem{
+    text-align: center;
+    border: 1px solid transparent;
+  }& .dropDownItem:hover{
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    font-weight: bold;
+  
   }
 `;
-export const SearchInfoItem = styled.a`
-  display: block;
-  float: left;
-  line-height: 20px;
-  padding: 0 5px;
-  margin-right: 10px;
-  margin-bottom: 15px;
-  font-size: 12px;
-  border: 1px solid #ddd;
-  color: #787878;
-  border-radius: 3px;
-`
-export const Addition = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 56px;
-`;
-export const Button = styled.div`
-  float: right;
-  margin-top: 18px;
-  margin-right: 20px;
-  padding: 0 20px;
-  line-height: 38px;
-  border-radius: 19px;
-  border: 1px solid #ec6149;
-  font-size: 14px;
-  &.reg {
-    color: #ec6149;
 
+export const BannerWrapper = styled.div`
+  position: relative;
+  width:100%;
+  & .banner {
+    width:auto;
+    height:auto;
+    max-width:100%;
+    min-width: 960px;
+    max-height:100%;
+    min-height: 370px;
+    
   }
-  &.writing {
-    color: #fff;
-    background: #ec6149;
-  }
+`
+export const DemoWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;  
+`
+
+export const DemoTitle = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 952px;
+  height: 176px;
+  margin: -120px  0 0 -476px;
+  font-family: SourceHanSansSC-Regular,sans-serif;
+  font-size:56px;
+  color:#ffffff;
+  letter-spacing:0;
+  text-align:center;
+  line-height:88px;
+
   
 `
+export const DemoContent = styled.div`
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 790px;
+  height: 56px;
+  margin: 0 0 -125px -386px; 
+  & .lefts {
+    display: inline-block;
+  }& .rights {
+    display: inline-block;
+  }
+`
 
+export const Input = styled.div`
+  position: relative;
+ 
+  border-radius: 8px;
+  width: 790px;
+  & input{
+  width: 726px;
+  height: 56px;
+  opacity: 0.9;
+  padding: 0;
+  border: 0;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  font-family: PingFangSC-Regular,serif;
+  font-size: 20px;
+  color: #666666;
+  letter-spacing: 0;
+    &::placeholder {
+      padding-left: 20px;
+  }
+  }
+`
 
-export const SearchInfoList = styled.div`
-  overflow: hidden;
+export const SearchButton = styled.div`
+  position: relative;
+  float: right;
+  width: 64px;
+  height: 56px;
 
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
+  & img {
+    position: absolute;
+    left: 17px;
+    top: 13px;  
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  
 `
