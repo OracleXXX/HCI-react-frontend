@@ -7,7 +7,7 @@ class INVTFlowChart extends PureComponent {
         return (
                 <INVTFlowChartWrapper>
                     <h1>
-                        项目投资流程
+                        流程图
                     </h1>
                 </INVTFlowChartWrapper>
 

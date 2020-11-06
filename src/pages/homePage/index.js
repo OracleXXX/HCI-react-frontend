@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import HouseDemo from "./components/HouseDemo";
+import HouseDemo from "./components/NewProjectDemo";
 import WeOffer from "./components/WeOffer";
 import INVTFlowChart from "./components/INVTFlowChart";
 import NewsFeed from "./components/NewsFeed";
@@ -24,7 +24,7 @@ class homePage extends PureComponent {
         )
     }
     componentDidMount() {
-
+        this.props.changeHomePageData();
     }
 
 
@@ -36,6 +36,10 @@ const mapState = (state) => ({
 
 });
 const mapDispatch = (dispatch) => ({
+    changeHomePageData() {
+        dispatch(actionCreators.getHomePageInfo());
+
+    },
 
 })
 

@@ -1,0 +1,2 @@
+export const CHANGE_HOMEPAGE_DATA = 'homePage/CHANGE_HOMEPAGE_DATA';
+export const GET_PROJECT_LIST = 'homePage/GET_PROJECT_LIST';

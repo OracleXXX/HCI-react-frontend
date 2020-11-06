@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "data": {
+
+    "newProjectList": [
+      {
+        "id": 1,
+        "uuid": "",
+        "price": 1200,
+        "addr": "685 brewer Dr",
+        "area": "1220平方米/房屋出租",
+        "imgUrl": "upload/685 brewer Dr.jpg"
+
+    },{
+        "id": 2,
+        "uuid": "",
+        "price": 1234,
+        "addr": "252 BrookHollow",
+        "area": "3000平方米/房屋出租",
+        "imgUrl": "upload/252 BrookHollow.jpg"
+
+    },{
+        "id": 3,
+        "uuid": "",
+        "price": 3000,
+        "addr": "252 BrookHollow",
+        "area": "3000平方米/房屋出租",
+        "imgUrl": "https://photos.zillowstatic.com/p_e/ISrp0j3kgz9j1u1000000000.jpg"
+
+    },{
+        "id": 4,
+        "uuid": "",
+        "price": 4000,
+        "addr": "252 BrookHollow",
+        "area": "3110平方米/房屋出租",
+        "imgUrl": "https://photos.zillowstatic.com/p_e/IS7qje6fku3arn0000000000.jpg"
+
+    },{
+        "id": 5,
+        "uuid": "",
+        "price": 5000,
+        "addr": "252 BrookHollow",
+        "area": "4241平方米/房屋出租",
+        "imgUrl": "https://photos.zillowstatic.com/fp/fbaf746aa9f9a997d502fbd498690647-p_e.jpg"
+
+    },{
+        "id": 6,
+        "uuid": "",
+        "price": 6000,
+        "addr": "252 BrookHollow",
+        "area": "7445平方米/房屋出租",
+        "imgUrl": "https://photos.zillowstatic.com/fp/cd81523426cb8558c09f21f7d165779c-p_e.jpg"
+
+    },{
+        "id": 7,
+        "uuid": "",
+        "price": 7000,
+        "addr": "252 BrookHollow",
+        "area": "4104平方米/房屋出租",
+        "imgUrl": "https://photos.zillowstatic.com/fp/d72b9927652268245a2b1858d633e530-p_e.jpg"
+
+    }
+    ]
+  }
+}

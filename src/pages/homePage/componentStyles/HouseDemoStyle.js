@@ -2,7 +2,9 @@
 import styled from "styled-components";
 import nextArrow from '../../../statics/imgs/homePage/nextArrow.png';
 import prevArrow from '../../../statics/imgs/homePage/prevArrow.png';
-export const HouseDemoWrapper = styled.div`
+
+
+export const NewProjectDemoWrapper = styled.div`
   width: 100%;
   height: 640px;
   border-top: 1px solid #ffffff;
@@ -55,41 +57,6 @@ export const SliderWrapper = styled.div`
     border: 1px solid blue;
   }
 `;
-
-export const Item = styled.div`
-  width: 380px;
-  height: 293px;
-  border: 1px dashed black;
-  
-  margin: 0 15px;
-  border-radius: 19px;
-  & img{
-    width: 380px;
-    height: 248px;
-    border-radius: 19px;
-    overflow: hidden;
-  }
-  & .intro {
-    margin-top: 23px;
-  }
-  & .intro-left {
-    font-family: HiraginoSans-W6;
-    color: #DE2F2F;
-    line-height: 22px;
-    font-size: 24px;
-    float: left;
-  }
-  & .intro-right {
-  
-    font-family: SourceHanSansSC-Normal;
-    color: #333333;
-    text-align: right;
-    line-height: 22px;
-    float: right;
-    font-size: 16px;
-  }
-`;
-
 export const PrevArrow = styled.div`
   position: absolute;
   top: 96px; 
@@ -113,3 +80,87 @@ export const NextArrow = styled.div`
   border: 1px solid transparent;
   background-image: url(${nextArrow});
 `
+export const Item = styled.div`
+  position: relative;
+  width: 380px;
+  height: 293px;  
+  margin: 0 15px;
+  border-radius: 19px;
+  & img{
+    width: 380px;
+    height: 248px;
+    border-radius: 19px;
+    overflow: hidden;
+  }
+  & .intro {
+    margin-top: 23px;
+  }
+  & .intro-left {
+    font-family: HiraginoSans-W6;
+    color: #DE2F2F;
+    line-height: 22px;
+    font-size: 24px;
+    float: left;
+    & .perMonth {
+      font-family: SourceHanSansSC-Medium;
+      font-size: 16px;    
+    }
+  }
+  & .intro-right {  
+    font-family: SourceHanSansSC-Normal;
+    color: #333333;
+    text-align: right;
+    line-height: 22px;
+    float: right;
+    font-size: 16px;
+  }
+`;
+
+
+export const InnerImg = styled.div`
+  position: absolute;
+  top: 70%;
+  left: 16px;
+  width: 348px;
+  height: 30px;
+  line-height: 30px;
+  
+  & .addr {
+    font-family: SourceHanSansSC-Medium;
+    font-size: 18px;
+    color: #FFFFFF;  
+    display: inline-block;
+    float: left;
+    & .addrIcon {
+      display: inline-block;
+      width: 12px;
+      height: 15px;
+      margin-right: 8px;
+      
+    }
+  }
+  & .projectMoreInfo {
+    display: inline-block;
+    float: right;
+    width: 72px;
+    height: 30px;
+    background: rgba(0,0,0,0.20);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 19px;
+    & span {
+      margin: 0 8px 0 14px;
+      font-family: SourceHanSansSC-Regular;
+      font-size: 14px;
+      color: #F6F8F9;
+    }
+    & img {
+      display: inline-block;
+      width: 7px;
+      height: 12px;       
+    } 
+  }
+  & .projectMoreInfo:hover {
+    border: 1px solid dodgerblue;
+    
+  }
+`;
