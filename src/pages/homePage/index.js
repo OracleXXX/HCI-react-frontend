@@ -1,7 +1,11 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {OfferWrapper, HomePageWrapper, HouseDemoWrapper} from "./style";
+import HouseDemo from "./components/HouseDemo";
+import WeOffer from "./components/WeOffer";
+import INVTFlowChart from "./components/INVTFlowChart";
+import NewsFeed from "./components/NewsFeed";
+import {HomePageWrapper} from "./style";
 import {actionCreators} from './store';
 
 
@@ -11,8 +15,10 @@ class homePage extends PureComponent {
         const {} = this.props;
         return (
             <HomePageWrapper>
-                <OfferWrapper>我们提供什么</OfferWrapper>
-                <HouseDemoWrapper>精选房源</HouseDemoWrapper>
+                <WeOffer />
+                <HouseDemo />
+                <INVTFlowChart />
+                <NewsFeed />
             </HomePageWrapper>
 
         )

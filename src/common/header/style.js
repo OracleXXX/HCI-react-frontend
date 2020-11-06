@@ -33,7 +33,7 @@ export const NavItem = styled.div`
     cursor: pointer;
     line-height: 56px;
     padding: 0 27px;
-    font-family: SourceHanSansSC-Regular,sans-serif;
+    font-family: SourceHanSansSC-Regular;
     font-size: 16px;
     letter-spacing: 0;
     color: #FFFFFF;
@@ -114,7 +114,7 @@ export const DemoTitle = styled.div`
   width: 952px;
   height: 176px;
   margin: -120px  0 0 -476px;
-  font-family: SourceHanSansSC-Regular,sans-serif;
+  font-family: SourceHanSansSC-Regular;
   font-size:56px;
   color:#ffffff;
   letter-spacing:0;

@@ -11,7 +11,7 @@ import {
     NavItem,
     DropDownServices,
 } from "./style";
-import triangle from '../../statics/imgs/triangle.svg';
+import triangle from '../../statics/imgs/header/triangle.svg';
 import './addtionStyle.css';
 import {Link} from "react-router-dom";
 

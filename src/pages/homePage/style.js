@@ -1,23 +1,23 @@
 import styled from "styled-components";
+
+//主页全局
 export const HomePageWrapper = styled.div`
-  
+`;
 
-`
-export const OfferWrapper = styled.div`
-  width: 1200px;
-  height: 461px;
+
+
+
+//项目投资流程图 project investment flow chart
+export const INVTFlowChartWrapper = styled.div`
+  width: 875px;
+  height: 1363px;
   border: 1px solid red;
-  margin: 86px auto;
+  margin: 86px auto
 
-`
-
-export const HouseDemoWrapper = styled.div`
+`;
+// 最近动态 news feed
+export const NewsFeedWrapper = styled.div`
   width: 100%;
-  height: 640px;
-  border: 1px solid blue;
+  height: 760px;
   background-color: #F6F8F9;
-  
-`
-/*
-1433+640=2073
--2176*/
+`;
