@@ -1,7 +1,7 @@
 //精选房源
 import styled from "styled-components";
-import nextArrow from '../../../statics/imgs/homePage/nextArrow.png';
-import prevArrow from '../../../statics/imgs/homePage/prevArrow.png';
+import nextArrow from '../../../statics/imgs/homePageImgs/nextArrow.png';
+import prevArrow from '../../../statics/imgs/homePageImgs/prevArrow.png';
 
 
 export const NewProjectDemoWrapper = styled.div`

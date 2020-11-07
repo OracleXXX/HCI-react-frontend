@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import HouseDemo from "./components/NewProjectDemo";
 import WeOffer from "./components/WeOffer";
-import INVTFlowChart from "./components/INVTFlowChart";
+import INVTFlowChart from "./components/InvestmtFLowChart";
 import NewsFeed from "./components/NewsFeed";
 import {HomePageWrapper} from "./style";
 import {actionCreators} from './store';

@@ -9,6 +9,7 @@ class NewsFeed extends PureComponent {
                     <h1>
                         最近动态
                     </h1>
+
                 </NewsFeedWrapper>
 
         )

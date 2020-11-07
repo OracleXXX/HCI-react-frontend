@@ -80,7 +80,7 @@ export const IconItem = styled.div`
     width: 86px;
     height: 86px;
     background-color: #F5F8FA;
-    background-image: url("../../../statics/imgs/homePage/RealEstateRecmd.svg");
+    background-image: url("../../../statics/imgs/homePageImgs/RealEstateRecmd.svg");
   }
   & .offerName {
   

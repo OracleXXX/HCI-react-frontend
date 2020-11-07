@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {BannerWrapper, DemoWrapper, DemoTitle, DemoContent, Input, SearchButton} from './style';
-import BannerPic from '../../statics/imgs/header/banner-large.png';
-import Glass from '../../statics/imgs/header/iconFangDajing.svg';
+import BannerPic from '../../statics/imgs/headerImgs/banner-large.png';
+import Glass from '../../statics/imgs/headerImgs/iconFangDajing.svg';
 import {connect} from 'react-redux';
 class Banner extends PureComponent {
     render() {

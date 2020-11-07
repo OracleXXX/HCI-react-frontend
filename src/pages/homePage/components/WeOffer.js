@@ -3,10 +3,10 @@ import {WeOfferWrapper, WeOfferLeft, WeOfferRight, WeOfferIcons, IconItem, DivLi
 import {connect} from 'react-redux';
 
 //import images
-import WeOfferPic from '../../../statics/imgs/homePage/offerBG.png';
-import RealEstateRecmdPic from '../../../statics/imgs/homePage/RealEstateRecmd.svg';
-import LoanPic from '../../../statics/imgs/homePage/loan.svg';
-import INVTPic from '../../../statics/imgs/homePage/NAInvestment.svg';
+import WeOfferPic from '../../../statics/imgs/homePageImgs/offerBG.png';
+import RealEstateRecmdPic from '../../../statics/imgs/homePageImgs/RealEstateRecmd.svg';
+import LoanPic from '../../../statics/imgs/homePageImgs/loan.svg';
+import INVTPic from '../../../statics/imgs/homePageImgs/NAInvestment.svg';
 
 class WeOffer extends PureComponent {
     render() {

@@ -7,11 +7,11 @@ import {
     PrevArrow,
     NextArrow,
     InnerImg
-} from '../componentStyles/HouseDemoStyle';
+} from '../componentStyles/NewProjectDemoStyle';
 import {connect} from 'react-redux';
 import Slider from 'react-slick';
-import addrIcon from '../../../statics/imgs/homePage/addrIcon.png';
-import moreInfoIcon from '../../../statics/imgs/homePage/moreInfoIcon.png';
+import addrIcon from '../../../statics/imgs/homePageImgs/addrIcon.png';
+import moreInfoIcon from '../../../statics/imgs/homePageImgs/moreInfoIcon.png';
 
 class NewProjectDemo extends PureComponent {
     constructor(props) {
@@ -101,6 +101,7 @@ class NewProjectDemo extends PureComponent {
 
 const mapStateToProps = (state) => ({
     list: state.getIn(['homePage', 'newProjectList'])
+
 
 })
 

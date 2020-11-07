@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {CSSTransition} from "react-transition-group";
 import Banner from './Banner';
 import {actionCreators} from './store';
-import {actionCreators as loginActionCreators} from '../../pages/login/store';
+
 import {
     HeaderWrapper,
     Logo,
@@ -11,7 +11,7 @@ import {
     NavItem,
     DropDownServices,
 } from "./style";
-import triangle from '../../statics/imgs/header/triangle.svg';
+import triangle from '../../statics/imgs/headerImgs/triangle.svg';
 import './addtionStyle.css';
 import {Link} from "react-router-dom";
 
@@ -119,9 +119,7 @@ const mapDispatchToProps = (dispatch) => {
                 dispatch(actionCreators.changePage(1));
             }
         },
-        logout() {
-            dispatch(loginActionCreators.logout());
-        },
+
         handleDropDown(displayMenu) {
             dispatch(actionCreators.changeDropDow(displayMenu));
         }
