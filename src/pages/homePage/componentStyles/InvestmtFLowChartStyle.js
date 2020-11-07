@@ -107,34 +107,47 @@ export const OddImgToIndex = styled.div`
   }
 `;
 
-export const IndexContent = styled.div`
+export const OddIndexContent = styled.div`
     position: absolute;
     left: 180px;
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 83px;
-    height: 54px;
-    & .stepContent {
+    height: 54px;  
+    & .oddContentTitle {
       font-family: SourceHanSansSC-Medium;
       font-size: 16px;
       color: #333333;
       line-height: 22px;
       margin-bottom: 8px;
+    } 
+    & .oddContent {
+      width: 299px;
+      font-family: SourceHanSansSC-Normal;
+      font-size: 14px;
+     
+      margin-bottom: 8px;
     }
-    & .stepMoreInfo {
+    & .oddMoreInfo {
+      cursor: pointer;
       position: relative;
-      box-sizing: border-box;
+      
       width: 83px;
       height: 26px;
       color: #2D84FF;
       background-color: #E5F4FF;
+      border: 1px solid transparent;
       border-radius: 13px;
+      box-sizing: border-box;
+      
       font-family: SourceHanSansSC-Normal;
       font-size: 14px;
       line-height: 26px;
       padding-left: 8px;   
     }
+     & .oddMoreInfo:hover {
+      border: 1px solid #2D84FF;
+     }
     & .moreInfoIcon-blue {
         margin-left: 6px;
     }
@@ -170,30 +183,48 @@ export const EvenIndexContent = styled.div`
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 83px;
+    width: 95px;
     height: 54px;
     //偶数序号内容
-    & .evenContent {
+    & .evenContentTitle {
       float: right;
+      width: 299px;
       font-family: SourceHanSansSC-Medium;
       font-size: 16px;
       color: #333333;
       line-height: 22px;
       margin-bottom: 8px;
+      text-align: right;
+    }
+    & .evenContent {
+      float: right;
+      width: 299px;
+      font-family: SourceHanSansSC-Normal;
+      font-size: 14px;
+      text-align: right;
+      margin-bottom: 8px;
     }
     //偶数了解详情字
     & .evenMoreInfo {
+      cursor: pointer;
       float: right;
-      box-sizing: border-box;
+      
+      
       width: 83px;
       height: 26px;
       color: #2D84FF;
       background-color: #E5F4FF;
       border-radius: 13px;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      
       font-family: SourceHanSansSC-Normal;
       font-size: 14px;
       line-height: 26px;
       padding-left: 8px;   
+    }
+    & .evenMoreInfo:hover{
+      border: 1px solid #2D84FF;
     }
     & .moreInfoIcon-blue {
         margin-left: 6px;

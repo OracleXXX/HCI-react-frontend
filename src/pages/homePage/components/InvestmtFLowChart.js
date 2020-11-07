@@ -9,7 +9,7 @@ import {
     EvenStepWrapper,
     OddStepWrapper,
     OddImgToIndex,
-    IndexContent,
+    OddIndexContent,
     EvenImgToIndex,
     EvenIndexContent
 
@@ -33,17 +33,17 @@ import oddDash from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/od
 import evenDash from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/evenDash.svg';
 import {connect} from 'react-redux';
 import moreInfoIcon from "../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/moreInfoIcon-blue.png";
-import {InnerImg} from "../componentStyles/NewProjectDemoStyle";
+
 
 //映射导入的图片组件
 const mapStepListToString = [
-    [step1, index1, '选定房源'],
-    [step2, index2, '咨询详情回报'],
-    [step3, index3, '与HCI签订合同并'],
-    [step4, index4, '资金'],
-    [step5, index5, '房屋情况'],
-    [step6, index6, '管理合同'],
-    [step7, index7, '项目展示']
+    [step1, index1, '选定房源', '', '', ''],
+    [step2, index2, '咨询详情及回报', '(交税流程、税务问题、法律问题)', '', ''],
+    [step3, index3, '与HCI签订合同并交付定金', '', '', ''],
+    [step4, index4, '资金', '', 'a.现金（交易具体流程）', 'b.私人贷款（私人贷款法律规范及流程）'],
+    [step5, index5, '房屋情况', '', 'a.房屋状况检查表', 'b.装修预算表'],
+    [step6, index6, '管理合同', '', 'a.第一年全包合同（10个月一次性租金回报） ', 'b.正常管理合同（10%管理费）'],
+    [step7, index7, '项目展示', '', '', '']
 ];
 
 class InvestmtFLowChart extends PureComponent {
@@ -73,26 +73,31 @@ class InvestmtFLowChart extends PureComponent {
     }
 
     getFlowChart() {
-        console.log(mapStepListToString[0][0]);
+        /*console.log(mapStepListToString[0][0]);*/
         const OddFlowChartList = [];
         const EvenFlowChartList = [];
         for (let i = 0; i < 7; i++) {
             const src = mapStepListToString[i][0];
-            console.log(i % 2)
+            const indexIcon = mapStepListToString[i][1];
+            const title = mapStepListToString[i][2];
+            const subTitle = mapStepListToString[i][3];
+            const content1 = mapStepListToString[i][4];
+            const content2 = mapStepListToString[i][5];
+            console.log(subTitle);
             if (i % 2 === 0) {
                 OddFlowChartList.push(
-                    <OddStepWrapper>
+                    <OddStepWrapper key={mapStepListToString[i][2]}>
                         <div className='oddStep'>
                             <img src={src} alt=""/>
-                            {this.getOddIndexToImg(mapStepListToString[i][1], mapStepListToString[i][2])}
+                            {this.getOddIndexToImg(indexIcon, title, subTitle, content1, content2)}
                         </div>
                     </OddStepWrapper>
                 )
             } else {
                 EvenFlowChartList.push(
-                    <EvenStepWrapper>
+                    <EvenStepWrapper key={mapStepListToString[i][2]}>
                         <div className='evenStep'>
-                            {this.getEvenIndexToImg(mapStepListToString[i][1], mapStepListToString[i][2])}
+                            {this.getEvenIndexToImg(indexIcon, title, subTitle, content1, content2)}
                             <img src={src} alt=""/>
                         </div>
                     </EvenStepWrapper>
@@ -104,27 +109,35 @@ class InvestmtFLowChart extends PureComponent {
     }
 
     //奇数流程图序号的虚线+序号+详情样式
-    getOddIndexToImg(indexIcon, content) {
+    getOddIndexToImg(indexIcon, title, subTitle, content1, content2) {
         return (
             <OddImgToIndex>
                 <div className='imgToIndex-odd'>
                     <img src={oddDash} alt="" className='oddDash'/>
                     <img src={indexIcon} alt="" className='oddIndex'/>
-                    <IndexContent>
-                        <div className='stepContent'>{content}</div>
-                        {/*<div className='stepContentAddition'>选定房源</div>*/}
-                        <div className='stepMoreInfo'>
+                    <OddIndexContent>
+                        <div className='oddContentTitle'>{title}</div>
+                        {
+                            {subTitle} ? <div className='oddContentTitle'>{subTitle}</div> : null
+                        }
+                        {
+                            {content1} ? <div className='oddContent'>{content1}</div> : null
+                        }
+                        {
+                            {content2} ? <div className='oddContent'>{content2}</div> : null
+                        }
+                        <div className='oddMoreInfo'>
                             <span>了解详情</span>
                             <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
                         </div>
-                    </IndexContent>
+                    </OddIndexContent>
                 </div>
             </OddImgToIndex>
         )
     }
 
     //偶数流程图序号的虚线+序号+详情样式
-    getEvenIndexToImg(indexIcon, content) {
+    getEvenIndexToImg(indexIcon, title, subTitle, content1, content2) {
 
         return (
             <EvenImgToIndex>
@@ -132,9 +145,20 @@ class InvestmtFLowChart extends PureComponent {
                     <img src={evenDash} alt="" className='evenDash'/>
                     <img src={indexIcon} alt="" className='evenIndex'/>
                     <EvenIndexContent>
-                        <div className='stepContent evenContent'>{content}</div>
-                        {/*<div className='stepContentAddition'>选定房源</div>*/}
-                        <div className='stepMoreInfo evenMoreInfo'>
+                        <div className='evenContentTitle'>{title}</div>
+                        {
+
+                            {subTitle} ? <div className='evenContentTitle'>{subTitle}</div> : null
+                        }
+                        {
+                            {content1} ? <div className='evenContent'>{content1}</div> : null
+                        }
+                        {
+                            {content2} ? <div className='evenContent'>{content2}</div> : null
+                        }
+
+
+                        <div className='evenMoreInfo'>
                             <span>了解详情</span>
                             <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
                         </div>
