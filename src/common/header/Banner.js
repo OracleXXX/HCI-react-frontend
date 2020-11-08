@@ -1,8 +1,12 @@
 import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
+
 import {BannerWrapper, DemoWrapper, DemoTitle, DemoContent, Input, SearchButton} from './style';
+
+//静态资源
 import BannerPic from '../../statics/imgs/headerImgs/banner-large.png';
 import Glass from '../../statics/imgs/headerImgs/iconFangDajing.svg';
-import {connect} from 'react-redux';
+
 class Banner extends PureComponent {
     render() {
         return (
@@ -12,6 +16,7 @@ class Banner extends PureComponent {
                     <DemoTitle>
                         我们将持续为客户提供更高效，多元的房地产项目配置组合，保障资产安全
                     </DemoTitle>
+                     {/* 其他走马灯内容 还没写 */}
                      {/* 2.我们将坚持深耕于成本更低，成长潜力更高的地区，为客户提供高效的投资方案 */}
                      {/* 3.我们坚持传统行业互联网化的理念，建立专属资产配置的社群，让资源得到充分分享 */}
                      {/* 4. 我们将借助平台优势 提供平台自身房地产贷款服务 为客户撬动更大资本价值* /}

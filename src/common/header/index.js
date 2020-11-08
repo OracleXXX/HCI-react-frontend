@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from "react-router-dom";
 import {CSSTransition} from "react-transition-group";
 import Banner from './Banner';
 import {actionCreators} from './store';
@@ -13,7 +14,7 @@ import {
 } from "./style";
 import triangle from '../../statics/imgs/headerImgs/triangle.svg';
 import './addtionStyle.css';
-import {Link} from "react-router-dom";
+
 
 
 class Header extends Component {
@@ -45,7 +46,7 @@ class Header extends Component {
                     <Link to='/'>
                         <Logo/>
                     </Link>
-
+                    {/* 导航 */}
                     <Nav>
                         <NavItem className='CompName'>HomeCap INC</NavItem>
                         <NavItem className='left'>精选房源</NavItem>
@@ -64,6 +65,7 @@ class Header extends Component {
                     </Nav>
 
                 </HeaderWrapper>
+                {/* 走马灯Banner */}
                 <Banner/>
             </div>
         )
