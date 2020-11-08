@@ -2,14 +2,17 @@ import {fromJS} from "immutable";
 import * as constants from './constants'
 
 const defaultState = fromJS({
-    newProjectList:[]
-
+    newProjectList: [],
+    topNewsFeedList: [],
+    restNewsFeedList: []
 
 
 });
 const changeHomePageData = (state, action) => {
     return state.merge({
         newProjectList: fromJS(action.newProjectList),
+        topNewsFeedList: fromJS(action.topNewsFeedList),
+        restNewsFeedList: fromJS(action.restNewsFeedList)
     });
 }
 /*const getProjectList = (state, action) => {
@@ -22,10 +25,9 @@ const changeHomePageData = (state, action) => {
 export default (state = defaultState, action) => {
     switch (action.type) {
         case constants.CHANGE_HOMEPAGE_DATA:
-            return changeHomePageData(state,action)
-/*        case constants.GET_PROJECT_LIST:
-            return getProjectList(state, action);*/
-
+            return changeHomePageData(state, action)
+        /*        case constants.GET_PROJECT_LIST:
+                    return getProjectList(state, action);*/
         default:
             return state;
     }

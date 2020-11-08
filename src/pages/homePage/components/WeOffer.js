@@ -49,4 +49,5 @@ class WeOffer extends PureComponent {
     }
 }
 
+
 export default connect(null, null)(WeOffer);
