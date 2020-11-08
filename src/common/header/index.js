@@ -48,7 +48,7 @@ class Header extends Component {
                     </Link>
                     {/* 导航 */}
                     <Nav>
-                        <NavItem className='CompName'>HomeCap INC</NavItem>
+                        <Link to='/'><NavItem className='CompName'>HomeCap INC</NavItem></Link>
                         <NavItem className='left'>精选房源</NavItem>
                         <NavItem className='left' onClick={() => {
                             handleDropDown(displayMenu)

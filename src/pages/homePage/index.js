@@ -1,9 +1,9 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import HouseDemo from "./components/NewProjectDemo";
+import NewProjectDemo from "./components/NewProjectDemo";
 import WeOffer from "./components/WeOffer";
-import INVTFlowChart from "./components/InvestmtFLowChart";
+import InvestmtFLowChart from "./components/InvestmtFLowChart";
 import NewsFeed from "./components/NewsFeed";
 import {HomePageWrapper} from "./style";
 import {actionCreators} from './store';
@@ -16,8 +16,8 @@ class homePage extends PureComponent {
         return (
             <HomePageWrapper>
                 <WeOffer />
-                <HouseDemo />
-                <INVTFlowChart />
+                <NewProjectDemo />
+                <InvestmtFLowChart />
                 <NewsFeed />
             </HomePageWrapper>
 

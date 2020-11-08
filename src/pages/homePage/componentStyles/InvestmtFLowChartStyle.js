@@ -5,7 +5,7 @@ export const InvestmtFlowChartWrapper = styled.div`
   width: 875px;
   height: 1370px;
   /*border: 1px solid black;*/
-  margin: 94px auto;
+  margin: 86px auto;
 `;
 export const FlowChartTitle = styled.div`
   width: 193px;
