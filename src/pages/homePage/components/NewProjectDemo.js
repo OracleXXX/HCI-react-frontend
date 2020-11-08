@@ -1,4 +1,9 @@
 import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
+// 轮播组件
+import Slider from 'react-slick';
+
+//导入css.js
 import {
     NewProjectDemoWrapper,
     SliderTitle,
@@ -8,14 +13,15 @@ import {
     NextArrow,
     InnerImg
 } from '../componentStyles/NewProjectDemoStyle';
-import {connect} from 'react-redux';
-import Slider from 'react-slick';
+
+// 导入页面静态资源
 import addrIcon from '../../../statics/imgs/homePageImgs/addrIcon.png';
 import moreInfoIcon from '../../../statics/imgs/homePageImgs/moreInfoIcon.png';
 
 class NewProjectDemo extends PureComponent {
     constructor(props) {
         super(props);
+        //绑定this
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
     }
@@ -29,7 +35,7 @@ class NewProjectDemo extends PureComponent {
     }
 
     render() {
-
+        // 轮播图设置
         const settings = {
             infinite: true,
             autoplay: true,
@@ -43,12 +49,15 @@ class NewProjectDemo extends PureComponent {
 
         return (
             <NewProjectDemoWrapper>
+                {/* 图轮播图title */}
                 <SliderTitle>
                     <div className='title'>精选房源</div>
                     <div className='rec'/>
                     <div className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</div>
                 </SliderTitle>
+                {/* 轮播图 */}
                 <SliderWrapper>
+                    {/* 左右指针 */}
                     <PrevArrow className="button hovered" onClick={this.previous}/>
                     <NextArrow className="button" onClick={this.next}/>
                     <Slider ref={c => (this.slider = c)} {...settings}>
@@ -87,19 +96,16 @@ class NewProjectDemo extends PureComponent {
                                 </div>
                             ))
                         }
-
                     </Slider>
-
                 </SliderWrapper>
-
             </NewProjectDemoWrapper>
-
         )
     }
 
 }
 
 const mapStateToProps = (state) => ({
+    // 去store提取state数据 map到props
     list: state.getIn(['homePage', 'newProjectList'])
 
 

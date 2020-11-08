@@ -12,6 +12,7 @@ class WeOffer extends PureComponent {
     render() {
         return (
             <WeOfferWrapper>
+                {/* 左边区域 */}
                 <WeOfferLeft>
                     <div className='offerTitle'>我们提供什么
                         <div className='rec'/>
@@ -20,9 +21,12 @@ class WeOffer extends PureComponent {
                         翻新 租赁 私人贷款等。向客户提供非中介的折扣型投资房源。为客户带来稳定回报率的同时，也辅助客户进行合理的资产配置。
                         线上线下同时展示北美房产投资咨询。一站式购房及管理服务。</p>
                 </WeOfferLeft>
+                {/* 右边区域 */}
                 <WeOfferRight>
                     <img src={WeOfferPic} alt=""/>
                 </WeOfferRight>
+
+                {/* 左下三个图标 */}
                 <WeOfferIcons>
                     <IconItem>
                         <img src={RealEstateRecmdPic} alt="" className='offerIcon'/>

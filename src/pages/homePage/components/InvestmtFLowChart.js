@@ -35,7 +35,7 @@ import {connect} from 'react-redux';
 import moreInfoIcon from "../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/moreInfoIcon-blue.png";
 
 
-//映射导入的图片组件
+//映射静态资源
 const mapStepListToString = [
     [step1, index1, '选定房源', '', '', ''],
     [step2, index2, '咨询详情及回报', '(交税流程、税务问题、法律问题)', '', ''],
@@ -48,6 +48,7 @@ const mapStepListToString = [
 
 class InvestmtFLowChart extends PureComponent {
     render() {
+        //拆分成奇数序号和偶数序号两个组件来遍历
 
         return (
             <InvestmtFlowChartWrapper>
@@ -117,6 +118,7 @@ class InvestmtFLowChart extends PureComponent {
                     <img src={indexIcon} alt="" className='oddIndex'/>
                     <OddIndexContent>
                         <div className='oddContentTitle'>{title}</div>
+                        {/* 判断是否为参数空 */}
                         {
                             {subTitle} ? <div className='oddContentTitle'>{subTitle}</div> : null
                         }
@@ -146,6 +148,7 @@ class InvestmtFLowChart extends PureComponent {
                     <img src={indexIcon} alt="" className='evenIndex'/>
                     <EvenIndexContent>
                         <div className='evenContentTitle'>{title}</div>
+                        {/* 判断是否为参数空 */}
                         {
 
                             {subTitle} ? <div className='evenContentTitle'>{subTitle}</div> : null

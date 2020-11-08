@@ -8,6 +8,7 @@ export const HomePageWrapper = styled.div`
 
 
 //项目投资流程图 project investment flow chart
+/*
 export const INVTFlowChartWrapper = styled.div`
   width: 875px;
   height: 1363px;
@@ -15,9 +16,12 @@ export const INVTFlowChartWrapper = styled.div`
   margin: 86px auto
 
 `;
+*/
 // 最近动态 news feed
+/*
 export const NewsFeedWrapper = styled.div`
   width: 100%;
   height: 760px;
   background-color: #F6F8F9;
 `;
+*/

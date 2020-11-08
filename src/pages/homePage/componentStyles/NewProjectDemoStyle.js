@@ -1,9 +1,9 @@
-//精选房源
+
 import styled from "styled-components";
 import nextArrow from '../../../statics/imgs/homePageImgs/nextArrow.png';
 import prevArrow from '../../../statics/imgs/homePageImgs/prevArrow.png';
 
-
+//精选房源 New Project Demo
 export const NewProjectDemoWrapper = styled.div`
   width: 100%;
   height: 640px;
