@@ -1,7 +1,6 @@
-import React, {PureComponent} from 'react';
+import React, {PureComponent, Fragment} from 'react';
 
 import {connect} from 'react-redux';
-
 import {
     NewsFeedWrapper,
     NewsFeedTitle,
@@ -28,7 +27,9 @@ const content1 = '阳光明媚的加利福尼亚州不断吸引着人们、企�
 const content2 = '之前我的文章和大家分享了疫情期间纽约房市的变化，但我的确很少直接谈到纽约房价到底受疫情影响有...';
 
 class NewsFeed extends PureComponent {
+
     render() {
+        const {topNewsFeedList, restNewsFeedList} = this.props;
         return (
             <NewsFeedWrapper>
                 <NewsFeedTitle>
@@ -45,79 +46,65 @@ class NewsFeed extends PureComponent {
     }
 
     getFixedTopArticle() {
+        const {topNewsFeedList} = this.props;
         return (
-            <FixedTopArticle>
-                {/* 置顶文章图片 */}
-                <LeftPart>
-                    <img src={test} alt="" className='LeftPartImg'/>
-                </LeftPart>
-                {/* 置顶文章内容 */}
-                <RightPart>
-                    {/* 置顶文章标题 */}
-                    <ArticleTitle className='articleTitle'>美国加州地产还值得投资吗</ArticleTitle>
-                    {/* 标签 */}
-                    <Tag>
-                        <div className='tag'>时事热点</div>
-                        <div className='tag'>市场趋势</div>
-                    </Tag>
-                    {/* 分割线 */}
-                    <div className='divLine'/>
-                    {/* 文章 */}
-                    <ArticleContent className='articleContent'>{content1}</ArticleContent>
-                    {this.getReadMore()}
-                </RightPart>
-            </FixedTopArticle>
+            <Fragment>
+                {
+                    topNewsFeedList.map((item) => (
+                        <FixedTopArticle>
+
+                            {/* 置顶文章图片 */}
+                            <LeftPart>
+                                <img src={item.get('imgUrl')} alt="" className='LeftPartImg'/>
+                            </LeftPart>
+                            {/* 置顶文章内容 */}
+                            <RightPart>
+                                {/* 置顶文章标题 */}
+                                <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
+                                {/* 标签 */}
+                                <Tag>
+                                    {item.get('tags') === 11 || 10 ? <div className='tag'>时事热点</div> : null}
+                                    {item.get('tags') === 11 || 1 ? <div className='tag'>市场趋势</div> : null}
+                                </Tag>
+                                {/* 分割线 */}
+                                <div className='divLine'/>
+                                {/* 文章 */}
+                                <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
+                                {this.getReadMore()}
+                            </RightPart>
+                        </FixedTopArticle>
+                    ))
+                }
+
+            </Fragment>
+
         )
     };
 
     getRestArticles() {
+        const {restNewsFeedList} = this.props;
         return (
             <RestArticles>
-                <RestArticle>
-                    <TopPart><img src={test} alt="" className='TopPartImg'/></TopPart>
-                    <BottomPart>
-                        <ArticleTitle className='articleTitle'>美国加州地产还值得投资吗</ArticleTitle>
-                        <Tag>
-                            <div className='tag'>时事热点</div>
-                            <div className='tag'>市场趋势</div>
-                        </Tag>
-                        <div className='divLine'/>
-                        <ArticleContent className='articleContent'>{content2}</ArticleContent>
-                        {this.getReadMore()}
-                    </BottomPart>
-                </RestArticle>
-                <RestArticle>
-                    <TopPart><img src={test} alt="" className='TopPartImg'/></TopPart>
-                    <BottomPart>
-                        <ArticleTitle className='articleTitle'>美国加州地产还值得投资吗</ArticleTitle>
-                        <Tag>
-                            <div className='tag'>时事热点</div>
-                            <div className='tag'>市场趋势</div>
-                        </Tag>
-                        <div className='divLine'/>
-                        <ArticleContent className='articleContent'>{content2}</ArticleContent>
-                        {this.getReadMore()}
-
-                    </BottomPart>
-                </RestArticle>
-                <RestArticle>
-                    <TopPart><img src={test} alt="" className='TopPartImg'/></TopPart>
-                    <BottomPart>
-                        <ArticleTitle className='articleTitle'>美国加州地产还值得投资吗</ArticleTitle>
-                        <Tag>
-                            <div className='tag'>时事热点</div>
-                            <div className='tag'>市场趋势</div>
-                        </Tag>
-                        <div className='divLine'/>
-                        <ArticleContent className='articleContent'>{content2}</ArticleContent>
-                        {this.getReadMore()}
-                    </BottomPart>
-                </RestArticle>
-
+                {
+                    restNewsFeedList.map((item) => (
+                        <RestArticle>
+                            <TopPart><img src={item.get('imgUrl')} alt="" className='TopPartImg'/></TopPart>
+                            <BottomPart>
+                                {console.log(item.title)}
+                                <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
+                                {this.getTag(item.get('tags'))}
+                                <div className='divLine'/>
+                                <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
+                                {this.getReadMore()}
+                            </BottomPart>
+                        </RestArticle>
+                    ))
+                }
             </RestArticles>
         )
     };
 
+    //查看更多按钮组件
     getReadMore() {
         return (
             <ReadMore>
@@ -130,10 +117,22 @@ class NewsFeed extends PureComponent {
 
         )
     }
+
+    //选择tag标签组件
+    getTag(bitmask) {
+        return (
+            <Tag>
+                {bitmask === 11 || 10 ? <div className='tag'>时事热点</div> : null}
+                {bitmask === 11 || 1 ? <div className='tag'>市场趋势</div> : null}
+            </Tag>
+        )
+    }
+
 }
+
 const mapStataToProps = (state) => ({
     topNewsFeedList: state.getIn(['homePage', 'topNewsFeedList']),
-    restNewsFeedList:state.getIn(['homePage', 'restNewsFeedList'])
+    restNewsFeedList: state.getIn(['homePage', 'restNewsFeedList'])
 
 })
 export default connect(mapStataToProps, null)(NewsFeed);
