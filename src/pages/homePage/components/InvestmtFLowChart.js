@@ -83,7 +83,7 @@ class InvestmtFLowChart extends PureComponent {
             const subTitle = mapStepListToString[i][3];
             const content1 = mapStepListToString[i][4];
             const content2 = mapStepListToString[i][5];
-            console.log(subTitle);
+
             if (i % 2 === 0) {
                 OddFlowChartList.push(
                     <OddStepWrapper key={mapStepListToString[i][2]}>
