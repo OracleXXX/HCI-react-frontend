@@ -14,7 +14,8 @@
   - 每页切换背景图片
   - 每页切换文字
   - 每页的搜索房屋编号的搜索框保持不变
-- 搜索框加入更改placeholder的margin时focus时光标没了
+  - 搜索框加入更改placeholder的margin时focus时光标没了
+  - 图片加载问题，没有占位符，导致banner加载完成之前很乱
 
 ### 三、 We offer
 

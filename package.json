@@ -47,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-mult-transition-image-view": "^1.0.5",
+    "self-adapt-fontsize": "^1.0.6"
   }
 }

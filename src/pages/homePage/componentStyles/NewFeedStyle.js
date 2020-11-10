@@ -5,10 +5,10 @@ import styled from "styled-components";
 // 最近动态 news feed
 export const NewsFeedWrapper = styled.div`
   width: 100%;
-  height: 1088px;
-  padding: 86px;
+  height: 1061px;
+  padding: 86px 0 0;
   box-sizing: border-box;
-  background-color: #F6F8F9
+  background-color: #F6F8F9;
   
  
 `;

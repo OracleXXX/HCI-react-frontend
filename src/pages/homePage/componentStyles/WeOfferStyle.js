@@ -86,7 +86,7 @@ export const IconItem = styled.div`
   }
   & .offerName {
   
-  margin: 23px auto;
+    margin: 23px auto;
     font-family: SourceHanSansSC-Regular;
     font-size: 14px;
     color: #333333;

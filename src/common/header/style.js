@@ -97,7 +97,7 @@ export const BannerWrapper = styled.div`
   position: relative;
   width:100%;
   & .banner {
-    width:auto;
+    width:100%;
     height:auto;
     max-width:100%;
     min-width: 960px;
@@ -122,7 +122,8 @@ export const DemoTitle = styled.div`
   height: 176px;
   margin: -120px  0 0 -476px;
   font-family: SourceHanSansSC-Regular;
-  font-size:56px;
+  font-size:2.4em;
+  min-font-size: 1em;
   color:#ffffff;
   letter-spacing:0;
   text-align:center;

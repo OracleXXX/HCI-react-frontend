@@ -1,4 +1,9 @@
+body {
+    font: normal 0.84210vw Helvetica, Arial, sans-serif;
+}
+
 /*一站式服务右边的三角形左边距*/
+
 .triangle {
     margin-left: 5px;
 
