@@ -20,16 +20,12 @@ import {
 
 } from '../componentStyles/NewFeedStyle';
 
-
 import test from '../../../statics/imgs/test.jpg';
 
-const content1 = '阳光明媚的加利福尼亚州不断吸引着人们、企业和游客，地理和经济都具有多样性。从山峦到海滩，加州的经济由娱乐和技术、农业（得益于全年温和的天气）、制造业、保健和金融等行业组成。大量的公司总部设在洛杉矶、旧金山、圣地亚哥、圣何塞和萨克拉门托等大都市地区，难怪加州的人口持续增长——尽管其人口密集，缺乏可负担的住房和生活成本高…'
-const content2 = '之前我的文章和大家分享了疫情期间纽约房市的变化，但我的确很少直接谈到纽约房价到底受疫情影响有...';
 
 class NewsFeed extends PureComponent {
 
     render() {
-        const {topNewsFeedList, restNewsFeedList} = this.props;
         return (
             <NewsFeedWrapper>
                 <NewsFeedTitle>
@@ -37,14 +33,16 @@ class NewsFeed extends PureComponent {
                     <div className='rec'/>
                 </NewsFeedTitle>
                 <NewsFeedArticle>
+                    {/*置顶文章*/}
                     {this.getFixedTopArticle()}
+                    {/*除了置顶的文章*/}
                     {this.getRestArticles()}
                 </NewsFeedArticle>
             </NewsFeedWrapper>
 
         )
     }
-
+    //置顶文章
     getFixedTopArticle() {
         const {topNewsFeedList} = this.props;
         return (
@@ -55,7 +53,7 @@ class NewsFeed extends PureComponent {
 
                             {/* 置顶文章图片 */}
                             <LeftPart>
-                                <img src={item.get('imgUrl')} alt="" className='LeftPartImg'/>
+                                <img src={item.get('imgUrl')} alt="" className='LeftPartImg no-select'/>
                             </LeftPart>
                             {/* 置顶文章内容 */}
                             <RightPart>
@@ -80,7 +78,7 @@ class NewsFeed extends PureComponent {
 
         )
     };
-
+    // 除了置顶的文章
     getRestArticles() {
         const {restNewsFeedList} = this.props;
         return (
@@ -88,7 +86,7 @@ class NewsFeed extends PureComponent {
                 {
                     restNewsFeedList.map((item) => (
                         <RestArticle>
-                            <TopPart><img src={item.get('imgUrl')} alt="" className='TopPartImg'/></TopPart>
+                            <TopPart><img src={item.get('imgUrl')} alt="" className='TopPartImg no-select'/></TopPart>
                             <BottomPart>
                                 {console.log(item.title)}
                                 <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>

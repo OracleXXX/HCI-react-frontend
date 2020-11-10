@@ -4,7 +4,9 @@ import logoPic from '../../statics/Inc-Logo.jpg';
 export const HeaderWrapper = styled.div`
     z-index: 100;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
-    height: 60px; 
+    height: 60px;
+
+    
 `;
 
 
@@ -87,6 +89,11 @@ export const DropDownServices = styled.div`
 `;
 
 export const BannerWrapper = styled.div`
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    -khtml-user-select:none;/*早期浏览器*/
+    user-select:none;
   position: relative;
   width:100%;
   & .banner {

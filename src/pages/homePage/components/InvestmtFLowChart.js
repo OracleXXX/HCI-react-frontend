@@ -56,7 +56,7 @@ class InvestmtFLowChart extends PureComponent {
                     <span className='title'>项目投资流程</span>
                     <div className='rec'/>
                 </FlowChartTitle>
-                <FlowChart>
+                <FlowChart className='no-select'>
                     {/*奇数流程*/}
                     <OddWrapper>
                         {this.getFlowChart()[0]}

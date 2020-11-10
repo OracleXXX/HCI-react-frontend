@@ -46,6 +46,7 @@ export const WeOfferLeft = styled.div`
   
   }
 `;
+
     /*  右边图片部分  */
 export const WeOfferRight = styled.div`
   display: inline-block;

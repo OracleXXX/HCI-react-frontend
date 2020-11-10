@@ -42,7 +42,7 @@ class Header extends Component {
         const {handleDropDown, displayMenu} = this.props;
         return (
             <div>
-                <HeaderWrapper>
+                <HeaderWrapper className='no-select'>
                     <Link to='/'>
                         <Logo/>
                     </Link>

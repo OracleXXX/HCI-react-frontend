@@ -8,6 +8,13 @@ import RealEstateRecmdPic from '../../../statics/imgs/homePageImgs/RealEstateRec
 import LoanPic from '../../../statics/imgs/homePageImgs/loan.svg';
 import INVTPic from '../../../statics/imgs/homePageImgs/NAInvestment.svg';
 
+const xxx = {
+    "-moz-user-select": "none",/*火狐*/
+    "-webkit-user-select": "none",/*webkit浏览器*/
+    "-ms-user-select": "none",/*IE10*/
+    "-khtml-user-select": "none",/*早期浏览器*/
+    "user-select": "none"
+}
 class WeOffer extends PureComponent {
     render() {
         return (
@@ -23,11 +30,11 @@ class WeOffer extends PureComponent {
                 </WeOfferLeft>
                 {/* 右边区域 */}
                 <WeOfferRight>
-                    <img src={WeOfferPic} alt=""/>
+                    <img src={WeOfferPic} alt="" className='no-select'/>
                 </WeOfferRight>
 
                 {/* 左下三个图标 */}
-                <WeOfferIcons>
+                <WeOfferIcons className='no-select'>
                     <IconItem>
                         <img src={RealEstateRecmdPic} alt="" className='offerIcon'/>
                         <div className='offerName'>地产项目推荐</div>

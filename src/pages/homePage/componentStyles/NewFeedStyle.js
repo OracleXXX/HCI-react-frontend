@@ -5,7 +5,7 @@ import styled from "styled-components";
 // 最近动态 news feed
 export const NewsFeedWrapper = styled.div`
   width: 100%;
-  height: 900px;
+  height: 1088px;
   padding: 86px;
   box-sizing: border-box;
   background-color: #F6F8F9
