@@ -62,24 +62,25 @@ export const NavItem = styled.div`
         float: right;
         color: #969696;
       }*/
-      &.active {
+/*      &.active {
         color: #ea6f5a;
-      } 
+      } */
 `;
 
 export const DropDownServices = styled.div`
   z-index: 100;
   position: absolute;
   left: 0;
-  top: 58px;
+  top: 56.5px;
   height: 174px;
-  width: 126px;
+  width: 100%;
 
   background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
   font-size: 13px;
   & .dropDownItem{
     text-align: center;
     border: 1px solid transparent;
+    color: #FFFFFF;
   }& .dropDownItem:hover{
     border: 1px solid #FFFFFF;
     border-radius: 2px;

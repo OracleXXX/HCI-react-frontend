@@ -16,7 +16,6 @@ import triangle from '../../statics/imgs/headerImgs/triangle.svg';
 import './addtionStyle.css';
 
 
-
 class Header extends PureComponent {
 
     getDropDown() {
@@ -25,9 +24,15 @@ class Header extends PureComponent {
             return (
                 <DropDownServices>
                     <ul>
-                        <li className='dropDownItem'>一站式房屋管理</li>
-                        <li className='dropDownItem'>一站式房屋买卖</li>
-                        <li className='dropDownItem'>平台活动</li>
+                        <Link to='/one-step/management'>
+                            <li className='dropDownItem'>一站式房屋管理</li>
+                        </Link>
+                        <Link to='/one-step/long-short'>
+                            <li className='dropDownItem'>一站式房屋买卖</li>
+                        </Link>
+                        <Link to='/one-step/activities'>
+                            <li className='dropDownItem'>平台活动</li>
+                        </Link>
                     </ul>
                 </DropDownServices>
             )
@@ -49,19 +54,23 @@ class Header extends PureComponent {
                     {/* 导航 */}
                     <Nav>
                         <Link to='/'><NavItem className='CompName'>HomeCap INC</NavItem></Link>
-                        <NavItem className='left'>精选房源</NavItem>
-                        <NavItem className='left' onClick={() => {
-                            handleDropDown(displayMenu)
-                        }}>
+                        <Link to='/new-project'><NavItem className='left'>精选房源</NavItem></Link>
+                        <NavItem
+                            className='left'
+                            onMouseEnter={() => {handleDropDown(displayMenu)}}
+                            onMouseLeave={() => {handleDropDown(displayMenu)}}
+                            onClick={() => {handleDropDown(displayMenu)}}
+
+                        >
                             一站式服务
                             <img src={triangle} alt="" className='triangle'/>
                             {this.getDropDown()}
                         </NavItem>
-                        <NavItem className='left'>房屋私人贷款</NavItem>
-                        <NavItem className='left'>项目展示</NavItem>
-                        <NavItem className='left'>团队背景</NavItem>
-                        <NavItem className='left'>美房投资攻略</NavItem>
-                        <NavItem className='left'>联系我们</NavItem>
+                        <Link to='/platform-loan'><NavItem className='left'>平台贷款</NavItem></Link>
+                        <Link to='/closed-project'><NavItem className='left'>项目展示</NavItem></Link>
+                        <Link to='/platform-loan'><NavItem className='left'>团队背景</NavItem></Link>
+                        <Link to='/news-feed'><NavItem className='left'>美房投资攻略</NavItem></Link>
+                        <Link to='/contact-us'><NavItem className='left'>联系我们</NavItem></Link>
                     </Nav>
 
                 </HeaderWrapper>

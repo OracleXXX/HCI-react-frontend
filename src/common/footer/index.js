@@ -1,5 +1,7 @@
 import React, {PureComponent} from 'react';
+import {Link} from "react-router-dom";
 import {connect} from 'react-redux';
+
 import footerPic from '../../statics/imgs/footer/footerPic.png'
 import {
     FooterWrapper,
@@ -11,6 +13,7 @@ import {
     PopularCities,
     CopyRight
 } from './style';
+
 
 class Footer extends PureComponent {
     /* 全局size是16px 16 * em应该等于目标size */
@@ -33,16 +36,16 @@ class Footer extends PureComponent {
                         <FooterNav>
                             <div className="nav-items-footer">
                                 <div className="nav-title-footer">网站导航</div>
-                                <div className='nav-item-footer'>精选房源</div>
-                                <div className='nav-item-footer'>一站式房屋服务</div>
-                                <div className='nav-item-footer'>一站式房屋买卖</div>
-                                <div className='nav-item-footer'>平台贷款</div>
+                                <Link to='/new-project'><div className='nav-item-footer'>精选房源</div></Link>
+                                <Link to='/one-step/management'><div className='nav-item-footer'>一站式房屋管理</div></Link>
+                                <Link to='/one-step/long-short'><div className='nav-item-footer'>一站式房屋买卖</div></Link>
+                                <Link to='/platform-loan'><div className='nav-item-footer'>平台贷款</div></Link>
                             </div>
                         </FooterNav>
                         <div className='vertical-div-line'/>
                         <FooterContactUs>
                             <div className="nav-items-footer">
-                                <div className="nav-title-footer">联系我们</div>
+                                <Link to='/contact-us' ><div className="nav-title-footer">联系我们</div></Link>
                                 <div className='nav-item-footer'>8830 3890 8329</div>
                                 <div className='nav-item-footer'><p>美国田纳西州《大迪哥的私人会所》</p></div>
                                 <div className='nav-item-footer'>dadige@gmail.com</div>

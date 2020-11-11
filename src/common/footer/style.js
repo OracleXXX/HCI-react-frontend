@@ -80,17 +80,21 @@ export const FooterMain = styled.div`
     height: 100%;
     margin: 0 auto;
     text-align: left;
+    
+    
   }   
   & .nav-title-footer {
     font-family: SourceHanSansSC-Regular;    
     margin: 30% auto;
     white-space:nowrap; 
+    color: #FFFFFF;
   }
   & .nav-item-footer {
     font-family: SourceHanSansSC-Normal;
     margin: 30% auto;
     opacity: 0.8;  
-    white-space:nowrap; 
+    white-space:nowrap;
+    color: #FFFFFF; 
   }
 `;
 export const FooterNav = styled.div`
