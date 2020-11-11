@@ -95,8 +95,8 @@ export const BannerWrapper = styled.div`
     -ms-user-select:none;/*IE10*/
     -khtml-user-select:none;/*早期浏览器*/
     user-select:none;
-  position: relative;
-  width:100%;
+    position: relative;
+    width:100%;
   & .banner {
     width:100%;
     height:auto;
