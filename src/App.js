@@ -17,10 +17,11 @@ import NewsFeed from "./pages/newsFeed/loadable";
 import ContactUs from "./pages/contactUs/loadable";
 import Management from "./pages/oneStepService/management/loadable";
 import LongShort from "./pages/oneStepService/longShort/loadable";
-import Activities from "./pages/oneStepService/activities";
-
+import Activities from "./pages/oneStepService/activities/loadable";
+import OurTeam from "./pages/ourTeam/loadable";
 import store from "./store";
 import GlobalStyle from './style';
+
 
 
 
@@ -39,6 +40,7 @@ class App extends Component {
                         <Route path='/one-step/activities' exact component={Activities}/>
                         <Route path='/platform-loan' exact component={PlatformLoan}/>
                         <Route path='/closed-project' exact component={ClosedProject}/>
+                        <Route path='/our-team' exact component={OurTeam}/>
                         <Route path='/news-feed' exact component={NewsFeed}/>
                         <Route path='/contact-us' exact component={ContactUs}/>
                     </div>

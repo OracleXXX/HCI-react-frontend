@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+## 前端` src/pages`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+所有组件store中已经写好，reducer都合并到了根组件的reducer: `src/reducer`
 
-## Available Scripts
+`axios`请求的的`api`目录在 `public/api`
 
-In the project directory, you can run:
+需要crud的图片在`public/upload`
 
-### `npm start`
+写死的的静态图片字体文件在 `src/statics`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 一层 (没有子网页)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 一站式管理： 组件路径`onestep/management`
+- 一站式买卖： 组件路径  `oneStep/longShort`
+- 平台贷款： 组件路径 `platformLoan`
+- 团队背景 ： 组件路径  `ourTeam`
+- 联系我们： 组件路径 `contactUs`
 
-### `npm test`
+### 两层（都有一个子网页，以后有可能有两个）
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 精选房源： 组件路径 `newProject`
+- 平台活动： 组件路径 `oneStep/activities`
+- 项目展示： 组件路径 `closedProject`
+- 投资攻略： 组件路径 `newsFeed`
 
-### `npm run build`
+### 后台管理系统（目前先不用管）
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 管理员登录
+- 上传房源信息、已完成项目信息、团队背景
+- 发布投资攻略（最近动态） 文章
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 后端
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 框架：我就会`flask`和`springboot`，或者其他主流框架
+- 数据库： `mysql`?
+- 自动收发邮件
+- 具体需要讨论 一下
 
-### `npm run eject`
+## 部署
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- docker/docker-compose
+- 服务器：AWS-EC2
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 当前计划
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 12月初 我们三个公司都会被母公司(Home Cap Inc)收购，商业计划书也会准备好准备融资。需要让投资人看到一个看上去没有bug的平台。所以最好在这之前，网页至少测试版本，并且留1-4天的的时间去部署并测试
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 11.21 之前, 也就是下周六：做完所有页面，
+  - 可以没有任何动画效果。
+  - 可以不兼容手机尺寸
+  - 但是正常的电脑屏幕尺寸都要兼容。
+- 11.28 之前，也就是下下周六：完成后台，并连接前后台
+- 最后几天部署并上传真实数据测试
 
-## Learn More
+## 未来计划
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- SEO优化
+- 兼容所有尺寸
+- 优化细节的动画效果（ex：鼠标悬停切换动画， 弹窗弹出动画）
+- 添加后台管理系统以及后台登录，登出上传功能。不需要注册功能
+- 添加用户注册登录功能并且可以在网页中发表评论，以及管理用户信息的数据库
+- 添加订金支付功能，用户可以直接支付定金锁定房源（每个房源只能同时被一个人锁）
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
