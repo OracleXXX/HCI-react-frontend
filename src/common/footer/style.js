@@ -4,12 +4,12 @@ export const FooterWrapper = styled.div`
   position: relative;
   width: 100%;
   height: auto;
-  min-width: 960px;
+  min-width: 50rem;
   overflow: hidden;
   & .footer-img {
     width: inherit;
     height: auto;
-    min-width: 370px;
+    min-width: 37rem;
   }    
 `;
 export const AboutUs = styled.div`
@@ -28,14 +28,14 @@ export const AboutUs = styled.div`
     height: 37%;
     margin: 0 auto;
     font-family: SourceHanSansSC-Medium;
-    font-size: 2em;
+    font-size: 3.2rem;
     line-height: 146%;
   }
   & .about-us-content {
     width: 100%;
     height: 63%;
     font-family: SourceHanSansSC-Regular;
-    font-size: 0.93em;
+    font-size: 1.5em;
     line-height: 186%;
     margin: 0 auto;
     padding-top: 2.38%;
@@ -51,7 +51,7 @@ export const FooterContent = styled.div`
   height: 37%;
   background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
   font-family: SourceHanSansSC-Normal;
-  font-size: 0.875em;
+  font-size: 1.4rem;
   color: #FFFFFF;
   letter-spacing: 0;
   opacity: 0.96;
@@ -64,7 +64,6 @@ export const FooterMain = styled.div`
   display: flex;
   width: 100%;
   height: 82.8%;
-  font-size: 0.9375em;
 
   
 
@@ -88,6 +87,7 @@ export const FooterMain = styled.div`
     margin: 30% auto;
     white-space:nowrap; 
     color: #FFFFFF;
+    font-size: 1.5rem;
   }
   & .nav-item-footer {
     font-family: SourceHanSansSC-Normal;
@@ -147,6 +147,7 @@ export const CopyRight = styled.div`
   width: inherit;
   height: 18.2%;
   text-align: center;
+  font-size: 1.3rem;
   & .horiz-div-line {
      width: 62.5%;
     height: 1px;
