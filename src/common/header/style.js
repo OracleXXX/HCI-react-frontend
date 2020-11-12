@@ -151,14 +151,15 @@ export const DemoContent = styled.div`
 
 export const Input = styled.div`
   position: relative;
- 
+  box-sizing: border-box;
   border-radius: 8rem;
   width: 79rem;
   & input{
   width: 72.6rem;
   height: 5.6rem;
+  box-sizing: border-box;
   opacity: 0.9;
-  padding: 0;
+  padding-left: 2rem;
   border: 0;
   border-bottom-left-radius: 0.8rem;
   border-top-left-radius: 0.8rem;
@@ -167,7 +168,7 @@ export const Input = styled.div`
   color: #666666;
   letter-spacing: 0;
     &::placeholder {
-      padding-left: 2rem;
+     
   }
   }
 `
