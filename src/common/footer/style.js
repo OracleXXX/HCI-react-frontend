@@ -4,7 +4,7 @@ export const FooterWrapper = styled.div`
   position: relative;
   width: 100%;
   height: auto;
-  min-width: 1420px;
+  min-width: 960px;
   overflow: hidden;
   & .footer-img {
     width: inherit;
@@ -119,6 +119,7 @@ export const PopularCities = styled.div`
   width: 33%;
   height: 100%;
   margin: 0 auto;
+  padding-left: 2rem;
   
   & .col-left {
     width: 50%;

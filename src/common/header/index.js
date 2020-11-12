@@ -13,6 +13,7 @@ import {
     DropDownServices,
 } from "./style";
 import triangle from '../../statics/imgs/headerImgs/triangle.svg';
+import logoPic from '../../statics/Inc-Logo.jpg';
 import './addtionStyle.css';
 
 
@@ -48,12 +49,10 @@ class Header extends PureComponent {
         return (
             <div>
                 <HeaderWrapper className='no-select'>
-                    <Link to='/'>
-                        <Logo/>
-                    </Link>
+
                     {/* 导航 */}
                     <Nav>
-                        <Link to='/'><NavItem className='CompName'>HomeCap INC</NavItem></Link>
+                        <Link to='/'><NavItem className='CompName'><Logo src={logoPic} alt=""/>HomeCap INC</NavItem></Link>
                         <Link to='/new-project'><NavItem className='left'>精选房源</NavItem></Link>
                         <NavItem
                             className='left'

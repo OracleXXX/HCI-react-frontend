@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logoPic from '../../statics/Inc-Logo.jpg';
+
 
 export const HeaderWrapper = styled.div`
     z-index: 100;
@@ -10,18 +10,15 @@ export const HeaderWrapper = styled.div`
 `;
 
 
-export const Logo = styled.div`
-    position: absolute;
-    top:0;
-    left:0;
-    display:block;
-    width:100px;
+export const Logo = styled.img`
+    float: left;
+    display:inline-block;
+    width: auto;
     height:56px;
-    background: url(${logoPic}) no-repeat;
-    background-size: contain;
+
 `;
 
-export const Nav = styled.div`
+export const Nav = styled.ul`
     width: 1120px;
     height: 100%;
 
@@ -30,11 +27,12 @@ export const Nav = styled.div`
   
 `;
 
-export const NavItem = styled.div`
+export const NavItem = styled.li`
     position: relative;
     cursor: pointer;
     line-height: 56px;
     padding: 0 27px;
+    
     font-family: SourceHanSansSC-Regular;
     font-size: 16px;
     letter-spacing: 0;
@@ -42,6 +40,7 @@ export const NavItem = styled.div`
     border: 1px solid transparent;
       &.CompName {
         float: left;
+ 
         font-family: 'Lobster', cursive;
         font-size: 20px;   
       }
