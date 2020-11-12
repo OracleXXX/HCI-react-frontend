@@ -27,7 +27,7 @@ class NewsFeed extends PureComponent {
 
     render() {
         return (
-            <NewsFeedWrapper>
+            <NewsFeedWrapper className='scale-control'>
                 <NewsFeedTitle>
                     <span className='title'>最近动态</span>
                     <div className='rec'/>

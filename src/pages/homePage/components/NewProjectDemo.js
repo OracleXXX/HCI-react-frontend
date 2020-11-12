@@ -48,12 +48,12 @@ class NewProjectDemo extends PureComponent {
         };
 
         return (
-            <NewProjectDemoWrapper>
+            <NewProjectDemoWrapper className='scale-control'>
                 {/* 图轮播图title */}
                 <SliderTitle>
                     <div className='title'>精选房源</div>
                     <div className='rec'/>
-                    <div className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</div>
+                    <div ><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
                 </SliderTitle>
                 {/* 轮播图 */}
                 <SliderWrapper>

@@ -2,14 +2,12 @@ import styled from "styled-components";
 
 export const FooterWrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: calc(192rem - 17px);
   height: auto;
-  min-width: 50rem;
   overflow: hidden;
   & .footer-img {
     width: inherit;
     height: auto;
-    min-width: 37rem;
   }    
 `;
 export const AboutUs = styled.div`

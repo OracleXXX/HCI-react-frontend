@@ -2,47 +2,52 @@ import styled from "styled-components";
 
 
 /*  我们提供什么, We offer  */
+export const WeOfferFragment = styled.div`
+  width: calc(192rem - 17px);
+  height: fit-content;
+
+`;
 export const WeOfferWrapper = styled.div`
   position: relative;
-  width: 1204px;
-  height: 461px;
+  width: 120.4rem;
+  height: 46.1rem;
   //border: 1px solid red;
-  margin: 86px auto;
+  margin: 8.6rem auto;
   font-size: 0 
 `;
     /*  左边文字部分  */
 export const WeOfferLeft = styled.div`
   display: inline-block;
-  width: 600px;
+  width: 60rem;
   height: 100%;
   //border: 1px dashed greenyellow;
   overflow: hidden; //让行内块元素的基准线变为一起
   & .offerTitle {
     position: relative;
-    width: 192px;
-    height: 50px;
-    padding-top: 15px;
+    width: 19.2rem;
+    height: 5rem;
+    padding-top: 1.5rem;
     font-family: SourceHanSansSC-Bold;
-    font-size: 32px;
+    font-size: 3.2rem;
     color: #333333;
     text-align: center;     
     & .rec {
       position: absolute;
       bottom: 0;
-      width: 50px;
-      height: 3px;
-      border-radius: 1.5px;
+      width: 5rem;
+      height: 0.3rem;
+      border-radius: 0.15rem;
       background-color: #2D84FF;
     }
   }
   & .offerContent {
-    width: 564px;
+    width: 56.4rem;
     font-family:SourceHanSansSC-Regular;
-    font-size:15px;
+    font-size:1.5rem;
     color:#555555;
-    line-height:26px;
+    line-height:2.6rem;
     text-align:left;
-    margin-top: 28px;
+    margin-top: 2.8rem;
   
   }
 `;
@@ -50,45 +55,45 @@ export const WeOfferLeft = styled.div`
     /*  右边图片部分  */
 export const WeOfferRight = styled.div`
   display: inline-block;
-  width: 600px;
+  width: 60rem;
   height: 100%;
   //border: 1px dashed black;
   overflow: hidden;
   & img {
-    width: 600px;
-    height: 340px;
+    width: 60rem;
+    height: 34rem;
   }
 `;
   /*  三个图标  */
 export const WeOfferIcons = styled.div`
   position: absolute;
   left: 0;
-  top: 252px;
-  width: 730px;
-  height: 209px;
+  top: 25.2rem;
+  width: 73rem;
+  height: 20.9rem;
   background-color: #FFFFFF;
-  box-shadow: 0 4px 18px 0 #E6E6E6;
-  border-radius: 8px;
+  box-shadow: 0 0.4rem 1.8rem 0 #E6E6E6;
+  border-radius: 0.8rem;
 `;
 
 export const IconItem = styled.div`
   display: inline-block;
-  width: 239px;
-  height: 209px;
-  margin: 40px auto 0;
+  width: 23.9rem;
+  height: 20.9rem;
+  margin: 4rem auto 0;
   overflow: hidden;
   text-align: center;
   & .offerIcon {
-    width: 86px;
-    height: 86px;
+    width: 8.6rem;
+    height: 8.6rem;
     background-color: #F5F8FA;
     background-image: url("../../../statics/imgs/homePageImgs/RealEstateRecmd.svg");
   }
   & .offerName {
   
-    margin: 23px auto;
+    margin: 2.3rem auto;
     font-family: SourceHanSansSC-Regular;
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #333333;
   }
 `;
@@ -96,10 +101,10 @@ export const IconItem = styled.div`
 export const DivLine = styled.div`
   display: inline-block;
   width: 1px;
-  height: 72px;
+  height: 7.2rem;
   background-color: #EEEEEE;
   vertical-align: top;
-  margin-top: 69px;
+  margin-top: 6.9rem;
 
 `;
 

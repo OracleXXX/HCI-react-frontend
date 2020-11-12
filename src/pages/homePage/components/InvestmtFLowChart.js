@@ -51,7 +51,7 @@ class InvestmtFLowChart extends PureComponent {
         //拆分成奇数序号和偶数序号两个组件来遍历
 
         return (
-            <InvestmtFlowChartWrapper>
+            <InvestmtFlowChartWrapper className='scale-control'>
                 <FlowChartTitle>
                     <span className='title'>项目投资流程</span>
                     <div className='rec'/>
@@ -129,7 +129,7 @@ class InvestmtFLowChart extends PureComponent {
                             {content2} ? <div className='oddContent'>{content2}</div> : null
                         }
                         <div className='oddMoreInfo'>
-                            <span>了解详情</span>
+                            <div>了解详情</div>
                             <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
                         </div>
                     </OddIndexContent>
@@ -162,9 +162,10 @@ class InvestmtFLowChart extends PureComponent {
 
 
                         <div className='evenMoreInfo'>
-                            <span>了解详情</span>
+                            <div>了解详情</div>
                             <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
                         </div>
+                        <div className='clear'/>
                     </EvenIndexContent>
 
                 </div>

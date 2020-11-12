@@ -22,14 +22,14 @@ class Footer extends PureComponent {
     render() {
 
         return (
-            <FooterWrapper className="no-select">
+            <FooterWrapper className="no-select scale-control">
                 <AboutUs>
                     <div className="about-us-title">关于我们</div>
                     <div className="about-us-content">Home Cap INC是美国房地产投资股份有限公司 多年致力于北美房地产投资 投资内容包括开发 翻新 租赁
                         私人贷款等。向客户提供非中介的折扣型投资房源。为客户带来稳定回报率的同时，也辅助客户进行合理的资产配置、 线上线下同时展示北美房产投资咨询、一站式购房及管理服务
                     </div>
                 </AboutUs>
-                <img src={footerPic} alt="" className='footer-img '/>
+                <img src={footerPic} alt="" className='footer-img scale-control'/>
 
                 <FooterContent>
                     <FooterMain>

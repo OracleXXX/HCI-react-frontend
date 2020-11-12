@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 // 最近动态 news feed
 export const NewsFeedWrapper = styled.div`
-  width: 100%;
-  height: 1061px;
-  padding: 86px 0 0;
+  width: calc(192rem - 17px);
+  height: 106.1rem;
+
+  padding: 8.6rem 0 0;
   box-sizing: border-box;
   background-color: #F6F8F9;
   
@@ -14,42 +15,40 @@ export const NewsFeedWrapper = styled.div`
 `;
 
 export const NewsFeedTitle = styled.div`
-  width: 129px;
-  height: 66px;
+  width: 12.9rem;
+  height: 6.6rem;
   margin: 0 auto;
   & .title {
-    width: 128px;
-    height: 47px;
+    width: 12.8rem;
+    height: 4.7rem;
     font-family: SourceHanSansSC-Bold;
-    font-size: 32px;
+    font-size: 3.2rem;
     color: #333333;
     text-align: center;
-    line-height: 47px;
+    line-height: 4.7rem;
   }
   & .rec {
-    width: 50px;
-    height: 3px;
+    width: 5rem;
+    height: 0.3rem;
     background-color: #2D84FF;
     vertical-align: bottom;
-    border-radius: 1.5px;
-    margin: 16px auto 0;
+    border-radius: 0.15rem;
+    margin: 1.6rem auto 0;
   }
 `;
 
 export const NewsFeedArticle = styled.div`
-  width: 1266px;
-  height: 795px;
+  width: 126.6rem;
+  height: 79.5rem;
   
-  margin: 57px auto;
+  margin: 5.7rem auto;
 //  border: 1px solid red;
-  
-  
 `;
 
 export const FixedTopArticle = styled.div`
-  width: 1266px;
-  height: 360px;
-  margin-bottom: 15px;
+  width: 126.6rem;
+  height: 36rem;
+  margin-bottom: 1.5rem;
   box-sizing: border-box;
 //  border: 1px solid red;
   
@@ -58,27 +57,27 @@ export const FixedTopArticle = styled.div`
 
 export const LeftPart = styled.div`
   display: inline-block;
-  width: 680px;
-  height: 360px;
+  width: 68rem;
+  height: 36rem;
   box-sizing: border-box;
-  margin: 0 16px 0 32px;
-  border-radius: 8px;
+  margin: 0 1.6rem 0 3.2rem;
+  border-radius: 0.8rem;
 //  border: 1px solid red;
   overflow: hidden;
   & .LeftPartImg {
-    width: 680px;
-    height: 360px;
-    max-width: 680px;
-    max-height: 360px;
+    width: 68rem;
+    height: 36rem;
+    max-width: 68rem;
+    max-height: 36rem;
     
   }
 `;
 export const RightPart = styled.div`
   position: relative;
   display: inline-block;
-  width: 488px;
-  height: 250px;
-  margin: 0 32px 0 16px;
+  width: 48.8rem;
+  height: 25rem;
+  margin: 0 3.2rem 0 1.6rem;
   box-sizing: border-box;
 //  border: 1px solid red;
   vertical-align: top;
@@ -88,8 +87,8 @@ export const RightPart = styled.div`
 
 
 export const RestArticles = styled.div`
-  width: 1266px;
-  height: 405px;
+  width: 126.6rem;
+  height: 40.5rem;
   text-align: center;
   
 
@@ -99,57 +98,57 @@ export const RestArticles = styled.div`
 export const RestArticle = styled.div`
 
   display: inline-block;
-  width: 380px;
-  height: 405px;
+  width: 38rem;
+  height: 40.5rem;
 
-  margin: 0 15px;
-  border-radius: 8px;
+  margin: 0 1.5rem;
+  border-radius: 0.8rem;
   vertical-align: top;
 //  border: 1px dashed black;
 
 `;
 export const TopPart = styled.div`
-  width: 380px;
-  height: 208px;
-  border-radius: 8px;
+  width: 38rem;
+  height: 20.8rem;
+  border-radius: 0.8rem;
 //  border: 1px dashed black;
   overflow: hidden;
   & .TopPartImg {
     vertical-align: top;
-    width: 380px;
-    height: 208px;
-    max-width: 380px;
-    max-height: 208px;
-    border-radius: 8px;
+    width: 38rem;
+    height: 20.8rem;
+    max-width: 38rem;
+    max-height: 20.8rem;
+    border-radius: 0.8rem;
     
   }
   
 `;
 export const ArticleTitle = styled.div`
-  height: 40px;
+  height: 4rem;
   font-family: SourceHanSansSC-Medium;
-  font-size: 22px;
-  line-height: 40px;
+  font-size: 2.2rem;
+  line-height: 4rem;
   color: #333333; 
 `;
 export const BottomPart = styled.div`
   position: relative;
-  width: 360px;
-  height: 181px;
-  margin: 16px auto;
+  width: 36rem;
+  height: 18.1rem;
+  margin: 1.6rem auto;
 //  border: 1px dashed black;
   text-align: left;
 
   & .articleTitle {
-    height: 36px;
-    line-height: 36px;
-    font-size: 20px;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    font-size: 2rem;
   }
   & .divLine {
-    width: 360px;
+    width: 36rem;
     height: 1px;
-    border-radius: 115.5px;
-    margin: 16px auto 13px;
+    border-radius: 11.55rem;
+    margin: 1.6rem auto 1.3rem;
     background-image: linear-gradient(270deg, #D1C2FF 0%, #B7E0FF 100%);
   }
 `;
@@ -157,51 +156,47 @@ export const BottomPart = styled.div`
 
 export const Tag = styled.div`
   font-family: SourceHanSansSC-Normal;
-  font-size:12px;
+  font-size:1.2rem;
   color:#888888;
-  margin-top: 6px;
-  margin-bottom: 12px;
+  margin-top: 0.6rem;
+  margin-bottom: 1.2rem;
   & .tag{
-    height: 22px;
-    padding: 0 6px;
-    line-height: 22px;
+    height: 2.2rem;
+    padding: 0 0.6rem;
+    line-height: 2.2rem;
     display: inline-block;
     background-color: #F4F4F4;
-    border-radius: 13px;
-    margin-right: 20px;
+    border-radius: 1.3rem;
+    margin-right: 2rem;
     
   }
 `;
 export const ArticleContent = styled.div`
   font-family:SourceHanSansSC-Normal;
-  font-size:15px;
+  font-size:1.5rem;
   color:#666666;
-  line-height:26px;
-  
-
+  line-height:2.6rem;
 `;
 export const ReadMore = styled.div`
-  
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 88px;
-  font-size: 14px;
+  margin-top: 2rem;
+  width: inherit;
+  font-size: 1.4rem;
   cursor: pointer;
   & .readMore {
+    width: fit-content;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 0.5rem;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     -webkit-background-clip: text;
+    white-space:nowrap;
     color: transparent;
   }
-
 `;
 export const Arrow = styled.div`
   display: inline-block;
   position: relative;
-  width: 27px;
-  height: 7px;
+  width: 2.7rem;
+  height: 0.7rem;
   overflow: hidden;
   
   
@@ -209,18 +204,18 @@ export const Arrow = styled.div`
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 26.77px;
-    height: 0.97px;
-    border-radius: 0.5px;
+    width: 2.677rem;
+    height: 0.097rem;
+    border-radius: 0.05rem;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
   }
   & .arrowEnd {
     position: absolute;
-    right: -2px;
+    right: -0.2rem;
     bottom: 0;
-    width: 1.85px;
-    height: 10.12px;
-    border-radius: 0.5px;
+    width: 0.185rem;
+    height: 1.012rem;
+    border-radius: 0.05rem;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     transform: rotate(-60deg);
     transform-origin: right bottom;

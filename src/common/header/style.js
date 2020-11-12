@@ -5,37 +5,30 @@ export const HeaderWrapper = styled.div`
     z-index: 100;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     height: 6rem;
-    width: 100%;
+    width: calc(192rem - 17px);
+    min-width: 1300px;
 
-    
+    box-sizing: border-box;   
 `;
-
-
 export const Logo = styled.img`
     float: left;
     display:inline-block;
     width: auto;
     height:5.6rem;
-
 `;
-
 export const Nav = styled.div`
     width: 120rem;
     height: 100%;
-
     box-sizing: border-box;
     margin: 0 auto;
-  
 `;
-
 export const NavItem = styled.div`
     display: flex;
     flex-direction: row;
     position: relative;
     cursor: pointer;
     line-height: 5.6rem;
-    padding: 0 2.7rem;
-    
+    padding: 0 2.7rem;  
     font-family: SourceHanSansSC-Regular;
     font-size: 1.6rem;
     letter-spacing: 0;
@@ -97,14 +90,16 @@ export const BannerWrapper = styled.div`
     -khtml-user-select:none;/*早期浏览器*/
     user-select:none;
     position: relative;
-    width:100%;
+    width: calc(192rem - 17px);
+    min-width: 1300px;
+
   & .banner {
-    width:100%;
+    width:calc(192rem - 17px);
     height:auto;
-    max-width:100%;
-    min-width: 50rem;
-    max-height:100%;
-    min-height: 37rem;
+    max-width:192rem;
+    min-width: 1300px;
+
+
     
   }
 `
