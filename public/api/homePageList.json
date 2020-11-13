@@ -8,7 +8,7 @@
         "price": 1200,
         "addr": "685 brewer Dr",
         "area": "1220平方米/房屋出租",
-        "imgUrl": "upload/685 brewer Dr.jpg"
+        "imgUrl": "upload/newProject/685 brewer Dr.jpg"
 
     },{
         "id": 2,
@@ -16,7 +16,7 @@
         "price": 1234,
         "addr": "252 BrookHollow",
         "area": "3000平方米/房屋出租",
-        "imgUrl": "upload/252 BrookHollow.jpg"
+        "imgUrl": "upload/newProject/252 BrookHollow.jpg"
 
     },{
         "id": 3,

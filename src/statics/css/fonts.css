@@ -41,6 +41,13 @@
     font-family: HiraginoSans-W6;
     src: url("fonts/HiraginoSans-W6.otf");
 }
+@font-face {
+    font-family: PingFangSC-Regular;
+    src: url("fonts/PingFangSC/PingFang-SC-Regular.ttf");
+}@font-face {
+    font-family: PingFangSC-Semibold;
+    src: url("fonts/PingFangSC/PingFang-SC-Semibold.ttf");
+}
 
 
 

@@ -120,18 +120,25 @@ export const Item = styled.div`
 
 export const InnerImg = styled.div`
   position: absolute;
-  top: 70%;
-  left: 1.6rem;
-  width: 34.8rem;
-  height: 3rem;
+  top: calc(24.8rem - 6rem - 1px);
+  width: 38rem;
+  height: 6rem;
+  padding: 0 1.6rem;
+  box-sizing: border-box;
+  border-bottom-right-radius: 1.8rem;
+  border-bottom-left-radius: 1.8rem;
   line-height: 3rem;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.80) 98%);
   
   & .addr {
     font-family: SourceHanSansSC-Medium;
     font-size: 1.8rem;
+    line-height: 3rem;
     color: #FFFFFF;  
     display: inline-block;
     float: left;
+    height: 3rem;
+    margin: 1.5rem auto;
     & .addrIcon {
       display: inline-block;
       width: 1.2rem;
@@ -149,6 +156,7 @@ export const InnerImg = styled.div`
     background: rgba(0,0,0,0.20);
     border: 1px solid rgba(255,255,255,0.60);
     border-radius: 1.9rem;
+    margin: 1.5rem auto;
     & span {
       margin: 0 0.8rem 0 1.4rem;
       font-family: SourceHanSansSC-Regular;

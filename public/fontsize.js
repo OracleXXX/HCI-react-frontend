@@ -6,6 +6,5 @@ document.addEventListener('DOMContentLoaded', setFontSize, false); //火狐
 function setFontSize() {
     var cWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var htmlFontSize = 10 * (Math.max(cWidth, 1300) / 1920);
-    console.log([window.innerWidth,document.documentElement.clientWidth,document.body.clientWidth]);
     document.documentElement.style.fontSize = htmlFontSize + 'px';
 }

@@ -13,8 +13,8 @@ export const HeaderWrapper = styled.div`
 export const Logo = styled.img`
     float: left;
     display:inline-block;
-    width: auto;
-    height:5.6rem;
+    width: 5.2rem;
+    height:4.9rem;
 `;
 export const Nav = styled.div`
     width: 120rem;

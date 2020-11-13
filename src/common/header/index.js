@@ -13,7 +13,7 @@ import {
     DropDownServices,
 } from "./style";
 import triangle from '../../statics/imgs/headerImgs/triangle.svg';
-import logoPic from '../../statics/Inc-Logo.jpg';
+import logoPic from '../../statics/imgs/headerImgs/Inc-Logo-0.jpg';
 import './addtionStyle.css';
 
 
