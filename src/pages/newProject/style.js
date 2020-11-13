@@ -166,3 +166,32 @@ export const MarginItem = styled.div`
     }
 `;
 
+export const SeeMore = styled.div`
+  width: 24rem;
+  height: 5.6rem;
+  border-radius: 0.8rem;
+  color: #333333;
+  font-family: SourceHanSansSC-Normal;
+  font-size: 2rem;
+  opacity: 0.96;
+  border: 1px solid blue;
+  margin: 3.8rem auto;
+  box-sizing: border-box;
+  & .see-more {
+    width: 10.1rem;
+    height: 2.9rem;
+    margin: 1.35rem auto;
+    line-height: 2.9rem;  
+    box-sizing: border-box;
+  }
+  & span {
+    vertical-align: top;
+  }
+  & .see-more-icon {
+    width: 1.3rem;
+    height: 0.8rem;
+    margin: 1.05rem 0 0 0.8rem;
+    box-sizing: border-box;
+    vertical-align: top; 
+  }
+`;

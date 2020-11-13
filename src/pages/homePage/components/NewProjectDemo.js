@@ -24,9 +24,11 @@ class NewProjectDemo extends PureComponent {
         //绑定this
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
+
     }
 
     next() {
+        console.log(this.props.list2)
         this.slider.slickNext();
     }
 
@@ -61,17 +63,6 @@ class NewProjectDemo extends PureComponent {
                     <PrevArrow className="button hovered" onClick={this.previous}/>
                     <NextArrow className="button" onClick={this.next}/>
                     <Slider ref={c => (this.slider = c)} {...settings}>
-                        {/*
-                        <div>
-                            <Item>
-                                <img src="upload/252 BrookHollow.jpg" alt="" className=''/>
-                                <div className='intro'>
-                                    <span className='intro-left'>$2000/月</span>
-                                    <span className='intro-right'>1200平方木/房屋出售</span>
-                                </div>
-                            </Item>
-                        </div>
-                        */}
                         {
                             this.props.list.map((item) => (
                                 <div key={item.get('id')}>
@@ -88,9 +79,9 @@ class NewProjectDemo extends PureComponent {
                                             </div>
                                         </InnerImg>
                                         <div className='intro'>
-                                            <span className='intro-left'>${item.get('price')}<span
-                                                className='perMonth'>/月</span></span>
-                                            <span className='intro-right'>{item.get('area')}</span>
+                                            <span className='intro-left'>{item.get('price')}<span
+                                                className='perMonth'>{item.get('month')}</span></span>
+                                            <span className='intro-right'>{item.get('area')+item.get('rental')}</span>
                                         </div>
                                     </Item>
                                 </div>
@@ -106,7 +97,7 @@ class NewProjectDemo extends PureComponent {
 
 const mapStateToProps = (state) => ({
     // 去store提取state数据 map到props
-    list: state.getIn(['homePage', 'newProjectList'])
+    list: state.getIn(['newProject', "newProjectList"])
 
 
 })

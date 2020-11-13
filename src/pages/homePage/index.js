@@ -7,6 +7,7 @@ import InvestmtFLowChart from "./components/InvestmtFLowChart";
 import NewsFeed from "./components/NewsFeed";
 import {HomePageWrapper} from "./style";
 import {actionCreators} from './store';
+import {actionCreators as NewProjectActionCreator} from '../newProject/store';
 
 
 class homePage extends PureComponent {
@@ -38,7 +39,7 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
     changeHomePageData() {
         dispatch(actionCreators.getHomePageInfo());
-
+        dispatch(NewProjectActionCreator.getNewProject());
     },
 
 })

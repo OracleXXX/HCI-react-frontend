@@ -157,6 +157,7 @@ export const InnerImg = styled.div`
     border: 1px solid rgba(255,255,255,0.60);
     border-radius: 1.9rem;
     margin: 1.5rem auto;
+    cursor: pointer;
     & span {
       margin: 0 0.8rem 0 1.4rem;
       font-family: SourceHanSansSC-Regular;
