@@ -85,6 +85,7 @@ export const MoreInfo = styled.div`
     background: rgba(0,0,0,0.20);
     border: 1px solid rgba(255,255,255,0.60);
     border-radius: 1.9rem;
+    cursor: pointer;
     & span {
       margin: 0 0.8rem 0 1.4rem;
       font-family: SourceHanSansSC-Regular;
@@ -177,6 +178,7 @@ export const SeeMore = styled.div`
   border: 1px solid blue;
   margin: 3.8rem auto;
   box-sizing: border-box;
+  cursor: pointer;
   & .see-more {
     width: 10.1rem;
     height: 2.9rem;
