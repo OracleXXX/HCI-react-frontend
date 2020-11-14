@@ -27,15 +27,11 @@ class Activity extends PureComponent {
 
     }
 
-    //每个活动（遍历）
+   // 从demoList里面切片 实现分页
     getNewPage(page) {
-
-
         return demoList.slice(Math.max(0, page - 1) * 5, page * 5)
-
-
     };
-
+     //每个活动（遍历）, 然后放入demoList
     getActivityItems() {
         const {activityList} = this.props;
         if (demoList.length > 0) {
@@ -67,7 +63,7 @@ class Activity extends PureComponent {
             )
         })
     };
-
+    //分页器
     getPagination(totalPage) {
         const {page, handlePageChange} = this.props;
         let pages = [];
@@ -109,8 +105,6 @@ class Activity extends PureComponent {
     componentDidMount() {
         this.props.getActivityList(this.props.activityList);
 
-
-        /*   this.props.handlePageChange();*/
     }
 
 
