@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const NewProjectWrapper = styled.div`
 
+
 `;
 
 export const NewProjectContainer = styled.div`
-  width: 123.7rem;
+  width: 123.6rem;
   height: fit-content;
   display: flex;
   flex-flow:row wrap;

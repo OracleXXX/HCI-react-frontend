@@ -13,7 +13,6 @@ import {actionCreators as NewProjectActionCreator} from '../newProject/store';
 class homePage extends PureComponent {
 
     render() {
-        const {} = this.props;
         return (
             <HomePageWrapper>
                 <WeOffer />

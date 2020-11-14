@@ -30,10 +30,6 @@ const totalList = [];
 const demoList = [];
 
 class NewProject extends PureComponent {
-    constructor(props) {
-        super(props);
-    }
-
     //把数据放入demoList
     changeDemoList() {
         const {newProjectList} = this.props;
@@ -124,9 +120,7 @@ class NewProject extends PureComponent {
     }
     // 每个预期数内容
     getMarginItem(name, content) {
-
         return (
-
             <MarginItem>
                 <span className='margin-item-name'>{name}：</span>
                 <span className='margin-item-info'>{content}</span>
@@ -163,7 +157,7 @@ class NewProject extends PureComponent {
     }
 
     componentDidMount() {
-        this.props.getNewProject()
+        this.props.getNewProject(this.props.newProjectList)
         this.changeDemoList()
     }
 }
@@ -176,8 +170,8 @@ const mapState = (state) => ({
     totalPage: state.getIn(['newProject', 'totalPage'])
 });
 const mapDispatch = (dispatch) => ({
-    getNewProject() {
-        dispatch(actionCreators.getNewProject());
+    getNewProject(list) {
+        list.size === 0 && dispatch(actionCreators.getNewProject());
 
     },
     handleGetMorePages(page) {

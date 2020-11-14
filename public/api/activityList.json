@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": {
+    "activityList": [
+      {
+        "id": 1,
+        "imgUrl": "upload/activity/1.png",
+        "title": "2020 WINTER 冬季峰会",
+        "content": "2020 WINTER 冬季峰会将于11月11日14:00-18:00在home capital inc官网直播，峰会将持续发布金融、基建、医疗、城市等内容，引领产业智能，加速复工复产",
+        "location": "线上直播",
+        "time": "2020-11-11",
+        "deadline": "2020-10-30"
+
+      },
+      {
+        "id": 2,
+        "imgUrl": "upload/activity/2.png",
+        "title": "全球投资峰会",
+        "content": "2020 WINTER 冬季峰会将于11月11日14:00-18:00在home capital inc官网直播，峰会将持续发布金融、基建、医疗、城市等内容，引领产业智能，加速复工复产",
+        "location": "线上直播",
+        "time": "2020-12-11",
+        "deadline": "2020-10-30"
+      },
+      {
+        "id": 3,
+        "imgUrl": "upload/activity/3.png",
+        "title": "北京V影响力峰会",
+        "content": "2020 WINTER 冬季峰会将于11月11日14:00-18:00在home capital inc官网直播，峰会将持续发布金融、基建、医疗、城市等内容，引领产业智能，加速复工复产",
+        "location": "线上直播",
+        "time": "2020-13-11",
+        "deadline": "2020-10-30"
+      },
+      {
+        "id": 4,
+        "imgUrl": "upload/activity/4.png",
+        "title": "酷科技 未来家",
+        "content": "2020 WINTER 冬季峰会将于11月11日14:00-18:00在home capital inc官网直播，峰会将持续发布金融、基建、医疗、城市等内容，引领产业智能，加速复工复产",
+        "location": "线上直播",
+        "time": "2020-14-11",
+        "deadline": "2020-10-30"
+      },
+      {
+        "id": 5,
+        "imgUrl": "upload/activity/5.png",
+        "title": "品牌全球化之路",
+        "content": "2020 WINTER 冬季峰会将于11月11日14:00-18:00在home capital inc官网直播，峰会将持续发布金融、基建、医疗、城市等内容，引领产业智能，加速复工复产",
+        "location": "线上直播",
+        "time": "2020-15-11",
+        "deadline": "2020-10-30"
+      }
+    ]
+  }
+}

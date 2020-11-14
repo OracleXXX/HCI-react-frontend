@@ -1,18 +1,19 @@
 import axios from 'axios'
 import * as constants from './constants'
 
-const changeDetail = (title, content)=> ({
-    type: constants.CHANGE_DETAIL,
-    title,
-    content
+
+
+const changeActivity = (result)=> ({
+    type: constants.CHANGE_ACTIVITY,
+    activityList: result.activityList
 
 })
 
-export const getDetail=(id)=> {
+export const getActivity=()=> {
     return (dispatch) => {
-        axios.get('/api/detail.json?id='+id).then((res)=> {
+        axios.get('/api/activityList.json').then((res)=> {
             const result =res.data.data;
-            dispatch(changeDetail(result.title, result.content));
+            dispatch(changeActivity(result));
             }
 
         );
