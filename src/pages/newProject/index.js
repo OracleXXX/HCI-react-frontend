@@ -33,8 +33,7 @@ class NewProject extends PureComponent {
     //把数据放入demoList
     changeDemoList() {
         const {newProjectList} = this.props;
-        const numOfProject = newProjectList.size
-        if (totalList.length === numOfProject) {
+        if (totalList.length > 0) {
             return
         }
         newProjectList.map((item, index) => {
@@ -52,8 +51,7 @@ class NewProject extends PureComponent {
 
     //所有房源
     getNewProjectContainer(page, totalPage) {
-        this.changeDemoList()
-        console.log("totalLIst " + demoList.length)
+
         if (page <= totalPage) {
             for (let i = Math.max(page - 1, 0) * 6; i < page * 6; i++) {
                 demoList.push(totalList[i])
@@ -130,6 +128,7 @@ class NewProject extends PureComponent {
     // 渲染
     render() {
         const {page, totalPage} = this.props;
+        this.changeDemoList()
         return (
             <NewProjectWrapper>
                 <NewProjectTitle>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const ActivityWrapper = styled.div`
   width: calc(192rem - 17px);
   min-width: 1300px;
@@ -32,10 +33,9 @@ export const ActivityTitle = styled.div`
 export const ActivityContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 128rem;
-  height: 172.4rem;
-  margin: 6.6rem auto;
+
+  margin: 6.6rem auto 2.5rem;
   
  
 `;
@@ -54,7 +54,7 @@ export const DivLine = styled.div`
   height: 0.1rem;
   border-radius: 0.1rem;
   background-color: #E6E6E6;
-  margin: 0 auto;
+  margin: 4.1rem auto;
 `;
 
 export const ItemLeft = styled.div`
@@ -131,5 +131,40 @@ export const Apply = styled.div`
   line-height: 4rem;
   cursor: pointer;
   border: 0.1rem solid transparent;
+`;
+
+export const Pagination = styled.div`
+  width: fit-content;
+  height: 2rem; 
+  margin: 0 auto 6.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  line-height: 2rem;
+  
+  font-family: SourceHanSansSC-Regular;
+    font-size: 1.4rem;
+    color: #333333;
+  & .prev-next {
+    width: 4.2rem;
+    height: 2rem;
+    margin: auto 1rem;
+    cursor: pointer;   
+  }
+  & .page-number {
+    width: 0.8rem;
+    height: 2rem;  
+    margin: auto 1rem;
+    cursor: pointer;    
+    }
+    & .active {
+      color: #2D84FF
+    }
+    & .disabled {
+      cursor: not-allowed;
+      opacity:0.5;//设置蒙版效果
+
+    
+    }
   
 `;
