@@ -22,20 +22,12 @@ import test from '../../../statics/imgs/test.jpg'
 const demoList = [];
 
 class Activity extends PureComponent {
-    constructor(props) {
-        super(props);
 
-    }
-
-    //每个活动（遍历）
+   // 从demoList里面切片 实现分页
     getNewPage(page) {
-
-
         return demoList.slice(Math.max(0, page - 1) * 5, page * 5)
-
-
     };
-
+     //每个活动（遍历）, 然后放入demoList
     getActivityItems() {
         const {activityList} = this.props;
         if (demoList.length > 0) {
@@ -43,7 +35,7 @@ class Activity extends PureComponent {
         }
         activityList.map((item) => {
             demoList.push(
-                <Fragment>
+                <Fragment key={item.get("id")}>
                     <ActivityItem>
                         <ItemLeft>
                             <img src={"../" + item.get("imgUrl")} alt="" className="item-left-img no-select"/>
@@ -67,20 +59,20 @@ class Activity extends PureComponent {
             )
         })
     };
-
+    //分页器
     getPagination(totalPage) {
         const {page, handlePageChange} = this.props;
         let pages = [];
         pages.push(
-            <span onClick={() => handlePageChange(page - 1, totalPage)} className={page===1? "prev-next disabled": "prev-next"}>上一页</span>
+            <span key="news-feed-page-prev" onClick={() => handlePageChange(page - 1, totalPage)} className={page===1? "prev-next disabled": "prev-next" }>上一页</span>
         )
         for (let i = 1; i <= totalPage; i++) {
             pages.push(
-                <span onClick={() => handlePageChange(i, totalPage)} className={page===i? "page-number active": "page-number"}>{i}</span>
+                <span  key={"news-feed-page-"+i} onClick={() => handlePageChange(i, totalPage)} className={page===i? "page-number active": "page-number"}>{i}</span>
             )
         }
         pages.push(
-            <span onClick={() => handlePageChange(page + 1, totalPage)} className={page===totalPage? "prev-next disabled": "prev-next"}>下一页</span>
+            <span key="news-feed-page-next" onClick={() => handlePageChange(page + 1, totalPage)} className={page===totalPage? "prev-next disabled": "prev-next"}>下一页</span>
         )
         return pages;
     }
@@ -109,8 +101,6 @@ class Activity extends PureComponent {
     componentDidMount() {
         this.props.getActivityList(this.props.activityList);
 
-
-        /*   this.props.handlePageChange();*/
     }
 
 
