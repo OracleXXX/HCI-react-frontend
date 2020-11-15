@@ -81,7 +81,7 @@ class Activity extends PureComponent {
     //渲染
     render() {
         const {page, totalPage} = this.props;
-        demoList.length>0 && this.getActivityItems()
+        this.getActivityItems()
         return (
             <ActivityWrapper>
                 <ActivityTitle>
