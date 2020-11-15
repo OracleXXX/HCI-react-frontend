@@ -1,23 +1,25 @@
 import React, {PureComponent, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-
 import {actionCreators} from './store';
 import {
-    NewsFeedTitle,
+    Data,
+    NewsFeedTitle, Tag,
 
 } from "../homePage/componentStyles/NewFeedStyle";
 import {
     NewsFeedWrapper,
     NewsFeedContainer,
     PopularArticleContainer,
+    PopularArticleItem,
+    ArticleItemBottom,
     RestArticleContainer,
     ArticleItem,
     ArticleItemLeft,
     ArticleItemRight,
     ArticleItemRightTop,
     ArticleItemRightBottom,
-    ArticleItemBottom,
+
     ReadMore,
     Arrow
 
@@ -30,7 +32,7 @@ const demoList = [];
 class NewsFeed extends PureComponent {
     //渲染
     render() {
-        const {handlePageChange, page, totalPage} = this.props;
+        const {page, totalPage} = this.props;
         this.getArticleItems()
         return (
             <NewsFeedWrapper>
@@ -40,7 +42,9 @@ class NewsFeed extends PureComponent {
                     <div className='rec'/>
                 </NewsFeedTitle>
                 <NewsFeedContainer>
-                    <PopularArticleContainer>asd</PopularArticleContainer>
+                    <PopularArticleContainer>
+                        {this.getPopularArticleContainer()}
+                    </PopularArticleContainer>
                     <RestArticleContainer>{this.getRestArticleContainer(page)}</RestArticleContainer>
                 </NewsFeedContainer>
                 <Pagination>
@@ -52,20 +56,20 @@ class NewsFeed extends PureComponent {
 
     getArticleItems() {
         const {newsFeedList} = this.props;
-        let count = 0;
+        let count = -1;
 
         if (demoList.length > 0) {
             return
         }
         newsFeedList.map((item) => {
-            let className = "article-item-" + count;
-
+            count += 1;
             /*置顶文章*/
             count < 3 && popularList.push(
-                <ArticleItem className={className} key={item.get("id")}>
-                    <img src={item.get("imgUrl")} alt=""/>
-                    <ArticleItemBottom>{item.get("title")}</ArticleItemBottom>
-                </ArticleItem>
+                <PopularArticleItem className={ count ? "article-item-right" : "article-item-left"} key={item.get("id")}>
+                    {this.getArticleData(item.get("day"), item.get("year-month"))}
+                    <img src={item.get("imgUrl")} alt="" className="popular-img"/>
+                    <ArticleItemBottom className={ count ? "popular-article-title-right" : "popular-article-title-left"} >{item.get("title")}</ArticleItemBottom>
+                </PopularArticleItem>
             );
 
             /* 剩余文章 */
@@ -73,16 +77,17 @@ class NewsFeed extends PureComponent {
                 <Fragment key={item.get("id")}>
                     <ArticleItem>
                         <ArticleItemLeft>
+                            {this.getArticleData(item.get("day"), item.get("year-month"))}
                             <img src={item.get("imgUrl")} alt="" className="item-left-img no-select"/>
                         </ArticleItemLeft>
                         <ArticleItemRight>
                             <ArticleItemRightTop>
                                 <div className="article-title">{item.get("title")}</div>
-                                <div className="article-content">{item.get("tags")}</div>
+                                <div className="article-tags no-select">{this.getTag(item.get("tags"))}</div>
                                 <div className="article-content">{item.get("preContent")}</div>
                             </ArticleItemRightTop>
                             <ArticleItemRightBottom>
-                                <ReadMore className="right-bottom-read-more">{this.getReadMore()}</ReadMore>
+                                <ReadMore className="right-bottom-read-more no-select">{this.getReadMore()}</ReadMore>
                             </ArticleItemRightBottom>
 
                         </ArticleItemRight>
@@ -90,15 +95,17 @@ class NewsFeed extends PureComponent {
                     <DivLine/>
                 </Fragment>
             )
-
-            count += 1;
         })
-    }
+    };
+
+    getPopularArticleContainer() {
+        return popularList;
+    };
 
     getRestArticleContainer(page) {
-        return demoList.slice(Math.max(0, page - 1) * 5, page * 5)
+        return demoList.slice(Math.max(0, page - 1) * 5, page * 5);
 
-    }
+    };
 
     getPagination(totalPage) {
         const {page, handlePageChange} = this.props;
@@ -109,7 +116,7 @@ class NewsFeed extends PureComponent {
                 className={page === 1 ? "prev-next disabled" : "prev-next"}
                 key="news-feed-page-prev"
             >上一页</span>
-        )
+        );
         for (let i = 1; i <= totalPage; i++) {
             pages.push(
                 <span
@@ -119,6 +126,7 @@ class NewsFeed extends PureComponent {
                 >{i}</span>
             )
         }
+        ;
         pages.push(
             <span
                 onClick={() => handlePageChange(page + 1, totalPage)}
@@ -128,6 +136,17 @@ class NewsFeed extends PureComponent {
         )
         return pages;
     }
+
+    //选择tag标签组件
+    getTag(bitmask) {
+        return (
+            <Tag>
+                {bitmask === 11 || 10 ? <div className='tag'>时事热点</div> : null}
+                {bitmask === 11 || 1 ? <div className='tag'>市场趋势</div> : null}
+            </Tag>
+        )
+    };
+
 
     //查看更多按钮组件
     getReadMore() {
@@ -141,16 +160,21 @@ class NewsFeed extends PureComponent {
             </Fragment>
 
         )
+    };
+    getArticleData(day, yearMonth) {
+        return (
+            <Data><div className="data-day">{day}</div><div className="data-year-month">{yearMonth}</div></Data>
+        )
     }
 
 
     componentDidMount() {
 
         this.props.getNewsFeedList();
-    }
+    };
 
 
-}
+};
 
 //用connect + mapstate 就可以直接取出store中的数据
 const mapState = (state) => ({

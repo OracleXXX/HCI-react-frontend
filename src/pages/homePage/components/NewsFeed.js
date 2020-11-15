@@ -16,7 +16,8 @@ import {
     Tag,
     ArticleContent,
     Arrow,
-    ReadMore
+    ReadMore,
+    Data
 
 } from '../componentStyles/NewFeedStyle';
 
@@ -53,6 +54,7 @@ class NewsFeed extends PureComponent {
 
                             {/* 置顶文章图片 */}
                             <LeftPart>
+                                {this.getArticleData()}
                                 <img src={item.get('imgUrl')} alt="" className='LeftPartImg no-select'/>
                             </LeftPart>
                             {/* 置顶文章内容 */}
@@ -86,9 +88,11 @@ class NewsFeed extends PureComponent {
                 {
                     restNewsFeedList.map((item) => (
                         <RestArticle key={item.get("id")}>
-                            <TopPart><img src={item.get('imgUrl')} alt="" className='TopPartImg no-select'/></TopPart>
+                            <TopPart>
+                                {this.getArticleData()}
+                                <img src={item.get('imgUrl')} alt="" className='TopPartImg no-select'/>
+                            </TopPart>
                             <BottomPart>
-                                {console.log(item.title)}
                                 <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
@@ -125,12 +129,19 @@ class NewsFeed extends PureComponent {
             </Tag>
         )
     }
+    getArticleData() {
+        return (
+            <Data><div className="data-day">02</div><div className="data-year-month">2020/11</div></Data>
+        )
+    }
 
 }
 
 const mapStataToProps = (state) => ({
     popularNewsFeedList: state.getIn(['homePage', 'popularNewsFeedList']),
-    restNewsFeedList: state.getIn(['homePage', 'restNewsFeedList'])
+    restNewsFeedList: state.getIn(['homePage', 'restNewsFeedList']),
+    tempList: state.getIn(['newsFeed', 'newsFeedList'])
 
-})
+});
+
 export default connect(mapStataToProps, null)(NewsFeed);

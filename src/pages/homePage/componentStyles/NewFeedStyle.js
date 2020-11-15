@@ -56,6 +56,7 @@ export const FixedTopArticle = styled.div`
 `;
 
 export const LeftPart = styled.div`
+  position: relative;
   display: inline-block;
   width: 68rem;
   height: 36rem;
@@ -108,6 +109,7 @@ export const RestArticle = styled.div`
 
 `;
 export const TopPart = styled.div`
+  position: relative;
   width: 38rem;
   height: 20.8rem;
   border-radius: 0.8rem;
@@ -220,4 +222,30 @@ export const Arrow = styled.div`
     transform: rotate(-60deg);
     transform-origin: right bottom;
   }
+`;
+
+export const Data = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 6.7rem;
+  height: 6.4rem;
+  border-radius: 0.8rem 0;
+  background-color: red;
+  color: #FFFFFF;
+  font-family: Helvetica;
+  text-align: center;
+  opacity: 0.7;
+  background-image: linear-gradient(180deg, #7F55FF 0%, #5DBBFF 100%);
+  
+  & .data-day {
+    font-size: 2.8rem;
+  }
+  & .data-year-month {
+    font-size: 1.4rem;
+  }
+  
 `;

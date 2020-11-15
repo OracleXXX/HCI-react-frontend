@@ -19,19 +19,74 @@ export const PopularArticleContainer = styled.div`
   width: 120rem;
   height: 48rem;
   box-sizing: border-box;
-  border: 1px dashed red;
 
+  & .article-item-left {
+    float: left;
+    display: inline-block;
+    width: 76rem;  
+    height: 48rem; 
+  };
+  & .article-item-right {
+    float: right;
+    display: inline-block;
+    vertical-align: top;
+    width: 41rem;
+    height: 22.5rem;
+    margin-bottom: 3rem;
+  };  
+
+`;
+export const PopularArticleItem = styled.div`
+  position: relative;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  
+  overflow: hidden;
+  color: #FFFFFF;
+  ;  
+  font-family: SourceHanSansSC-Medium; 
+  & .popular-img{
+    width: inherit;
+    height: inherit;
+    border-radius: 0.8rem;
+  }
+  & .popular-article-title-left {
+    height: 8rem;   
+    font-size: 2.4rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 4rem
+  }  
+
+  & .popular-article-title-right {
+    height: 6rem;
+    font-size: 2rem;
+    padding: 1rem 0 1rem 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 4rem
+  }
+  
+
+`;
+export const ArticleItemBottom = styled.div`
+  z-index: 200;
+  position: absolute;
+  bottom: 0;
+  width: inherit;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.80) 98%);
 `;
 
 export const RestArticleContainer = styled.div`
   width: 120rem;
-  height: 136.4rem;
+
   box-sizing: border-box;
-  border: 1px dashed black;
   margin-top: 4rem;
 
 `;
 /*添加至列表 start*/
+
 export const ArticleItem = styled.div`
   display: flex;
   flex-direction: row;
@@ -43,12 +98,16 @@ export const ArticleItem = styled.div`
 `;
 
 export const ArticleItemLeft = styled.div`
+    position: relative;
     width: 38rem;
     height: 20.8rem;
+    overflow: hidden;
+    border-radius: 0.8rem;
 
   & .item-left-img {
-    width: 38rem;
-    height: 20.8rem;
+    width: inherit;
+    height: inherit;
+    border-radius: 0.8rem;
 
   }
   
@@ -66,11 +125,32 @@ export const ArticleItemRight = styled.div`
 export const ArticleItemRightTop = styled.div`
   width: inherit;
   height: 13.6rem;
+  & .article-title {
+    height: 3.6rem;
+    font-family: SourceHanSansSC-Medium;
+    font-size: 2rem;
+    line-height: 3.6rem;
+    color: #333333;  
+    cursor: pointer;
+  }
+  & .article-content {
+    height: fit-content;
+    font-family: SourceHanSansSC-Normal;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+    color: #666666;  
+  }
+  
 `;
 
 export const ArticleItemRightBottom = styled.div`
   width: inherit;
   height: 2rem;
+  & .right-bottom-read-more {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  }
 `;
 export const ReadMore = styled.div`
   width: inherit;
@@ -124,5 +204,4 @@ export const Arrow = styled.div`
   }
 `;
 
-export const ArticleItemBottom = styled.div``;
 /*添加至列表 end*/

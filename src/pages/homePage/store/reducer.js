@@ -3,7 +3,8 @@ import * as constants from './constants'
 
 const defaultState = fromJS({
     popularNewsFeedList: [],
-    restNewsFeedList: []
+    restNewsFeedList: [],
+    tempList:[]
 
 
 });

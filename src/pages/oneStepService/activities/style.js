@@ -53,18 +53,20 @@ export const DivLine = styled.div`
   height: 0.1rem;
   border-radius: 0.1rem;
   background-color: #E6E6E6;
-  margin: 4.1rem auto;
+  margin: 4rem auto;
 `;
 
 export const ItemLeft = styled.div`
   width: 58.4rem;
   height: 28rem;
   overflow: hidden;
+  border-radius: 0.8rem;
 
 
   & .item-left-img {
     width: 58.4rem;
     height: 28rem;
+    border-radius: 0.8rem;
     
 
   }
@@ -79,13 +81,14 @@ export const ItemRight = styled.div`
 export const ItemRightTop = styled.div`
   width: 58.5rem;
   height: 9.3rem;
+  color: #333333;
   & .activity-title {
     height: 3.3rem;
-    font-family: SourceHanSansSC-Bold;
+    font-family: SourceHanSansSC-Medium;
     font-size: 2.2rem;
   };
   & .activity-content {
-    font-family: SourceHanSansSC-Medium;
+    font-family: SourceHanSansSC-Normal;
     font-size: 1.5rem;
     line-height: 2.6rem;
   }
