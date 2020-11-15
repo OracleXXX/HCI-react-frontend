@@ -34,7 +34,7 @@ class NewsFeed extends PureComponent {
                 </NewsFeedTitle>
                 <NewsFeedArticle>
                     {/*置顶文章*/}
-                    {this.getFixedTopArticle()}
+                    {this.getFixedPopularArticle()}
                     {/*除了置顶的文章*/}
                     {this.getRestArticles()}
                 </NewsFeedArticle>
@@ -43,13 +43,13 @@ class NewsFeed extends PureComponent {
         )
     }
     //置顶文章
-    getFixedTopArticle() {
-        const {topNewsFeedList} = this.props;
+    getFixedPopularArticle() {
+        const {popularNewsFeedList} = this.props;
         return (
             <Fragment>
                 {
-                    topNewsFeedList.map((item) => (
-                        <FixedTopArticle>
+                    popularNewsFeedList.map((item) => (
+                        <FixedTopArticle key={item.get("id")}>
 
                             {/* 置顶文章图片 */}
                             <LeftPart>
@@ -68,7 +68,7 @@ class NewsFeed extends PureComponent {
                                 <div className='divLine'/>
                                 {/* 文章 */}
                                 <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
-                                {this.getReadMore()}
+                                <ReadMore>{this.getReadMore()}</ReadMore>
                             </RightPart>
                         </FixedTopArticle>
                     ))
@@ -85,7 +85,7 @@ class NewsFeed extends PureComponent {
             <RestArticles>
                 {
                     restNewsFeedList.map((item) => (
-                        <RestArticle>
+                        <RestArticle key={item.get("id")}>
                             <TopPart><img src={item.get('imgUrl')} alt="" className='TopPartImg no-select'/></TopPart>
                             <BottomPart>
                                 {console.log(item.title)}
@@ -93,7 +93,7 @@ class NewsFeed extends PureComponent {
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
                                 <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
-                                {this.getReadMore()}
+                                <ReadMore>{this.getReadMore()}</ReadMore>
                             </BottomPart>
                         </RestArticle>
                     ))
@@ -105,13 +105,13 @@ class NewsFeed extends PureComponent {
     //查看更多按钮组件
     getReadMore() {
         return (
-            <ReadMore>
+            <Fragment>
                 <div className='readMore'>查看更多</div>
                 <Arrow>
                     <div className='arrowStart'/>
                     <div className='arrowEnd'/>
                 </Arrow>
-            </ReadMore>
+            </Fragment>
 
         )
     }
@@ -129,7 +129,7 @@ class NewsFeed extends PureComponent {
 }
 
 const mapStataToProps = (state) => ({
-    topNewsFeedList: state.getIn(['homePage', 'topNewsFeedList']),
+    popularNewsFeedList: state.getIn(['homePage', 'popularNewsFeedList']),
     restNewsFeedList: state.getIn(['homePage', 'restNewsFeedList'])
 
 })

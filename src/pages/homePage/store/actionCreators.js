@@ -4,7 +4,7 @@ import {fromJS} from "immutable";
 
 const changeHomePageData = (result) =>({
     type: constants.CHANGE_HOMEPAGE_DATA,
-    topNewsFeedList: result.topNewsFeedList,
+    popularNewsFeedList: result.popularNewsFeedList,
     restNewsFeedList: result.restNewsFeedList,
 })
 

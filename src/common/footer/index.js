@@ -19,6 +19,7 @@ class Footer extends PureComponent {
     /* 全局size是16px 16 * em应该等于目标size */
 
     /* 行高是标签高度除以正常行高 */
+
     render() {
 
         return (

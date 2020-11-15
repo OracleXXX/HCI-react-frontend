@@ -2,14 +2,14 @@ import {fromJS} from "immutable";
 import * as constants from './constants'
 
 const defaultState = fromJS({
-    topNewsFeedList: [],
+    popularNewsFeedList: [],
     restNewsFeedList: []
 
 
 });
 const changeHomePageData = (state, action) => {
     return state.merge({
-        topNewsFeedList: fromJS(action.topNewsFeedList),
+        popularNewsFeedList: fromJS(action.popularNewsFeedList),
         restNewsFeedList: fromJS(action.restNewsFeedList)
     });
 }

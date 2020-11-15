@@ -46,8 +46,7 @@ export const ActivityItem = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-`
+`;
 
 export const DivLine = styled.div`
   width: 120rem;
@@ -132,6 +131,7 @@ export const Apply = styled.div`
   cursor: pointer;
   border: 0.1rem solid transparent;
 `;
+
 
 export const Pagination = styled.div`
   width: fit-content;

@@ -15,8 +15,8 @@ export const updatePage = (page) => {
 
 const changeNewsFeedList = (result)=> ({
     type: constants.CHANGE_NEWS_FEED_LIST,
-    newsFeedList: result.topicList,
-    totalPage: Math.ceil(result.topicList.length/1)
+    newsFeedList: result.newsFeedList,
+    totalPage: Math.ceil((result.newsFeedList.length-3)/5)
 
 });
 
