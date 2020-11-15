@@ -35,7 +35,7 @@ class Activity extends PureComponent {
         }
         activityList.map((item) => {
             demoList.push(
-                <Fragment key={item.get("id")}>
+                <div key={item.get("id")}>
                     <ActivityItem>
                         <ItemLeft>
                             <img src={"../" + item.get("imgUrl")} alt="" className="item-left-img no-select"/>
@@ -55,9 +55,10 @@ class Activity extends PureComponent {
                         </ItemRight>
                     </ActivityItem>
                     <DivLine/>
-                </Fragment>
+                </div>
             )
         })
+        console.log(demoList)
     };
     //分页器
     getPagination(totalPage) {
@@ -80,7 +81,7 @@ class Activity extends PureComponent {
     //渲染
     render() {
         const {page, totalPage} = this.props;
-        this.getActivityItems()
+        demoList.length>0 && this.getActivityItems()
         return (
             <ActivityWrapper>
                 <ActivityTitle>

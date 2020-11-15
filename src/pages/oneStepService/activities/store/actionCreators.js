@@ -14,7 +14,7 @@ export const updatePage = (page) => {
 };
 
 
-const changeActivity = (result)=> ({
+const changeActivityList = (result)=> ({
     type: constants.CHANGE_ACTIVITY,
     activityList: result.activityList,
     totalPage: Math.ceil(result.activityList.length/5)
@@ -25,7 +25,7 @@ export const getActivity=()=> {
     return (dispatch) => {
         axios.get('/api/activityList.json').then((res)=> {
             const result =res.data.data;
-            dispatch(changeActivity(result));
+            dispatch(changeActivityList(result));
             }
 
         );

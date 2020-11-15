@@ -46,8 +46,7 @@ export const ActivityItem = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-`
+`;
 
 export const DivLine = styled.div`
   width: 120rem;
@@ -133,10 +132,11 @@ export const Apply = styled.div`
   border: 0.1rem solid transparent;
 `;
 
+
 export const Pagination = styled.div`
   width: fit-content;
   height: 2rem; 
-  margin: 0 auto 6.6rem;
+  margin: 0 auto 6.6rem auto;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -149,7 +149,9 @@ export const Pagination = styled.div`
     width: 4.2rem;
     height: 2rem;
     margin: auto 1rem;
-    cursor: pointer;   
+    cursor: pointer;
+    white-space:nowrap;
+    ;   
   }
   & .page-number {
     width: 0.8rem;

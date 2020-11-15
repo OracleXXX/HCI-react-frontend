@@ -36,7 +36,7 @@ class NewProject extends PureComponent {
         if (totalList.length > 0) {
             return
         }
-        newProjectList.map((item, index) => {
+        newProjectList.map((item) => {
             totalList.push(
                 <ContainerItem key={item.get("id")}>
                     {/*图*/}

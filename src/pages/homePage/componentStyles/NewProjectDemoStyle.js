@@ -90,7 +90,7 @@ export const Item = styled.div`
   & img{
     width: 38rem;
     height: 24.8rem;
-    border-radius: 1.9rem;
+    border-radius: 0.8rem;
     overflow: hidden;
   }
   & .intro {

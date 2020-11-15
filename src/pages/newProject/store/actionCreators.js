@@ -18,6 +18,7 @@ export const getNewProject = ()=> {
     return (dispatch) => {
         axios.get('/api/newProjectList.json').then((res)=> {
             const result =res.data.data;
+
             dispatch(changeNewProjectList(result));
             }
         );

@@ -9,7 +9,7 @@ import {HomePageWrapper} from "./style";
 import {actionCreators} from './store';
 import {actionCreators as NewProjectActionCreator} from '../newProject/store';
 
-
+/*cpc tigersniffsrose*/
 class homePage extends PureComponent {
 
     render() {
