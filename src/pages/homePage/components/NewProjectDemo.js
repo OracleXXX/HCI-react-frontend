@@ -64,7 +64,7 @@ class NewProjectDemo extends PureComponent {
                     <NextArrow className="button" onClick={this.next}/>
                     <Slider ref={c => (this.slider = c)} {...settings}>
                         {
-                            this.props.list.map((item) => (
+                            this.props.newProjectList.map((item) => (
                                 <div key={item.get('id')}>
                                     <Item>
                                         <img src={item.get('imgUrl')} alt="" className=''/>
@@ -97,7 +97,7 @@ class NewProjectDemo extends PureComponent {
 
 const mapStateToProps = (state) => ({
     // 去store提取state数据 map到props
-    list: state.getIn(['newProject', "newProjectList"])
+    newProjectList: state.getIn(['newProject', "newProjectList"])
 
 
 })

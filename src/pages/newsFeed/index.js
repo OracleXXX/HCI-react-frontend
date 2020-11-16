@@ -185,12 +185,14 @@ const mapState = (state) => ({
 
 });
 const mapDispatch = (dispatch) => ({
-    getNewsFeedList(list) {
+    getNewsFeedList() {
 
         dispatch(actionCreators.getNewsFeed())
     },
     handlePageChange(page, totalPage) {
-        0 < page && page <= totalPage && dispatch(actionCreators.updatePage(page));
+        0 < page
+        && page <= totalPage
+        && dispatch(actionCreators.updatePage(page));
     }
 
 

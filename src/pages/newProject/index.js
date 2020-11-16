@@ -58,7 +58,7 @@ class NewProject extends PureComponent {
             }
         }
         return (
-            <NewProjectContainer>{demoList}</NewProjectContainer>
+            demoList
         )
     }
 
@@ -137,7 +137,7 @@ class NewProject extends PureComponent {
                     <div><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
                 </NewProjectTitle>
 
-                {this.getNewProjectContainer(page, totalPage)}
+                <NewProjectContainer>{this.getNewProjectContainer(page, totalPage)}</NewProjectContainer>
                 {
                     page < totalPage
                         ? <SeeMore

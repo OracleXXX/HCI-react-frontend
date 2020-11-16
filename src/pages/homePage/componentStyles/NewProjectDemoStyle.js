@@ -80,13 +80,13 @@ export const NextArrow = styled.div`
   border: 1px solid transparent;
   background-image: url(${nextArrow});
   background-size: contain;
-`
+`;
 export const Item = styled.div`
   position: relative;
   width: 38rem;
   height: 29.3rem;  
   margin: 0 1.5rem;
-  border-radius: 1.9rem;
+  border-radius: 0.8rem;
   & img{
     width: 38rem;
     height: 24.8rem;
@@ -125,8 +125,8 @@ export const InnerImg = styled.div`
   height: 6rem;
   padding: 0 1.6rem;
   box-sizing: border-box;
-  border-bottom-right-radius: 1.8rem;
-  border-bottom-left-radius: 1.8rem;
+  border-bottom-right-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
   line-height: 3rem;
   background-image: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.80) 98%);
   

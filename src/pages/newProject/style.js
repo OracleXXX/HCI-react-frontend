@@ -12,7 +12,7 @@ export const NewProjectContainer = styled.div`
   flex-flow:row wrap;
   justify-content:center;
   align-items:center;
-  margin: 0 auto;
+  margin: 3.4rem auto;
   box-sizing: border-box;
 `;
 

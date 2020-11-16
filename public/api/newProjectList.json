@@ -17,37 +17,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$200"
-            },
-            {
-              "name": "预期回报率",
-              "content": "10%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2000"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20000"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20000"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 2,
@@ -64,37 +34,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },{
         "id": 3,
         "uuid": "",
@@ -110,37 +50,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },{
         "id": 4,
         "uuid": "",
@@ -156,37 +66,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },{
         "id": 5,
         "uuid": "",
@@ -202,37 +82,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 6,
@@ -249,37 +99,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 7,
@@ -296,37 +116,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 8,
@@ -343,37 +133,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 9,
@@ -390,37 +150,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 10,
@@ -437,37 +167,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 11,
@@ -484,37 +184,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 12,
@@ -531,37 +201,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 13,
@@ -578,37 +218,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 14,
@@ -625,37 +235,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 15,
@@ -672,37 +252,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 16,
@@ -719,37 +269,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       },
       {
         "id": 17,
@@ -766,37 +286,7 @@
         "expectRate": "12%",
         "expectRentalIncome": "$2011",
         "expectRemodel": "$20000",
-        "platformLoan": "$500000",
-        "marginItem": {
-          "left": [
-            {
-              "name": "具体地址",
-              "content": "252 BrookHollow"
-            },
-            {
-              "name": "预期收益",
-              "content": "$201"
-            },
-            {
-              "name": "预期回报率",
-              "content": "12%"
-            }
-          ],
-          "right": [
-            {
-              "name": "预期租金",
-              "content": "$2030"
-            },
-            {
-              "name": "预期装修费用",
-              "content": "$20400"
-            },
-            {
-              "name": "平台贷款",
-              "content": "$20500"
-            }
-          ]
-        }
+        "platformLoan": "$500000"
       }
     ]
   }

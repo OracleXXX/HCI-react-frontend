@@ -1,1 +1,1 @@
-export const CHANGE_DETAIL = 'detail/CHANGE_DETAIL'
+export const CHANGE_CLOSED_PROJECT_LIST = 'closedProjectList/CHANGE_CLOSED_PROJECT_LIST'
