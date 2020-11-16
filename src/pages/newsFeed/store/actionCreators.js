@@ -22,7 +22,6 @@ const changeNewsFeedList = (result)=> ({
 
 export const getNewsFeed=()=> {
     return (dispatch) => {
-        console.log("asd")
         axios.get('/api/newsFeedList.json').then((res)=> {
             const result =res.data.data;
 

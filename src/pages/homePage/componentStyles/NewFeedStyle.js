@@ -82,6 +82,10 @@ export const RightPart = styled.div`
   box-sizing: border-box;
 //  border: 1px solid red;
   vertical-align: top;
+  & .articleContent{
+    height: 13rem;
+    -webkit-line-clamp: 5;
+  }
 `;
     
     
@@ -146,6 +150,11 @@ export const BottomPart = styled.div`
     line-height: 3.6rem;
     font-size: 2rem;
   }
+  & .articleContent{
+    height: 5.2rem;
+    -webkit-line-clamp: 2;
+
+  }
   & .divLine {
     width: 36rem;
     height: 1px;
@@ -176,8 +185,15 @@ export const Tag = styled.div`
 export const ArticleContent = styled.div`
   font-family:SourceHanSansSC-Normal;
   font-size:1.5rem;
+  height: 5.2rem;
   color:#666666;
   line-height:2.6rem;
+      overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;    
+    -webkit-box-orient: vertical;
+
+
 `;
 export const ReadMore = styled.div`
   margin-top: 2rem;
@@ -208,6 +224,8 @@ export const Arrow = styled.div`
     bottom: 0;
     width: 2.677rem;
     height: 0.097rem;
+    box-sizing: border-box;
+    border: none;
     border-radius: 0.05rem;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
   }

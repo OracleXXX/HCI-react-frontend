@@ -23,10 +23,10 @@ import {
 
 import test from '../../../statics/imgs/test.jpg';
 
-
 class NewsFeed extends PureComponent {
 
     render() {
+
         return (
             <NewsFeedWrapper className='scale-control'>
                 <NewsFeedTitle>
@@ -43,13 +43,14 @@ class NewsFeed extends PureComponent {
 
         )
     }
+
     //置顶文章
     getFixedPopularArticle() {
-        const {popularNewsFeedList} = this.props;
+        const {popularArticleList} = this.props;
         return (
             <Fragment>
                 {
-                    popularNewsFeedList.map((item) => (
+                    popularArticleList.map((item) => (
                         <FixedTopArticle key={item.get("id")}>
 
                             {/* 置顶文章图片 */}
@@ -80,13 +81,14 @@ class NewsFeed extends PureComponent {
 
         )
     };
+
     // 除了置顶的文章
     getRestArticles() {
-        const {restNewsFeedList} = this.props;
+        const {restArticleList} = this.props;
         return (
             <RestArticles>
                 {
-                    restNewsFeedList.map((item) => (
+                    restArticleList.map((item) => (
                         <RestArticle key={item.get("id")}>
                             <TopPart>
                                 {this.getArticleData()}
@@ -129,18 +131,22 @@ class NewsFeed extends PureComponent {
             </Tag>
         )
     }
+
     getArticleData() {
         return (
-            <Data><div className="data-day">02</div><div className="data-year-month">2020/11</div></Data>
+            <Data>
+                <div className="data-day">02</div>
+                <div className="data-year-month">2020/11</div>
+            </Data>
         )
     }
 
 }
 
 const mapStataToProps = (state) => ({
-    popularNewsFeedList: state.getIn(['homePage', 'popularNewsFeedList']),
-    restNewsFeedList: state.getIn(['homePage', 'restNewsFeedList']),
-    tempList: state.getIn(['newsFeed', 'newsFeedList'])
+    popularArticleList: state.getIn(['newsFeed', 'newsFeedList']).slice(0, 1),
+    restArticleList: state.getIn(['newsFeed', 'newsFeedList']).slice(1, 4),
+
 
 });
 
