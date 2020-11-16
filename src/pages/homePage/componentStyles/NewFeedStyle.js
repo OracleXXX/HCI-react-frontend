@@ -188,10 +188,10 @@ export const ArticleContent = styled.div`
   height: 5.2rem;
   color:#666666;
   line-height:2.6rem;
-      overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;    
-    -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;    
+  -webkit-box-orient: vertical;
 
 
 `;

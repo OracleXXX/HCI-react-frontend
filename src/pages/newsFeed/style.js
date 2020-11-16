@@ -139,6 +139,11 @@ export const ArticleItemRightTop = styled.div`
     font-size: 1.5rem;
     line-height: 2.6rem;
     color: #666666;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;    
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
   
 `;
