@@ -13,14 +13,17 @@ import {
     NextArrow,
     PrevArrow,
     ItemTop,
+    FixedBottom,
     ItemMid,
     ItemBottom,
-    DivLine
+    DivLine,
+    MoreInfo
 
 } from './style'
 import Slider from "react-slick";
 import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
+
 
 class ClosedProject extends PureComponent {
     constructor(props) {
@@ -31,10 +34,16 @@ class ClosedProject extends PureComponent {
 
     }
 
+
     getMoveBar() {
+        const {flippingSlider} = this.props;
         return (
+
             <div className='move-bar-container'>
-                <div className='move-bar'/>
+
+                    <div className={flippingSlider ? 'move-bar' : 'move-bar right'}/>
+
+
             </div>
         )
     }
@@ -49,15 +58,24 @@ class ClosedProject extends PureComponent {
     }
 
     getSlider(list) {
+        const {flippingSlider} = this.props;
+        console.log(this.props.flippingList.toJS());
         return (
             list.map((item) => {
-    /*            console.log(item.get("imgUrl").toJS()[0]);*/
+
                 return (
-                    <div className="slider">
+                    <div className="slider" key={item.get("id")}>
                         <Item>
                             <ItemTop>
                                 <img src={item.get("imgUrl").toJS()[0]} alt="" className="item-top-img"/>
-                                <></>
+                                <FixedBottom>
+                                    <div className="fixed-bottom-left"><img src={addrIcon} alt=""/>{item.get("location")}</div>
+                                    <MoreInfo>
+                                        详情
+                                        <img src={moreInfoIcon} alt=""/>
+                                    </MoreInfo>
+
+                                </FixedBottom>
                             </ItemTop>
                             <div className="mid-bottom">
 
@@ -69,13 +87,23 @@ class ClosedProject extends PureComponent {
                                     <div className="area-rental">{item.get("area") + item.get("rental")}</div>
                                 </ItemMid>
                                 <ItemBottom>
-                                    <DivLine />
+                                    <DivLine/>
                                     <div className="item-info">
-                                        <div className="item-info-1"><span className="item-info-title">具体地址：</span><div className="item-info-content">{item.get("fullAddr")}</div></div>
-                                        <div><span className="item-info-title">预期收益：</span><span className="item-info-content">{item.get("netIncome")}</span></div>
-                                        <div><span className="item-info-title">预期回报率：</span><span className="item-info-content">{item.get("profitRate")}</span></div>
-                                        <div><span className="item-info-title">预期租金：</span><span className="item-info-content">{item.get("rentalIncome")}</span></div>
-                                        <div><span className="item-info-title">预期装修费用：</span><span className="item-info-content">{item.get("flipping")}</span></div>
+                                        <div className="item-info-1"><span className="item-info-title">具体地址：</span>
+                                            <div className="item-info-content">{item.get("fullAddr")}</div>
+                                        </div>
+                                        <div><span className="item-info-title">预期收益：</span><span
+                                            className="item-info-content">{item.get("netIncome")}</span></div>
+                                        <div><span className="item-info-title">预期回报率：</span><span
+                                            className="item-info-content">{item.get("profitRate")}</span></div>
+                                        <div><span className="item-info-title">预期租金：</span><span
+                                            className="item-info-content">{item.get("rentalIncome")}</span></div>
+                                        {
+                                            flippingSlider
+                                                ? <div><span className="item-info-title">预期装修费用：</span><span
+                                                    className="item-info-content">{item.get("flippingC")}</span></div>
+                                                : null
+                                        }
                                     </div>
                                 </ItemBottom>
                             </div>
@@ -85,7 +113,6 @@ class ClosedProject extends PureComponent {
             })
         )
     }
-
 
     render() {
         const settings = {
@@ -98,15 +125,15 @@ class ClosedProject extends PureComponent {
             arrows: false,
 
         };
-        const {curSlider, noFlippingList} = this.props;
+        const {flippingSlider, noFlippingList, flippingList} = this.props;
         return (
             <ClosedProjectDemoWrapper className='scale-control'>
                 {/* 图轮播图title */}
                 <ClosedProjectTitle>
 
-                    <div className='title'>翻新后出租/出售房屋</div>
+                    <div className='title' onClick={() => this.props.handleSliderChange(true)}>翻新后出租/出售房屋</div>
                     <VerticalDivLine/>
-                    <div className='title'>可直接出租/出售房屋</div>
+                    <div className='title' onClick={() => this.props.handleSliderChange(false)}>可直接出租/出售房屋</div>
                     <Rec>{this.getMoveBar()}</Rec>
                 </ClosedProjectTitle>
                 {/* 轮播图 */}
@@ -117,7 +144,8 @@ class ClosedProject extends PureComponent {
 
                     <div className="slider">
                         <Slider ref={c => (this.slider = c)} {...settings} className="slider">
-                            { this.getSlider(this.props.noFlippingList) }
+                            {flippingSlider ? this.getSlider(flippingList) : this.getSlider(noFlippingList)}
+
 
                         </Slider>
                     </div>
@@ -140,14 +168,16 @@ class ClosedProject extends PureComponent {
 const mapState = (state) => ({
     noFlippingList: state.getIn(["closedProject", "noFlippingList"]),
     flippingList: state.getIn(["closedProject", "flippingList"]),
+    flippingSlider: state.getIn(["closedProject", "flippingSlider"]),
 });
 const mapDispatch = (dispatch) => ({
     getClosedProjectList() {
         dispatch(actionCreators.getClosedProjectList())
-
-
-
+    },
+    handleSliderChange(flipping) {
+        dispatch(actionCreators.handleSliderChange(flipping))
     }
+
 });
 
 export default connect(mapState, mapDispatch)(withRouter(ClosedProject));

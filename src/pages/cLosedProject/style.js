@@ -27,6 +27,7 @@ export const ClosedProjectTitle = styled.div`
     font-size:2.6rem;
     color:#333333;
     text-align:center;
+    cursor: pointer;
   }
 
 `;
@@ -43,13 +44,19 @@ export const Rec = styled.div`
       width: 39.2rem;
       height: inherit;
       margin: 0 auto;
+        
     }
     & .move-bar {
-      float: right;
+      float: left;
       width: 8rem;
       height: inherit;
       background-color: #2D84FF;
     }
+    & .right {
+      float: right;
+    }
+
+
 `;
 // slider
 export const SliderWrapper = styled.div`
@@ -107,17 +114,67 @@ export const Item = styled.div`
 
 `;
 export const ItemTop = styled.div`
+  position: relative;
   width: 27.6rem;
   height: 20rem;
   overflow: hidden;
-
-  
-
 & .item-top-img {
   width: inherit;
   height: inherit;
   border-radius: 0.8rem 0.8rem 0 0;
-}
+};
+`;
+
+export const FixedBottom = styled.div`
+  width: inherit;
+  height: 3.8rem;
+  z-index: 200;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.80) 98%);
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  padding:0 0.8rem;
+  box-sizing: border-box;
+  & .fixed-bottom-left {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-family: SourceHanSansSC-Medium;
+  & img {
+    width: 1.1rem;
+    height: 1.3rem;
+    margin: auto 0.8rem auto 0
+  } 
+  }
+`;
+export const MoreInfo = styled.div`
+  cursor: pointer;
+  width: 6.1rem;
+  height: 2.7rem;
+  border: 0.1rem solid rgba(255,255,255,0.6);
+  border-radius: 1.9rem;
+  padding-left:1.2rem;
+  padding-right: 1.2rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.20);
+  font-family: PingFangSC-Regular;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  & img {
+    width: 0.6rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+  }
+  
 `;
 
 

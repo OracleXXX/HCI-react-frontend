@@ -6,7 +6,9 @@
         "id": 1,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -16,11 +18,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 2,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -30,11 +35,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 3,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -44,11 +52,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 4,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -58,11 +69,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 5,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -72,11 +86,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 6,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -86,11 +103,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 7,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -100,11 +120,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 8,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -114,11 +137,14 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011"
-      },{
+      },
+      {
         "id": 9,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -135,7 +161,9 @@
         "id": 1,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -145,12 +173,15 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
-      },{
+        "flippingC": "$120"
+      },
+      {
         "id": 2,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -160,12 +191,15 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
-      },{
+        "flippingC": "$120"
+      },
+      {
         "id": 3,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -175,12 +209,15 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
-      },{
+        "flippingC": "$120"
+      },
+      {
         "id": 4,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -190,12 +227,15 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
-      },{
+        "flippingC": "$120"
+      },
+      {
         "id": 5,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -205,12 +245,15 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
-      },{
+        "flippingC": "$120"
+      },
+      {
         "id": 6,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -220,12 +263,15 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
-      },{
+        "flippingC": "$120"
+      },
+      {
         "id": 7,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -235,12 +281,15 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
-      },{
+        "flippingC": "$120"
+      },
+      {
         "id": 8,
         "uuid": "",
         "location": "纳什维尔",
-        "imgUrl": ["upload/newProject/685 brewer Dr.jpg"],
+        "imgUrl": [
+          "upload/newProject/685 brewer Dr.jpg"
+        ],
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
@@ -250,7 +299,7 @@
         "netIncome": "$201",
         "profitRate": "12%",
         "rentalIncome": "$2011",
-        "flippingCost": "$20000"
+        "flippingC": "$120"
       }
     ]
   }
