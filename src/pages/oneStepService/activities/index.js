@@ -22,12 +22,32 @@ import test from '../../../statics/imgs/test.jpg'
 const demoList = [];
 
 class Activity extends PureComponent {
+    //渲染
+    render() {
+        const {page, totalPage} = this.props;
+        this.getActivityItems()
+        return (
+            <ActivityWrapper>
+                <ActivityTitle>
+                    <div className='title'>平台活动</div>
+                    <div className='rec'/>
+                </ActivityTitle>
+                <ActivityContainer>{this.getNewPage(page)}</ActivityContainer>
+                <Pagination className='no-select'>
+                    {this.getPagination(totalPage)}
 
-   // 从demoList里面切片 实现分页
+                </Pagination>
+
+            </ActivityWrapper>
+        )
+    }
+
+    // 从demoList里面切片 实现分页
     getNewPage(page) {
         return demoList.slice(Math.max(0, page - 1) * 5, page * 5)
     };
-     //每个活动（遍历）, 然后放入demoList
+
+    //每个活动（遍历）, 然后放入demoList
     getActivityItems() {
         const {activityList} = this.props;
         if (demoList.length > 0) {
@@ -60,42 +80,26 @@ class Activity extends PureComponent {
         })
         console.log(demoList)
     };
+
     //分页器
     getPagination(totalPage) {
         const {page, handlePageChange} = this.props;
         let pages = [];
         pages.push(
-            <span key="news-feed-page-prev" onClick={() => handlePageChange(page - 1, totalPage)} className={page===1? "prev-next disabled": "prev-next" }>上一页</span>
+            <span key="news-feed-page-prev" onClick={() => handlePageChange(page - 1, totalPage)}
+                  className={page === 1 ? "prev-next disabled" : "prev-next"}>上一页</span>
         )
         for (let i = 1; i <= totalPage; i++) {
             pages.push(
-                <span  key={"news-feed-page-"+i} onClick={() => handlePageChange(i, totalPage)} className={page===i? "page-number active": "page-number"}>{i}</span>
+                <span key={"news-feed-page-" + i} onClick={() => handlePageChange(i, totalPage)}
+                      className={page === i ? "page-number active" : "page-number"}>{i}</span>
             )
         }
         pages.push(
-            <span key="news-feed-page-next" onClick={() => handlePageChange(page + 1, totalPage)} className={page===totalPage? "prev-next disabled": "prev-next"}>下一页</span>
+            <span key="news-feed-page-next" onClick={() => handlePageChange(page + 1, totalPage)}
+                  className={page === totalPage ? "prev-next disabled" : "prev-next"}>下一页</span>
         )
         return pages;
-    }
-
-    //渲染
-    render() {
-        const {page, totalPage} = this.props;
-        this.getActivityItems()
-        return (
-            <ActivityWrapper>
-                <ActivityTitle>
-                    <div className='title'>平台活动</div>
-                    <div className='rec'/>
-                </ActivityTitle>
-                <ActivityContainer>{this.getNewPage(page)}</ActivityContainer>
-                <Pagination className='no-select'>
-                    {this.getPagination(totalPage)}
-
-                </Pagination>
-
-            </ActivityWrapper>
-        )
     }
 
 
