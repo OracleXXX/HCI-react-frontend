@@ -26,8 +26,8 @@ import arrowToBot from '../../statics/imgs/PlatformLoan/arrowToBot.png'
 import arrowToLB from '../../statics/imgs/PlatformLoan/arrowToLB.png'
 import arrowToRB from '../../statics/imgs/PlatformLoan/arrowToRB.png'
 
-class PlatformLoan extends PureComponent {
 
+class PlatformLoan extends PureComponent {
     render() {
         return (
             <PlatformLoanWrapper>
@@ -65,19 +65,11 @@ class PlatformLoan extends PureComponent {
                             <div className="circle-content"><Circle/><span>Judicial Proceeding</span></div>
                             <div className="circle-content"><Circle/><span>Moratorium</span></div>
                         </AdditionInfoContainerItem>
-
-
-
-
                     </AdditionInfoContainer>
-
                 </AdditionInfo>
-
             </PlatformLoanWrapper>
-
         )
     }
-
     getFlowChartLeft() {
         return (
             <FLowCharLeft>
@@ -95,7 +87,6 @@ class PlatformLoan extends PureComponent {
             </FLowCharLeft>
         )
     }
-
     getFlowChartMid() {
         return (
             <FlowChartMid>
@@ -104,7 +95,6 @@ class PlatformLoan extends PureComponent {
             </FlowChartMid>
         )
     }
-
     getMidItem() {
         return (
             <MidItem>
@@ -127,32 +117,15 @@ class PlatformLoan extends PureComponent {
             </FlowChartRight>
         )
     }
-    /*    componentDidMount() {
-            this.props.getDetail(this.props.match.params.id);
-        }*/
+
+
 
 
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({});
+const mapState = (state) => ({
+});
 const mapDispatch = (dispatch) => ({})
 
 export default connect(mapState, mapDispatch)(withRouter(PlatformLoan));
-
-
-//模板
-/*
-import React, {Component} from 'react';
-class Detail extends Component {
-    render() {
-        return (
-            <div>Detail
-
-
-            </div>
-        )
-    }
-}
-export default Detail;
-*/
