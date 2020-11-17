@@ -69,7 +69,6 @@ class ClosedProject extends PureComponent {
                                 </FixedBottom>
                             </ItemTop>
                             <div className="mid-bottom">
-
                                 <ItemMid>
                                     <div className="price-month">
                                         <span className="price">{item.get("price")}</span>

@@ -46,7 +46,6 @@ export const NavItem = styled.div`
       }
       &.left{
          display: inline-block;
-
       }
       &.left:hover{
         border: 1px solid #FFFFFF;
@@ -72,6 +71,7 @@ export const DropDownServices = styled.div`
 
   background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
   font-size: 13px;
+  font-weight: normal;
   & .dropDownItem{
     text-align: center;
     border: 1px solid transparent;
@@ -151,37 +151,36 @@ export const Input = styled.div`
   border-radius: 8rem;
   width: 79rem;
   & input{
-  width: 72.6rem;
+  width: 79rem;
   height: 5.6rem;
   box-sizing: border-box;
   opacity: 0.9;
   padding-left: 2rem;
   border: 0;
-  border-bottom-left-radius: 0.8rem;
-  border-top-left-radius: 0.8rem;
+  border-radius: 0.8rem;
   font-family: PingFangSC-Regular,serif;
   font-size: 2rem;
   color: #666666;
   letter-spacing: 0;
-    &::placeholder {
-     
-  }
   }
 `
-
 export const SearchButton = styled.div`
-  position: relative;
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 6.4rem;
   height: 5.6rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-bottom-right-radius: 0.8rem;
   border-top-right-radius: 0.8rem;
   background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
-  & img {
-    position: absolute;
-    left: 1.7rem;
-    top: 1.3rem;  
+  & img:hover{
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  & img {  
     width: 3rem;
     height: 3rem;
     line-height: 3rem;

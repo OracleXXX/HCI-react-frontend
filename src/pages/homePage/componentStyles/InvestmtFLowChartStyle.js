@@ -4,8 +4,6 @@ import styled from "styled-components";
 export const InvestmtFlowChartWrapper = styled.div`
   width: 87.5rem;
   height: 137rem;
-
-  /*border: 1px solid black;*/
   margin: 8.6rem auto;
 `;
 export const FlowChartTitle = styled.div`
@@ -38,7 +36,6 @@ export const FlowChart =styled.div`
   left: -8rem;
   width: 87.5rem;
   height: 124rem;
-  /*border: 1px solid red;*/
   margin: 5.7rem auto;
   & img {
     max-height: 21.8rem;
@@ -50,7 +47,6 @@ export const OddWrapper = styled.div`
   top: 0;
   width: 51.2rem;
   height: 124rem;
-  /*border: 1px dashed red;*/
 `;
 export const EvenWrapper = styled.div`
   position: absolute;
@@ -58,7 +54,6 @@ export const EvenWrapper = styled.div`
   top: 17rem;
   width: 66.9rem;
   height: 90rem;
-  /*border: 1px dashed blue;*/
 `;
 export const OddStepWrapper = styled.div`
   width: 49.8rem;
@@ -130,42 +125,6 @@ export const OddIndexContent = styled.div`
       font-size: 1.4rem;
       margin-bottom: 0.8rem;
     };
-    & .oddMoreInfo {
-      cursor: pointer;
-      float: left;
-      width: fit-content;
-      height: 2.6rem;
-      padding: 0 0.8rem; 
-      color: #2D84FF;
-      background-color: #E5F4FF;
-      
-      border-radius: 1.3rem;
-      border: 1px solid transparent;
-      box-sizing: border-box;
-      white-space:nowrap;
-      & div {
-         display: inline-block;
-         font-family: SourceHanSansSC-Normal;
-         font-size: 1.4rem;
-         text-align: center;
-         line-height: 2.6rem;
-         vertical-align: top;
-         margin: auto;
-   
-      };
-      & .moreInfoIcon-blue {
-         display: inline-block;
-         margin: 0.8rem 0.3rem 0.8rem 0.6rem;
-         width: 0.5rem;
-         height: 0.8rem;
-
-      };
-    };
-     & .oddMoreInfo:hover {
-      border: 1px solid #2D84FF;
-     };
-
-    };
 `;
 //--------------------------------------------
 export const EvenImgToIndex = styled.div`
@@ -199,9 +158,7 @@ export const EvenImgToIndex = styled.div`
       width: 3.2rem;
       height: 3.2rem;
   };
-
 `;
-
 export const EvenIndexContent = styled.div`
     position: absolute;
     left: 18.9rem;
@@ -228,43 +185,28 @@ export const EvenIndexContent = styled.div`
       font-size: 1.4rem;
       text-align: right;
       margin-bottom: 0.8rem;
-    };
-    //偶数了解详情字
-    & .evenMoreInfo {
-      cursor: pointer;
-      float: right;
-      width: fit-content;
-      height: 2.6rem;
-      padding: 0 0.8rem; 
-      color: #2D84FF;
-      background-color: #E5F4FF;
-      
-      border-radius: 1.3rem;
-      border: 1px solid transparent;
-      box-sizing: border-box;
-      white-space:nowrap;
-       & div {
-          display: inline-block;
-          font-family: SourceHanSansSC-Normal;
-          font-size: 1.4rem;
-          text-align: center;
-          line-height: 2.6rem;
-          vertical-align: top;
-          margin: auto;
-   
-      };
-        & .moreInfoIcon-blue {
-          display: inline-block;
-          margin: 0.8rem 0.3rem 0.8rem 0.6rem;
-          width: 0.5rem;
-          height: 0.8rem;
-
-      };
-    };
-    & .evenMoreInfo:hover{
-      border: 1px solid #2D84FF;
-    };
-           
-    
-    
+    };   
+`;
+export const MoreInfo = styled.div`
+  cursor: pointer;
+  width: 8.3rem;
+  height: 2.6rem;
+  border: 0.1rem solid rgba(255,255,255,0.6);
+  border-radius: 1.9rem;
+  padding: 0 0.8rem;
+  margin-top: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  background-image: linear-gradient(-45deg, #7F55FF 0%, #5DBBFF 100%);
+  font-family: SourceHanSansSC-Normal;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #FFFFFF;
+  & img {
+    width: 0.7rem;
+    height: 1.2rem;
+    margin-left: 0.6rem;
+  };
 `;

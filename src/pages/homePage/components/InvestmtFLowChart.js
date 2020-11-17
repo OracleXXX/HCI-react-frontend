@@ -11,7 +11,8 @@ import {
     OddImgToIndex,
     OddIndexContent,
     EvenImgToIndex,
-    EvenIndexContent
+    EvenIndexContent,
+    MoreInfo
 
 } from '../componentStyles/InvestmtFLowChartStyle';
 //导入图片
@@ -32,7 +33,7 @@ import index7 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/ind
 import oddDash from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/oddDash.svg';
 import evenDash from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/evenDash.svg';
 import {connect} from 'react-redux';
-import moreInfoIcon from "../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/moreInfoIcon-blue.png";
+import moreInfoIcon from "../../../statics/imgs/homePageImgs/moreInfoIcon.png";
 
 
 //映射静态资源
@@ -128,10 +129,7 @@ class InvestmtFLowChart extends PureComponent {
                         {
                             {content2} ? <div className='oddContent'>{content2}</div> : null
                         }
-                        <div className='oddMoreInfo'>
-                            <div>了解详情</div>
-                            <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
-                        </div>
+                        {this.getMoreInfo()}
                     </OddIndexContent>
                 </div>
             </OddImgToIndex>
@@ -160,11 +158,8 @@ class InvestmtFLowChart extends PureComponent {
                             {content2} ? <div className='evenContent'>{content2}</div> : null
                         }
 
+                        {this.getMoreInfo()}
 
-                        <div className='evenMoreInfo'>
-                            <div>了解详情</div>
-                            <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
-                        </div>
                         <div className='clear'/>
                     </EvenIndexContent>
 
@@ -172,6 +167,15 @@ class InvestmtFLowChart extends PureComponent {
             </EvenImgToIndex>
         )
 
+    }
+
+    getMoreInfo() {
+        return (
+            <MoreInfo>
+                <span>了解详情</span>
+                <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
+            </MoreInfo>
+        )
     }
 }
 

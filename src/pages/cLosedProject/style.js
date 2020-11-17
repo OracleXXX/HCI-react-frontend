@@ -158,8 +158,7 @@ export const MoreInfo = styled.div`
   height: 2.7rem;
   border: 0.1rem solid rgba(255,255,255,0.6);
   border-radius: 1.9rem;
-  padding-left:1.2rem;
-  padding-right: 1.2rem;
+  padding: 0 1.2rem;
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;

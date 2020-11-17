@@ -9,9 +9,11 @@ import {
     SliderTitle,
     SliderWrapper,
     Item,
+    ImgBottom,
+    MoreInfo,
     PrevArrow,
     NextArrow,
-    InnerImg
+
 } from '../componentStyles/NewProjectDemoStyle';
 
 // 导入页面静态资源
@@ -55,7 +57,7 @@ class NewProjectDemo extends PureComponent {
                 <SliderTitle>
                     <div className='title'>精选房源</div>
                     <div className='rec'/>
-                    <div ><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
+                    <div><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
                 </SliderTitle>
                 {/* 轮播图 */}
                 <SliderWrapper>
@@ -68,20 +70,19 @@ class NewProjectDemo extends PureComponent {
                                 <div key={item.get('id')}>
                                     <Item>
                                         <img src={item.get('imgUrl')} alt="" className=''/>
-                                        <InnerImg>
-                                            <div className='addr'>
-                                                <img src={addrIcon} alt="" className='addrIcon'/>
-                                                {item.get('addr')}
+                                        <ImgBottom>
+                                            <div className="img-bottom-left">
+                                                <img src={addrIcon} alt=""/>{item.get("location")}
                                             </div>
-                                            <div className='projectMoreInfo'>
+                                            <MoreInfo>
                                                 <span>详情</span>
                                                 <img src={moreInfoIcon} alt=""/>
-                                            </div>
-                                        </InnerImg>
+                                            </MoreInfo>
+                                        </ImgBottom>
                                         <div className='intro'>
                                             <span className='intro-left'>{item.get('price')}<span
                                                 className='perMonth'>{item.get('month')}</span></span>
-                                            <span className='intro-right'>{item.get('area')+item.get('rental')}</span>
+                                            <span className='intro-right'>{item.get('area') + item.get('rental')}</span>
                                         </div>
                                     </Item>
                                 </div>
