@@ -90,7 +90,7 @@ class InvestmtFLowChart extends PureComponent {
                 OddFlowChartList.push(
                     <OddStepWrapper key={mapStepListToString[i][2]}>
                         <div className='oddStep'>
-                            <img src={src} alt=""/>
+                            <img src={src} alt="" className="flow-chart-img"/>
                             {this.getOddIndexToImg(indexIcon, title, subTitle, content1, content2)}
                         </div>
                     </OddStepWrapper>
@@ -100,7 +100,7 @@ class InvestmtFLowChart extends PureComponent {
                     <EvenStepWrapper key={mapStepListToString[i][2]}>
                         <div className='evenStep'>
                             {this.getEvenIndexToImg(indexIcon, title, subTitle, content1, content2)}
-                            <img src={src} alt=""/>
+                            <img src={src} alt="" className="flow-chart-img"/>
                         </div>
                     </EvenStepWrapper>
                 )

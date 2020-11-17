@@ -7,7 +7,7 @@ import axios from 'axios';
 
 //----------------------------------
 
-export const changeDropDow= (dropped)=> ({
+export const changeDropDown= (dropped)=> ({
     type:constants.CHANGE_DROPDOWN,
     dropped
 

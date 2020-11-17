@@ -62,7 +62,7 @@ class Header extends PureComponent {
                             <img src={triangle} alt="" className='triangle'/>
                             {this.getDropDown()}
                         </NavItem>
-                        <Link to='/platform-loan'><NavItem className={'left'}>平台贷款</NavItem></Link>
+                        <Link to='/platform-loan'><NavItem className={'left'}>平台贷款 </NavItem></Link>
                         <Link to='/closed-project'><NavItem className='left'>项目展示</NavItem></Link>
                         <Link to='/our-team'><NavItem className='left'>团队背景</NavItem></Link>
                         <Link to='/news-feed'><NavItem className='left'>美房投资攻略</NavItem></Link>
@@ -83,7 +83,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         handleDropDown(displayMenu) {
-            dispatch(actionCreators.changeDropDow(displayMenu));
+            dispatch(actionCreators.changeDropDown(displayMenu));
         }
 
 

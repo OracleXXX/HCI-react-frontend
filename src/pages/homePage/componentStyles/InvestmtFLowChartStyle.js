@@ -38,6 +38,7 @@ export const FlowChart =styled.div`
   height: 124rem;
   margin: 5.7rem auto;
   & img {
+    max-width: 19rem;
     max-height: 21.8rem;
   }
 `
@@ -61,6 +62,7 @@ export const OddStepWrapper = styled.div`
   margin-bottom: 12rem;
   padding-left: 1.4rem;
   vertical-align:top;
+
 `;
 export const EvenStepWrapper = styled.div`
   width: 66.9rem;
