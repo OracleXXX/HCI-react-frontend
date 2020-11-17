@@ -187,3 +187,12 @@ export const SearchButton = styled.div`
   }
   
 `
+
+export const FloatBar = styled.div`
+display: none;
+position: absolute;
+bottom: 0.1rem;
+  width: 6.2rem;
+  height: 0.2rem;
+  background: #FFFFFF;
+`;

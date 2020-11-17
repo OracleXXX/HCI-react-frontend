@@ -3,7 +3,8 @@ import {fromJS} from "immutable";
 
 const defaultState = fromJS({
 
-    displayMenu: false
+    displayMenu: false,
+    navItems:[['asd','asds'], ["asd", 'gfh']]
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export

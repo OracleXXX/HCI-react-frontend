@@ -24,20 +24,24 @@ import {actionCreators} from './store';
 import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import seeMoreIcon from "../../statics/imgs/newProject/seeMoreIcon.png"
-import {fromJS} from "immutable";
 
-const totalList = [];
 const demoList = [];
 
 class NewProject extends PureComponent {
-    //把数据放入demoList
+    //所有房源
+    getNewProjectContainer(page, totalPage) {
+        if (page <= totalPage) {
+            return demoList.slice(0, page * 6)
+        }
+    }
+    //把数据放入totalList
     changeDemoList() {
         const {newProjectList} = this.props;
-        if (totalList.length > 0) {
+        if (demoList.length > 0) {
             return
         }
         newProjectList.map((item) => {
-            totalList.push(
+            demoList.push(
                 <ContainerItem key={item.get("id")}>
                     {/*图*/}
                     {this.getItemImgContainer(item.get("imgUrl"), item.get("addr"))}
@@ -45,22 +49,11 @@ class NewProject extends PureComponent {
                     {this.getItemPriceContaner(item.get("price"), item.get("month"), item.get("area"), item.get("rental"))}
                     {/*预期数据*/}
                     {this.getMarginContainer(item.get("fullAddr"), item.get("expectCash"), item.get("expectRate"), item.get("expectRentalIncome"), item.get("expectRemodel"), item.get("platformLoan"))}
-                </ContainerItem>)
+                </ContainerItem>
+            )
         })
     }
 
-    //所有房源
-    getNewProjectContainer(page, totalPage) {
-
-        if (page <= totalPage) {
-            for (let i = Math.max(page - 1, 0) * 6; i < page * 6; i++) {
-                demoList.push(totalList[i])
-            }
-        }
-        return (
-            demoList
-        )
-    }
 
     //图
     getItemImgContainer(imgUrl, addr) {
@@ -116,6 +109,7 @@ class NewProject extends PureComponent {
             </MarginContainer>
         )
     }
+
     // 每个预期数内容
     getMarginItem(name, content) {
         return (
@@ -125,9 +119,10 @@ class NewProject extends PureComponent {
             </MarginItem>
         )
     };
+
     // 渲染
     render() {
-        const {page, totalPage} = this.props;
+        const {page, totalPage, newProjectList} = this.props;
         this.changeDemoList()
         return (
             <NewProjectWrapper>
@@ -157,7 +152,6 @@ class NewProject extends PureComponent {
 
     componentDidMount() {
         this.props.getNewProject(this.props.newProjectList)
-        this.changeDemoList()
     }
 }
 
@@ -169,8 +163,8 @@ const mapState = (state) => ({
     totalPage: state.getIn(['newProject', 'totalPage'])
 });
 const mapDispatch = (dispatch) => ({
-    getNewProject(list) {
-        list.size === 0 && dispatch(actionCreators.getNewProject());
+    getNewProject(newProjectList) {
+        newProjectList.size === 0 && dispatch(actionCreators.getNewProject());
 
     },
     handleGetMorePages(page) {

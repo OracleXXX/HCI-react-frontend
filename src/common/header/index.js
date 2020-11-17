@@ -11,6 +11,7 @@ import {
     Nav,
     NavItem,
     DropDownServices,
+    FloatBar
 } from "./style";
 import triangle from '../../statics/imgs/headerImgs/triangle.svg';
 import logoPic from '../../statics/imgs/headerImgs/Inc-Logo-0.jpg';
@@ -62,7 +63,7 @@ class Header extends PureComponent {
                             <img src={triangle} alt="" className='triangle'/>
                             {this.getDropDown()}
                         </NavItem>
-                        <Link to='/platform-loan'><NavItem className={'left'}>平台贷款 </NavItem></Link>
+                        <Link to='/platform-loan'><NavItem className={'left active'}>平台贷款 {<FloatBar/>}</NavItem></Link>
                         <Link to='/closed-project'><NavItem className='left'>项目展示</NavItem></Link>
                         <Link to='/our-team'><NavItem className='left'>团队背景</NavItem></Link>
                         <Link to='/news-feed'><NavItem className='left'>美房投资攻略</NavItem></Link>
@@ -77,7 +78,8 @@ class Header extends PureComponent {
 }
 const mapStateToProps = (state) => {
     return {
-        displayMenu: state.getIn(['header', 'displayMenu'])
+        displayMenu: state.getIn(['header', 'displayMenu']),
+        navItems: state.getIn(['header', 'navItems'])
     }
 }
 const mapDispatchToProps = (dispatch) => {

@@ -196,10 +196,10 @@ export const ItemMid = styled.div`
     font-family: HiraginoSans-W6;
     font-size: 1.8rem;
   }  
-  & .month {
+/*  & .month {
     font-family: SourceHanSansSC-Normal;
     font-size: 1.3rem;
-  }
+  }*/
   & .area-rental {
     width: fit-content;
     font-family: SourceHanSansSC-Normal;

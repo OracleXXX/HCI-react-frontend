@@ -72,7 +72,7 @@ class ClosedProject extends PureComponent {
                                 <ItemMid>
                                     <div className="price-month">
                                         <span className="price">{item.get("price")}</span>
-                                        <span className="month">{item.get("month")}</span>
+
                                     </div>
                                     <div className="area-rental">{item.get("area") + item.get("rental")}</div>
                                 </ItemMid>
@@ -82,15 +82,15 @@ class ClosedProject extends PureComponent {
                                         <div className="item-info-1"><span className="item-info-title">具体地址：</span>
                                             <div className="item-info-content">{item.get("fullAddr")}</div>
                                         </div>
-                                        <div><span className="item-info-title">预期收益：</span><span
+                                        <div><span className="item-info-title">收益：</span><span
                                             className="item-info-content">{item.get("netIncome")}</span></div>
-                                        <div><span className="item-info-title">预期回报率：</span><span
+                                        <div><span className="item-info-title">回报率：</span><span
                                             className="item-info-content">{item.get("profitRate")}</span></div>
-                                        <div><span className="item-info-title">预期租金：</span><span
+                                        <div><span className="item-info-title">租金：</span><span
                                             className="item-info-content">{item.get("rentalIncome")}</span></div>
                                         {
                                             flippingSlider
-                                                ? <div><span className="item-info-title">预期装修费用：</span><span
+                                                ? <div><span className="item-info-title">装修费用：</span><span
                                                     className="item-info-content">{item.get("flippingC")}</span></div>
                                                 : null
                                         }
