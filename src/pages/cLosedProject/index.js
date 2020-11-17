@@ -33,30 +33,21 @@ class ClosedProject extends PureComponent {
         this.previous = this.previous.bind(this);
 
     }
-
-
     getMoveBar() {
         const {flippingSlider} = this.props;
         return (
-
             <div className='move-bar-container'>
-
                     <div className={flippingSlider ? 'move-bar' : 'move-bar right'}/>
-
-
             </div>
         )
     }
-
     next() {
         this.slider.slickNext();
     }
-
     previous() {
         this.slider.slickPrev();
         console.log(this.props.noFlippingList)
     }
-
     getSlider(list) {
         const {flippingSlider} = this.props;
         console.log(this.props.flippingList.toJS());
@@ -113,7 +104,6 @@ class ClosedProject extends PureComponent {
             })
         )
     }
-
     render() {
         const settings = {
             infinite: true,

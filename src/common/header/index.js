@@ -40,10 +40,7 @@ class Header extends PureComponent {
         } else {
             return null;
         }
-
     };
-
-
     render() {
         const {handleDropDown, displayMenu} = this.props;
         return (
@@ -65,71 +62,26 @@ class Header extends PureComponent {
                             <img src={triangle} alt="" className='triangle'/>
                             {this.getDropDown()}
                         </NavItem>
-                        <Link to='/platform-loan'><NavItem className='left'>平台贷款</NavItem></Link>
+                        <Link to='/platform-loan'><NavItem className={'left'}>平台贷款</NavItem></Link>
                         <Link to='/closed-project'><NavItem className='left'>项目展示</NavItem></Link>
                         <Link to='/our-team'><NavItem className='left'>团队背景</NavItem></Link>
                         <Link to='/news-feed'><NavItem className='left'>美房投资攻略</NavItem></Link>
                         <Link to='/contact-us'><NavItem className='left'>联系我们</NavItem></Link>
                     </Nav>
-
                 </HeaderWrapper>
                 {/* 走马灯Banner */}
                 <Banner/>
             </div>
         )
-
     }
 }
-
 const mapStateToProps = (state) => {
     return {
-        focused: state.getIn(['header', 'focused']),
-        list: state.getIn(['header', 'list']),
-        page: state.getIn(['header', 'page']),
-        mouseIn: state.getIn(['header', 'mouseIn']),
-        totalPage: state.getIn(['header', 'totalPage']),
-        login: state.getIn(['login', 'login']),
         displayMenu: state.getIn(['header', 'displayMenu'])
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleInputFocus(list) {
-            (list.size === 0) && dispatch(actionCreators.getList());
-            dispatch(actionCreators.searchFocus());
-        },
-        handleInputBlur() {
-            dispatch(actionCreators.searchBlur());
-        },
-        handleMouseEnter() {
-            dispatch(actionCreators.mouseEnter());
-        },
-        handleMouseLeave() {
-            dispatch(actionCreators.mouseLeave());
-        },
-        handleMouseHover(target) {
-            target.style.color = 'blue';
-
-        },
-        handleMouseOut(target) {
-            target.style.color = '#666';
-
-        },
-        handleChangePage(page, totalPage, spin) {
-            let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
-            if (originAngle) {
-                originAngle = parseInt(originAngle, 10);
-            } else {
-                originAngle = 0;
-            }
-            spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';
-            if (page < totalPage) {
-                dispatch(actionCreators.changePage(page + 1));
-            } else {
-                dispatch(actionCreators.changePage(1));
-            }
-        },
-
         handleDropDown(displayMenu) {
             dispatch(actionCreators.changeDropDow(displayMenu));
         }

@@ -23,6 +23,7 @@ export const Nav = styled.div`
     margin: 0 auto;
 `;
 export const NavItem = styled.div`
+    position: relative;
     display: flex;
     flex-direction: row;
     position: relative;
