@@ -82,11 +82,11 @@ class ClosedProject extends PureComponent {
                                         <div className="item-info-1"><span className="item-info-title">具体地址：</span>
                                             <div className="item-info-content">{item.get("fullAddr")}</div>
                                         </div>
-                                        <div><span className="item-info-title">收益：</span><span
+                                        <div><span className="item-info-title">现金总收益：</span><span
                                             className="item-info-content">{item.get("netIncome")}</span></div>
-                                        <div><span className="item-info-title">回报率：</span><span
+                                        <div><span className="item-info-title">现金回报率：</span><span
                                             className="item-info-content">{item.get("profitRate")}</span></div>
-                                        <div><span className="item-info-title">租金：</span><span
+                                        <div><span className="item-info-title">租金收益：</span><span
                                             className="item-info-content">{item.get("rentalIncome")}</span></div>
                                         {
                                             flippingSlider

@@ -42,6 +42,7 @@ class Header extends PureComponent {
             return null;
         }
     };
+
     render() {
         const {handleDropDown, displayMenu} = this.props;
         return (
@@ -50,24 +51,38 @@ class Header extends PureComponent {
 
                     {/* 导航 */}
                     <Nav>
-                        <Link to='/'><NavItem className='CompName'><Logo src={logoPic} alt=""/>HomeCap INC</NavItem></Link>
-                        <Link to='/new-project'><NavItem className='left'>精选房源</NavItem></Link>
+                        <Link to='/'><NavItem className='CompName'><Logo src={logoPic} alt=""/>HomeCap
+                            INC<FloatBar
+                            className="float-bar"/></NavItem></Link>
+                        <Link to='/new-project'><NavItem className='left'>精选房源<FloatBar
+                            className="float-bar"/></NavItem></Link>
                         <NavItem
                             className='left'
-                            onMouseEnter={() => {handleDropDown(displayMenu)}}
-                            onMouseLeave={() => {handleDropDown(displayMenu)}}
-                            onClick={() => {handleDropDown(displayMenu)}}
+                            onMouseEnter={() => {
+                                handleDropDown(displayMenu)
+                            }}
+                            onMouseLeave={() => {
+                                handleDropDown(displayMenu)
+                            }}
+                            onClick={() => {
+                                handleDropDown(displayMenu)
+                            }}
 
                         >
                             一站式服务
                             <img src={triangle} alt="" className='triangle'/>
                             {this.getDropDown()}
                         </NavItem>
-                        <Link to='/platform-loan'><NavItem className={'left active'}>平台贷款 {<FloatBar/>}</NavItem></Link>
-                        <Link to='/closed-project'><NavItem className='left'>项目展示</NavItem></Link>
-                        <Link to='/our-team'><NavItem className='left'>团队背景</NavItem></Link>
-                        <Link to='/news-feed'><NavItem className='left'>美房投资攻略</NavItem></Link>
-                        <Link to='/contact-us'><NavItem className='left'>联系我们</NavItem></Link>
+                        <Link to='/platform-loan'><NavItem className={'left active'}>平台贷款 <FloatBar
+                            className="float-bar"/></NavItem></Link>
+                        <Link to='/closed-project'><NavItem className='left'>项目展示<FloatBar
+                            className="float-bar"/></NavItem></Link>
+                        <Link to='/our-team'><NavItem className='left'>团队背景<FloatBar
+                            className="float-bar"/></NavItem></Link>
+                        <Link to='/news-feed'><NavItem className='left'>美房投资攻略<FloatBar
+                            className="float-bar"/></NavItem></Link>
+                        <Link to='/contact-us'><NavItem className='left'>联系我们<FloatBar
+                            className="float-bar"/></NavItem></Link>
                     </Nav>
                 </HeaderWrapper>
                 {/* 走马灯Banner */}
@@ -75,7 +90,12 @@ class Header extends PureComponent {
             </div>
         )
     }
+
+
+
+
 }
+
 const mapStateToProps = (state) => {
     return {
         displayMenu: state.getIn(['header', 'displayMenu']),

@@ -5,7 +5,7 @@
       {
         "id": 1,
         "uuid": "",
-        "location": " City",
+        "location": "Ashland City",
         "imgUrl": [
           "upload/closedProject/252-Brookhollow-Dr/after/1.jpg",
           "upload/newProject/685 brewer Dr.jpg"
@@ -152,19 +152,20 @@
       {
         "id": 1,
         "uuid": "",
-        "location": "纳什维尔",
+        "location": "Ashland City",
         "imgUrl": [
+          "upload/closedProject/252-Brookhollow-Dr/after/1.jpg",
           "upload/newProject/685 brewer Dr.jpg"
         ],
-        "price": "$3000",
+        "price": "$140000",
         "month": "/月",
-        "area": "1220平方米",
+        "area": "1,000sqft",
         "rental": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "netIncome": "$20000",
+        "profitRate": "38.657%",
+        "rentalIncome": "9%",
+        "flippingC": "$60000"
       },
       {
         "id": 2,

@@ -40,17 +40,15 @@ export const NavItem = styled.div`
         font-family: 'Lobster', cursive;
         font-size: 2rem;   
       }
-      &.CompName:hover {
-         border: 1px solid #FFFFFF;
-         font-weight: bold;
-      }
+      &.CompName:hover .float-bar {
+        display: block;
+        }
       &.left{
          display: inline-block;
       }
-      &.left:hover{
-        border: 1px solid #FFFFFF;
-        border-radius: 0.2rem;
-        font-weight: bold;
+      &.left:hover .float-bar {
+        display: block;
+        }
       }
 /*      &.right {
         float: right;
@@ -189,10 +187,13 @@ export const SearchButton = styled.div`
 `
 
 export const FloatBar = styled.div`
-display: none;
-position: absolute;
-bottom: 0.1rem;
+  display: none;
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  right: 0;
   width: 6.2rem;
   height: 0.2rem;
   background: #FFFFFF;
+  margin: 0 auto;
 `;
