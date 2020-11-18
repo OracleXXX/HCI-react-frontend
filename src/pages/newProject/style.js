@@ -161,10 +161,10 @@ export const MarginItem = styled.div`
     font-size: 1.5rem;
     color: #333333;
     & .margin-item-name {
-      font-family: PingFangSC-Semibold;
+      font-family: SourceHanSansSC-Medium;
     }
     & .margin-item-info {
-      font-family: PingFangSC-Regular;
+      font-family: SourceHanSansSC-Normal;
     }
 `;
 

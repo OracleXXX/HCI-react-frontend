@@ -68,7 +68,7 @@ export const DropDownServices = styled.div`
   width: 100%;
 
   background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: normal;
   & .dropDownItem{
     text-align: center;
