@@ -1,15 +1,51 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
-import {actionCreators} from './store';
+import pic from '../../statics/imgs/footer/footerPic.png';
+import {ContactUSTitle} from "../contactUs/style";
 
 
 class OurTeam extends PureComponent {
 
     render() {
         return (
-            <div className='testdiv'>团队背景</div>
+            <div>
+                <ContactUSTitle>
+                    <div className='title'>团队背景</div>
+                    <div className='rec'/>
+                </ContactUSTitle>
+                <div className='eqheight'>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div className='eqheight'>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                    <div>
+                        <img src={pic} width="100" height="100"/>
+                    </div>
+                </div>
+            </div>
         )
     }
 /*    componentDidMount() {
