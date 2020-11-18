@@ -1,50 +1,49 @@
-import React, {PureComponent} from 'react';
+import React, {Fragment, PureComponent} from 'react';
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
-import {actionCreators} from './store';
+import {constants} from './store';
+import {
+    ManagementWrapper,
+    ManagementFlowChart,
+    FlowChartItem
 
+} from './style'
+import {ActivityTitle as ManagementTitle} from "../../oneStepService/activities/style";
 
+//import image
 class Management extends PureComponent {
 
     render() {
         return (
-            <div className='testdiv'>一站式房屋管理</div>
+            <ManagementWrapper>
+                <ManagementTitle>
+                    <div className='title'>一站式房屋管理流程</div>
+                    <div className='rec no-select'/>
+                </ManagementTitle>
+                <ManagementFlowChart>{this.getFLowChart()}</ManagementFlowChart>
+            </ManagementWrapper>
         )
     }
-/*    componentDidMount() {
-        this.props.getDetail(this.props.match.params.id);
-    }*/
 
-
-}
-
-//用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({
-
-
-});
-const mapDispatch = (dispatch) => ({
-
-
-
-})
-
-export default connect(mapState, mapDispatch)(withRouter(Management));
-
-
-//模板
-/*
-import React, {Component} from 'react';
-class Detail extends Component {
-    render() {
+    getFLowChart() {
         return (
-            <div>Detail
-
-
-            </div>
+            constants.FLOW_CHART_IMGS.map((item, index) => {
+                return (
+                    <Fragment key={index}>
+                        <FlowChartItem>
+                            <img src={item} alt="" className='flow-chart-img no-select'/>
+                            <div className="flow-chart-content">{constants.FLOW_CHART_CONTENTS[index]}</div>
+                        </FlowChartItem>
+                        {index < 4 ? <FlowChartItem>
+                            <img src={constants.FLOW_CHART_ARROW} alt="" className='flow-chart-arrow no-select'/>
+                        </FlowChartItem> : null}
+                    </Fragment>
+                )
+            })
         )
     }
 }
-export default Detail;
-*/
+
+export default connect(null, null)(withRouter(Management));
+

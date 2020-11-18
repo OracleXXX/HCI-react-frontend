@@ -16,7 +16,7 @@ class OurTeam extends PureComponent {
                 </ContactUSTitle>
                 <div className='eqheight'>
                     <div>
-                        <img src={pic} width="100" height="100"/>
+                        <img src={pic} width="100" height="100" alt=""/>
                     </div>
                     <div>
                         <img src={pic} width="100" height="100"/>

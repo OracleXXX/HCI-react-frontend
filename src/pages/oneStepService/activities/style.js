@@ -11,7 +11,7 @@ export const ActivityTitle = styled.div`
   margin: 5.7rem auto 0;
  
   & .title {
-    width: 12.8rem;
+    width: fit-content;
     height: 4.7rem;
     line-height: 4.7rem;
     margin: 0 auto;

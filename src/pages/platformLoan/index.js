@@ -19,7 +19,6 @@ import {
     Circle
 
 } from './style'
-import {actionCreators} from './store';
 import {ActivityTitle as PlatformLoanTitle} from "../oneStepService/activities/style";
 
 import loanPic from '../../statics/imgs/PlatformLoan/loanPic.png'
@@ -128,15 +127,5 @@ class PlatformLoan extends PureComponent {
             </FlowChartRight>
         )
     }
-
-
-
-
 }
-
-//用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({
-});
-const mapDispatch = (dispatch) => ({})
-
-export default connect(mapState, mapDispatch)(withRouter(PlatformLoan));
+export default connect(null, null)(withRouter(PlatformLoan));
