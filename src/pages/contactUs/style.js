@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContactUSTitle = styled.div`
   width: 19.3rem;
   height: 6.6rem;
-  margin: 0 auto;
+  margin: 5.7rem auto;
   & .title {
     margin: 0 auto;
     width: 19.2rem;
