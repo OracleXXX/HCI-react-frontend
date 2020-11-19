@@ -37,7 +37,7 @@ export const NavItem = styled.div`
     border: 1px solid transparent;
       &.CompName {
         display: inline-block;
-        font-family: 'Lobster', cursive;
+        font-family: HyShangWeiShouShuW-regular;
         font-size: 2rem;   
       }
       &.CompName:hover .float-bar {

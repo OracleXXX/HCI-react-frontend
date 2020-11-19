@@ -26,3 +26,4 @@ export const contactData = [
         shanghai: '上海email'
     },
 ];
+export const LOCATION = ["Nashville", "1609 Damascus Rd, 37128", "xueguanxiong@gmail.com"]

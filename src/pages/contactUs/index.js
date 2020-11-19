@@ -1,9 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import AppHook from './Hook';
 import * as Constants from './store/constants';
-import pic from '../../statics/imgs/footer/footerPic.png';
 import contactUsImg from '../../statics/imgs/contactUs/contactUsPic.png';
 import {Form, Button} from 'react-bootstrap';
 
@@ -11,22 +9,22 @@ import {ActivityTitle as ContactUsTitle} from "../oneStepService/activities/styl
 
 import {
     ContactUsWrapper,
-    LocationContainer,
+    ContactUsContainer,
     LocationItem,
-    LocationCity,
-    LocationAddr,
-    LocationEmail,
-    QRCodeContainer,
-    FormContainer
+    LocationContent,
+    City,
+    Addr,
+    Email,
+    QRCodeItem,
+    FormContainer,
+    DivLine
 } from './style';
+import QRcode from "../../statics/imgs/contactUs/QRcode.jpg";
 import {constants} from "./store";
 
 
 class ContactUs extends PureComponent {
     render() {
-        const contacts = () => (
-                <AppHook columns={Constants.contactColumns} data={Constants.contactData}/>
-        );
 
         return (
             <ContactUsWrapper>
@@ -34,45 +32,27 @@ class ContactUs extends PureComponent {
                     <div className='title'>联系我们</div>
                     <div className='rec'/>
                 </ContactUsTitle>
-                <LocationContainer>
-                    {
-                        constants.contactColumns.map((item)=>{
-                            console.log(item.Header)
-                            return (
-                                <LocationItem>
-                                    <LocationCity></LocationCity>
-                                    <LocationAddr></LocationAddr>
-                                    <LocationEmail></LocationEmail>
-                                </LocationItem>
-                            )
-                            }
-                        )
-                    }
+                <ContactUsContainer>
+
                     <LocationItem>
+                        <LocationContent>
+                            <City>{constants.LOCATION[0]}</City>
+                            <Addr>{constants.LOCATION[1]}</Addr>
+                            <Email>{constants.LOCATION[2]}</Email>
+                        </LocationContent>
 
                     </LocationItem>
-                </LocationContainer>
-                <ContactUsTitle>
-                    <div className='title'>扫描二维码立即咨询</div>
-                    <div className='rec'/>
-                </ContactUsTitle>
-                <QRCodeContainer>
+                    <DivLine/>
+                    <QRCodeItem>
+                        <div className='img-border'>
+                            <img src={QRcode} alt=""/>
+                        </div>
+                        <div>Home Cap Inc 客服</div>
 
-                    <div className='eqheight'>
-                        <div>
-                            <img src={pic} width="100" height="100"/>
-                        </div>
-                        <div>
-                            <img src={pic} width="100" height="100"/>
-                        </div>
-                        <div>
-                            <img src={pic} width="100" height="100"/>
-                        </div>
-                        <div>
-                            <img src={pic} width="100" height="100"/>
-                        </div>
-                    </div>
-                </QRCodeContainer>
+                    </QRCodeItem>
+
+                </ContactUsContainer>
+
                 <FormContainer>
                     <img src={contactUsImg} alt="" className="top-right-img"/>
                     <Form>

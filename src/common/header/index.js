@@ -51,8 +51,7 @@ class Header extends PureComponent {
 
                     {/* 导航 */}
                     <Nav>
-                        <Link to='/'><NavItem className='CompName'><Logo src={logoPic} alt=""/>HomeCap
-                            INC<FloatBar
+                        <Link to='/'><NavItem className='CompName'><Logo src={logoPic} alt=""/>HCI<FloatBar
                             className="float-bar"/></NavItem></Link>
                         <Link to='/new-project'><NavItem className='left'>精选房源<FloatBar
                             className="float-bar"/></NavItem></Link>

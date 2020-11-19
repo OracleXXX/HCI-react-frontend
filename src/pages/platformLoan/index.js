@@ -37,8 +37,8 @@ class PlatformLoan extends PureComponent {
                     <div className='rec'/>
                 </PlatformLoanTitle>
                 {/*sub title*/}
-                <Comment><p>个人房屋抵押贷款是指申请人以自己的房屋产权作为抵押向银行申请贷款,贷款资金的用途可用作个人消费和运营。</p>
-                    <p>个人房屋抵押贷款区别个人住房抵押贷款。而个人住房贷款是指银行向借款人发放的用于购买自用普通住房的贷款。借款人申请个人住房贷款时必须提供担保。</p></Comment>
+                <Comment><p>平台作为房屋的所有者以房屋作为抵押向买方提供贷款。</p>
+                    <p>买方向卖方支付不低于15%的首付，买卖双方商定其利率及分期付款的方式。（例：平台提供30年固定利率贷款，3年后将余额一次性付清）</p></Comment>
                 {/*main area*/}
                 <LoanFlowChart>
                     {/*flow chart*/}
