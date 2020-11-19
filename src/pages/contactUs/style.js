@@ -37,3 +37,21 @@ export const FormContainer = styled.div`
     height: 35.4rem;
   }
 `;
+
+export const LocationItem = styled.div`
+    
+`;
+
+export const LocationCity = styled.div`
+    
+`;
+
+
+export const LocationAddr = styled.div`
+    
+`;
+
+
+export const LocationEmail = styled.div`
+    
+`;

@@ -12,9 +12,14 @@ import {ActivityTitle as ContactUsTitle} from "../oneStepService/activities/styl
 import {
     ContactUsWrapper,
     LocationContainer,
+    LocationItem,
+    LocationCity,
+    LocationAddr,
+    LocationEmail,
     QRCodeContainer,
     FormContainer
 } from './style';
+import {constants} from "./store";
 
 
 class ContactUs extends PureComponent {
@@ -30,7 +35,22 @@ class ContactUs extends PureComponent {
                     <div className='rec'/>
                 </ContactUsTitle>
                 <LocationContainer>
+                    {
+                        constants.contactColumns.map((item)=>{
+                            console.log(item.Header)
+                            return (
+                                <LocationItem>
+                                    <LocationCity></LocationCity>
+                                    <LocationAddr></LocationAddr>
+                                    <LocationEmail></LocationEmail>
+                                </LocationItem>
+                            )
+                            }
+                        )
+                    }
+                    <LocationItem>
 
+                    </LocationItem>
                 </LocationContainer>
                 <ContactUsTitle>
                     <div className='title'>扫描二维码立即咨询</div>
