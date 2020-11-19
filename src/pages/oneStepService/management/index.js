@@ -28,7 +28,7 @@ class Management extends PureComponent {
 
     getFLowChart() {
         return (
-            constants.FLOW_CHART_IMGS.map((item, index) => {
+            constants.FLOW_CHART_IMG.map((item, index) => {
                 return (
                     <Fragment key={index}>
                         <FlowChartItem>

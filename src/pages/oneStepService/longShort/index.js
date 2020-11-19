@@ -1,10 +1,12 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-
+import {constants} from './store';
 import {ActivityTitle as LongShortTitle} from "../../oneStepService/activities/style";
 import {
     LongShortWrapper,
+    LongShortFlowChart,
+    FlowChartItem
 } from "./style";
 
 
@@ -17,37 +19,25 @@ class LongShort extends PureComponent {
                     <div className='title'>一站式房屋买卖流程</div>
                     <div className='rec no-select'/>
                 </LongShortTitle>
-
+                <LongShortFlowChart>{this.getFLowChart()}</LongShortFlowChart>
             </LongShortWrapper>
         )
     }
-
-    /*    componentDidMount() {
-            this.props.getDetail(this.props.match.params.id);
-        }*/
-
-
-}
-
-//用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({});
-const mapDispatch = (dispatch) => ({})
-
-export default connect(mapState, mapDispatch)(withRouter(LongShort));
-
-
-//模板
-/*
-import React, {Component} from 'react';
-class Detail extends Component {
-    render() {
+    getFLowChart() {
         return (
-            <div>Detail
-
-
-            </div>
+            constants.FLOW_CHART_IMG.map((item, index) => {
+                return (
+                    <FlowChartItem>
+                        <img src={item} alt="" className='long-short-img'/>
+                        <div className='long-short-content'>
+                            <div className='content'>{constants.FLOW_CHART_CONTENT[index]}</div>
+                        </div>
+                        <img src={constants.FLOW_CHART_INDEX[index]} alt="" className='long-short-index'/>
+                    </FlowChartItem>
+                )
+            })
         )
     }
 }
-export default Detail;
-*/
+export default connect(null, null)(withRouter(LongShort));
+
