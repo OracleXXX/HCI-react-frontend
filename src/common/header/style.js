@@ -49,16 +49,7 @@ export const NavItem = styled.div`
       &.left:hover .float-bar {
         display: block;
         }
-      }
-/*      &.right {
-        float: right;
-        color: #969696;
-      }*/
-/*      &.active {
-        color: #ea6f5a;
-      } */
 `;
-
 export const DropDownServices = styled.div`
   z-index: 100;
   position: absolute;
@@ -154,12 +145,13 @@ export const Input = styled.div`
   box-sizing: border-box;
   opacity: 0.9;
   padding-left: 2rem;
-  border: 0;
   border-radius: 0.8rem;
   font-family: PingFangSC-Regular,serif;
   font-size: 2rem;
   color: #666666;
   letter-spacing: 0;
+    border: none;
+  outline: none;
   }
 `
 export const SearchButton = styled.div`

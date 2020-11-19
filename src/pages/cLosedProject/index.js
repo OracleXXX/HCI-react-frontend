@@ -23,6 +23,7 @@ import {
 import Slider from "react-slick";
 import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
+import * as constants from "./store/constants";
 
 
 class ClosedProject extends PureComponent {
@@ -33,21 +34,58 @@ class ClosedProject extends PureComponent {
         this.previous = this.previous.bind(this);
 
     }
+
+    render() {
+
+        const {flippingSlider, noFlippingList, flippingList} = this.props;
+        return (
+            <ClosedProjectDemoWrapper className='scale-control'>
+                {/* 图轮播图title */}
+                <ClosedProjectTitle>
+
+                    <div className='title' onClick={() => this.props.handleSliderChange(true)}>翻新后出租/出售房屋</div>
+                    <VerticalDivLine/>
+                    <div className='title' onClick={() => this.props.handleSliderChange(false)}>可直接出租/出售房屋</div>
+                    <Rec>{this.getMoveBar()}</Rec>
+                </ClosedProjectTitle>
+                {/* 轮播图 */}
+
+                <SliderWrapper>
+                    {/* 左右指针 */}
+                    <PrevArrow className="button hovered" onClick={this.previous}/>
+
+                    <div className="slider">
+                        <Slider ref={c => (this.slider = c)} {...constants.SETTINGS} className="slider">
+                            {flippingSlider ? this.getSlider(flippingList) : this.getSlider(noFlippingList)}
+
+
+                        </Slider>
+                    </div>
+
+                    <NextArrow className="button" onClick={this.next}/>
+                </SliderWrapper>
+            </ClosedProjectDemoWrapper>
+        )
+    };
+
     getMoveBar() {
         const {flippingSlider} = this.props;
         return (
             <div className='move-bar-container'>
-                    <div className={flippingSlider ? 'move-bar' : 'move-bar right'}/>
+                <div className={flippingSlider ? 'move-bar' : 'move-bar right'}/>
             </div>
         )
     }
+
     next() {
         this.slider.slickNext();
     }
+
     previous() {
         this.slider.slickPrev();
         console.log(this.props.noFlippingList)
     }
+
     getSlider(list) {
         const {flippingSlider} = this.props;
         console.log(this.props.flippingList.toJS());
@@ -60,7 +98,8 @@ class ClosedProject extends PureComponent {
                             <ItemTop>
                                 <img src={item.get("imgUrl").toJS()[0]} alt="" className="item-top-img"/>
                                 <FixedBottom>
-                                    <div className="fixed-bottom-left"><img src={addrIcon} alt=""/>{item.get("location")}</div>
+                                    <div className="fixed-bottom-left"><img src={addrIcon}
+                                                                            alt=""/>{item.get("location")}</div>
                                     <MoreInfo>
                                         详情
                                         <img src={moreInfoIcon} alt=""/>
@@ -103,47 +142,7 @@ class ClosedProject extends PureComponent {
             })
         )
     }
-    render() {
-        const settings = {
-            infinite: true,
-            autoplay: true,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            pauseOnHover: true,
-            arrows: false,
 
-        };
-        const {flippingSlider, noFlippingList, flippingList} = this.props;
-        return (
-            <ClosedProjectDemoWrapper className='scale-control'>
-                {/* 图轮播图title */}
-                <ClosedProjectTitle>
-
-                    <div className='title' onClick={() => this.props.handleSliderChange(true)}>翻新后出租/出售房屋</div>
-                    <VerticalDivLine/>
-                    <div className='title' onClick={() => this.props.handleSliderChange(false)}>可直接出租/出售房屋</div>
-                    <Rec>{this.getMoveBar()}</Rec>
-                </ClosedProjectTitle>
-                {/* 轮播图 */}
-
-                <SliderWrapper>
-                    {/* 左右指针 */}
-                    <PrevArrow className="button hovered" onClick={this.previous}/>
-
-                    <div className="slider">
-                        <Slider ref={c => (this.slider = c)} {...settings} className="slider">
-                            {flippingSlider ? this.getSlider(flippingList) : this.getSlider(noFlippingList)}
-
-
-                        </Slider>
-                    </div>
-
-                    <NextArrow className="button" onClick={this.next}/>
-                </SliderWrapper>
-            </ClosedProjectDemoWrapper>
-        )
-    };
 
     componentDidMount() {
         this.props.getClosedProjectList();

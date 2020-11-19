@@ -1,86 +1,55 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import pic from '../../statics/imgs/footer/footerPic.png';
-import {ContactUSTitle} from "../contactUs/style";
-
+import {constants} from './store';
+import {ActivityTitle as OurTeamTitle} from "../oneStepService/activities/style";
+import {
+    OurTeamWrapper,
+    OurTeamContainer,
+    ContainerItem,
+    ItemWrapper,
+    Avatar,
+    Name,
+    Position,
+    Introduction
+} from './style';
+import test from '../../statics/imgs/dadige.jpg'
 
 class OurTeam extends PureComponent {
 
     render() {
         return (
-            <div>
-                <ContactUSTitle>
+            <OurTeamWrapper>
+                <OurTeamTitle>
                     <div className='title'>团队背景</div>
                     <div className='rec'/>
-                </ContactUSTitle>
-                <div className='eqheight'>
-                    <div>
-                        <img src={pic} width="100" height="100" alt=""/>
-                    </div>
-                    <div>
-                        <img src={pic} width="100" height="100"/>
-                    </div>
-                    <div>
-                        <img src={pic} width="100" height="100"/>
-                    </div>
-                    <div>
-                        <img src={pic} width="100" height="100"/>
-                    </div>
-                </div>
-
-                <br/>
-
-                <div className='eqheight'>
-                    <div>
-                        <img src={pic} width="100" height="100"/>
-                    </div>
-                    <div>
-                        <img src={pic} width="100" height="100"/>
-                    </div>
-                    <div>
-                        <img src={pic} width="100" height="100"/>
-                    </div>
-                    <div>
-                        <img src={pic} width="100" height="100"/>
-                    </div>
-                </div>
-            </div>
+                </OurTeamTitle>
+                <OurTeamContainer>{this.getOurTeamContainer()}</OurTeamContainer>
+            </OurTeamWrapper>
         )
     }
-/*    componentDidMount() {
-        this.props.getDetail(this.props.match.params.id);
-    }*/
-
-
-}
-
-//用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({
-
-
-});
-const mapDispatch = (dispatch) => ({
-
-
-
-})
-
-export default connect(mapState, mapDispatch)(withRouter(OurTeam));
-
-
-//模板
-/*
-import React, {Component} from 'react';
-class Detail extends Component {
-    render() {
+    getOurTeamContainer() {
         return (
-            <div>Detail
-
-
-            </div>
+            constants.TEAM_MEMBERS.map((item, index) => {
+                return (
+                    <ContainerItem>
+                        <ItemWrapper>
+                        <Avatar>
+                            <img src={test} alt=""/>
+                        </Avatar>
+                        <Name>{item}</Name>
+                        <Position>{constants.TEAM_POSITION[index]}</Position>
+                        <Introduction>{constants.TEAM_INTRO[index]}</Introduction>
+                            </ItemWrapper>
+                    </ContainerItem>
+                )
+            })
         )
     }
+
+
 }
-export default Detail;
-*/
+
+
+export default connect(null, null)(withRouter(OurTeam));
