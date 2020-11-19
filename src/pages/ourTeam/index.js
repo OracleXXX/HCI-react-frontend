@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import pic from '../../statics/imgs/footer/footerPic.png';
 import {constants} from './store';
 import {ActivityTitle as OurTeamTitle} from "../oneStepService/activities/style";
 import {
@@ -36,7 +35,9 @@ class OurTeam extends PureComponent {
                     <ContainerItem>
                         <ItemWrapper>
                         <Avatar>
-                            <img src={test} alt=""/>
+                            <div className='avatar'>
+                                <img src={test} alt=""/>
+                            </div>
                         </Avatar>
                         <Name>{item}</Name>
                         <Position>{constants.TEAM_POSITION[index]}</Position>
@@ -47,9 +48,5 @@ class OurTeam extends PureComponent {
             })
         )
     }
-
-
 }
-
-
 export default connect(null, null)(withRouter(OurTeam));

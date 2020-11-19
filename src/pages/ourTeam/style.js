@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export const OurTeamWrapper = styled.div`
   width: calc(192rem - 17px);
 `;
@@ -42,17 +43,36 @@ export const ItemWrapper = styled.div`
 export const Avatar = styled.div`
   width: 13.2rem;
   height: 13.2rem;
-  border-radius: 6.6rem;
+  border-radius: 6.65rem;
+  box-sizing: border-box;
+  border: 0.1rem solid transparent;
+  background-image: linear-gradient(150deg, #5DBBFF 0%, #7F55FF 100%);
   overflow: hidden;
-  & img {
-    width: inherit;
-    height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & .avatar {
+    width: 13.2rem;
+    height: 13.2rem;
+    border-radius: 6.6rem;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: 12rem;
+      height: 12rem;
+      box-sizing: border-box;
+      border-radius: 6rem;
+    }    
   }
   
   
+
 `;
-
-
 export const Name = styled.div`
   width: fit-content;
   height: 2.9rem;

@@ -1,4 +1,3 @@
-export const CHANGE_DETAIL = 'detail/CHANGE_DETAIL';
 export const TEAM_MEMBERS = ["王钦田", "大迪哥", "镰大爷", "薛冠雄", "大迪哥", "大迪哥"];
 export const TEAM_POSITION = ["HCI首席执行官", "HCI首席执行官", "HCI首席执行官", "HCI首席执行官", "HCI首席执行官", "HCI首席执行官"];
 export const TEAM_INTRO = ["简介：阿里云首任总经理，在阿里巴巴发起并负责扫码支付等多个核心业务，并在阿里资本和手机淘宝担任重要职务。2003年创立的PHPWind为中国最受欢迎的开源论坛软件之一。",
