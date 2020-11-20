@@ -13,10 +13,14 @@ import {ActivityTitle as ManagementTitle} from "../../oneStepService/activities/
 
 //import image
 class Management extends PureComponent {
-
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <ManagementWrapper>
+            <ManagementWrapper ref={this.ScrollTo}>
                 <ManagementTitle>
                     <div className='title'>一站式房屋管理流程</div>
                     <div className='rec no-select'/>
@@ -42,6 +46,9 @@ class Management extends PureComponent {
                 )
             })
         )
+    }
+    componentDidMount() {
+        this.scrollToMyRef()
     }
 }
 

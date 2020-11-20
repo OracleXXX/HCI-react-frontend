@@ -48,6 +48,7 @@ class NewProjectDemo extends PureComponent {
             slidesToScroll: 1,
             pauseOnHover: true,
             arrows: false,
+            lazyLoad: true,
 
         };
 
@@ -74,7 +75,7 @@ class NewProjectDemo extends PureComponent {
                                             <div className="img-bottom-left">
                                                 <img src={addrIcon} alt=""/>{item.get("location")}
                                             </div>
-                                            <MoreInfo>
+                                            <MoreInfo className="button">
                                                 <span>详情</span>
                                                 <img src={moreInfoIcon} alt=""/>
                                             </MoreInfo>

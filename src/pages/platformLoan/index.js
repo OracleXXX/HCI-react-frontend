@@ -28,9 +28,14 @@ import arrowToRB from '../../statics/imgs/PlatformLoan/arrowToRB.png'
 
 
 class PlatformLoan extends PureComponent {
+     constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <PlatformLoanWrapper>
+            <PlatformLoanWrapper ref={this.ScrollTo}>
                 {/*title*/}
                 <PlatformLoanTitle>
                     <div className='title'>平台贷款</div>
@@ -126,6 +131,9 @@ class PlatformLoan extends PureComponent {
 
             </FlowChartRight>
         )
+    }
+    componentDidMount() {
+        this.scrollToMyRef()
     }
 }
 export default connect(null, null)(withRouter(PlatformLoan));

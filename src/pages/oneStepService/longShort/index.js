@@ -11,10 +11,14 @@ import {
 
 
 class LongShort extends PureComponent {
-
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <LongShortWrapper>
+            <LongShortWrapper ref={this.ScrollTo}>
                 <LongShortTitle>
                     <div className='title'>一站式房屋买卖流程</div>
                     <div className='rec no-select'/>
@@ -37,6 +41,9 @@ class LongShort extends PureComponent {
                 )
             })
         )
+    }
+    componentDidMount() {
+        this.scrollToMyRef()
     }
 }
 export default connect(null, null)(withRouter(LongShort));

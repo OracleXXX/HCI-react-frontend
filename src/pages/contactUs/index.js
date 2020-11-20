@@ -22,10 +22,15 @@ import {constants} from "./store";
 
 
 class ContactUs extends PureComponent {
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
 
-            <ContactUsWrapper>
+            <ContactUsWrapper ref={this.ScrollTo}>
                 <ContactUsTitle>
                     <div className='title'>联系我们</div>
                     <div className='rec'/>
@@ -80,7 +85,7 @@ class ContactUs extends PureComponent {
                         <Form.Group controlId="formBasicComments">
                             <Form.Label>您的留言</Form.Label>
 
-                            <Form.Control as="textarea" rows={4} id='comments' />
+                            <Form.Control as="textarea" rows={4} id='comments'/>
 
                             <Form.Text id="commentsInfo" muted>
                                 {Constants.COMMENT_HELP_TEXT}
@@ -108,6 +113,7 @@ class ContactUs extends PureComponent {
             </LocationContent>
         )
     }
+
     getQRCodeItem() {
         return (
             <Fragment>
@@ -119,9 +125,9 @@ class ContactUs extends PureComponent {
         )
     }
 
-    /*    componentDidMount() {
-            this.props.getDetail(this.props.match.params.id);
-        }*/
+        componentDidMount() {
+            this.scrollToMyRef()
+        }
 
 
 }

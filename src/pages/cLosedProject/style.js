@@ -6,6 +6,12 @@ import nextArrow from "../../statics/imgs/homePageImgs/nextArrow.png";
 export const ClosedProjectDemoWrapper = styled.div`
   width: calc(192rem - 17px);
   height: 89.6rem;
+  & .button:hover {
+    border: 0.1rem solid #2D84FF;
+    box-shadow: 0 0 0 0.2rem  rgba(45, 132, 255, 0.5);
+    -moz-outline-radius: 0.8rem;
+    font-weight: bolder;
+  }
   
 `;
 // title

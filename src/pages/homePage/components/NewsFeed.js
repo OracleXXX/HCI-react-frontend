@@ -24,7 +24,6 @@ import {
 import test from '../../../statics/imgs/test.jpg';
 
 class NewsFeed extends PureComponent {
-
     render() {
 
         return (
@@ -99,7 +98,7 @@ class NewsFeed extends PureComponent {
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
                                 <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
-                                <ReadMore>{this.getReadMore()}</ReadMore>
+                                <ReadMore >{this.getReadMore()}</ReadMore>
                             </BottomPart>
                         </RestArticle>
                     ))
@@ -139,6 +138,8 @@ class NewsFeed extends PureComponent {
                 <div className="data-year-month">2020/11</div>
             </Data>
         )
+    }
+    componentDidMount() {
     }
 
 }

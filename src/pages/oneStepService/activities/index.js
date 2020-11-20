@@ -22,13 +22,19 @@ import test from '../../../statics/imgs/test.jpg'
 const demoList = [];
 
 class Activity extends PureComponent {
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     //渲染
     render() {
+
         const {page, totalPage} = this.props;
         this.getActivityItems()
         return (
             <ActivityWrapper>
-                <ActivityTitle>
+                <ActivityTitle ref={this.ScrollTo}>
                     <div className='title'>平台活动</div>
                     <div className='rec'/>
                 </ActivityTitle>
@@ -86,17 +92,17 @@ class Activity extends PureComponent {
         const {page, handlePageChange} = this.props;
         let pages = [];
         pages.push(
-            <span key="news-feed-page-prev" onClick={() => handlePageChange(page - 1, totalPage)}
+            <span key="news-feed-page-prev" onClick={() => handlePageChange(page - 1, totalPage, this.scrollToMyRef)}
                   className={page === 1 ? "prev-next disabled" : "prev-next"}>上一页</span>
         )
         for (let i = 1; i <= totalPage; i++) {
             pages.push(
-                <span key={"news-feed-page-" + i} onClick={() => handlePageChange(i, totalPage)}
+                <span key={"news-feed-page-" + i} onClick={() => handlePageChange(i, totalPage, this.scrollToMyRef)}
                       className={page === i ? "page-number active" : "page-number"}>{i}</span>
             )
         }
         pages.push(
-            <span key="news-feed-page-next" onClick={() => handlePageChange(page + 1, totalPage)}
+            <span key="news-feed-page-next" onClick={() => handlePageChange(page + 1, totalPage, this.scrollToMyRef)}
                   className={page === totalPage ? "prev-next disabled" : "prev-next"}>下一页</span>
         )
         return pages;
@@ -105,6 +111,7 @@ class Activity extends PureComponent {
 
     componentDidMount() {
         this.props.getActivityList(this.props.activityList);
+        this.scrollToMyRef()
 
     }
 
@@ -123,9 +130,10 @@ const mapDispatch = (dispatch) => ({
     getActivityList(list) {
         list.size === 0 && dispatch(actionCreators.getActivity());
     },
-    handlePageChange(page, totalPage) {
+    handlePageChange(page, totalPage, scroll) {
 
         0 < page && page <= totalPage && dispatch(actionCreators.updatePage(page));
+        scroll()
 
     }
 

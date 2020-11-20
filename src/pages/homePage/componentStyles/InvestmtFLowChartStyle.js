@@ -5,6 +5,12 @@ export const InvestmtFlowChartWrapper = styled.div`
   width: 87.5rem;
   height: 137rem;
   margin: 8.6rem auto;
+    & .button:hover {
+    border: 0.1rem solid #2D84FF;
+    box-shadow: 0 0 0 0.2rem  rgba(45, 132, 255, 0.5);
+    -moz-outline-radius: 0.8rem;
+    font-weight: bolder;
+  }
 `;
 export const FlowChartTitle = styled.div`
   width: 19.3rem;

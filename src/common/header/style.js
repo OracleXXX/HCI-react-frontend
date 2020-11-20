@@ -106,11 +106,6 @@ export const DropDownServices = styled.div`
 `;
 
 export const BannerWrapper = styled.div`
-    -moz-user-select:none;/*火狐*/
-    -webkit-user-select:none;/*webkit浏览器*/
-    -ms-user-select:none;/*IE10*/
-    -khtml-user-select:none;/*早期浏览器*/
-    user-select:none;
     position: relative;
     width: calc(192rem - 17px);
     min-width: 1300px;
@@ -123,9 +118,7 @@ export const BannerWrapper = styled.div`
   }
 `
 export const DemoWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+
   height: 100%;
   width: 100%;  
 `
@@ -184,7 +177,7 @@ export const Input = styled.div`
   }
     & input:focus {
     border: 0.1rem solid #2D84FF;
-    box-shadow: 0 0 0 0.4rem  rgba(45, 132, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem  rgba(45, 132, 255, 0.5);
     -moz-outline-radius: 0.8rem;
   }
 `

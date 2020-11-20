@@ -1,4 +1,8 @@
 import triangle from '../../../statics/imgs/headerImgs/triangle.svg';
+import Banner1 from '../../../statics/imgs/headerImgs/banner-regular.png'
+import {DemoWrapper} from "../BannerStyle";
+import React from "react";
+
 export const TRIANGLE = triangle;
 export const CHANGE_DROPDOWN = 'headerImgs/CHANGE_DROPDOWN';
 
@@ -52,3 +56,36 @@ export const DROP_DOWN_BAR = [
         name: "平台活动"
     },
 ]
+
+export const BANNER_CONTENT = [
+    {
+        id: 1,
+        imgUrl: Banner1,
+        content: "我们将持续为客户提供更高效，多元的房地产项目配置组合，保障资产安全"
+    }, {
+        id: 2,
+        imgUrl: Banner1,
+        content: "我们将坚持深耕于成本更低，成长潜力更高的地区，为客户提供高效的投资方案"
+    }, {
+        id: 3,
+        imgUrl: Banner1,
+        content: "我们坚持传统行业互联网化的理念，建立专属资产配置的社群，让资源得到充分分享"
+    }, {
+        id: 4,
+        imgUrl: Banner1,
+        content: "我们将借助平台优势 提供平台自身房地产贷款服务 为客户撬动更大资本价值"
+    },
+]
+
+export const SLIDER_SETTINGS = {
+    dots: true,
+    fade: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    lazyLoad: true,
+
+};

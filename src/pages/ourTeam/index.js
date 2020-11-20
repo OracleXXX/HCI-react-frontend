@@ -16,10 +16,14 @@ import {
 import test from '../../statics/imgs/dadige.jpg';
 
 class OurTeam extends PureComponent {
-
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <OurTeamWrapper>
+            <OurTeamWrapper ref={this.ScrollTo}>
                 <OurTeamTitle>
                     <div className='title'>团队背景</div>
                     <div className='rec'/>
@@ -47,6 +51,9 @@ class OurTeam extends PureComponent {
                 )
             })
         )
+    }
+    componentDidMount() {
+        this.scrollToMyRef()
     }
 }
 export default connect(null, null)(withRouter(OurTeam));

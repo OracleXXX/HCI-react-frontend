@@ -171,7 +171,7 @@ class InvestmtFLowChart extends PureComponent {
 
     getMoreInfo() {
         return (
-            <MoreInfo>
+            <MoreInfo className="button">
                 <span>了解详情</span>
                 <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
             </MoreInfo>

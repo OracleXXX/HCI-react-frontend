@@ -30,12 +30,17 @@ const popularList = []
 const demoList = [];
 
 class NewsFeed extends PureComponent {
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     //渲染
     render() {
         const {page, totalPage} = this.props;
         this.getArticleItems()
         return (
-            <NewsFeedWrapper>
+            <NewsFeedWrapper ref={this.ScrollTo}>
                 <NewsFeedTitle>
 
                     <span className='title'>最近动态</span>
@@ -65,10 +70,11 @@ class NewsFeed extends PureComponent {
             count += 1;
             /*置顶文章*/
             count < 3 && popularList.push(
-                <PopularArticleItem className={ count ? "article-item-right" : "article-item-left"} key={item.get("id")}>
+                <PopularArticleItem className={count ? "article-item-right" : "article-item-left"} key={item.get("id")}>
                     {this.getArticleData(item.get("day"), item.get("year-month"))}
                     <img src={item.get("imgUrl")} alt="" className="popular-img"/>
-                    <ArticleItemBottom className={ count ? "popular-article-title-right" : "popular-article-title-left"} >{item.get("title")}</ArticleItemBottom>
+                    <ArticleItemBottom
+                        className={count ? "popular-article-title-right" : "popular-article-title-left"}>{item.get("title")}</ArticleItemBottom>
                 </PopularArticleItem>
             );
 
@@ -161,9 +167,13 @@ class NewsFeed extends PureComponent {
 
         )
     };
+
     getArticleData(day, yearMonth) {
         return (
-            <Data><div className="data-day">{day}</div><div className="data-year-month">{yearMonth}</div></Data>
+            <Data>
+                <div className="data-day">{day}</div>
+                <div className="data-year-month">{yearMonth}</div>
+            </Data>
         )
     }
 
@@ -171,6 +181,7 @@ class NewsFeed extends PureComponent {
     componentDidMount() {
 
         this.props.getNewsFeedList();
+        this.scrollToMyRef()
     };
 
 

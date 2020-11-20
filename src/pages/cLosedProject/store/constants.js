@@ -10,3 +10,6 @@ export const SETTINGS = {
     pauseOnHover: true,
     arrows: false,
 };
+
+
+

@@ -19,6 +19,21 @@ import './addtionStyle.css';
 import {constants} from "./store";
 
 class Header extends PureComponent {
+    scrollToTop = () => window.scrollTo(0, 0)
+
+    render() {
+        return (
+            <div>
+                <HeaderWrapper className='no-select'>
+
+                    {/* 导航 */}
+                    <Nav>{this.getNavBar()}</Nav>
+                </HeaderWrapper>
+                {/* 走马灯Banner */}
+                <Banner/>
+            </div>
+        )
+    }
 
     getDropDown() {
         const {displayMenu} = this.props;
@@ -48,10 +63,10 @@ class Header extends PureComponent {
                 if (index !== 2) {
                     console.log(item.link)
                     return (
-                        <Link to={item.link}><NavItem className={index === 0 ? 'CompName' : "left"}>
+                        <Link to={item.link}><NavItem className={index === 0 ? 'CompName' : "left"} onClick={()=>{this.scrollToTop()}}>
                             {index === 0 ? <Logo src={logoPic}/> : null}
                             <div className='nav-name'>{item.name}</div>
-                            <FloatBar className="float-bar"/></NavItem>
+                        </NavItem>
                         </Link>
                     )
                 } else {
@@ -60,9 +75,9 @@ class Header extends PureComponent {
                             className='left'
                             onMouseEnter={() => {
                                 handleDropDown(displayMenu)
-                            }}onMouseLeave={() => {
-                                handleDropDown(displayMenu)
-                            }}
+                            }} onMouseLeave={() => {
+                            handleDropDown(displayMenu)
+                        }}
                             onClick={() => {
                                 handleDropDown(displayMenu)
                             }}
@@ -76,20 +91,6 @@ class Header extends PureComponent {
             })
         )
 
-    }
-
-    render() {
-        return (
-            <div>
-                <HeaderWrapper className='no-select'>
-
-                    {/* 导航 */}
-                    <Nav>{this.getNavBar()}</Nav>
-                </HeaderWrapper>
-                {/* 走马灯Banner */}
-                <Banner/>
-            </div>
-        )
     }
 
 
