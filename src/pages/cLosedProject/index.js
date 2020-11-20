@@ -83,15 +83,11 @@ class ClosedProject extends PureComponent {
 
     previous() {
         this.slider.slickPrev();
-        console.log(this.props.noFlippingList)
     }
-
     getSlider(list) {
         const {flippingSlider} = this.props;
-        console.log(this.props.flippingList.toJS());
         return (
             list.map((item) => {
-
                 return (
                     <div className="slider" key={item.get("id")}>
                         <Item>

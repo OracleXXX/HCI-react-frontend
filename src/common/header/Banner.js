@@ -8,12 +8,10 @@ import {
     FixBannerSearch,
     Input,
     SearchButton,
-    SliderWrapper,
     SliderItem
 } from './BannerStyle';
 
 //静态资源
-import BannerPic from '../../statics/imgs/headerImgs/banner-regular.png';
 import Glass from '../../statics/imgs/headerImgs/iconFangDajing.svg';
 import {constants} from './store'
 
@@ -37,7 +35,7 @@ class Banner extends PureComponent {
                         {
                             constants.BANNER_CONTENT.map((item) => {
                                 return (
-                                    <SliderItem>
+                                    <SliderItem key={item.id}>
                                         <img className="banner" src={item.imgUrl} alt=''/>
                                         <SliderContent>{item.content}</SliderContent>
                                     </SliderItem>

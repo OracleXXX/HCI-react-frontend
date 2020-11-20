@@ -86,6 +86,7 @@ class NewProject extends PureComponent {
                     {this.getMarginContainer(item.get("fullAddr"), item.get("expectCash"), item.get("expectRate"), item.get("expectRentalIncome"), item.get("expectRemodel"), item.get("platformLoan"))}
                 </ContainerItem>
             )
+            return null;
         })
     }
 

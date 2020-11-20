@@ -9,13 +9,9 @@ import {
     DivLine
 } from '../componentStyles/WeOfferStyle';
 import {connect} from 'react-redux';
+import {constants} from "../store";
 
 //import images
-import WeOfferPic from '../../../statics/imgs/homePageImgs/offerBG.png';
-import RealEstateRecmdPic from '../../../statics/imgs/homePageImgs/RealEstateRecmd.svg';
-import LoanPic from '../../../statics/imgs/homePageImgs/loan.svg';
-import INVTPic from '../../../statics/imgs/homePageImgs/NAInvestment.svg';
-
 
 
 class WeOffer extends PureComponent {
@@ -34,23 +30,23 @@ class WeOffer extends PureComponent {
                     </WeOfferLeft>
                     {/* 右边区域 */}
                     <WeOfferRight>
-                        <img src={WeOfferPic} alt="" className='no-select'/>
+                        <img src={constants.WE_OFFER_IMG} alt="" className='no-select'/>
                     </WeOfferRight>
 
                     {/* 左下三个图标 */}
                     <WeOfferIcons className='no-select'>
                         <IconItem>
-                            <img src={RealEstateRecmdPic} alt="" className='offerIcon'/>
+                            <img src={constants.REAL_ESTATE_RECMD_IMG} alt="" className='offerIcon'/>
                             <div className='offerName'>地产项目推荐</div>
                         </IconItem>=
                         <DivLine/>
                         <IconItem>
-                            <img src={LoanPic} alt="" className='offerIcon'/>
+                            <img src={constants.LOAN_IMG} alt="" className='offerIcon'/>
                             <div className='offerName'>平台贷款</div>
                         </IconItem>
                         <DivLine/>
                         <IconItem>
-                            <img src={INVTPic} alt="" className='offerIcon'/>
+                            <img src={constants.INVT_IMG} alt="" className='offerIcon'/>
                             <div className='offerName'>北美房地产投资指南</div>
                         </IconItem>
                     </WeOfferIcons>

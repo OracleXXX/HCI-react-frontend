@@ -15,10 +15,9 @@ import {
     NextArrow,
 
 } from '../componentStyles/NewProjectDemoStyle';
-
 // 导入页面静态资源
-import addrIcon from '../../../statics/imgs/homePageImgs/addrIcon.png';
-import moreInfoIcon from '../../../statics/imgs/homePageImgs/moreInfoIcon.png';
+import {constants} from '../store'
+
 
 class NewProjectDemo extends PureComponent {
     constructor(props) {
@@ -40,17 +39,7 @@ class NewProjectDemo extends PureComponent {
 
     render() {
         // 轮播图设置
-        const settings = {
-            infinite: true,
-            autoplay: true,
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            pauseOnHover: true,
-            arrows: false,
-            lazyLoad: true,
 
-        };
 
         return (
             <NewProjectDemoWrapper className='scale-control'>
@@ -65,7 +54,7 @@ class NewProjectDemo extends PureComponent {
                     {/* 左右指针 */}
                     <PrevArrow className="button hovered" onClick={this.previous}/>
                     <NextArrow className="button" onClick={this.next}/>
-                    <Slider ref={c => (this.slider = c)} {...settings}>
+                    <Slider ref={c => (this.slider = c)} {...constants.NEW_PROJECT_SETTINGS}>
                         {
                             this.props.newProjectList.map((item) => (
                                 <div key={item.get('id')}>
@@ -73,16 +62,19 @@ class NewProjectDemo extends PureComponent {
                                         <img src={item.get('imgUrl')} alt="" className=''/>
                                         <ImgBottom>
                                             <div className="img-bottom-left">
-                                                <img src={addrIcon} alt=""/>{item.get("location")}
+                                                <img src={constants.ADDR_ICON} alt=""/>
+                                                {item.get("location")}
                                             </div>
                                             <MoreInfo className="button">
                                                 <span>详情</span>
-                                                <img src={moreInfoIcon} alt=""/>
+                                                <img src={constants.MORE_INFO_ICON} alt=""/>
                                             </MoreInfo>
                                         </ImgBottom>
                                         <div className='intro'>
-                                            <span className='intro-left'>{item.get('price')}<span
-                                                className='perMonth'>{item.get('month')}</span></span>
+                                            <div className='intro-left'>
+                                                <span>{item.get('price')}</span>
+                                                <span className='perMonth'>{item.get('month')}</span>
+                                            </div>
                                             <span className='intro-right'>{item.get('area') + item.get('rental')}</span>
                                         </div>
                                     </Item>
@@ -94,14 +86,10 @@ class NewProjectDemo extends PureComponent {
             </NewProjectDemoWrapper>
         )
     }
-
 }
 
 const mapStateToProps = (state) => ({
     // 去store提取state数据 map到props
     newProjectList: state.getIn(['newProject', "newProjectList"])
-
-
 })
-
 export default connect(mapStateToProps, null)(NewProjectDemo);

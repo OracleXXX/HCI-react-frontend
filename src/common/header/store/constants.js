@@ -1,7 +1,5 @@
 import triangle from '../../../statics/imgs/headerImgs/triangle.svg';
 import Banner1 from '../../../statics/imgs/headerImgs/banner-regular.png'
-import {DemoWrapper} from "../BannerStyle";
-import React from "react";
 
 export const TRIANGLE = triangle;
 export const CHANGE_DROPDOWN = 'headerImgs/CHANGE_DROPDOWN';

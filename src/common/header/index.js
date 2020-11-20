@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
-import {CSSTransition} from "react-transition-group";
 import Banner from './Banner';
 import {actionCreators} from './store';
 
@@ -43,7 +42,7 @@ class Header extends PureComponent {
                     {
                         constants.DROP_DOWN_BAR.map((item, index) => {
                             return (
-                                <Link to={item.link}>
+                                <Link to={item.link} key={item.name}>
                                     <div className="dropDownItem">{item.name}</div>
                                 </Link>
                             )
@@ -61,11 +60,13 @@ class Header extends PureComponent {
         return (
             constants.NAV_BAR.map((item, index) => {
                 if (index !== 2) {
-                    console.log(item.link)
                     return (
-                        <Link to={item.link}><NavItem className={index === 0 ? 'CompName' : "left"} onClick={()=>{this.scrollToTop()}}>
+                        <Link to={item.link} key={item.name}><NavItem className={index === 0 ? 'CompName' : "left"} onClick={index===0? () => {
+                            this.scrollToTop()
+                        }:null} >
                             {index === 0 ? <Logo src={logoPic}/> : null}
                             <div className='nav-name'>{item.name}</div>
+
                         </NavItem>
                         </Link>
                     )
@@ -75,9 +76,12 @@ class Header extends PureComponent {
                             className='left'
                             onMouseEnter={() => {
                                 handleDropDown(displayMenu)
-                            }} onMouseLeave={() => {
+                            }}
+                            onMouseLeave={() => {
                             handleDropDown(displayMenu)
+
                         }}
+                            key={item.name}
                             onClick={() => {
                                 handleDropDown(displayMenu)
                             }}

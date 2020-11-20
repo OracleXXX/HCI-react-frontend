@@ -81,7 +81,7 @@ export const DropDownServices = styled.div`
   height: 17.4rem;
   width: fit-content;
   background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: normal;
   display: flex;
   flex-direction: column;

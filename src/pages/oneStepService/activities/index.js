@@ -1,4 +1,4 @@
-import React, {Fragment, PureComponent} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
@@ -17,7 +17,6 @@ import {
     Apply,
     Pagination
 } from './style';
-import test from '../../../statics/imgs/test.jpg'
 
 const demoList = [];
 
@@ -83,8 +82,9 @@ class Activity extends PureComponent {
                     <DivLine/>
                 </div>
             )
+            return null;
         })
-        console.log(demoList)
+
     };
 
     //分页器

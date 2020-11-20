@@ -4,8 +4,8 @@ import {withRouter} from 'react-router-dom';
 import {actionCreators} from './store';
 import {
     Data,
-    NewsFeedTitle, Tag,
-
+    NewsFeedTitle,
+    Tag,
 } from "../homePage/componentStyles/NewFeedStyle";
 import {
     NewsFeedWrapper,
@@ -19,7 +19,6 @@ import {
     ArticleItemRight,
     ArticleItemRightTop,
     ArticleItemRightBottom,
-
     ReadMore,
     Arrow
 
@@ -101,6 +100,7 @@ class NewsFeed extends PureComponent {
                     <DivLine/>
                 </Fragment>
             )
+            return null;
         })
     };
 
@@ -205,9 +205,6 @@ const mapDispatch = (dispatch) => ({
         && page <= totalPage
         && dispatch(actionCreators.updatePage(page));
     }
-
-
 })
-
 export default connect(mapState, mapDispatch)(withRouter(NewsFeed));
 

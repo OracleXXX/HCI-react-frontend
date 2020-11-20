@@ -11,7 +11,6 @@ import {
 } from './style'
 import {ActivityTitle as ManagementTitle} from "../../oneStepService/activities/style";
 
-//import image
 class Management extends PureComponent {
     constructor(props) {
         super(props)

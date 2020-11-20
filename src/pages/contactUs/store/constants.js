@@ -2,7 +2,7 @@ import addrIcon from '../.././../statics/imgs/contactUs/addrIcon.png';
 import emailIcon from '../.././../statics/imgs/contactUs/emailIcon.png';
 import QRcode from "../../../statics/imgs/contactUs/QRcode.jpg";
 
-export const CHANGE_DETAIL = 'detail/CHANGE_DETAIL'
+
 export const NAME_HELP_TEXT = '您可以使用任何名字，包括昵称或者英文名'
 export const EMAIL_HELP_TEXT = '您的常用邮箱，用于回复您的消息，如需要快速回复，请填写微信号或者电话号码。'
 export const PHONE_HELP_TEXT = '我们不会将您的电话号码泄露给任何人。填写电话号码，获得最快速最直接的回复。'

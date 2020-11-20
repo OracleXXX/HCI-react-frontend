@@ -31,7 +31,7 @@ class LongShort extends PureComponent {
         return (
             constants.FLOW_CHART_IMG.map((item, index) => {
                 return (
-                    <FlowChartItem>
+                    <FlowChartItem key={index}>
                         <img src={item} alt="" className='long-short-img'/>
                         <div className='long-short-content'>
                             <div className='content'>{constants.FLOW_CHART_CONTENT[index]}</div>

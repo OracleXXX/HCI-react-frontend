@@ -21,11 +21,8 @@ import {
 
 } from '../componentStyles/NewFeedStyle';
 
-import test from '../../../statics/imgs/test.jpg';
-
 class NewsFeed extends PureComponent {
     render() {
-
         return (
             <NewsFeedWrapper className='scale-control'>
                 <NewsFeedTitle>

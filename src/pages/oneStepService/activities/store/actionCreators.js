@@ -1,5 +1,6 @@
 import axios from 'axios'
 import * as constants from './constants'
+import {fromJS} from "immutable";
 
 const changePage = (page) =>({
     type: constants.CHANGE_PAGE,
@@ -16,7 +17,7 @@ export const updatePage = (page) => {
 
 const changeActivityList = (result)=> ({
     type: constants.CHANGE_ACTIVITY,
-    activityList: result.activityList,
+    activityList: fromJS(result.activityList),
     totalPage: Math.ceil(result.activityList.length/5)
 
 })

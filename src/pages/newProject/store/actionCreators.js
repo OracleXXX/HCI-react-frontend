@@ -9,7 +9,7 @@ const getPages = (page)=>({
 
 const changeNewProjectList = (result)=> ({
     type: constants.CHANGE_NEW_PROJECT_LIST,
-    newProjectList: result.newProjectList,
+    newProjectList: fromJS(result.newProjectList),
     totalPage: Math.ceil(result.newProjectList.length/6)
 
 });

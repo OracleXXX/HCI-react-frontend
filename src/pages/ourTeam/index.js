@@ -13,7 +13,6 @@ import {
     Position,
     Introduction
 } from './style';
-import test from '../../statics/imgs/dadige.jpg';
 
 class OurTeam extends PureComponent {
     constructor(props) {
@@ -36,7 +35,7 @@ class OurTeam extends PureComponent {
         return (
             constants.TEAM_MEMBERS.map((item, index) => {
                 return (
-                    <ContainerItem>
+                    <ContainerItem key={index}>
                         <ItemWrapper>
                         <Avatar>
                             <div className='avatar'>
