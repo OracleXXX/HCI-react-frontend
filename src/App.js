@@ -28,7 +28,9 @@ import GlobalStyle from './style';
 class App extends Component {
     render() {
         return (
+
             <Provider store={store}>
+
                 <GlobalStyle/>
                 <BrowserRouter>
                     <Header/>
