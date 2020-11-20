@@ -2,69 +2,101 @@ import styled from "styled-components";
 
 
 export const HeaderWrapper = styled.div`
-    z-index: 100;
+    z-index: 10000;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     height: 6rem;
     width: calc(192rem - 17px);
-    min-width: 1300px;
-
     box-sizing: border-box;   
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 0.8rem 0 #666666;
 `;
 export const Logo = styled.img`
-    float: left;
     display:inline-block;
     width: 5.2rem;
     height:4.9rem;
 `;
 export const Nav = styled.div`
-    width: 120rem;
+   
+    width: 104rem;
     height: 100%;
     box-sizing: border-box;
     margin: 0 auto;
-`;
-export const NavItem = styled.div`
-    position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+`;
+export const NavItem = styled.div`
+    width: fit-content;
+    height: 6rem;
     position: relative;
+    white-space: nowrap;
+
     cursor: pointer;
-    line-height: 5.6rem;
-    padding: 0 2.7rem;  
+    line-height: 2.4rem;
     font-family: SourceHanSansSC-Regular;
     font-size: 1.6rem;
     letter-spacing: 0;
     color: #FFFFFF;
     border: 1px solid transparent;
+    display: flex; 
+    align-items: center;
       &.CompName {
-        display: inline-block;
-        font-family: HyShangWeiShouShuW-regular;
-        font-size: 2rem;   
+        height: 3rem;
+        font-family: 'Fugaz One', cursive;  
+        font-size: 3rem;    
       }
       &.CompName:hover .float-bar {
         display: block;
         }
-      &.left{
-         display: inline-block;
+      & .nav-name {
+        height: fit-content;
+        width: fit-content;
+      }
+      & .left {
+      -webkit-transition:-webkit-transform 2s;
+      }
+      & .nav-name:hover {
+          font-weight: bolder;
       }
       &.left:hover .float-bar {
         display: block;
+        
         }
+      &.left:hover .triangle {
+        transform: rotate(180deg);
+        transition: ease-in-out 0.2s;
+        }
+        
 `;
 export const DropDownServices = styled.div`
   z-index: 100;
   position: absolute;
-  left: 0;
-  top: 5.65rem;
+  left: -1.0rem;
+  top: 5.99rem;
   height: 17.4rem;
-  width: 100%;
-
+  width: fit-content;
   background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  
+  
   & .dropDownItem{
+    height: 5.8rem;
+    width: 100%;
+    line-height: 5.8rem;
     text-align: center;
     border: 1px solid transparent;
     color: #FFFFFF;
+    padding-right: 2rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
   }& .dropDownItem:hover{
     border: 1px solid #FFFFFF;
     border-radius: 0.2rem;
@@ -82,15 +114,12 @@ export const BannerWrapper = styled.div`
     position: relative;
     width: calc(192rem - 17px);
     min-width: 1300px;
-
   & .banner {
     width:calc(192rem - 17px);
     height:auto;
     max-width:192rem;
     min-width: 1300px;
-
-
-    
+   
   }
 `
 export const DemoWrapper = styled.div`
@@ -150,8 +179,13 @@ export const Input = styled.div`
   font-size: 2rem;
   color: #666666;
   letter-spacing: 0;
-    border: none;
+  border: 0.1rem solid transparent;
   outline: none;
+  }
+    & input:focus {
+    border: 0.1rem solid #2D84FF;
+    box-shadow: 0 0 0 0.4rem  rgba(45, 132, 255, 0.5);
+    -moz-outline-radius: 0.8rem;
   }
 `
 export const SearchButton = styled.div`

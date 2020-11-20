@@ -11,7 +11,7 @@ import avatar8 from '../../../statics/imgs/ourTeam/8.png';
 export const TEAM_MEMBERS = ["王钦田", "Eric Hurst", "薛冠雄", "Alejandro Mercado", "孙迪", "Morris Eguakun", "Nick Holton", "Isaac Lopez"];
 
 export const TEAM_POSITION = ["HCI创始人", "财务主管", "技术主管", "投资主管", "客户主管", "市场主管", "律师顾问", "项目经理"];
-export const TEAM_INTRO = ["多年在北美从事房地产及金融行业，会计与金融双学位，曾带领Home CapitalInvestment 团队创造了两年内市直翻倍的佳绩。",
+export const TEAM_INTRO = ["多年在北美从事房地产及金融行业，会计与金融双学位，曾带领Home CapitalInvestment 团队创造了两年内市值翻倍的佳绩。",
     "多年从事财务管理工作， 曾 任LAH Investment 总裁， 毕业于哥伦比亚大学，任MTSU金融客座教授。主要负责HCI的财务管控",
     "全栈开发工程师，掌握多项主流Web应用开发技术，美国华盛顿计算机科学、精算科学硕士。主要负责HCI平台软件开发、运维和信息优化",
     "多年从事房产投资行业，大量接触国际投资人，拥有丰厚的银行及地产金融资源。主要负责HCI资源接洽",

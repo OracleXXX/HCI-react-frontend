@@ -146,8 +146,9 @@ export const FormContainer = styled.div`
     box-sizing: border-box;
   }
   & input:focus {
-    border: 0.1rem solid #2D84FF;
-    outline: 0.3rem solid rgba(45, 132, 255, 0.2);
+    border: 1px solid #2D84FF;
+    box-shadow: 0 0 0 4px rgba(45, 132, 255, 0.2);
+
   }
   & .form-text{
     width: fit-content;
@@ -161,10 +162,12 @@ export const FormContainer = styled.div`
     width: 96rem;
     padding-bottom: 7rem;
     font-size: 2rem;
+    border-radius: 0.4rem;
+    outline: none;
   }
   & #comments:focus {
     border: 1px solid #2D84FF;
-    outline: 0.2rem solid rgba(45, 132, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(45, 132, 255, 0.2);
   }
   & .form-button {
     width: 16.8rem;
