@@ -13,7 +13,7 @@ import {
     Position,
     Introduction
 } from './style';
-import test from '../../statics/imgs/dadige.jpg'
+import test from '../../statics/imgs/dadige.jpg';
 
 class OurTeam extends PureComponent {
 
@@ -36,7 +36,7 @@ class OurTeam extends PureComponent {
                         <ItemWrapper>
                         <Avatar>
                             <div className='avatar'>
-                                <img src={test} alt=""/>
+                                <img src={constants.TEAM_AVATAR[index]} alt=""/>
                             </div>
                         </Avatar>
                         <Name>{item}</Name>
