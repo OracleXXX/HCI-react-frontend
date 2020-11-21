@@ -20,13 +20,14 @@ import {
     Data
 
 } from '../componentStyles/NewFeedStyle';
+import {Link} from "react-router-dom";
 
 class NewsFeed extends PureComponent {
     render() {
         return (
             <NewsFeedWrapper className='scale-control'>
                 <NewsFeedTitle>
-                    <span className='title'>最近动态</span>
+                    <Link to='/news-feed'><span className='title'>最近动态</span></Link>
                     <div className='rec'/>
                 </NewsFeedTitle>
                 <NewsFeedArticle>
@@ -67,7 +68,7 @@ class NewsFeed extends PureComponent {
                                 <div className='divLine'/>
                                 {/* 文章 */}
                                 <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
-                                <ReadMore>{this.getReadMore()}</ReadMore>
+                                <ReadMore className="button">{this.getReadMore()}</ReadMore>
                             </RightPart>
                         </FixedTopArticle>
                     ))
@@ -95,7 +96,7 @@ class NewsFeed extends PureComponent {
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
                                 <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
-                                <ReadMore >{this.getReadMore()}</ReadMore>
+                                <ReadMore className="button" >{this.getReadMore()}</ReadMore>
                             </BottomPart>
                         </RestArticle>
                     ))

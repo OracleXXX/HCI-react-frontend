@@ -36,17 +36,17 @@ class Footer extends PureComponent {
                     <FooterMain>
                         <FooterNav>
                             <div className="nav-items-footer">
-                                <div className="nav-title-footer">网站导航</div>
-                                <Link to='/new-project'><div className='nav-item-footer'>精选房源</div></Link>
-                                <Link to='/one-step/management'><div className='nav-item-footer'>一站式房屋管理</div></Link>
-                                <Link to='/one-step/long-short'><div className='nav-item-footer'>一站式房屋买卖</div></Link>
-                                <Link to='/platform-loan'><div className='nav-item-footer'>平台贷款</div></Link>
+                                <Link to={'/'}><div className="nav-title-footer pointer">网站导航</div></Link>
+                                <Link to='/new-project'><div className='nav-item-footer pointer'>精选房源</div></Link>
+                                <Link to='/one-step/management'><div className='nav-item-footer pointer'>一站式房屋管理</div></Link>
+                                <Link to='/one-step/long-short'><div className='nav-item-footer pointer'>一站式房屋买卖</div></Link>
+                                <Link to='/platform-loan'><div className='nav-item-footer pointer'>平台贷款</div></Link>
                             </div>
                         </FooterNav>
                         <div className='vertical-div-line'/>
                         <FooterContactUs>
                             <div className="nav-items-footer">
-                                <Link to='/contact-us' ><div className="nav-title-footer">联系我们</div></Link>
+                                <Link to='/contact-us' ><div className="nav-title-footer pointer">联系我们</div></Link>
                                 <div className='nav-item-footer'>8830 3890 8329</div>
                                 <div className='nav-item-footer'><p>美国田纳西州《大迪哥的私人会所》</p></div>
                                 <div className='nav-item-footer'>dadige@gmail.com</div>

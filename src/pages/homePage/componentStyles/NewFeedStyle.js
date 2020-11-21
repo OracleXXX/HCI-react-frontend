@@ -10,6 +10,10 @@ export const NewsFeedWrapper = styled.div`
   padding: 8.6rem 0 0;
   box-sizing: border-box;
   background-color: #F6F8F9;
+  & .button:hover {
+    font-weight: bolder;
+  }
+  & .button:active{ -moz-transform: translate(0.1rem,0.1rem); -webkit-transform: translate(0.1rem,0.1rem); -o-transform: translate(0.1rem,0.1rem); }
   
  
 `;

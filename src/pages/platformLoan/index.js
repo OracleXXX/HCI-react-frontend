@@ -45,9 +45,9 @@ class PlatformLoan extends PureComponent {
                 <Comment><p>平台作为房屋的所有者以房屋作为抵押向买方提供贷款。</p>
                     <p>买方向卖方支付不低于15%的首付，买卖双方商定其利率及分期付款的方式。（例：平台提供30年固定利率贷款，3年后将余额一次性付清）</p></Comment>
                 {/*main area*/}
-                <LoanFlowChart>
+                <LoanFlowChart className='no-select'>
                     {/*flow chart*/}
-                    <FlowChartMain>
+                    <FlowChartMain >
                         {this.getFlowChartLeft()}
                         {this.getFlowChartMid()}
                         {this.getFlowChartRight()}

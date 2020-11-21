@@ -27,7 +27,7 @@ class OurTeam extends PureComponent {
                     <div className='title'>团队背景</div>
                     <div className='rec'/>
                 </OurTeamTitle>
-                <OurTeamContainer>{this.getOurTeamContainer()}</OurTeamContainer>
+                <OurTeamContainer className='no-select'>{this.getOurTeamContainer()}</OurTeamContainer>
             </OurTeamWrapper>
         )
     }

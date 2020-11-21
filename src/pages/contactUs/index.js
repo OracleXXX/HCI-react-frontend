@@ -41,7 +41,7 @@ class ContactUs extends PureComponent {
                     <QRCodeItem>{this.getQRCodeItem()}</QRCodeItem>
                 </ContactUsContainer>
                 <FormContainer>
-                    <img src={contactUsImg} alt="" className="top-right-img"/>
+                    <img src={contactUsImg} alt="" className="top-right-img no-select"/>
                     <Form className='container-form'>
                         <Form.Group controlId="exampleForm.ControlInput1" className='form-group'>
                             <Form.Label className='form-label'>姓名</Form.Label>
@@ -85,14 +85,14 @@ class ContactUs extends PureComponent {
                         <Form.Group controlId="formBasicComments">
                             <Form.Label>您的留言</Form.Label>
 
-                            <Form.Control as="textarea" rows={4} id='comments'/>
+                            <Form.Control as="textarea" rows={4} className='comments'/>
 
                             <Form.Text id="commentsInfo" muted>
                                 {Constants.COMMENT_HELP_TEXT}
                             </Form.Text>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" className='form-button'>
+                        <Button variant="primary" type="submit" className='form-button no-select'>
                             提交
                         </Button>
                     </Form>
@@ -108,8 +108,8 @@ class ContactUs extends PureComponent {
         return (
             <LocationContent>
                 <City>{constants.LOCATION[0]}</City>
-                <Addr><img src={constants.ADDR_ICON} alt=""/>{constants.LOCATION[1]}</Addr>
-                <Email><img src={constants.EMAIL_ICON} alt=""/>{constants.LOCATION[2]}</Email>
+                <Addr><img src={constants.ADDR_ICON} alt="" className='no-select'/>{constants.LOCATION[1]}</Addr>
+                <Email><img src={constants.EMAIL_ICON} alt="" className='no-select'/>{constants.LOCATION[2]}</Email>
             </LocationContent>
         )
     }
@@ -118,7 +118,7 @@ class ContactUs extends PureComponent {
         return (
             <Fragment>
                 <div className='img-border'>
-                    <img src={constants.QR_CODE} alt=""/>
+                    <img src={constants.QR_CODE} alt="" className='no-select'/>
                 </div>
                 <div>Home Cap Inc 客服</div>
             </Fragment>

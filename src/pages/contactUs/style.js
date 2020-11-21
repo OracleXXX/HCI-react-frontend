@@ -14,7 +14,6 @@ export const ContactUsContainer = styled.div`
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  
 `;
 export const LocationItem = styled.div`
     width: 59.5rem;
@@ -24,7 +23,6 @@ export const LocationItem = styled.div`
     align-items: center;
     justify-content: center;
 `;
-
 export const LocationContent = styled.div`
   position: relative;
   top: -2rem;
@@ -146,8 +144,8 @@ export const FormContainer = styled.div`
     box-sizing: border-box;
   }
   & input:focus {
-    border: 1px solid #2D84FF;
-    box-shadow: 0 0 0 4px rgba(45, 132, 255, 0.2);
+    border: 1px solid rgba(45, 132, 255);
+    box-shadow: 0 0 0 0.3rem rgba(45, 132, 255, 0.2);
 
   }
   & .form-text{
@@ -158,16 +156,16 @@ export const FormContainer = styled.div`
     line-height: 2.2rem;
     color: #666666;
   }
-  & #comments {
+  & .comments {
     width: 96rem;
     padding-bottom: 7rem;
     font-size: 2rem;
     border-radius: 0.4rem;
     outline: none;
   }
-  & #comments:focus {
-    border: 1px solid #2D84FF;
-    box-shadow: 0 0 0 4px rgba(45, 132, 255, 0.2);
+  & .comments:focus {
+    border: 1px solid rgba(45, 132, 255);
+    box-shadow: 0 0 0 0.3rem rgba(45, 132, 255, 0.2);
   }
   & .form-button {
     width: 16.8rem;

@@ -74,7 +74,7 @@ class Activity extends PureComponent {
                                 <div className='activity-location'>活动地点：{item.get("location")}</div>
                                 <div className='activity-time'>活动时间：{item.get("time")}</div>
                                 <div className='activity-deadline'>截止日期：{item.get("deadline")}</div>
-                                <Apply className='apply no-select'>我要报名</Apply>
+                                <Apply className='apply no-select button'>我要报名</Apply>
                             </ItemRightBottom>
 
                         </ItemRight>

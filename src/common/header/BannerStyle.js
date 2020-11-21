@@ -7,8 +7,8 @@ export const BannerWrapper = styled.div`
 
 `
 export const DemoWrapper = styled.div`
-  height: calc(192rem - 17px);
-  width: 100%;  
+  width: calc(192rem - 17px);
+  height: 100%;  
   box-sizing: border-box;
   & .banner {
     width:calc(192rem - 17px);

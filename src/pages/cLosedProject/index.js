@@ -52,7 +52,7 @@ class ClosedProject extends PureComponent {
 
                 <SliderWrapper>
                     {/* 左右指针 */}
-                    <PrevArrow className="button hovered" onClick={this.previous}/>
+                    <PrevArrow className="button" onClick={this.previous}/>
 
                     <div className="slider">
                         <Slider ref={c => (this.slider = c)} {...constants.SETTINGS} className="slider">

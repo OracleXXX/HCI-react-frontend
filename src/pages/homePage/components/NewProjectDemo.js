@@ -17,6 +17,7 @@ import {
 } from '../componentStyles/NewProjectDemoStyle';
 // 导入页面静态资源
 import {constants} from '../store'
+import {withRouter, Link} from "react-router-dom";
 
 
 class NewProjectDemo extends PureComponent {
@@ -42,10 +43,10 @@ class NewProjectDemo extends PureComponent {
 
 
         return (
-            <NewProjectDemoWrapper className='scale-control'>
+            <NewProjectDemoWrapper>
                 {/* 图轮播图title */}
                 <SliderTitle>
-                    <div className='title'>精选房源</div>
+                    <Link to='/new-project'><div className='title'>精选房源</div></Link>
                     <div className='rec'/>
                     <div><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
                 </SliderTitle>
@@ -92,4 +93,4 @@ const mapStateToProps = (state) => ({
     // 去store提取state数据 map到props
     newProjectList: state.getIn(['newProject', "newProjectList"])
 })
-export default connect(mapStateToProps, null)(NewProjectDemo);
+export default connect(mapStateToProps, null)(withRouter(NewProjectDemo));

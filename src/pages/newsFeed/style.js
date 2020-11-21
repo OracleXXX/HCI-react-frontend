@@ -154,8 +154,9 @@ export const ArticleItemRightBottom = styled.div`
   & .right-bottom-read-more {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-end;  
   }
+
 `;
 export const ReadMore = styled.div`
   width: inherit;
@@ -167,6 +168,8 @@ export const ReadMore = styled.div`
   display: flex;
   flex-direction: row;
   white-space: nowrap;
+  box-sizing: border-box;
+  border: 1px solid transparent;
   
   & .readMore {
     width: fit-content;
@@ -176,6 +179,10 @@ export const ReadMore = styled.div`
     white-space:nowrap;
     color: transparent;
   }
+  & .readMore:hover {
+    font-weight: bolder;
+  }
+  & .readMore:active{ -moz-transform: translate(0.1rem,0.1rem); -webkit-transform: translate(0.1rem,0.1rem); -o-transform: translate(0.1rem,0.1rem); }
   
 `;
 export const Arrow = styled.div`

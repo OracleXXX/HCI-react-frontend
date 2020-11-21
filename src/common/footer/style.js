@@ -9,6 +9,9 @@ export const FooterWrapper = styled.div`
     width: inherit;
     height: auto;
   }    
+  & .pointer:hover{
+    font-weight: bolder;
+  }
 `;
 export const AboutUs = styled.div`
 
@@ -86,6 +89,7 @@ export const FooterMain = styled.div`
     white-space:nowrap; 
     color: #FFFFFF;
     font-size: 1.5rem;
+    cursor: pointer;
   }
   & .nav-item-footer {
     font-family: SourceHanSansSC-Normal;
@@ -93,6 +97,7 @@ export const FooterMain = styled.div`
     opacity: 0.8;  
     white-space:nowrap;
     color: #FFFFFF; 
+    cursor: pointer;
   }
 `;
 export const FooterNav = styled.div`

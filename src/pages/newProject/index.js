@@ -49,6 +49,7 @@ class NewProject extends PureComponent {
                     page < totalPage
                         ? <SeeMore
                             onClick={() => this.props.handleGetMorePages(page)}
+                            className="button"
                         >
                             <div className="see-more">
                                 <span>查看更多</span>
@@ -102,7 +103,7 @@ class NewProject extends PureComponent {
                             <img src={constants.ADDR_ICON} alt="" className='addr-icon'/>
                             <span className='city-name'>{addr}</span>
                         </City>
-                        <MoreInfo className='no-select'>
+                        <MoreInfo className='no-select button'>
                             <span>详情</span>
                             <img src={constants.MORE_INFO_ICON} alt=""/>
                         </MoreInfo>
