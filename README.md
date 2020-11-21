@@ -75,28 +75,28 @@
 ## 后端
 - 目前springboot已经建好
 ### 项目拆分：
-- controller, entity, repository, service, config
-- yml配置：application.yml
+    - controller, entity, repository, service, config
+    - yml配置：application.yml
 - API（controller层）
- - 精选房源
- - 项目展示
- - 最近动态
- - 平台活动
- - 联系我们 MY
+    - 精选房源
+    - 项目展示
+    - 最近动态
+    - 平台活动
+    - 联系我们 MY
 - 数据库（entity）
- - 精选房源
- - 项目展示
- - 最近动态
- - 平台活动
+     - 精选房源
+     - 项目展示
+     - 最近动态
+     - 平台活动
 - 持久层(repository)
- - 同上
+     - 同上
 - service
- - 精选房源
- - 项目展示
- - 最近动态
- - 平台活动
- - 联系我们 MY
+     - 精选房源
+     - 项目展示
+     - 最近动态
+     - 平台活动
+     - 联系我们 MY
 - config
- - 跨域请求
- - 上传图片
- - 收发邮件 MY
+     - 跨域请求
+     - 上传图片
+     - 收发邮件 MY
