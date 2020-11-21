@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {Provider} from 'react-redux'
 import {BrowserRouter, Route} from 'react-router-dom';
-
 /*common part*/
 import Header from "./common/header";
 import Footer from "./common/footer";

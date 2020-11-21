@@ -18,7 +18,7 @@ import {
     FormContainer,
     DivLine
 } from './style';
-import {constants} from "./store";
+import {actionCreators, constants} from "./store";
 
 
 class ContactUs extends PureComponent {
@@ -28,6 +28,7 @@ class ContactUs extends PureComponent {
     }
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
+        console.log(this.props.testList)
         return (
 
             <ContactUsWrapper ref={this.ScrollTo}>
@@ -115,6 +116,7 @@ class ContactUs extends PureComponent {
     }
 
     getQRCodeItem() {
+        this.getTest()
         return (
             <Fragment>
                 <div className='img-border'>
@@ -124,33 +126,30 @@ class ContactUs extends PureComponent {
             </Fragment>
         )
     }
+    getTest(){
+        this.props.testList.map(item=>{
+            console.log(item.get("email"))
+            }
+        )
+    }
 
         componentDidMount() {
             this.scrollToMyRef()
+            this.props.handleTest(this.props.testList)
         }
 
 
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({});
-const mapDispatch = (dispatch) => ({})
+const mapState = (state) => ({
+    testList: state.getIn(['contactUs', 'test'])
+});
+const mapDispatch = (dispatch) => ({
+    handleTest(list) {
+        list.size===0&&dispatch(actionCreators.handleTest());
+    }
+})
 
 export default connect(mapState, mapDispatch)(withRouter(ContactUs));
 
-
-//模板
-/*
-import React, {Component} from 'react';
-class Detail extends Component {
-    render() {
-        return (
-            <div>Detail
-
-
-            </div>
-        )
-    }
-}
-export default Detail;
-*/

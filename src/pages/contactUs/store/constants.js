@@ -2,6 +2,8 @@ import addrIcon from '../.././../statics/imgs/contactUs/addrIcon.png';
 import emailIcon from '../.././../statics/imgs/contactUs/emailIcon.png';
 import QRcode from "../../../statics/imgs/contactUs/QRcode.jpg";
 
+export const TEST = 'test';
+
 
 export const NAME_HELP_TEXT = '您可以使用任何名字，包括昵称或者英文名'
 export const EMAIL_HELP_TEXT = '您的常用邮箱，用于回复您的消息，如需要快速回复，请填写微信号或者电话号码。'

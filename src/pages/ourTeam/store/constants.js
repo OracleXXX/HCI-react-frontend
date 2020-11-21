@@ -4,8 +4,8 @@ import avatar3 from '../../../statics/imgs/ourTeam/3.png';
 import avatar4 from '../../../statics/imgs/ourTeam/4.jpg';
 import avatar5 from '../../../statics/imgs/ourTeam/5.png';
 import avatar6 from '../../../statics/imgs/ourTeam/6.jpg';
-import avatar7 from '../../../statics/imgs/ourTeam/7.png';
-import avatar8 from '../../../statics/imgs/ourTeam/8.png';
+import avatar7 from '../../../statics/imgs/ourTeam/8.png';
+import avatar8 from '../../../statics/imgs/ourTeam/7.png';
 
 
 export const TEAM_MEMBERS = ["王钦田", "Eric Hurst", "薛冠雄", "Alejandro Mercado", "孙迪", "Morris Eguakun", "Nick Holton", "Isaac Lopez"];
