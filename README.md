@@ -72,3 +72,31 @@
 - 添加用户注册登录功能并且可以在网页中发表评论，以及管理用户信息的数据库
 - 添加订金支付功能，用户可以直接支付定金锁定房源（每个房源只能同时被一个人锁）
 
+## 后端
+- 目前springboot已经建好
+### 项目拆分：
+- controller, entity, repository, service, config
+- yml配置：application.yml
+- API（controller层）
+ - 精选房源
+ - 项目展示
+ - 最近动态
+ - 平台活动
+ - 联系我们 MY
+- 数据库（entity）
+ - 精选房源
+ - 项目展示
+ - 最近动态
+ - 平台活动
+- 持久层(repository)
+ - 同上
+- service
+ - 精选房源
+ - 项目展示
+ - 最近动态
+ - 平台活动
+ - 联系我们 MY
+- config
+ - 跨域请求
+ - 上传图片
+ - 收发邮件 MY
