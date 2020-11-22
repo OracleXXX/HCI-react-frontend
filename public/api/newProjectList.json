@@ -13,11 +13,11 @@
         "rental": "/房屋出租",
         "addr": "1609 damascus",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
+        "expectCash": "12%",
         "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
-        "platformLoan": "$500000"
+        "expectRentalIncome": "12%",
+        "expectRemodel": "12%",
+        "platformLoan": "有"
       },
       {
         "id": 2,

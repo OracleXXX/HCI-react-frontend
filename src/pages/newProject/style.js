@@ -145,6 +145,7 @@ export const MarginContainer = styled.div`
   background-color: #F7FBFF;
   box-sizing: border-box;
   border: 1px solid #DAE1E5;
+  white-space: nowrap;
   & .margin-container {
     display: flex;
     flex-direction: column;

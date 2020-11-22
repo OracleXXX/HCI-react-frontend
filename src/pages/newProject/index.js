@@ -134,14 +134,14 @@ class NewProject extends PureComponent {
         return (
             <MarginContainer>
                 <MarginContainerLeft className='margin-container'>
-                    {this.getMarginItem(newNames[0], fullAddr)}
-                    {this.getMarginItem(newNames[1], expectCash)}
-                    {this.getMarginItem(newNames[2], expectRate)}
+                    {this.getMarginItem(constants.FULL_ADDR, fullAddr)}
+                    {this.getMarginItem(constants.EXPECTED_RENTAL_RATE_OF_RETURN, expectCash)}
+                    {this.getMarginItem(constants.EXPECTED_CASH_RATE_OF_RETURN, expectRate)}
                 </MarginContainerLeft>
                 <MarginContainerRight className='margin-container'>
-                    {this.getMarginItem(newNames[3], expectRentalIncome)}
-                    {this.getMarginItem(newNames[4], expectRemodel)}
-                    {this.getMarginItem(newNames[5], platformLoan)}
+                    {this.getMarginItem(constants.EXPECTED_NET_INCOME, expectRentalIncome)}
+                    {this.getMarginItem(constants.EXPECTED_FLIPPING_COST, expectRemodel)}
+                    {this.getMarginItem(constants.PLATFORM_LOAN, platformLoan)}
                 </MarginContainerRight>
             </MarginContainer>
         )

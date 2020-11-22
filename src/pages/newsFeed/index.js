@@ -89,7 +89,7 @@ class NewsFeed extends PureComponent {
                             <ArticleItemRightTop>
                                 <div className="article-title">{item.get("title")}</div>
                                 <div className="article-tags no-select">{this.getTag(item.get("tags"))}</div>
-                                <div className="article-content">{item.get("preContent")}</div>
+                                <div className="article-content">{item.get("content")}</div>
                             </ArticleItemRightTop>
                             <ArticleItemRightBottom>
                                 <ReadMore className="right-bottom-read-more no-select">{this.getReadMore()}</ReadMore>

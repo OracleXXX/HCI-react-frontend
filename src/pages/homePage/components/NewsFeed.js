@@ -67,7 +67,7 @@ class NewsFeed extends PureComponent {
                                 {/* 分割线 */}
                                 <div className='divLine'/>
                                 {/* 文章 */}
-                                <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
+                                <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
                                 <ReadMore className="button">{this.getReadMore()}</ReadMore>
                             </RightPart>
                         </FixedTopArticle>
@@ -95,7 +95,7 @@ class NewsFeed extends PureComponent {
                                 <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
-                                <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
+                                <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
                                 <ReadMore className="button" >{this.getReadMore()}</ReadMore>
                             </BottomPart>
                         </RestArticle>

@@ -103,7 +103,7 @@ class ClosedProject extends PureComponent {
                                     <div className="price-month">
                                         <span className="price">{item.get("price")}</span>
                                     </div>
-                                    <div className="area-rental">{item.get("area") + item.get("rental")}</div>
+                                    <div className="area-rental">{item.get("area") + item.get("status")}</div>
                                 </ItemMid>
                                 <ItemBottom>
                                     <DivLine/>
@@ -113,21 +113,21 @@ class ClosedProject extends PureComponent {
                                             <div className="item-info-content">{item.get("fullAddr")}</div>
                                         </div>
                                         <div>
-                                            <span className="item-info-title">现金总收益：</span>
-                                            <span className="item-info-content">{item.get("netIncome")}</span>
+                                            <span className="item-info-title">租金回报率：</span>
+                                            <span className="item-info-content">{item.get("rentalRateOfReturn")}</span>
                                         </div>
                                         <div>
                                             <span className="item-info-title">现金回报率：</span>
-                                            <span className="item-info-content">{item.get("profitRate")}</span>
+                                            <span className="item-info-content">{item.get("cashRateOfReturn")}</span>
                                         </div>
                                         <div>
-                                            <span className="item-info-title">租金收益：</span>
-                                            <span className="item-info-content">{item.get("rentalIncome")}</span>
+                                            <span className="item-info-title">项目总回报率：</span>
+                                            <span className="item-info-content">{item.get("netReturn")}</span>
                                         </div>
                                         {
                                             flippingSlider
                                                 ? <div><span className="item-info-title">装修费用：</span><span
-                                                    className="item-info-content">{item.get("flippingC")}</span></div>
+                                                    className="item-info-content">{item.get("flippingCost")}</span></div>
                                                 : null
                                         }
                                     </div>

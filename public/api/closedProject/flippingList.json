@@ -10,12 +10,12 @@
         "price": "$140000",
         "month": "/月",
         "area": "1,000sqft",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$20000",
-        "profitRate": "38.657%",
-        "rentalIncome": "9%",
-        "flippingC": "$60000"
+        "rentalRateOfReturn": "$20000",
+        "cashRateOfReturn": "38.657%",
+        "netReturn": "9%",
+        "flippingCost": "$60000"
       },
       {
         "id": 2,
@@ -25,12 +25,12 @@
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "rentalRateOfReturn": "$201",
+        "cashRateOfReturn": "12%",
+        "netReturn": "$2011",
+        "flippingCost": "$120"
       },
       {
         "id": 3,
@@ -40,12 +40,12 @@
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "rentalRateOfReturn": "$201",
+        "cashRateOfReturn": "12%",
+        "netReturn": "$2011",
+        "flippingCost": "$120"
       },
       {
         "id": 4,
@@ -55,12 +55,12 @@
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "rentalRateOfReturn": "$201",
+        "cashRateOfReturn": "12%",
+        "netReturn": "$2011",
+        "flippingCost": "$120"
       },
       {
         "id": 5,
@@ -70,12 +70,12 @@
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "rentalRateOfReturn": "$201",
+        "cashRateOfReturn": "12%",
+        "netReturn": "$2011",
+        "flippingCost": "$120"
       },
       {
         "id": 6,
@@ -85,12 +85,12 @@
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "rentalRateOfReturn": "$201",
+        "cashRateOfReturn": "12%",
+        "netReturn": "$2011",
+        "flippingCost": "$120"
       },
       {
         "id": 7,
@@ -100,12 +100,12 @@
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "rentalRateOfReturn": "$201",
+        "cashRateOfReturn": "12%",
+        "netReturn": "$2011",
+        "flippingCost": "$120"
       },
       {
         "id": 8,
@@ -115,12 +115,12 @@
         "price": "$3000",
         "month": "/月",
         "area": "1220平方米",
-        "rental": "/房屋出租",
+        "status": "/房屋出租",
         "fullAddr": "252 BrookHollow, Nashville",
-        "netIncome": "$201",
-        "profitRate": "12%",
-        "rentalIncome": "$2011",
-        "flippingC": "$120"
+        "rentalRateOfReturn": "$201",
+        "cashRateOfReturn": "12%",
+        "netReturn": "$2011",
+        "flippingCost": "$120"
       }
     ]
   }
