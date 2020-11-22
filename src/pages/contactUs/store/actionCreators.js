@@ -16,7 +16,7 @@ export const handleTest = () => {
     return (dispatch) => {
         axios.get('http://localhost:8080/api/test').then((res) => {
                 const result = res.data;
-                console.log(result)
+
                 dispatch(testreact(result));
             }
         );

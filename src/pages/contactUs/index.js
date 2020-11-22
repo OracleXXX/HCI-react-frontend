@@ -135,7 +135,7 @@ class ContactUs extends PureComponent {
 
         componentDidMount() {
             this.scrollToMyRef()
-            this.props.handleTest(this.props.testList)
+            /*this.props.handleTest(this.props.testList)*/
         }
 
 

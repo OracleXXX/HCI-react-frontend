@@ -34,7 +34,9 @@ class ClosedProject extends PureComponent {
         this.ScrollTo = React.createRef()   // Create a ref object
 
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     render() {
 
         const {flippingSlider, noFlippingList, flippingList} = this.props;
@@ -83,6 +85,7 @@ class ClosedProject extends PureComponent {
     previous() {
         this.slider.slickPrev();
     }
+
     getSlider(list) {
         const {flippingSlider} = this.props;
         return (
@@ -112,6 +115,12 @@ class ClosedProject extends PureComponent {
                                             <span className="item-info-title">具体地址：</span>
                                             <div className="item-info-content">{item.get("fullAddr")}</div>
                                         </div>
+                                        {
+                                            flippingSlider
+                                                ? <div><span className="item-info-title">装修费用：</span><span
+                                                    className="item-info-content">{item.get("flippingCost")}</span></div>
+                                                : null
+                                        }
                                         <div>
                                             <span className="item-info-title">租金回报率：</span>
                                             <span className="item-info-content">{item.get("rentalRateOfReturn")}</span>
@@ -122,14 +131,9 @@ class ClosedProject extends PureComponent {
                                         </div>
                                         <div>
                                             <span className="item-info-title">项目总回报率：</span>
-                                            <span className="item-info-content">{item.get("netReturn")}</span>
+                                            <span className="item-info-content">{item.get("netRateOfReturn")}</span>
                                         </div>
-                                        {
-                                            flippingSlider
-                                                ? <div><span className="item-info-title">装修费用：</span><span
-                                                    className="item-info-content">{item.get("flippingCost")}</span></div>
-                                                : null
-                                        }
+
                                     </div>
                                 </ItemBottom>
                             </div>
