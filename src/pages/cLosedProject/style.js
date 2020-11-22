@@ -124,11 +124,11 @@ export const ItemTop = styled.div`
   width: 27.6rem;
   height: 20rem;
   overflow: hidden;
-& .item-top-img {
+  & .item-top-img {
   width: inherit;
   height: inherit;
   border-radius: 0.8rem 0.8rem 0 0;
-};
+  };
 `;
 
 export const FixedBottom = styled.div`
@@ -151,11 +151,11 @@ export const FixedBottom = styled.div`
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-family: SourceHanSansSC-Medium;
-  & img {
+    & img {
     width: 1.1rem;
     height: 1.3rem;
     margin: auto 0.8rem auto 0
-  } 
+    } 
   }
 `;
 export const MoreInfo = styled.div`

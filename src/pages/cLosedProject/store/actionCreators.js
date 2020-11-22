@@ -3,21 +3,35 @@ import * as constants from './constants'
 import {fromJS} from "immutable";
 
 
-const changeClosedProjectList = (result) => ({
-    type: constants.CHANGE_CLOSED_PROJECT_LIST,
+const changeNoFlippingList = (result) => ({
+    type: constants.CHANGE_NO_FLIPPING_LIST,
     noFlippingList: fromJS(result.noFlippingList),
-    flippingList: fromJS(result.flippingList)
+
+})
+const changeFlippingList = (result) => ({
+    type: constants.CHANGE_FLIPPING_LIST,
+    flippingList: fromJS(result.flippingList),
 
 })
 const sliderChange = (flipping) => ({
     type:constants.CHANGE_SLIDER,
     flipping
 })
-export const getClosedProjectList = (id) => {
+export const getNoFlippingList = (id) => {
     return (dispatch) => {
-        axios.get('/api/closeProjectList.json').then((res) => {
+        axios.get('/api/closedProject/noFlippingList.json').then((res) => {
                 const result = res.data.data;
-                dispatch(changeClosedProjectList(result));
+                dispatch(changeNoFlippingList(result));
+            }
+        );
+
+    }
+}
+export const getFlippingList = (id) => {
+    return (dispatch) => {
+        axios.get('/api/closedProject/flippingList.json').then((res) => {
+                const result = res.data.data;
+                dispatch(changeFlippingList(result));
             }
         );
 

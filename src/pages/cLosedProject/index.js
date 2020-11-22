@@ -42,7 +42,6 @@ class ClosedProject extends PureComponent {
             <ClosedProjectDemoWrapper className='scale-control' ref={this.ScrollTo}>
                 {/* 图轮播图title */}
                 <ClosedProjectTitle>
-
                     <div className='title' onClick={() => this.props.handleSliderChange(true)}>翻新后出租/出售房屋</div>
                     <VerticalDivLine/>
                     <div className='title' onClick={() => this.props.handleSliderChange(false)}>可直接出租/出售房屋</div>
@@ -92,7 +91,7 @@ class ClosedProject extends PureComponent {
                     <div className="slider" key={item.get("id")}>
                         <Item>
                             <ItemTop>
-                                <img src={item.get("imgUrl").toJS()[0]} alt="" className="item-top-img"/>
+                                <img src={item.get("imgUrl")} alt="" className="item-top-img"/>
                                 <FixedBottom>
                                     <div className="fixed-bottom-left"><img src={addrIcon}
                                                                             alt=""/>{item.get("location")}</div>
@@ -143,7 +142,8 @@ class ClosedProject extends PureComponent {
 
 
     componentDidMount() {
-        this.props.getClosedProjectList();
+        this.props.getNoFlippingList();
+        this.props.getFlippingList();
         this.scrollToMyRef()
 
     };
@@ -158,8 +158,11 @@ const mapState = (state) => ({
     flippingSlider: state.getIn(["closedProject", "flippingSlider"]),
 });
 const mapDispatch = (dispatch) => ({
-    getClosedProjectList() {
-        dispatch(actionCreators.getClosedProjectList())
+    getNoFlippingList() {
+        dispatch(actionCreators.getNoFlippingList())
+    },
+    getFlippingList() {
+        dispatch(actionCreators.getFlippingList())
     },
     handleSliderChange(flipping) {
         dispatch(actionCreators.handleSliderChange(flipping))

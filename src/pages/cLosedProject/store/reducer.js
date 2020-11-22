@@ -8,9 +8,15 @@ const defaultState = fromJS({
 
 
 });
-const changeCloseProjectList = (state, action) => {
+const changeNoFlippingList = (state, action) => {
     return state.merge({
         noFlippingList: fromJS(action.noFlippingList),
+
+    })
+
+}
+const changeFlippingList = (state, action) => {
+    return state.merge({
         flippingList: fromJS(action.flippingList),
     })
 
@@ -22,8 +28,10 @@ const changeSlider = (state, action) => {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case constants.CHANGE_CLOSED_PROJECT_LIST:
-            return changeCloseProjectList(state, action);
+        case constants.CHANGE_NO_FLIPPING_LIST:
+            return changeNoFlippingList(state, action);
+            case constants.CHANGE_FLIPPING_LIST:
+            return changeFlippingList(state, action);
         case constants.CHANGE_SLIDER:
             return changeSlider(state, action);
         default:

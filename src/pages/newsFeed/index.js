@@ -94,7 +94,6 @@ class NewsFeed extends PureComponent {
                             <ArticleItemRightBottom>
                                 <ReadMore className="right-bottom-read-more no-select">{this.getReadMore()}</ReadMore>
                             </ArticleItemRightBottom>
-
                         </ArticleItemRight>
                     </ArticleItem>
                     <DivLine/>
@@ -131,8 +130,7 @@ class NewsFeed extends PureComponent {
                     key={"news-feed-page-" + i}
                 >{i}</span>
             )
-        }
-        ;
+        };
         pages.push(
             <span
                 onClick={() => handlePageChange(page + 1, totalPage)}
