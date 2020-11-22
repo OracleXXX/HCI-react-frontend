@@ -74,6 +74,8 @@
 
 ## 后端
 - 目前springboot已经建好
+- 数据库 34.214.246.43:3306/hci_db
+- root，123456
 ### 项目拆分：
     - controller, entity, repository, service, config
     - yml配置：application.yml

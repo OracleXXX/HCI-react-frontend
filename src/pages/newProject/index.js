@@ -129,19 +129,18 @@ class NewProject extends PureComponent {
     };
 
     // 预期数据
-    getMarginContainer(fullAddr, expectCash, expectRate, expectRentalIncome, expectRemodel, platformLoan) {
-        const newNames = this.props.names.toJS()
+    getMarginContainer(fullAddr, expectedRentalRateOfReturn, expectedCashRateOfReturn, expectedNetIncome, expectedFlippingBudget, platformLoan) {
         return (
             <MarginContainer>
                 <MarginContainerLeft className='margin-container'>
                     {this.getMarginItem(constants.FULL_ADDR, fullAddr)}
-                    {this.getMarginItem(constants.FLIPPING_BUDGET, expectRemodel)}
-                    {this.getMarginItem(constants.EXPECTED_RENTAL_RATE_OF_RETURN, expectCash)}
+                    {this.getMarginItem(constants.FLIPPING_BUDGET, expectedFlippingBudget)}
+                    {this.getMarginItem(constants.EXPECTED_RENTAL_RATE_OF_RETURN, expectedRentalRateOfReturn)}
 
                 </MarginContainerLeft>
                 <MarginContainerRight className='margin-container'>
-                    {this.getMarginItem(constants.EXPECTED_CASH_RATE_OF_RETURN, expectRate)}
-                    {this.getMarginItem(constants.EXPECTED_NET_INCOME, expectRentalIncome)}
+                    {this.getMarginItem(constants.EXPECTED_CASH_RATE_OF_RETURN, expectedCashRateOfReturn)}
+                    {this.getMarginItem(constants.EXPECTED_NET_INCOME, expectedNetIncome)}
                     {this.getMarginItem(constants.PLATFORM_LOAN, platformLoan)}
                 </MarginContainerRight>
             </MarginContainer>

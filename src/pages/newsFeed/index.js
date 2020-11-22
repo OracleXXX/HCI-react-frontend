@@ -117,7 +117,7 @@ class NewsFeed extends PureComponent {
         let pages = [];
         pages.push(
             <span
-                onClick={() => handlePageChange(page - 1, totalPage)}
+                onClick={() => handlePageChange(page - 1, totalPage, this.scrollToMyRef)}
                 className={page === 1 ? "prev-next disabled" : "prev-next"}
                 key="news-feed-page-prev"
             >上一页</span>
@@ -125,7 +125,7 @@ class NewsFeed extends PureComponent {
         for (let i = 1; i <= totalPage; i++) {
             pages.push(
                 <span
-                    onClick={() => handlePageChange(i, totalPage)}
+                    onClick={() => handlePageChange(i, totalPage, this.scrollToMyRef)}
                     className={page === i ? "page-number active" : "page-number"}
                     key={"news-feed-page-" + i}
                 >{i}</span>
@@ -133,7 +133,7 @@ class NewsFeed extends PureComponent {
         };
         pages.push(
             <span
-                onClick={() => handlePageChange(page + 1, totalPage)}
+                onClick={() => handlePageChange(page + 1, totalPage, this.scrollToMyRef)}
                 className={page === totalPage ? "prev-next disabled" : "prev-next"}
                 key="news-feed-page-next"
             >下一页</span>
@@ -198,10 +198,11 @@ const mapDispatch = (dispatch) => ({
 
         dispatch(actionCreators.getNewsFeed())
     },
-    handlePageChange(page, totalPage) {
+    handlePageChange(page, totalPage, scroll) {
         0 < page
         && page <= totalPage
         && dispatch(actionCreators.updatePage(page));
+        scroll()
     }
 })
 export default connect(mapState, mapDispatch)(withRouter(NewsFeed));
