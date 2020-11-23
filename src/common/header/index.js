@@ -35,20 +35,20 @@ class Header extends PureComponent {
     }
 
     getDropDown() {
-const {displayMenu} = this.props;
-            return (
-                <DropDownServices className={displayMenu? "drop-down-active": "dropdown"}>
-                    {
-                        constants.DROP_DOWN_BAR.map((item, index) => {
-                            return (
-                                <Link to={item.link} key={item.name} >
-                                    <div className="dropDownItem">{item.name}</div>
-                                </Link>
-                            )
-                        })
-                    }
-                </DropDownServices>
-            )
+        const {displayMenu} = this.props;
+        return (
+            <DropDownServices className={displayMenu ? "drop-down-active" : "dropdown"}>
+                {
+                    constants.DROP_DOWN_BAR.map((item, index) => {
+                        return (
+                            <Link to={item.link} key={item.name}>
+                                <div className="dropDownItem">{item.name}</div>
+                            </Link>
+                        )
+                    })
+                }
+            </DropDownServices>
+        )
 
     };
 
@@ -58,9 +58,10 @@ const {displayMenu} = this.props;
             constants.NAV_BAR.map((item, index) => {
                 if (index !== 2) {
                     return (
-                        <Link to={item.link} key={item.name}><NavItem className={index === 0 ? 'CompName' : "left"} onClick={index===0? () => {
-                            this.scrollToTop()
-                        }:null} >
+                        <Link to={item.link} key={item.name}><NavItem className={index === 0 ? 'CompName' : "left"}
+                                                                      onClick={index === 0 ? () => {
+                                                                          this.scrollToTop()
+                                                                      } : null}>
                             {index === 0 ? <Logo src={logoPic}/> : null}
                             <div className='nav-name'>{item.name}</div>
 
@@ -72,12 +73,11 @@ const {displayMenu} = this.props;
                         <NavItem
                             className='left'
                             onMouseEnter={() => {
-                                handleDropDown(displayMenu)
+                                handleDropDown(false)
                             }}
                             onMouseLeave={() => {
-                            handleDropDown(displayMenu)
-
-                        }}
+                                handleDropDown(true)
+                            }}
                             key={item.name}
                             onClick={() => {
                                 handleDropDown(displayMenu)
