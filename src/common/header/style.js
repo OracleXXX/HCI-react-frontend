@@ -19,7 +19,7 @@ export const Logo = styled.img`
     height:4.9rem;
 `;
 export const Nav = styled.div`
-   
+    z-index: 1000;
     width: 104rem;
     height: 100%;
     box-sizing: border-box;
@@ -71,10 +71,18 @@ export const NavItem = styled.div`
         transform: rotate(180deg);
         transition: ease-in-out 0.2s;
         }
+      & .drop-down-active {
+          visibility: visible;
+          transition: 0.2s;
+          opacity: 1;          
+         
+      }
         
 `;
 export const DropDownServices = styled.div`
-  z-index: 100;
+  z-index: 50;
+  visibility: hidden;
+  box-sizing: border-box;
   position: absolute;
   left: -1.0rem;
   top: 5.99rem;
@@ -85,6 +93,10 @@ export const DropDownServices = styled.div`
   font-weight: normal;
   display: flex;
   flex-direction: column;
+  transition: 0.2s;
+  opacity: 0;
+  box-shadow: 0 0 0.8rem 0 #666666;
+  
   
   
   & .dropDownItem{

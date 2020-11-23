@@ -35,14 +35,13 @@ class Header extends PureComponent {
     }
 
     getDropDown() {
-        const {displayMenu} = this.props;
-        if (displayMenu) {
+const {displayMenu} = this.props;
             return (
-                <DropDownServices>
+                <DropDownServices className={displayMenu? "drop-down-active": "dropdown"}>
                     {
                         constants.DROP_DOWN_BAR.map((item, index) => {
                             return (
-                                <Link to={item.link} key={item.name}>
+                                <Link to={item.link} key={item.name} >
                                     <div className="dropDownItem">{item.name}</div>
                                 </Link>
                             )
@@ -50,9 +49,7 @@ class Header extends PureComponent {
                     }
                 </DropDownServices>
             )
-        } else {
-            return null;
-        }
+
     };
 
     getNavBar() {
