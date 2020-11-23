@@ -26,7 +26,9 @@ class ContactUs extends PureComponent {
         super(props)
         this.ScrollTo = React.createRef()   // Create a ref object
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     render() {
         return (
 
@@ -126,19 +128,14 @@ class ContactUs extends PureComponent {
         )
     }
 
-        componentDidMount() {
-            this.scrollToMyRef()
-
-        }
+    componentDidMount() {
+        this.scrollToMyRef()
+    }
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({
-
-});
-const mapDispatch = (dispatch) => ({
-
-})
+const mapState = (state) => ({});
+const mapDispatch = (dispatch) => ({})
 
 export default connect(mapState, mapDispatch)(withRouter(ContactUs));
 
