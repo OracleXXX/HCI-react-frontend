@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import {actionCreators} from './store';
+import {actionCreators, constants} from './store';
 //css
 import {
     ActivityWrapper,
@@ -59,11 +59,13 @@ class Activity extends PureComponent {
             return
         }
         activityList.map((item) => {
+            console.log(item);
             demoList.push(
+
                 <div key={item.get("id")}>
                     <ActivityItem>
                         <ItemLeft>
-                            <img src={"../" + item.get("imgUrl")} alt="" className="item-left-img no-select"/>
+                            <img src={constants.URL_HEADER+ item.get("avatar")} alt="" className="item-left-img no-select"/>
                         </ItemLeft>
                         <ItemRight>
                             <ItemRightTop>
