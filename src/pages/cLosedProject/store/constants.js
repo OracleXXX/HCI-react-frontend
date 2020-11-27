@@ -5,7 +5,7 @@ export const CHANGE_FLIPPING_LIST = 'closedProjectList/CHANGE_FLIPPING_LIST';
 export const SETTINGS = {
     infinite: true,
     autoplay: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     pauseOnHover: true,
