@@ -11,10 +11,14 @@ import {
 
 
 class LongShort extends PureComponent {
-
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <LongShortWrapper>
+            <LongShortWrapper ref={this.ScrollTo}>
                 <LongShortTitle>
                     <div className='title'>一站式房屋买卖流程</div>
                     <div className='rec no-select'/>
@@ -27,7 +31,7 @@ class LongShort extends PureComponent {
         return (
             constants.FLOW_CHART_IMG.map((item, index) => {
                 return (
-                    <FlowChartItem>
+                    <FlowChartItem key={index}>
                         <img src={item} alt="" className='long-short-img'/>
                         <div className='long-short-content'>
                             <div className='content'>{constants.FLOW_CHART_CONTENT[index]}</div>
@@ -37,6 +41,9 @@ class LongShort extends PureComponent {
                 )
             })
         )
+    }
+    componentDidMount() {
+        this.scrollToMyRef()
     }
 }
 export default connect(null, null)(withRouter(LongShort));

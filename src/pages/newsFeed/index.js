@@ -4,8 +4,8 @@ import {withRouter} from 'react-router-dom';
 import {actionCreators} from './store';
 import {
     Data,
-    NewsFeedTitle, Tag,
-
+    NewsFeedTitle,
+    Tag,
 } from "../homePage/componentStyles/NewFeedStyle";
 import {
     NewsFeedWrapper,
@@ -19,7 +19,6 @@ import {
     ArticleItemRight,
     ArticleItemRightTop,
     ArticleItemRightBottom,
-
     ReadMore,
     Arrow
 
@@ -30,12 +29,17 @@ const popularList = []
 const demoList = [];
 
 class NewsFeed extends PureComponent {
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     //渲染
     render() {
         const {page, totalPage} = this.props;
         this.getArticleItems()
         return (
-            <NewsFeedWrapper>
+            <NewsFeedWrapper ref={this.ScrollTo}>
                 <NewsFeedTitle>
 
                     <span className='title'>最近动态</span>
@@ -65,10 +69,11 @@ class NewsFeed extends PureComponent {
             count += 1;
             /*置顶文章*/
             count < 3 && popularList.push(
-                <PopularArticleItem className={ count ? "article-item-right" : "article-item-left"} key={item.get("id")}>
+                <PopularArticleItem className={count ? "article-item-right" : "article-item-left"} key={item.get("id")}>
                     {this.getArticleData(item.get("day"), item.get("year-month"))}
                     <img src={item.get("imgUrl")} alt="" className="popular-img"/>
-                    <ArticleItemBottom className={ count ? "popular-article-title-right" : "popular-article-title-left"} >{item.get("title")}</ArticleItemBottom>
+                    <ArticleItemBottom
+                        className={count ? "popular-article-title-right" : "popular-article-title-left"}>{item.get("title")}</ArticleItemBottom>
                 </PopularArticleItem>
             );
 
@@ -84,17 +89,17 @@ class NewsFeed extends PureComponent {
                             <ArticleItemRightTop>
                                 <div className="article-title">{item.get("title")}</div>
                                 <div className="article-tags no-select">{this.getTag(item.get("tags"))}</div>
-                                <div className="article-content">{item.get("preContent")}</div>
+                                <div className="article-content">{item.get("content")}</div>
                             </ArticleItemRightTop>
                             <ArticleItemRightBottom>
                                 <ReadMore className="right-bottom-read-more no-select">{this.getReadMore()}</ReadMore>
                             </ArticleItemRightBottom>
-
                         </ArticleItemRight>
                     </ArticleItem>
                     <DivLine/>
                 </Fragment>
             )
+            return null;
         })
     };
 
@@ -112,7 +117,7 @@ class NewsFeed extends PureComponent {
         let pages = [];
         pages.push(
             <span
-                onClick={() => handlePageChange(page - 1, totalPage)}
+                onClick={() => handlePageChange(page - 1, totalPage, this.scrollToMyRef)}
                 className={page === 1 ? "prev-next disabled" : "prev-next"}
                 key="news-feed-page-prev"
             >上一页</span>
@@ -120,16 +125,15 @@ class NewsFeed extends PureComponent {
         for (let i = 1; i <= totalPage; i++) {
             pages.push(
                 <span
-                    onClick={() => handlePageChange(i, totalPage)}
+                    onClick={() => handlePageChange(i, totalPage, this.scrollToMyRef)}
                     className={page === i ? "page-number active" : "page-number"}
                     key={"news-feed-page-" + i}
                 >{i}</span>
             )
-        }
-        ;
+        };
         pages.push(
             <span
-                onClick={() => handlePageChange(page + 1, totalPage)}
+                onClick={() => handlePageChange(page + 1, totalPage, this.scrollToMyRef)}
                 className={page === totalPage ? "prev-next disabled" : "prev-next"}
                 key="news-feed-page-next"
             >下一页</span>
@@ -161,9 +165,13 @@ class NewsFeed extends PureComponent {
 
         )
     };
+
     getArticleData(day, yearMonth) {
         return (
-            <Data><div className="data-day">{day}</div><div className="data-year-month">{yearMonth}</div></Data>
+            <Data>
+                <div className="data-day">{day}</div>
+                <div className="data-year-month">{yearMonth}</div>
+            </Data>
         )
     }
 
@@ -171,6 +179,7 @@ class NewsFeed extends PureComponent {
     componentDidMount() {
 
         this.props.getNewsFeedList();
+        this.scrollToMyRef()
     };
 
 
@@ -189,14 +198,12 @@ const mapDispatch = (dispatch) => ({
 
         dispatch(actionCreators.getNewsFeed())
     },
-    handlePageChange(page, totalPage) {
+    handlePageChange(page, totalPage, scroll) {
         0 < page
         && page <= totalPage
         && dispatch(actionCreators.updatePage(page));
+        scroll()
     }
-
-
 })
-
 export default connect(mapState, mapDispatch)(withRouter(NewsFeed));
 

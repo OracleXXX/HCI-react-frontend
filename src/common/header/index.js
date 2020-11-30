@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
-import {CSSTransition} from "react-transition-group";
 import Banner from './Banner';
 import {actionCreators} from './store';
 
@@ -13,77 +12,21 @@ import {
     DropDownServices,
     FloatBar
 } from "./style";
-import triangle from '../../statics/imgs/headerImgs/triangle.svg';
+
 import logoPic from '../../statics/imgs/headerImgs/Inc-Logo-0.jpg';
 import './addtionStyle.css';
-
+import {constants} from "./store";
 
 class Header extends PureComponent {
-
-    getDropDown() {
-        const {displayMenu} = this.props;
-        if (displayMenu) {
-            return (
-                <DropDownServices>
-                    <ul>
-                        <Link to='/one-step/management'>
-                            <li className='dropDownItem'>一站式房屋管理</li>
-                        </Link>
-                        <Link to='/one-step/long-short'>
-                            <li className='dropDownItem'>一站式房屋买卖</li>
-                        </Link>
-                        <Link to='/one-step/activities'>
-                            <li className='dropDownItem'>平台活动</li>
-                        </Link>
-                    </ul>
-                </DropDownServices>
-            )
-        } else {
-            return null;
-        }
-    };
+    scrollToTop = () => window.scrollTo(0, 0)
 
     render() {
-        const {handleDropDown, displayMenu} = this.props;
         return (
             <div>
                 <HeaderWrapper className='no-select'>
 
                     {/* 导航 */}
-                    <Nav>
-                        <Link to='/'><NavItem className='CompName'><Logo src={logoPic} alt=""/>HomeCap
-                            INC<FloatBar
-                            className="float-bar"/></NavItem></Link>
-                        <Link to='/new-project'><NavItem className='left'>精选房源<FloatBar
-                            className="float-bar"/></NavItem></Link>
-                        <NavItem
-                            className='left'
-                            onMouseEnter={() => {
-                                handleDropDown(displayMenu)
-                            }}
-                            onMouseLeave={() => {
-                                handleDropDown(displayMenu)
-                            }}
-                            onClick={() => {
-                                handleDropDown(displayMenu)
-                            }}
-
-                        >
-                            一站式服务
-                            <img src={triangle} alt="" className='triangle'/>
-                            {this.getDropDown()}
-                        </NavItem>
-                        <Link to='/platform-loan'><NavItem className={'left active'}>平台贷款 <FloatBar
-                            className="float-bar"/></NavItem></Link>
-                        <Link to='/closed-project'><NavItem className='left'>项目展示<FloatBar
-                            className="float-bar"/></NavItem></Link>
-                        <Link to='/our-team'><NavItem className='left'>团队背景<FloatBar
-                            className="float-bar"/></NavItem></Link>
-                        <Link to='/news-feed'><NavItem className='left'>美房投资攻略<FloatBar
-                            className="float-bar"/></NavItem></Link>
-                        <Link to='/contact-us'><NavItem className='left'>联系我们<FloatBar
-                            className="float-bar"/></NavItem></Link>
-                    </Nav>
+                    <Nav>{this.getNavBar()}</Nav>
                 </HeaderWrapper>
                 {/* 走马灯Banner */}
                 <Banner/>
@@ -91,7 +34,65 @@ class Header extends PureComponent {
         )
     }
 
+    getDropDown() {
+        const {displayMenu} = this.props;
+        return (
+            <DropDownServices className={displayMenu ? "drop-down-active" : "dropdown"}>
+                {
+                    constants.DROP_DOWN_BAR.map((item, index) => {
+                        return (
+                            <Link to={item.link} key={item.name}>
+                                <div className="dropDownItem">{item.name}</div>
+                            </Link>
+                        )
+                    })
+                }
+            </DropDownServices>
+        )
 
+    };
+
+    getNavBar() {
+        const {handleDropDown, displayMenu} = this.props;
+        return (
+            constants.NAV_BAR.map((item, index) => {
+                if (index !== 2) {
+                    return (
+                        <Link to={item.link} key={item.name}><NavItem className={index === 0 ? 'CompName' : "left"}
+                                                                      onClick={index === 0 ? () => {
+                                                                          this.scrollToTop()
+                                                                      } : null}>
+                            {index === 0 ? <Logo src={logoPic}/> : null}
+                            <div className='nav-name'>{item.name}</div>
+
+                        </NavItem>
+                        </Link>
+                    )
+                } else {
+                    return (
+                        <NavItem
+                            className='left'
+                            onMouseEnter={() => {
+                                handleDropDown(false)
+                            }}
+                            onMouseLeave={() => {
+                                handleDropDown(true)
+                            }}
+                            key={item.name}
+                            onClick={() => {
+                                handleDropDown(displayMenu)
+                            }}
+                        >
+                            <div className='nav-name'>{item.name}</div>
+                            <img src={constants.TRIANGLE} alt="" className='triangle'/>
+                            {this.getDropDown()}
+                        </NavItem>
+                    )
+                }
+            })
+        )
+
+    }
 
 
 }

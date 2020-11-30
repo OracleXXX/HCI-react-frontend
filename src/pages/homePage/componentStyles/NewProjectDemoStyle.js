@@ -13,6 +13,12 @@ export const NewProjectDemoWrapper = styled.div`
 
   border-top: 1px solid #ffffff;
   background-color: #F6F8F9;
+  & .button:hover {
+    border: 0.1rem solid #2D84FF;
+    box-shadow: 0 0 0 0.2rem  rgba(45, 132, 255, 0.5);
+    -moz-outline-radius: 0.8rem;
+  }
+  & .button:active{ -moz-transform: translate(0.1rem,0.1rem); -webkit-transform: translate(0.1rem,0.1rem); -o-transform: translate(0.1rem,0.1rem); }
 `;
 
 
@@ -30,6 +36,7 @@ export const SliderTitle = styled.div`
     font-size:3.2rem;
     color:#333333;
     text-align:center;
+    cursor: pointer;
   }
   & .rec {
     width: 5rem;
@@ -55,9 +62,7 @@ export const SliderWrapper = styled.div`
   width: 123rem;
   height: 33rem;
   margin: 5.4rem auto 11.3rem; 
-  & .button:hover {
-    border: 1px solid blue;
-  }
+
 `;
 export const PrevArrow = styled.div`
   position: absolute;
@@ -66,6 +71,7 @@ export const PrevArrow = styled.div`
   width: 5.6rem;
   height: 5.6rem;
   cursor: pointer;
+  border-radius: 2.8rem;
   border: 1px solid transparent;
   background-image: url(${prevArrow});
   background-size: contain;
@@ -83,6 +89,7 @@ export const NextArrow = styled.div`
   border: 1px solid transparent;
   background-image: url(${nextArrow});
   background-size: contain;
+  border-radius: 2.8rem;
 `;
 export const Item = styled.div`
   position: relative;
@@ -171,5 +178,6 @@ export const MoreInfo = styled.div`
     height: 1.2rem;
     margin-left: 0.5rem;
   }
+
   
 `;

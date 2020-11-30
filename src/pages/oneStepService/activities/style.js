@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const ActivityWrapper = styled.div`
   width: calc(192rem - 17px);
   min-width: 1300px;
+  & .button:hover {
+    border: 0.1rem solid #2D84FF;
+    box-shadow: 0 0 0 0.2rem  rgba(45, 132, 255, 0.5);
+    -moz-outline-radius: 0.8rem;
+  }
+  & .button:active { -moz-transform: translate(0.1rem,0.1rem); -webkit-transform: translate(0.1rem,0.1rem); -o-transform: translate(0.1rem,0.1rem); }
 
 `;
 export const ActivityTitle = styled.div`
@@ -168,8 +174,11 @@ export const Pagination = styled.div`
     & .disabled {
       cursor: not-allowed;
       opacity:0.5;//设置蒙版效果
-
-    
     }
-  
+  & .page-number:hover {
+    font-weight: bold;
+  }
+  & .prev-next:hover {
+    font-weight: bolder;
+  }
 `;

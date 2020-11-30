@@ -1,6 +1,8 @@
 /*设置全局字体大小 1rem=10px*/
 html {
     font-size: 62.5%; /*10 ÷ 16 × 100% = 62.5%*/
+    scroll-behavior: smooth;
+
 }
 
 
@@ -41,12 +43,5 @@ html {
     height: 100%;
 }
 
-.eqheight {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-}
 
 /*===*/

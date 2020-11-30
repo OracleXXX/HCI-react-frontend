@@ -6,9 +6,8 @@ export const OurTeamWrapper = styled.div`
 
 
 export const OurTeamContainer = styled.div`
-/*  width: 89.2rem;
-  height: 92rem;*/
-  width: 93.2rem;
+
+  width: 120rem;
   height: 96rem;
   margin: 5.7rem auto;
   display: flex;
@@ -16,6 +15,7 @@ export const OurTeamContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   background: #FFFFFF;
+   color: #666666;
 `;
 
 
@@ -97,7 +97,7 @@ export const Position = styled.div`
 
 export const Introduction = styled.div`
   height: 15.6rem;
-  font-family: PingFangSC-Regular;
+  font-family: SourceHanSansSC-Normal;
   font-size: 1.4rem;
   line-height: 2.6rem;
   margin: 0 2rem;

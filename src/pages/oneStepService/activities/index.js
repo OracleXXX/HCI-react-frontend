@@ -1,8 +1,8 @@
-import React, {Fragment, PureComponent} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import {actionCreators} from './store';
+import {actionCreators, constants} from './store';
 //css
 import {
     ActivityWrapper,
@@ -17,18 +17,23 @@ import {
     Apply,
     Pagination
 } from './style';
-import test from '../../../statics/imgs/test.jpg'
 
 const demoList = [];
 
 class Activity extends PureComponent {
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     //渲染
     render() {
+
         const {page, totalPage} = this.props;
         this.getActivityItems()
         return (
             <ActivityWrapper>
-                <ActivityTitle>
+                <ActivityTitle ref={this.ScrollTo}>
                     <div className='title'>平台活动</div>
                     <div className='rec'/>
                 </ActivityTitle>
@@ -54,11 +59,13 @@ class Activity extends PureComponent {
             return
         }
         activityList.map((item) => {
+            console.log(item);
             demoList.push(
+
                 <div key={item.get("id")}>
                     <ActivityItem>
                         <ItemLeft>
-                            <img src={"../" + item.get("imgUrl")} alt="" className="item-left-img no-select"/>
+                            <img src={constants.URL_HEADER+ item.get("avatar")} alt="" className="item-left-img no-select"/>
                         </ItemLeft>
                         <ItemRight>
                             <ItemRightTop>
@@ -69,7 +76,7 @@ class Activity extends PureComponent {
                                 <div className='activity-location'>活动地点：{item.get("location")}</div>
                                 <div className='activity-time'>活动时间：{item.get("time")}</div>
                                 <div className='activity-deadline'>截止日期：{item.get("deadline")}</div>
-                                <Apply className='apply no-select'>我要报名</Apply>
+                                <Apply className='apply no-select button'>我要报名</Apply>
                             </ItemRightBottom>
 
                         </ItemRight>
@@ -77,8 +84,9 @@ class Activity extends PureComponent {
                     <DivLine/>
                 </div>
             )
+            return null;
         })
-        console.log(demoList)
+
     };
 
     //分页器
@@ -86,17 +94,17 @@ class Activity extends PureComponent {
         const {page, handlePageChange} = this.props;
         let pages = [];
         pages.push(
-            <span key="news-feed-page-prev" onClick={() => handlePageChange(page - 1, totalPage)}
+            <span key="news-feed-page-prev" onClick={() => handlePageChange(page - 1, totalPage, this.scrollToMyRef)}
                   className={page === 1 ? "prev-next disabled" : "prev-next"}>上一页</span>
         )
         for (let i = 1; i <= totalPage; i++) {
             pages.push(
-                <span key={"news-feed-page-" + i} onClick={() => handlePageChange(i, totalPage)}
+                <span key={"news-feed-page-" + i} onClick={() => handlePageChange(i, totalPage, this.scrollToMyRef)}
                       className={page === i ? "page-number active" : "page-number"}>{i}</span>
             )
         }
         pages.push(
-            <span key="news-feed-page-next" onClick={() => handlePageChange(page + 1, totalPage)}
+            <span key="news-feed-page-next" onClick={() => handlePageChange(page + 1, totalPage, this.scrollToMyRef)}
                   className={page === totalPage ? "prev-next disabled" : "prev-next"}>下一页</span>
         )
         return pages;
@@ -105,6 +113,7 @@ class Activity extends PureComponent {
 
     componentDidMount() {
         this.props.getActivityList(this.props.activityList);
+        this.scrollToMyRef()
 
     }
 
@@ -123,9 +132,10 @@ const mapDispatch = (dispatch) => ({
     getActivityList(list) {
         list.size === 0 && dispatch(actionCreators.getActivity());
     },
-    handlePageChange(page, totalPage) {
+    handlePageChange(page, totalPage, scroll) {
 
         0 < page && page <= totalPage && dispatch(actionCreators.updatePage(page));
+        scroll()
 
     }
 

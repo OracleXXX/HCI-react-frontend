@@ -20,17 +20,14 @@ import {
     Data
 
 } from '../componentStyles/NewFeedStyle';
-
-import test from '../../../statics/imgs/test.jpg';
+import {Link} from "react-router-dom";
 
 class NewsFeed extends PureComponent {
-
     render() {
-
         return (
             <NewsFeedWrapper className='scale-control'>
                 <NewsFeedTitle>
-                    <span className='title'>最近动态</span>
+                    <Link to='/news-feed'><span className='title'>最近动态</span></Link>
                     <div className='rec'/>
                 </NewsFeedTitle>
                 <NewsFeedArticle>
@@ -70,8 +67,8 @@ class NewsFeed extends PureComponent {
                                 {/* 分割线 */}
                                 <div className='divLine'/>
                                 {/* 文章 */}
-                                <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
-                                <ReadMore>{this.getReadMore()}</ReadMore>
+                                <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
+                                <ReadMore className="button">{this.getReadMore()}</ReadMore>
                             </RightPart>
                         </FixedTopArticle>
                     ))
@@ -98,8 +95,8 @@ class NewsFeed extends PureComponent {
                                 <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
-                                <ArticleContent className='articleContent'>{item.get('preContent')}</ArticleContent>
-                                <ReadMore>{this.getReadMore()}</ReadMore>
+                                <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
+                                <ReadMore className="button" >{this.getReadMore()}</ReadMore>
                             </BottomPart>
                         </RestArticle>
                     ))
@@ -139,6 +136,8 @@ class NewsFeed extends PureComponent {
                 <div className="data-year-month">2020/11</div>
             </Data>
         )
+    }
+    componentDidMount() {
     }
 
 }

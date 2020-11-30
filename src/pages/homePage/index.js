@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import NewProjectDemo from "./components/NewProjectDemo";
 import WeOffer from "./components/WeOffer";
 import InvestmtFLowChart from "./components/InvestmtFLowChart";
@@ -13,29 +13,31 @@ import {actionCreators as NewsFeedActionCreator} from '../newsFeed/store';
 /*cpc tigersniffsrose*/
 class homePage extends PureComponent {
 
+    scrollToTop = () => window.scrollTo(0, 0)
+
+
     render() {
         return (
             <HomePageWrapper>
-                <WeOffer />
-                <NewProjectDemo />
-                <InvestmtFLowChart />
-                <NewsFeed />
+                <WeOffer/>
+                <NewProjectDemo/>
+                <InvestmtFLowChart/>
+                <NewsFeed/>
             </HomePageWrapper>
 
         )
     }
+
     componentDidMount() {
         this.props.changeHomePageData();
+        this.scrollToTop()
     }
 
 
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({
-
-
-});
+const mapState = (state) => ({});
 const mapDispatch = (dispatch) => ({
     changeHomePageData() {
         dispatch(actionCreators.getHomePageInfo());

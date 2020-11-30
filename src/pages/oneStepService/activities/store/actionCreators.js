@@ -1,5 +1,6 @@
 import axios from 'axios'
 import * as constants from './constants'
+import {fromJS} from "immutable";
 
 const changePage = (page) =>({
     type: constants.CHANGE_PAGE,
@@ -16,16 +17,16 @@ export const updatePage = (page) => {
 
 const changeActivityList = (result)=> ({
     type: constants.CHANGE_ACTIVITY,
-    activityList: result.activityList,
-    totalPage: Math.ceil(result.activityList.length/5)
+    activityList: fromJS(result),
+    totalPage: Math.ceil(result.length/5)
 
 })
 
 export const getActivity=()=> {
     return (dispatch) => {
-        axios.get('/api/activityList.json').then((res)=> {
-            const result =res.data.data;
-            dispatch(changeActivityList(result));
+        axios.get('http://localhost:8080/api/one-step/activities').then((res)=> {
+
+            dispatch(changeActivityList(res.data));
             }
 
         );

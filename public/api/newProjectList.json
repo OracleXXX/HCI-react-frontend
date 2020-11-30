@@ -13,11 +13,11 @@
         "rental": "/房屋出租",
         "addr": "1609 damascus",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
-        "platformLoan": "$500000"
+        "flippingBudget": "12%",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "12%",
+        "expectedNetRateOfReturn": "12%",
+        "platformLoan": "有"
       },
       {
         "id": 2,
@@ -30,10 +30,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },{
         "id": 3,
@@ -46,10 +46,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },{
         "id": 4,
@@ -62,10 +62,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },{
         "id": 5,
@@ -78,10 +78,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -95,10 +95,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -112,10 +112,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -129,10 +129,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -146,10 +146,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -163,10 +163,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -180,10 +180,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -197,10 +197,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -214,10 +214,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -231,10 +231,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -248,10 +248,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -265,10 +265,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       },
       {
@@ -282,10 +282,10 @@
         "rental": "/房屋出租",
         "addr": "252 BrookHollow",
         "fullAddr": "252 BrookHollow, Nashville",
-        "expectCash": "$201",
-        "expectRate": "12%",
-        "expectRentalIncome": "$2011",
-        "expectRemodel": "$20000",
+        "flippingBudget": "$201",
+        "expectedRentalRateOfReturn": "12%",
+        "expectedCashRateOfReturn": "$2011",
+        "expectedNetRateOfReturn": "$20000",
         "platformLoan": "$500000"
       }
     ]

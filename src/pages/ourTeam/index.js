@@ -13,18 +13,21 @@ import {
     Position,
     Introduction
 } from './style';
-import test from '../../statics/imgs/dadige.jpg'
 
 class OurTeam extends PureComponent {
-
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <OurTeamWrapper>
+            <OurTeamWrapper ref={this.ScrollTo}>
                 <OurTeamTitle>
                     <div className='title'>团队背景</div>
                     <div className='rec'/>
                 </OurTeamTitle>
-                <OurTeamContainer>{this.getOurTeamContainer()}</OurTeamContainer>
+                <OurTeamContainer className='no-select'>{this.getOurTeamContainer()}</OurTeamContainer>
             </OurTeamWrapper>
         )
     }
@@ -32,11 +35,11 @@ class OurTeam extends PureComponent {
         return (
             constants.TEAM_MEMBERS.map((item, index) => {
                 return (
-                    <ContainerItem>
+                    <ContainerItem key={index}>
                         <ItemWrapper>
                         <Avatar>
                             <div className='avatar'>
-                                <img src={test} alt=""/>
+                                <img src={constants.TEAM_AVATAR[index]} alt=""/>
                             </div>
                         </Avatar>
                         <Name>{item}</Name>
@@ -47,6 +50,9 @@ class OurTeam extends PureComponent {
                 )
             })
         )
+    }
+    componentDidMount() {
+        this.scrollToMyRef()
     }
 }
 export default connect(null, null)(withRouter(OurTeam));

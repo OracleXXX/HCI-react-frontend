@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 // 导入css样式组件
 import {
     InvestmtFlowChartWrapper,
@@ -16,36 +17,7 @@ import {
 
 } from '../componentStyles/InvestmtFLowChartStyle';
 //导入图片
-import step1 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/flowChart1.png';
-import step2 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/flowChart2.png';
-import step3 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/flowChart3.png';
-import step4 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/flowChart4.png';
-import step5 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/flowChart5.png';
-import step6 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/flowChart6.png';
-import step7 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/flowChart7.png';
-import index1 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/index1.png';
-import index2 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/index2.png';
-import index3 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/index3.png';
-import index4 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/index4.png';
-import index5 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/index5.png';
-import index6 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/index6.png';
-import index7 from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/index7.png';
-import oddDash from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/oddDash.svg';
-import evenDash from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/evenDash.svg';
-import {connect} from 'react-redux';
-import moreInfoIcon from "../../../statics/imgs/homePageImgs/moreInfoIcon.png";
-
-
-//映射静态资源
-const mapStepListToString = [
-    [step1, index1, '选定房源', '', '', ''],
-    [step2, index2, '咨询详情及回报', '(交税流程、税务问题、法律问题)', '', ''],
-    [step3, index3, '与HCI签订合同并交付定金', '', '', ''],
-    [step4, index4, '资金', '', 'a.现金（交易具体流程）', 'b.私人贷款（私人贷款法律规范及流程）'],
-    [step5, index5, '房屋情况', '', 'a.房屋状况检查表', 'b.装修预算表'],
-    [step6, index6, '管理合同', '', 'a.第一年全包合同（10个月一次性租金回报） ', 'b.正常管理合同（10%管理费）'],
-    [step7, index7, '项目展示', '', '', '']
-];
+import {constants} from '../store'
 
 class InvestmtFLowChart extends PureComponent {
     render() {
@@ -79,16 +51,16 @@ class InvestmtFLowChart extends PureComponent {
         const OddFlowChartList = [];
         const EvenFlowChartList = [];
         for (let i = 0; i < 7; i++) {
-            const src = mapStepListToString[i][0];
-            const indexIcon = mapStepListToString[i][1];
-            const title = mapStepListToString[i][2];
-            const subTitle = mapStepListToString[i][3];
-            const content1 = mapStepListToString[i][4];
-            const content2 = mapStepListToString[i][5];
+            const src = constants.MAP_STEP_LIST_TO_STRING[i][0];
+            const indexIcon = constants.MAP_STEP_LIST_TO_STRING[i][1];
+            const title = constants.MAP_STEP_LIST_TO_STRING[i][2];
+            const subTitle = constants.MAP_STEP_LIST_TO_STRING[i][3];
+            const content1 = constants.MAP_STEP_LIST_TO_STRING[i][4];
+            const content2 = constants.MAP_STEP_LIST_TO_STRING[i][5];
 
             if (i % 2 === 0) {
                 OddFlowChartList.push(
-                    <OddStepWrapper key={mapStepListToString[i][2]}>
+                    <OddStepWrapper key={constants.MAP_STEP_LIST_TO_STRING[i][2]}>
                         <div className='oddStep'>
                             <img src={src} alt="" className="flow-chart-img"/>
                             {this.getOddIndexToImg(indexIcon, title, subTitle, content1, content2)}
@@ -97,7 +69,7 @@ class InvestmtFLowChart extends PureComponent {
                 )
             } else {
                 EvenFlowChartList.push(
-                    <EvenStepWrapper key={mapStepListToString[i][2]}>
+                    <EvenStepWrapper key={constants.MAP_STEP_LIST_TO_STRING[i][2]}>
                         <div className='evenStep'>
                             {this.getEvenIndexToImg(indexIcon, title, subTitle, content1, content2)}
                             <img src={src} alt="" className="flow-chart-img"/>
@@ -115,7 +87,7 @@ class InvestmtFLowChart extends PureComponent {
         return (
             <OddImgToIndex>
                 <div className='imgToIndex-odd'>
-                    <img src={oddDash} alt="" className='oddDash'/>
+                    <img src={constants.ODD_DASH} alt="" className='oddDash'/>
                     <img src={indexIcon} alt="" className='oddIndex'/>
                     <OddIndexContent>
                         <div className='oddContentTitle'>{title}</div>
@@ -142,7 +114,7 @@ class InvestmtFLowChart extends PureComponent {
         return (
             <EvenImgToIndex>
                 <div className='imgToIndex-even'>
-                    <img src={evenDash} alt="" className='evenDash'/>
+                    <img src={constants.EVEN_DASH} alt="" className='evenDash'/>
                     <img src={indexIcon} alt="" className='evenIndex'/>
                     <EvenIndexContent>
                         <div className='evenContentTitle'>{title}</div>
@@ -171,9 +143,9 @@ class InvestmtFLowChart extends PureComponent {
 
     getMoreInfo() {
         return (
-            <MoreInfo>
+            <MoreInfo className="button">
                 <span>了解详情</span>
-                <img src={moreInfoIcon} alt="" className='moreInfoIcon-blue'/>
+                <img src={constants.MORE_INFO_ICON} alt="" className='moreInfoIcon-blue'/>
             </MoreInfo>
         )
     }

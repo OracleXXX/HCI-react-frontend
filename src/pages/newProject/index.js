@@ -21,19 +21,55 @@ import {
     SliderTitle as NewProjectTitle
 } from '../homePage/componentStyles/NewProjectDemoStyle';
 import {actionCreators} from './store';
-import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
-import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
-import seeMoreIcon from "../../statics/imgs/newProject/seeMoreIcon.png"
+import {constants} from './store'
 
 const demoList = [];
 
 class NewProject extends PureComponent {
+    constructor(props) {
+        super(props)
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop-100)
+    // 渲染
+    render() {
+        const {page, totalPage} = this.props;
+        this.changeDemoList()
+        return (
+            <NewProjectWrapper ref={this.ScrollTo}>
+                <NewProjectTitle>
+                    <div className='title'>精选房源</div>
+                    <div className='rec no-select'/>
+                    <div><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
+                </NewProjectTitle>
+
+                <NewProjectContainer>{this.getNewProjectContainer(page, totalPage)}</NewProjectContainer>
+                {
+                    page < totalPage
+                        ? <SeeMore
+                            onClick={() => this.props.handleGetMorePages(page)}
+                            className="button"
+                        >
+                            <div className="see-more">
+                                <span>查看更多</span>
+                                <img src={constants.SEE_MORE_ICON} alt="" className="see-more-icon"/>
+                            </div>
+                        </SeeMore>
+                        : null
+                }
+
+            </NewProjectWrapper>
+        )
+    }
+
     //所有房源
     getNewProjectContainer(page, totalPage) {
         if (page <= totalPage) {
             return demoList.slice(0, page * 6)
         }
     }
+
     //把数据放入totalList
     changeDemoList() {
         const {newProjectList} = this.props;
@@ -44,31 +80,32 @@ class NewProject extends PureComponent {
             demoList.push(
                 <ContainerItem key={item.get("id")}>
                     {/*图*/}
-                    {this.getItemImgContainer(item.get("imgUrl"), item.get("addr"))}
+                    {this.getItemImgContainer(item.get("imgUrl"), item.get("location"))}
                     {/*价格和租金*/}
                     {this.getItemPriceContaner(item.get("price"), item.get("month"), item.get("area"), item.get("rental"))}
                     {/*预期数据*/}
-                    {this.getMarginContainer(item.get("fullAddr"), item.get("expectCash"), item.get("expectRate"), item.get("expectRentalIncome"), item.get("expectRemodel"), item.get("platformLoan"))}
+                    {this.getMarginContainer(item.get("fullAddr"), item.get("flippingBudget"), item.get("expectedRentalRateOfReturn"), item.get("expectedCashRateOfReturn"), item.get("expectedNetRateOfReturn"), item.get("platformLoan"))}
                 </ContainerItem>
             )
+            return null;
         })
     }
 
 
     //图
-    getItemImgContainer(imgUrl, addr) {
+    getItemImgContainer(imgUrl, location) {
         return (
             <ItemImgContainer>
                 <img src={imgUrl} alt="" className='house-img no-select'/>
                 <AdditionInfo>
                     <div className='addition-info-content'>
                         <City>
-                            <img src={addrIcon} alt="" className='addr-icon'/>
-                            <span className='city-name'>{addr}</span>
+                            <img src={constants.ADDR_ICON} alt="" className='addr-icon'/>
+                            <span className='city-name'>{location}</span>
                         </City>
-                        <MoreInfo className='no-select'>
+                        <MoreInfo className='no-select button'>
                             <span>详情</span>
-                            <img src={moreInfoIcon} alt=""/>
+                            <img src={constants.MORE_INFO_ICON} alt=""/>
                         </MoreInfo>
                     </div>
                 </AdditionInfo>
@@ -92,19 +129,19 @@ class NewProject extends PureComponent {
     };
 
     // 预期数据
-    getMarginContainer(fullAddr, expectCash, expectRate, expectRentalIncome, expectRemodel, platformLoan) {
-        const newNames = this.props.names.toJS()
+    getMarginContainer(fullAddr, expectedRentalRateOfReturn, expectedCashRateOfReturn, expectedNetIncome, expectedFlippingBudget, platformLoan) {
         return (
             <MarginContainer>
                 <MarginContainerLeft className='margin-container'>
-                    {this.getMarginItem(newNames[0], fullAddr)}
-                    {this.getMarginItem(newNames[1], expectCash)}
-                    {this.getMarginItem(newNames[2], expectRate)}
+                    {this.getMarginItem(constants.FULL_ADDR, fullAddr)}
+                    {this.getMarginItem(constants.FLIPPING_BUDGET, expectedFlippingBudget)}
+                    {this.getMarginItem(constants.EXPECTED_RENTAL_RATE_OF_RETURN, expectedRentalRateOfReturn)}
+
                 </MarginContainerLeft>
                 <MarginContainerRight className='margin-container'>
-                    {this.getMarginItem(newNames[3], expectRentalIncome)}
-                    {this.getMarginItem(newNames[4], expectRemodel)}
-                    {this.getMarginItem(newNames[5], platformLoan)}
+                    {this.getMarginItem(constants.EXPECTED_CASH_RATE_OF_RETURN, expectedCashRateOfReturn)}
+                    {this.getMarginItem(constants.EXPECTED_NET_INCOME, expectedNetIncome)}
+                    {this.getMarginItem(constants.PLATFORM_LOAN, platformLoan)}
                 </MarginContainerRight>
             </MarginContainer>
         )
@@ -120,38 +157,10 @@ class NewProject extends PureComponent {
         )
     };
 
-    // 渲染
-    render() {
-        const {page, totalPage, newProjectList} = this.props;
-        this.changeDemoList()
-        return (
-            <NewProjectWrapper>
-                <NewProjectTitle>
-                    <div className='title'>精选房源</div>
-                    <div className='rec no-select'/>
-                    <div><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
-                </NewProjectTitle>
-
-                <NewProjectContainer>{this.getNewProjectContainer(page, totalPage)}</NewProjectContainer>
-                {
-                    page < totalPage
-                        ? <SeeMore
-                            onClick={() => this.props.handleGetMorePages(page)}
-                        >
-                            <div className="see-more">
-                                <span>查看更多</span>
-                                <img src={seeMoreIcon} alt="" className="see-more-icon"/>
-                            </div>
-                        </SeeMore>
-                        : null
-                }
-
-            </NewProjectWrapper>
-        )
-    }
 
     componentDidMount() {
-        this.props.getNewProject(this.props.newProjectList)
+        this.props.getNewProject(this.props.newProjectList);
+        this.scrollToMyRef()
     }
 }
 

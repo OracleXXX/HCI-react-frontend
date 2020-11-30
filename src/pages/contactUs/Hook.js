@@ -39,8 +39,8 @@ function AppHook({ columns, data }) {
     return (
         <table {...getTableProps()}>
             <thead>
-            {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroups.map((headerGroup, index) => (
+                <tr {...headerGroup.getHeaderGroupProps()} key={index}>
                     {headerGroup.headers.map(column => (
                         <th {...column.getHeaderProps()}>{column.render('Header')}</th>
                     ))}
@@ -51,7 +51,7 @@ function AppHook({ columns, data }) {
             {rows.map((row, i) => {
                 prepareRow(row)
                 return (
-                    <tr {...row.getRowProps()}>
+                    <tr {...row.getRowProps()} key={i}>
                         {row.cells.map(cell => {
                             return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                         })}
