@@ -5,6 +5,7 @@ import styled from "styled-components";
 export const WeOfferFragment = styled.div`
   width: calc(192rem - 17px);
   height: fit-content;
+  
 
 `;
 export const WeOfferWrapper = styled.div`
@@ -30,7 +31,8 @@ export const WeOfferLeft = styled.div`
     font-family: SourceHanSansSC-Bold;
     font-size: 3.2rem;
     color: #333333;
-    text-align: center;     
+    text-align: center;  
+    white-space: nowrap;   
     & .rec {
       position: absolute;
       bottom: 0;

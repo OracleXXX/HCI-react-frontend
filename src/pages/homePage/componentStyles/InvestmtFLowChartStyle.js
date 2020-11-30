@@ -29,7 +29,7 @@ export const FlowChartTitle = styled.div`
     vertical-align: bottom;
   
   }
-`
+`;
 
 export const FlowChart =styled.div`
   position: relative;
@@ -41,7 +41,7 @@ export const FlowChart =styled.div`
     max-width: 19rem;
     max-height: 21.8rem;
   }
-`
+`;
 export const OddWrapper = styled.div`
   position: absolute;
   right: 0;
