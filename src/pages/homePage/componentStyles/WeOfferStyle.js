@@ -14,13 +14,17 @@ export const WeOfferWrapper = styled.div`
   height: 46.1rem;
   //border: 1px solid red;
   margin: 8.6rem auto;
-  font-size: 0 
+  font-size: 0;
+  display: flex;
+  flex-wrap: nowrap;
 `;
     /*  左边文字部分  */
 export const WeOfferLeft = styled.div`
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 60rem;
-  height: 100%;
+  height: 19.8rem;
   //border: 1px dashed greenyellow;
   overflow: hidden; //让行内块元素的基准线变为一起
   & .offerTitle {
@@ -49,7 +53,6 @@ export const WeOfferLeft = styled.div`
     color:#555555;
     line-height:2.6rem;
     text-align:left;
-    margin-top: 2.8rem;
   
   }
 `;

@@ -30,6 +30,7 @@ export const NewsFeedTitle = styled.div`
     color: #333333;
     text-align: center;
     line-height: 4.7rem;
+    white-space: nowrap;
   }
   & .rec {
     width: 5rem;

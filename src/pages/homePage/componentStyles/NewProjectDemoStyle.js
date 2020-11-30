@@ -37,6 +37,7 @@ export const SliderTitle = styled.div`
     color:#333333;
     text-align:center;
     cursor: pointer;
+    white-space: nowrap;
   }
   & .rec {
     width: 5rem;
