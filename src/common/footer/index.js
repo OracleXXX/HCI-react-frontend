@@ -64,8 +64,10 @@ class Footer extends PureComponent {
                                 </div>
                                 <div className="col-right">
                                     <div className='nav-item-footer col'>麦迪逊</div>
-                                    <div className='nav-item-footer col'>Murfreesboro</div>
+                                    <div className='nav-item-footer col'>默弗里斯伯勒</div>
                                     <div className='nav-item-footer col'>孟菲斯</div>
+                                    <div className='nav-item-footer col'>大爱诗兰城</div>
+                                    <div className='nav-item-footer col'>大迪哥家</div>
                                 </div>
 
 
