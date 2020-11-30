@@ -45,6 +45,7 @@ export const NavItem = styled.div`
     border: 1px solid transparent;
     display: flex; 
     align-items: center;
+    box-sizing: border-box;
       &.CompName {
         height: 3rem;
         font-family: 'Fugaz One', cursive;  
@@ -56,6 +57,7 @@ export const NavItem = styled.div`
       & .nav-name {
         height: fit-content;
         width: fit-content;
+        box-sizing: border-box;
       }
       & .left {
       -webkit-transition:-webkit-transform 2s;
