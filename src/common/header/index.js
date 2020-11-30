@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
 import Banner from './Banner';
 import {actionCreators} from './store';
-
+import smoothscroll from 'smoothscroll-polyfill';
 import {
     HeaderWrapper,
     Logo,
@@ -16,7 +16,7 @@ import {
 import logoPic from '../../statics/imgs/headerImgs/Inc-Logo-0.jpg';
 import './addtionStyle.css';
 import {constants} from "./store";
-
+smoothscroll.polyfill();
 class Header extends PureComponent {
     scrollToTop = () => window.scrollTo(0, 0)
 
