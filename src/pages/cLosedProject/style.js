@@ -34,6 +34,7 @@ export const ClosedProjectTitle = styled.div`
     color:#333333;
     text-align:center;
     cursor: pointer;
+    white-space: nowrap;
   }
 
 `;
