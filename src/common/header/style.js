@@ -63,7 +63,7 @@ export const NavItem = styled.div`
       -webkit-transition:-webkit-transform 2s;
       }
       & .nav-name:hover {
-          font-weight: bolder;
+          -webkit-font-smoothing: antialiased ;
       }
       &.left:hover .float-bar {
         display: block;
@@ -114,7 +114,7 @@ export const DropDownServices = styled.div`
   }& .dropDownItem:hover{
     border: 1px solid #FFFFFF;
     border-radius: 0.2rem;
-    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
   
   }
 `;

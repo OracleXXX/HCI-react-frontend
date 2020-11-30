@@ -155,11 +155,13 @@ export const FormContainer = styled.div`
     font-size: 1.3rem;
     line-height: 2.2rem;
     color: #666666;
+
   }
   & .comments {
     width: 96rem;
     padding-bottom: 7rem;
     font-size: 2rem;
+    border: 0.1rem solid #D8D8D8;
     border-radius: 0.4rem;
     outline: none;
   }

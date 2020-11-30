@@ -2,7 +2,7 @@
 html {
     font-size: 62.5%; /*10 ÷ 16 × 100% = 62.5%*/
     scroll-behavior: smooth;
-
+    -webkit-overflow-scrolling: touch;
 }
 
 

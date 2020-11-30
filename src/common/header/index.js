@@ -16,7 +16,9 @@ import {
 import logoPic from '../../statics/imgs/headerImgs/Inc-Logo-0.jpg';
 import './addtionStyle.css';
 import {constants} from "./store";
+
 smoothscroll.polyfill();
+
 class Header extends PureComponent {
     scrollToTop = () => window.scrollTo(0, 0)
 
@@ -58,14 +60,15 @@ class Header extends PureComponent {
             constants.NAV_BAR.map((item, index) => {
                 if (index !== 2) {
                     return (
-                        <Link to={item.link} key={item.name}><NavItem className={index === 0 ? 'CompName' : "left"}
-                                                                      onClick={index === 0 ? () => {
-                                                                          this.scrollToTop()
-                                                                      } : null}>
-                            {index === 0 ? <Logo src={logoPic}/> : null}
-                            <div className='nav-name'>{item.name}</div>
+                        <Link to={item.link} key={item.name}>
+                            <NavItem className={index === 0 ? 'CompName' : "left"}
+                                     onClick={index === 0 ? () => {
+                                         this.scrollToTop()
+                                     } : null}>
+                                {index === 0 ? <Logo src={logoPic}/> : null}
+                                <div className='nav-name'>{item.name}</div>
 
-                        </NavItem>
+                            </NavItem>
                         </Link>
                     )
                 } else {
