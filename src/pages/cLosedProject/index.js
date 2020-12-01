@@ -24,7 +24,7 @@ import Slider from "react-slick";
 import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import * as constants from "./store/constants";
-import Popup from "../../common/popup";
+import {constants as activityConstants} from '../oneStepService/activities/store';
 
 class ClosedProject extends PureComponent {
     constructor(props) {
@@ -96,7 +96,7 @@ class ClosedProject extends PureComponent {
                     <div className="slider" key={item.get("id")}>
                         <Item>
                             <ItemTop>
-                                <img src={item.get("imgUrl")} alt="" className="item-top-img"/>
+                                <img src={activityConstants.PROXY_URL+item.get("avatar")} alt="" className="item-top-img"/>
                                 <FixedBottom>
                                     <div className="fixed-bottom-left"><img src={addrIcon}
                                                                             alt=""/>{item.get("location")}</div>
@@ -115,25 +115,25 @@ class ClosedProject extends PureComponent {
                                     <div className="item-info">
                                         <div className="item-info-1">
                                             <span className="item-info-title">具体地址：</span>
-                                            <div className="item-info-content">{item.get("fullAddr")}</div>
+                                            <div className="item-info-content">{item.get("full_addr")}</div>
                                         </div>
                                         {
                                             flippingSlider
                                                 ? <div><span className="item-info-title">装修费用：</span><span
-                                                    className="item-info-content">{item.get("flippingCost")}</span></div>
+                                                    className="item-info-content">{item.get("flipping_cost")}</span></div>
                                                 : null
                                         }
                                         <div>
                                             <span className="item-info-title">租金回报率：</span>
-                                            <span className="item-info-content">{item.get("rentalRateOfReturn")}</span>
+                                            <span className="item-info-content">{item.get("rental_rate_of_return")}</span>
                                         </div>
                                         <div>
                                             <span className="item-info-title">现金回报率：</span>
-                                            <span className="item-info-content">{item.get("cashRateOfReturn")}</span>
+                                            <span className="item-info-content">{item.get("cash_rate_of_return")}</span>
                                         </div>
                                         <div>
                                             <span className="item-info-title">项目总回报率：</span>
-                                            <span className="item-info-content">{item.get("netRateOfReturn")}</span>
+                                            <span className="item-info-content">{item.get("net_rate_of_return")}</span>
                                         </div>
 
                                     </div>
@@ -162,16 +162,20 @@ const mapState = (state) => ({
     noFlippingList: state.getIn(["closedProject", "noFlippingList"]),
     flippingList: state.getIn(["closedProject", "flippingList"]),
     flippingSlider: state.getIn(["closedProject", "flippingSlider"]),
+    detailList: state.getIn(["closedProject", "detailList"])
 });
 const mapDispatch = (dispatch) => ({
     getNoFlippingList() {
-        dispatch(actionCreators.getNoFlippingList())
+        dispatch(actionCreators.getNoFlippingList());
     },
     getFlippingList() {
-        dispatch(actionCreators.getFlippingList())
+        dispatch(actionCreators.getFlippingList());
     },
     handleSliderChange(flipping) {
-        dispatch(actionCreators.handleSliderChange(flipping))
+        dispatch(actionCreators.handleSliderChange(flipping));
+    },
+    getDetail(id) {
+        dispatch(actionCreators.getDetail(id));
     }
 
 });

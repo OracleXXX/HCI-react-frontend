@@ -17,4 +17,6 @@ export const PopupWrapper = styled.div`
 export const PopupItem = styled.div`
   width: fit-content;
   height: fit-content;
+  box-shadow: 0 0 5px 0 rgba(175,175,175,0.19);
+  border-radius: 0.8rem;
 `;

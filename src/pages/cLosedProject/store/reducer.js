@@ -4,6 +4,7 @@ import * as constants from './constants'
 const defaultState = fromJS({
     noFlippingList: [],
     flippingList: [],
+    detailList:[],
     flippingSlider: true
 
 
@@ -14,24 +15,31 @@ const changeNoFlippingList = (state, action) => {
 
     })
 
-}
+};
 const changeFlippingList = (state, action) => {
     return state.merge({
         flippingList: fromJS(action.flippingList),
     })
 
-}
+};
+const changeDetailList = (state, action)=> {
+    return state.merge({
+        detailList: fromJS(action.detailList),
+    })
+};
 const changeSlider = (state, action) => {
     return state.set('flippingSlider', action.flipping);
-}
+};
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action) => {
     switch (action.type) {
         case constants.CHANGE_NO_FLIPPING_LIST:
             return changeNoFlippingList(state, action);
-            case constants.CHANGE_FLIPPING_LIST:
+        case constants.CHANGE_FLIPPING_LIST:
             return changeFlippingList(state, action);
+        case constants.GET_DETAIL_LIST:
+            return changeDetailList(state, action);
         case constants.CHANGE_SLIDER:
             return changeSlider(state, action);
         default:

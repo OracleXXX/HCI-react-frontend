@@ -190,12 +190,12 @@ export const Register = styled.div`
   border-radius: 0.8rem;
   background-color: #FFFFFF;
   position: relative;
-  
+  box-sizing: border-box; 
 `;
 
 
 export const RegisterTitle = styled.div`
-  width: inherit;
+  width: 100%;
   height: 4.8rem;
   background-image: linear-gradient(-45deg, #7F55FF 0%, #5DBBFF 100%);
   border-radius: 0.8rem 0.8rem 0 0;
@@ -207,6 +207,7 @@ export const RegisterTitle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 `;
 
 
