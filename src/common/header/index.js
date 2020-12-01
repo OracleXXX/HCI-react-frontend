@@ -23,11 +23,10 @@ class Header extends PureComponent {
         return (
             <div>
                 <HeaderWrapper className='no-select'>
-
                     {/* 导航 */}
                     <Nav>{this.getNavBar()}</Nav>
                 </HeaderWrapper>
-                {/* 走马灯Banner */}
+                {/* slide Banner */}
                 <Banner/>
             </div>
         )

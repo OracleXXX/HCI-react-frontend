@@ -66,7 +66,7 @@ class ClosedProject extends PureComponent {
 
                     <NextArrow className="button" onClick={this.next}/>
                 </SliderWrapper>
-                <Popup/>
+
             </ClosedProjectDemoWrapper>
         )
     };

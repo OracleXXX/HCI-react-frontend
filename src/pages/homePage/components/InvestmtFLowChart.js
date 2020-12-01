@@ -18,11 +18,12 @@ import {
 } from '../componentStyles/InvestmtFLowChartStyle';
 //导入图片
 import {constants} from '../store'
+import {Link} from "react-router-dom";
 
 class InvestmtFLowChart extends PureComponent {
+
     render() {
         //拆分成奇数序号和偶数序号两个组件来遍历
-
         return (
             <InvestmtFlowChartWrapper className='scale-control'>
                 <FlowChartTitle>
@@ -57,13 +58,12 @@ class InvestmtFLowChart extends PureComponent {
             const subTitle = constants.MAP_STEP_LIST_TO_STRING[i][3];
             const content1 = constants.MAP_STEP_LIST_TO_STRING[i][4];
             const content2 = constants.MAP_STEP_LIST_TO_STRING[i][5];
-
             if (i % 2 === 0) {
                 OddFlowChartList.push(
                     <OddStepWrapper key={constants.MAP_STEP_LIST_TO_STRING[i][2]}>
                         <div className='oddStep'>
                             <img src={src} alt="" className="flow-chart-img"/>
-                            {this.getOddIndexToImg(indexIcon, title, subTitle, content1, content2)}
+                            {this.getOddIndexToImg(indexIcon, title, subTitle, content1, content2, i)}
                         </div>
                     </OddStepWrapper>
                 )
@@ -71,7 +71,7 @@ class InvestmtFLowChart extends PureComponent {
                 EvenFlowChartList.push(
                     <EvenStepWrapper key={constants.MAP_STEP_LIST_TO_STRING[i][2]}>
                         <div className='evenStep'>
-                            {this.getEvenIndexToImg(indexIcon, title, subTitle, content1, content2)}
+                            {this.getEvenIndexToImg(indexIcon, title, subTitle, content1, content2, i)}
                             <img src={src} alt="" className="flow-chart-img"/>
                         </div>
                     </EvenStepWrapper>
@@ -83,7 +83,7 @@ class InvestmtFLowChart extends PureComponent {
     }
 
     //奇数流程图序号的虚线+序号+详情样式
-    getOddIndexToImg(indexIcon, title, subTitle, content1, content2) {
+    getOddIndexToImg(indexIcon, title, subTitle, content1, content2, index) {
         return (
             <OddImgToIndex>
                 <div className='imgToIndex-odd'>
@@ -92,16 +92,10 @@ class InvestmtFLowChart extends PureComponent {
                     <OddIndexContent>
                         <div className='oddContentTitle'>{title}</div>
                         {/* 判断是否为参数空 */}
-                        {
-                            {subTitle} ? <div className='oddContentTitle'>{subTitle}</div> : null
-                        }
-                        {
-                            {content1} ? <div className='oddContent'>{content1}</div> : null
-                        }
-                        {
-                            {content2} ? <div className='oddContent'>{content2}</div> : null
-                        }
-                        {this.getMoreInfo()}
+                        {{subTitle} ? <div className='oddContentTitle'>{subTitle}</div> : null}
+                        {{content1} ? <div className='oddContent'>{content1}</div> : null}
+                        {{content2} ? <div className='oddContent'>{content2}</div> : null}
+                        {this.getMoreInfo(index)}
                     </OddIndexContent>
                 </div>
             </OddImgToIndex>
@@ -109,8 +103,7 @@ class InvestmtFLowChart extends PureComponent {
     }
 
     //偶数流程图序号的虚线+序号+详情样式
-    getEvenIndexToImg(indexIcon, title, subTitle, content1, content2) {
-
+    getEvenIndexToImg(indexIcon, title, subTitle, content1, content2, index) {
         return (
             <EvenImgToIndex>
                 <div className='imgToIndex-even'>
@@ -119,34 +112,24 @@ class InvestmtFLowChart extends PureComponent {
                     <EvenIndexContent>
                         <div className='evenContentTitle'>{title}</div>
                         {/* 判断是否为参数空 */}
-                        {
-
-                            {subTitle} ? <div className='evenContentTitle'>{subTitle}</div> : null
-                        }
-                        {
-                            {content1} ? <div className='evenContent'>{content1}</div> : null
-                        }
-                        {
-                            {content2} ? <div className='evenContent'>{content2}</div> : null
-                        }
-
-                        {this.getMoreInfo()}
-
-                        <div className='clear'/>
+                        { {subTitle} ? <div className='evenContentTitle'>{subTitle}</div> : null }
+                        { {content1} ? <div className='evenContent'>{content1}</div> : null }
+                        { {content2} ? <div className='evenContent'>{content2}</div> : null }
+                        { this.getMoreInfo(index) }
                     </EvenIndexContent>
-
                 </div>
             </EvenImgToIndex>
         )
-
     }
 
-    getMoreInfo() {
+    getMoreInfo(index) {
         return (
-            <MoreInfo className="button">
-                <span>了解详情</span>
-                <img src={constants.MORE_INFO_ICON} alt="" className='moreInfoIcon-blue'/>
-            </MoreInfo>
+            <Link to={index === 6 ? '/closed-project' : index === 5 ? '/one-step/management' : '/one-step/long-short'}>
+                <MoreInfo className="button">
+                    <span>了解详情</span>
+                    <img src={constants.MORE_INFO_ICON} alt="" className='moreInfoIcon-blue'/>
+                </MoreInfo>
+            </Link>
         )
     }
 }

@@ -286,5 +286,18 @@ export const RegisterQRCode = styled.div`
 `;
 
 export const ExitButton = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8.8rem;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
   cursor: pointer;
+  & .exit-button {
+    box-sizing: border-box;
+    width: 5.6rem;
+    height: 8.8rem;
+  }
 `;

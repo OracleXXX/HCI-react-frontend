@@ -67,6 +67,7 @@ class Activity extends PureComponent {
             return
         }
         activityList.map((item, index) => {
+            //展示页面列表
             demoList.push(
                 <div key={item.get("id")}>
                     <ActivityItem>
@@ -91,18 +92,17 @@ class Activity extends PureComponent {
                     <DivLine/>
                 </div>
             )
+            //弹出框内容列表
             popList.push(
                 <PopupWrapper >
                     <PopupItem className="popup-item">
                         <Register>
                             <RegisterTitle className="no-select">我要报名</RegisterTitle>
                             <RegisterContent>
-
                                 <div className="register-content-title"><div className="over">活动详情：</div><div className="register-content-title-bg"/></div>
                                     <div className='register-content'>时间：{item.get("time")}</div>
                                     <div className='register-content'>地点：{item.get("location")}</div>
                                     <div className='register-content'>主题：{item.get("title")}</div>
-
                                     <div className='register-content'>报名截止日期：{item.get("deadline")}</div>
                             </RegisterContent>
                             <DivLinePopup/>
@@ -111,7 +111,7 @@ class Activity extends PureComponent {
                                 <img src={contactUsConstants.QR_CODE} alt="" className="qr-code"/>
                             </RegisterQRCode>
                             <ExitButton onClick={()=>{changePopIndex(-1)}}>
-                                退出
+                                <img src={constants.EXIT_BUTTON} alt="" className="exit-button"/>
                             </ExitButton>
 
                         </Register>
