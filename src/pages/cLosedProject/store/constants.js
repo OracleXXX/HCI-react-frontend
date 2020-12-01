@@ -1,8 +1,8 @@
-
 export const CHANGE_SLIDER = 'closedProjectList/CHANGE_SLIDER';
 export const CHANGE_NO_FLIPPING_LIST = 'closedProjectList/CHANGE_NO_FLIPPING_LIST';
 export const CHANGE_FLIPPING_LIST = 'closedProjectList/CHANGE_FLIPPING_LIST';
 export const GET_DETAIL_LIST = 'closedProjectList/GET_DETAIL_LIST';
+export const CHANGE_POP_INDEX = 'closedProjectList/CHANGE_POP_INDEX';
 
 export const SETTINGS = {
     infinite: true,

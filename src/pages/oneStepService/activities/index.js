@@ -62,7 +62,7 @@ class Activity extends PureComponent {
 
     //每个活动（遍历）, 然后放入demoList
     getActivityItems() {
-        const {activityList, changePopIndex, popIndex} = this.props;
+        const {activityList, changePopIndex} = this.props;
         if (demoList.length > 0) {
             return
         }

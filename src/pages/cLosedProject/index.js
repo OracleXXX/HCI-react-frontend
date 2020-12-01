@@ -25,6 +25,7 @@ import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import * as constants from "./store/constants";
 import {constants as activityConstants} from '../oneStepService/activities/store';
+import {PopupItem, PopupWrapper} from "../../common/popup/style";
 
 class ClosedProject extends PureComponent {
     constructor(props) {
@@ -40,7 +41,7 @@ class ClosedProject extends PureComponent {
 
     render() {
 
-        const {flippingSlider, noFlippingList, flippingList} = this.props;
+        const {flippingSlider, noFlippingList, flippingList, popIndex, changePopIndex} = this.props;
         return (
             <ClosedProjectDemoWrapper className='scale-control' ref={this.ScrollTo}>
                 {/* 图轮播图title */}
@@ -51,22 +52,17 @@ class ClosedProject extends PureComponent {
                     <Rec>{this.getMoveBar()}</Rec>
                 </ClosedProjectTitle>
                 {/* 轮播图 */}
-
                 <SliderWrapper>
                     {/* 左右指针 */}
                     <PrevArrow className="button" onClick={this.previous}/>
-
                     <div className="slider">
                         <Slider ref={c => (this.slider = c)} {...constants.SETTINGS} className="slider">
                             {flippingSlider ? this.getSlider(flippingList) : this.getSlider(noFlippingList)}
-
-
                         </Slider>
                     </div>
-
                     <NextArrow className="button" onClick={this.next}/>
                 </SliderWrapper>
-
+                {popIndex>=0? <PopupWrapper><PopupItem><img src={addrIcon} alt="" onClick={()=>changePopIndex(-1, popIndex)}/></PopupItem></PopupWrapper> : null}
             </ClosedProjectDemoWrapper>
         )
     };
@@ -89,18 +85,22 @@ class ClosedProject extends PureComponent {
     }
 
     getSlider(list) {
-        const {flippingSlider} = this.props;
+        const {flippingSlider, popIndex, changePopIndex} = this.props;
         return (
-            list.map((item) => {
+            list.map((item, index) => {
                 return (
                     <div className="slider" key={item.get("id")}>
                         <Item>
                             <ItemTop>
-                                <img src={activityConstants.PROXY_URL+item.get("avatar")} alt="" className="item-top-img"/>
+                                <img src={activityConstants.PROXY_URL + item.get("avatar")} alt=""
+                                     className="item-top-img"/>
                                 <FixedBottom>
                                     <div className="fixed-bottom-left"><img src={addrIcon}
                                                                             alt=""/>{item.get("location")}</div>
-                                    <MoreInfo className="button">详情<img src={moreInfoIcon} alt=""/></MoreInfo>
+                                    <MoreInfo className="button" onClick={() => {
+                                        changePopIndex(index, popIndex)
+                                    }}>详情<img src={moreInfoIcon} alt=""/></MoreInfo>
+
                                 </FixedBottom>
                             </ItemTop>
                             <div className="mid-bottom">
@@ -125,7 +125,8 @@ class ClosedProject extends PureComponent {
                                         }
                                         <div>
                                             <span className="item-info-title">租金回报率：</span>
-                                            <span className="item-info-content">{item.get("rental_rate_of_return")}</span>
+                                            <span
+                                                className="item-info-content">{item.get("rental_rate_of_return")}</span>
                                         </div>
                                         <div>
                                             <span className="item-info-title">现金回报率：</span>
@@ -162,7 +163,8 @@ const mapState = (state) => ({
     noFlippingList: state.getIn(["closedProject", "noFlippingList"]),
     flippingList: state.getIn(["closedProject", "flippingList"]),
     flippingSlider: state.getIn(["closedProject", "flippingSlider"]),
-    detailList: state.getIn(["closedProject", "detailList"])
+    detailList: state.getIn(["closedProject", "detailList"]),
+    popIndex: state.getIn(["closedProject", "popIndex"])
 });
 const mapDispatch = (dispatch) => ({
     getNoFlippingList() {
@@ -176,6 +178,10 @@ const mapDispatch = (dispatch) => ({
     },
     getDetail(id) {
         dispatch(actionCreators.getDetail(id));
+    },
+    changePopIndex(index, popindex) {
+        console.log(popindex)
+        dispatch(actionCreators.changePopIndex(index))
     }
 
 });

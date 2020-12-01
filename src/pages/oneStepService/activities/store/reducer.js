@@ -5,7 +5,7 @@ const defaultState = fromJS({
     activityList:[],
     page: 1,
     totalPage: 0,
-    popIndex:-1
+    popIndex: -1
 
 
 });

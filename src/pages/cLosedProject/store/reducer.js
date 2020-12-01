@@ -5,6 +5,7 @@ const defaultState = fromJS({
     noFlippingList: [],
     flippingList: [],
     detailList:[],
+    popIndex: -1,
     flippingSlider: true
 
 
@@ -30,6 +31,9 @@ const changeDetailList = (state, action)=> {
 const changeSlider = (state, action) => {
     return state.set('flippingSlider', action.flipping);
 };
+const changePopIndex = (state, action) => {
+    return state.set('popIndex', action.index);
+}
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action) => {
@@ -42,6 +46,8 @@ export default (state = defaultState, action) => {
             return changeDetailList(state, action);
         case constants.CHANGE_SLIDER:
             return changeSlider(state, action);
+        case constants.CHANGE_POP_INDEX:
+            return changePopIndex(state, action);
         default:
             return state;
     }

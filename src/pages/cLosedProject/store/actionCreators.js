@@ -3,6 +3,8 @@ import * as constants from './constants'
 import {fromJS} from "immutable";
 
 
+
+
 const changeNoFlippingList = (result) => ({
     type: constants.CHANGE_NO_FLIPPING_LIST,
     noFlippingList: fromJS(result),
@@ -21,6 +23,10 @@ const getDetailList = (id, result) =>({
     type: constants.GET_DETAIL_LIST,
     detailList: fromJS(result),
     id
+});
+const changePopIndexR = (index)=>({
+    type: constants.CHANGE_POP_INDEX,
+    index
 })
 export const getNoFlippingList = (id) => {
     return (dispatch) => {
@@ -50,4 +56,10 @@ export const getDetail = (id) => {
             dispatch(getDetailList(id, result));
         });
     }
+};
+export const changePopIndex = (index)=> {
+    return (dispatch)=>{
+        dispatch(changePopIndexR(index));
+    }
 }
+
