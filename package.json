@@ -51,7 +51,6 @@
   },
   "devDependencies": {
     "react-mult-transition-image-view": "^1.0.5",
-    "self-adapt-fontsize": "^1.0.6",
-    "smoothscroll-polyfill": "^0.4.4"
+    "self-adapt-fontsize": "^1.0.6"
   }
 }

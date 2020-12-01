@@ -63,7 +63,8 @@ export const NavItem = styled.div`
       -webkit-transition:-webkit-transform 2s;
       }
       & .nav-name:hover {
-          -webkit-font-smoothing: antialiased ;
+          -webkit-font-smoothing: antialiased;
+          font-weight: bolder;
       }
       &.left:hover .float-bar {
         display: block;
@@ -75,7 +76,7 @@ export const NavItem = styled.div`
         }
       & .drop-down-active {
           visibility: visible;
-          transition: 0.2s;
+          transition: ease-in-out 0.2s;
           opacity: 1;          
          
       }
@@ -98,9 +99,6 @@ export const DropDownServices = styled.div`
   transition: 0.2s;
   opacity: 0;
   box-shadow: 0 0 0.8rem 0 #666666;
-  
-  
-  
   & .dropDownItem{
     height: 5.8rem;
     width: 100%;
@@ -115,22 +113,10 @@ export const DropDownServices = styled.div`
     border: 1px solid #FFFFFF;
     border-radius: 0.2rem;
     -webkit-font-smoothing: antialiased;
+    font-weight: bolder;
   
   }
 `;
-
-export const BannerWrapper = styled.div`
-    position: relative;
-    width: calc(192rem - 17px);
-    min-width: 1300px;
-  & .banner {
-    width:calc(192rem - 17px);
-    height:auto;
-    max-width:192rem;
-    min-width: 1300px;
-   
-  }
-`
 export const DemoWrapper = styled.div`
 
   height: 100%;

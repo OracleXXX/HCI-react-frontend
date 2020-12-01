@@ -9,6 +9,7 @@ export const ActivityWrapper = styled.div`
     -moz-outline-radius: 0.8rem;
   }
   & .button:active { -moz-transform: translate(0.1rem,0.1rem); -webkit-transform: translate(0.1rem,0.1rem); -o-transform: translate(0.1rem,0.1rem); }
+  
 
 `;
 export const ActivityTitle = styled.div`
@@ -181,4 +182,109 @@ export const Pagination = styled.div`
   & .prev-next:hover {
     font-weight: bolder;
   }
+`;
+
+export const Register = styled.div`
+  width: 64rem;
+  height: 52rem;
+  border-radius: 0.8rem;
+  background-color: #FFFFFF;
+  position: relative;
+  
+`;
+
+
+export const RegisterTitle = styled.div`
+  width: inherit;
+  height: 4.8rem;
+  background-image: linear-gradient(-45deg, #7F55FF 0%, #5DBBFF 100%);
+  border-radius: 0.8rem 0.8rem 0 0;
+  font-family: SourceHanSansSC-Medium;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+
+export const RegisterContent = styled.div`
+  width: inherit;
+  height: 24.5rem;
+  padding:2.8rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & .register-content-title{
+    position: relative;
+    width: 8rem;
+    height: 2.1rem;
+    text-align: justify;
+    font-family: SourceHanSansSC-Medium;
+    font-size: 1.6rem;
+    color: #333333;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    & .over{
+      position: absolute;
+      z-index: 999999999;
+    }   
+  }
+  & .register-content-title-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0 auto;
+      width: 7.9rem;
+      height: 1rem;
+      border-radius: 0.2rem;
+      background-image: linear-gradient(270deg, rgba(127,85,255, 0.06) 0%, #5DBBFF 100%);
+    }
+    & .register-content {
+      width: 70%;
+      height: 3.2rem;
+      line-height: 3.2rem;
+      font-family: SourceHanSansSC-Light;
+      font-size: 1.5rem;
+      white-space: nowrap;
+    }
+`;
+export const DivLinePopup = styled.div`
+  width: 58rem;
+  height: 0.1rem;
+  background-color: #EEEEEE;
+  border-radius: 0.8rem;
+  margin: 0 auto;
+`;
+
+
+export const RegisterQRCode = styled.div`
+  width: inherit;
+  height: 22.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1.8rem 0 4.7rem;
+  & .register-qr-title {
+    width: 10.5rem;
+    height: 3.2rem;
+    white-space: nowrap;
+    font-family: SourceHanSansSC-Light;
+    line-height: 3.2rem;
+    font-size: 1.5rem;
+    
+  };
+  & .qr-code {
+    width: 12.1rem;
+    height: 12.1rem;
+  };
+`;
+
+export const ExitButton = styled.div`
+  cursor: pointer;
 `;

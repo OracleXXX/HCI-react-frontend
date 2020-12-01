@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {BrowserRouter, withRouter} from 'react-router-dom';
 
 import {actionCreators} from './store';
 import {
@@ -24,6 +24,7 @@ import Slider from "react-slick";
 import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import * as constants from "./store/constants";
+import Popup from "../../common/popup";
 
 class ClosedProject extends PureComponent {
     constructor(props) {
@@ -65,6 +66,7 @@ class ClosedProject extends PureComponent {
 
                     <NextArrow className="button" onClick={this.next}/>
                 </SliderWrapper>
+                <Popup/>
             </ClosedProjectDemoWrapper>
         )
     };

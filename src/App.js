@@ -46,6 +46,7 @@ class App extends Component {
                         <Route path='/contact-us' exact component={ContactUs}/>
                     </div>
                     <Footer/>
+
                 </BrowserRouter>
 
             </Provider>

@@ -2,6 +2,7 @@
 import { combineReducers } from "redux-immutable";
 
 import { reducer as headerReducer } from '../common/header/store';
+import { reducer as popupReducer } from '../common/popup/store';
 
 import { reducer as homePageReducer } from '../pages/homePage/store'
 import { reducer as closedProjectReducer } from '../pages/cLosedProject/store'
@@ -24,7 +25,8 @@ const reducer = combineReducers({
     newsFeed: newsFeedReducer,
     platformLoan: platformLoanReducer,
     ourTeam: ourTeamReducer,
-    activity: activityReducer
+    activity: activityReducer,
+    popup: popupReducer
 
 });
 export default reducer;

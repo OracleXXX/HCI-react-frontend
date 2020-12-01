@@ -4,7 +4,8 @@ import * as constants from './constants'
 const defaultState = fromJS({
     activityList:[],
     page: 1,
-    totalPage: 0
+    totalPage: 0,
+    popIndex:-1
 
 
 });
@@ -20,6 +21,11 @@ const changeActivityList = (state, action)=> {
 
     });
 }
+const changePopIndex = (state, action) => {
+    return state.merge({
+        popIndex: action.index
+    })
+}
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action) => {
@@ -27,7 +33,9 @@ export default (state = defaultState, action) => {
         case constants.CHANGE_ACTIVITY:
             return changeActivityList(state, action);
         case constants.CHANGE_PAGE:
-            return changePage(state, action)
+            return changePage(state, action);
+        case constants.CHANGE_POP_INDEX:
+            return changePopIndex(state, action);
 
         default:
             return state;

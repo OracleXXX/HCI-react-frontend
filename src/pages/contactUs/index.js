@@ -18,7 +18,7 @@ import {
     FormContainer,
     DivLine
 } from './style';
-import {actionCreators, constants} from "./store";
+import {constants} from "./store";
 
 
 class ContactUs extends PureComponent {

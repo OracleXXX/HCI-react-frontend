@@ -15,21 +15,30 @@ import {
     ItemRightTop,
     ItemRightBottom,
     Apply,
-    Pagination
+    Pagination,
+    Register,
+    DivLinePopup,
+    RegisterTitle,
+    RegisterContent,
+    RegisterQRCode,
+    ExitButton
 } from './style';
-
+import {PopupItem, PopupWrapper} from "../../../common/popup/style";
+import {constants as contactUsConstants} from '../../contactUs/store';
 const demoList = [];
+const popList = [];
 
 class Activity extends PureComponent {
     constructor(props) {
         super(props)
         this.ScrollTo = React.createRef()   // Create a ref object
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     //渲染
     render() {
-
-        const {page, totalPage} = this.props;
+        const {page, totalPage, popIndex} = this.props;
         this.getActivityItems()
         return (
             <ActivityWrapper>
@@ -40,9 +49,8 @@ class Activity extends PureComponent {
                 <ActivityContainer>{this.getNewPage(page)}</ActivityContainer>
                 <Pagination className='no-select'>
                     {this.getPagination(totalPage)}
-
                 </Pagination>
-
+                {popIndex >= 0 ? this.getPopList(popIndex) : null}
             </ActivityWrapper>
         )
     }
@@ -54,18 +62,17 @@ class Activity extends PureComponent {
 
     //每个活动（遍历）, 然后放入demoList
     getActivityItems() {
-        const {activityList} = this.props;
+        const {activityList, changePopIndex, popIndex} = this.props;
         if (demoList.length > 0) {
             return
         }
-        activityList.map((item) => {
-            console.log(item);
+        activityList.map((item, index) => {
             demoList.push(
-
                 <div key={item.get("id")}>
                     <ActivityItem>
                         <ItemLeft>
-                            <img src={constants.URL_HEADER+ item.get("avatar")} alt="" className="item-left-img no-select"/>
+                            <img src={constants.PROXY_URL + item.get("avatar")} alt=""
+                                 className="item-left-img no-select"/>
                         </ItemLeft>
                         <ItemRight>
                             <ItemRightTop>
@@ -76,18 +83,52 @@ class Activity extends PureComponent {
                                 <div className='activity-location'>活动地点：{item.get("location")}</div>
                                 <div className='activity-time'>活动时间：{item.get("time")}</div>
                                 <div className='activity-deadline'>截止日期：{item.get("deadline")}</div>
-                                <Apply className='apply no-select button'>我要报名</Apply>
+                                <Apply className='apply no-select button'
+                                       onClick={() => changePopIndex(index)}>我要报名</Apply>
                             </ItemRightBottom>
-
                         </ItemRight>
                     </ActivityItem>
                     <DivLine/>
                 </div>
             )
+            popList.push(
+                <PopupWrapper >
+                    <PopupItem className="popup-item">
+                        <Register>
+                            <RegisterTitle className="no-select">我要报名</RegisterTitle>
+                            <RegisterContent>
+
+                                <div className="register-content-title"><div className="over">活动详情：</div><div className="register-content-title-bg"/></div>
+                                    <div className='register-content'>时间：{item.get("time")}</div>
+                                    <div className='register-content'>地点：{item.get("location")}</div>
+                                    <div className='register-content'>主题：{item.get("title")}</div>
+
+                                    <div className='register-content'>报名截止日期：{item.get("deadline")}</div>
+                            </RegisterContent>
+                            <DivLinePopup/>
+                            <RegisterQRCode>
+                                <div className="register-qr-title">了解详情请扫码</div>
+                                <img src={contactUsConstants.QR_CODE} alt="" className="qr-code"/>
+                            </RegisterQRCode>
+                            <ExitButton onClick={()=>{changePopIndex(-1)}}>
+                                退出
+                            </ExitButton>
+
+                        </Register>
+
+                    </PopupItem>
+                </PopupWrapper>
+            )
             return null;
         })
 
     };
+
+    //更改弹出框内容
+    getPopList(index) {
+        return popList[index]
+
+    }
 
     //分页器
     getPagination(totalPage) {
@@ -124,7 +165,8 @@ class Activity extends PureComponent {
 const mapState = (state) => ({
     activityList: state.getIn(["activity", "activityList"]),
     page: state.getIn(['activity', 'page']),
-    totalPage: state.getIn(['activity', 'totalPage'])
+    totalPage: state.getIn(['activity', 'totalPage']),
+    popIndex: state.getIn(['activity', 'popIndex']),
 
 
 });
@@ -133,10 +175,11 @@ const mapDispatch = (dispatch) => ({
         list.size === 0 && dispatch(actionCreators.getActivity());
     },
     handlePageChange(page, totalPage, scroll) {
-
         0 < page && page <= totalPage && dispatch(actionCreators.updatePage(page));
         scroll()
-
+    },
+    changePopIndex(index) {
+        dispatch(actionCreators.changePopIndex(index));
     }
 
 
