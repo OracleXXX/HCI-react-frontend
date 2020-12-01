@@ -218,7 +218,7 @@ export const RegisterContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  & .register-content-title{
+  & .register-content-title {
     position: relative;
     width: 8rem;
     height: 2.1rem;
