@@ -5,7 +5,8 @@ const defaultState = fromJS({
     newProjectList: [],
     expectationName: ["具体地址", "预期收益", "预期回报率", "预期租金", "预期装修费用", "平台贷款"],
     page: 1,
-    totalPage: 1
+    totalPage: 1,
+    newProjectDetailMap:{}
 
 
 });

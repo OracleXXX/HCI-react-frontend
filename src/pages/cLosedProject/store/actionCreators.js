@@ -24,10 +24,6 @@ const getDetailList = (id, result) =>({
     detailList: fromJS(result),
     id
 });
-const changePopIndexR = (index)=>({
-    type: constants.CHANGE_POP_INDEX,
-    index
-})
 export const getNoFlippingList = (id) => {
     return (dispatch) => {
         axios.get('http://52.34.204.235:8080/api/closed-project/noFlippingList').then((res) => {
@@ -37,6 +33,7 @@ export const getNoFlippingList = (id) => {
     }
 }
 export const getFlippingList = (id) => {
+
     return (dispatch) => {
         axios.get('http://52.34.204.235:8080/api/closed-project/flippingList').then((res) => {
             const result = res.data;
@@ -50,6 +47,7 @@ export const handleSliderChange = (flipping) => {
     }
 }
 export const getDetail = (id) => {
+    if (id===-1){return dispatch => dispatch(getDetailList(id, []))}
     return (dispatch)=> {
         axios.get('http://52.34.204.235:8080/api/closed-project/detail/'+id).then((res) => {
             const result = res.data;
@@ -57,9 +55,5 @@ export const getDetail = (id) => {
         });
     }
 };
-export const changePopIndex = (index)=> {
-    return (dispatch)=>{
-        dispatch(changePopIndexR(index));
-    }
-}
+
 

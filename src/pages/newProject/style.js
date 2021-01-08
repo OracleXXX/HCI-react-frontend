@@ -36,7 +36,6 @@ export const ItemImgContainer = styled.div`
   position: relative;
   width: inherit;
   height: 38rem;
-  background-color: blue;
   border-radius: 0.8rem;
   overflow: hidden;
   & .house-img {

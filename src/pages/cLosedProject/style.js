@@ -278,3 +278,60 @@ export const VerticalDivLine = styled.div`
 `;
 
 
+export const PopSliderWrapper = styled.div`
+  width: 80rem;
+  height: 52.4rem;
+  position: relative;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.4rem;
+`;
+export const PopSliderTop = styled.div`
+  width: 72.1rem;
+  height: 32.8rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+`;
+export const PopSliderItemTop = styled.div`
+  width: 72.1rem;
+  height: 32.8rem;
+  background-color: #999999;
+  box-sizing: border-box;
+  cursor: pointer;
+  & img{
+    width: auto;
+    height: 32.8rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    
+
+  }  
+`;
+
+export const PopSliderBottom = styled.div`
+  width: 74.1rem;
+  height: 9.6rem;
+`;
+
+export const PopSliderItemBottom = styled.div`
+  cursor: pointer;
+  box-sizing: border-box;
+
+  & img{
+    width: 12.8rem;
+    height: 9.6rem;
+    margin: 0 auto;
+    border-radius: 0.4rem;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+  }
+  & img:hover{
+      border: 2px solid rgba(45, 132, 255);
+
+  }
+`;

@@ -60,16 +60,18 @@ class NewProjectDemo extends PureComponent {
                             this.props.newProjectList.map((item) => (
                                 <div key={item.get('id')}>
                                     <Item>
-                                        <img src={item.get('imgUrl')} alt="" className=''/>
+                                        <img src={constants.PROXY_URL + item.get('avatar')} alt="" className=''/>
                                         <ImgBottom>
                                             <div className="img-bottom-left">
                                                 <img src={constants.ADDR_ICON} alt=""/>
                                                 {item.get("location")}
                                             </div>
-                                            <MoreInfo className="button">
+                                            <Link to={'/new-project/detail/'+item.get("id")}>
+                                                <MoreInfo className="button">
                                                 <span>详情</span>
                                                 <img src={constants.MORE_INFO_ICON} alt=""/>
                                             </MoreInfo>
+                                            </Link>
                                         </ImgBottom>
                                         <div className='intro'>
                                             <div className='intro-left'>

@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {
     NewProjectWrapper,
     NewProjectContainer,
@@ -80,20 +80,18 @@ class NewProject extends PureComponent {
             demoList.push(
                 <ContainerItem key={item.get("id")}>
                     {/*图*/}
-                    {this.getItemImgContainer(item.get("imgUrl"), item.get("location"))}
+                    {this.getItemImgContainer(item.get("id"), constants.PROXY_URL+item.get("avatar"), item.get("location"))}
                     {/*价格和租金*/}
-                    {this.getItemPriceContaner(item.get("price"), item.get("month"), item.get("area"), item.get("rental"))}
+                    {this.getItemPriceContaner(item.get("price"), item.get("status"), item.get("area"), item.get("status"))}
                     {/*预期数据*/}
-                    {this.getMarginContainer(item.get("fullAddr"), item.get("flippingBudget"), item.get("expectedRentalRateOfReturn"), item.get("expectedCashRateOfReturn"), item.get("expectedNetRateOfReturn"), item.get("platformLoan"))}
+                    {this.getMarginContainer(item.get("full_addr"), item.get("flipping_cost"), item.get("leasing_fee"), item.get("cash_flow_loan"), item.get("cash_flow_cash"), item.get("platform_loan"))}
                 </ContainerItem>
             )
             return null;
         })
     }
-
-
     //图
-    getItemImgContainer(imgUrl, location) {
+    getItemImgContainer(id, imgUrl, location) {
         return (
             <ItemImgContainer>
                 <img src={imgUrl} alt="" className='house-img no-select'/>
@@ -103,10 +101,11 @@ class NewProject extends PureComponent {
                             <img src={constants.ADDR_ICON} alt="" className='addr-icon'/>
                             <span className='city-name'>{location}</span>
                         </City>
+                        <Link to={'/new-project/detail/'+id}>
                         <MoreInfo className='no-select button'>
                             <span>详情</span>
                             <img src={constants.MORE_INFO_ICON} alt=""/>
-                        </MoreInfo>
+                        </MoreInfo></Link>
                     </div>
                 </AdditionInfo>
             </ItemImgContainer>
@@ -114,34 +113,35 @@ class NewProject extends PureComponent {
     };
 
     // 价格和租金
-    getItemPriceContaner(price, month, area, rental) {
+    getItemPriceContaner(price, month, area, status) {
 
         return (
             <ItemPriceContainer>
                 <div className='leasing-fee'>
                     <span className='price'>{price}</span>
-                    <span className='per-month'>{month}</span>
+                    <span className='per-month'>{month==="正在出租"?"/月":""}</span>
                 </div>
                 <div className='area rental'>
-                    <span>{area + rental}</span></div>
+                    <span>{area + "/"+status}</span></div>
             </ItemPriceContainer>
         )
     };
 
     // 预期数据
-    getMarginContainer(fullAddr, expectedRentalRateOfReturn, expectedCashRateOfReturn, expectedNetIncome, expectedFlippingBudget, platformLoan) {
+    getMarginContainer(full_addr, flipping_cost, leasing_fee, cash_flow_loan, cash_flow_cash, platform_loan) {
         return (
             <MarginContainer>
                 <MarginContainerLeft className='margin-container'>
-                    {this.getMarginItem(constants.FULL_ADDR, fullAddr)}
-                    {this.getMarginItem(constants.FLIPPING_BUDGET, expectedFlippingBudget)}
-                    {this.getMarginItem(constants.EXPECTED_RENTAL_RATE_OF_RETURN, expectedRentalRateOfReturn)}
+                    {this.getMarginItem(constants.FULL_ADDR, full_addr)}
+                    {this.getMarginItem(constants.FLIPPING_BUDGET, flipping_cost)}
+                    {this.getMarginItem(constants.CASH_FLOW_CASH, cash_flow_cash)}
 
                 </MarginContainerLeft>
                 <MarginContainerRight className='margin-container'>
-                    {this.getMarginItem(constants.EXPECTED_CASH_RATE_OF_RETURN, expectedCashRateOfReturn)}
-                    {this.getMarginItem(constants.EXPECTED_NET_INCOME, expectedNetIncome)}
-                    {this.getMarginItem(constants.PLATFORM_LOAN, platformLoan)}
+                    {this.getMarginItem(constants.PLATFORM_LOAN, platform_loan)}
+                    {this.getMarginItem(constants.LEASING_FEE, leasing_fee)}
+                    {this.getMarginItem(constants.CASH_FLOW_LOAN, cash_flow_loan)}
+
                 </MarginContainerRight>
             </MarginContainer>
         )

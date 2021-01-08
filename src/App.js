@@ -10,6 +10,7 @@ import HomePage from "./pages/homePage/loadable";
 
 /* children page */
 import NewProject from "./pages/newProject/loadable";
+import NewProjectDetail from "./pages/newProject/detail/loadable";
 import PlatformLoan from "./pages/platformLoan/loadable";
 import ClosedProject from "./pages/cLosedProject/loadable";
 import NewsFeed from "./pages/newsFeed/loadable";
@@ -20,6 +21,7 @@ import Activity from "./pages/oneStepService/activities/loadable";
 import OurTeam from "./pages/ourTeam/loadable";
 import store from "./store";
 import GlobalStyle from './style';
+
 
 
 
@@ -35,7 +37,9 @@ class App extends Component {
                     <Header/>
                     <div>
                         <Route path='/' exact component={HomePage}/>
-                        <Route path='/new-project' exact component={NewProject}/>
+                        <Route path='/new-project' exact component={NewProject}>
+                        </Route>
+                        <Route path='/new-project/detail/:id' exact component={NewProjectDetail}/>
                         <Route path='/one-step/management' exact component={Management}/>
                         <Route path='/one-step/long-short' exact component={LongShort}/>
                         <Route path='/one-step/activities' exact component={Activity}/>
@@ -44,6 +48,7 @@ class App extends Component {
                         <Route path='/our-team' exact component={OurTeam}/>
                         <Route path='/news-feed' exact component={NewsFeed}/>
                         <Route path='/contact-us' exact component={ContactUs}/>
+
                     </div>
                     <Footer/>
 

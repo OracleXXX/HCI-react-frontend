@@ -47,9 +47,9 @@ class Footer extends PureComponent {
                         <FooterContactUs>
                             <div className="nav-items-footer">
                                 <Link to='/contact-us' ><div className="nav-title-footer pointer">联系我们</div></Link>
-                                <div className='nav-item-footer'>8830 3890 8329</div>
-                                <div className='nav-item-footer'><p>美国田纳西州《大迪哥的私人会所》</p></div>
-                                <div className='nav-item-footer'>dadige@gmail.com</div>
+                                <div className='nav-item-footer'>(615)-423-2284</div>
+                                <div className='nav-item-footer'><p>1609 Damascus Rd, Murfreesboro, TN, 37128</p></div>
+                                <div className='nav-item-footer'>homecapus@gmail.com</div>
                             </div>
                         </FooterContactUs>
                         <div className='vertical-div-line'/>
@@ -57,17 +57,17 @@ class Footer extends PureComponent {
                             <div className="nav-items-footer two-columns">
                                 <div className="col-left">
                                     <div className="nav-title-footer col">热门城市</div>
-                                    <div className='nav-item-footer col'>纳什维尔</div>
+                                   <a href="https://zh.wikipedia.org/wiki/%E7%BA%B3%E4%BB%80%E7%BB%B4%E5%B0%94"> <div className='nav-item-footer col'>纳什维尔</div></a>
                                     <div className='nav-item-footer col'>路易斯维尔</div>
                                     <div className='nav-item-footer col'>亚特兰大</div>
-                                    <div className='nav-item-footer col'>鲍林格林</div>
+                                    <div className='nav-item-footer col'>鲍灵格林</div>
                                 </div>
                                 <div className="col-right">
                                     <div className='nav-item-footer col'>麦迪逊</div>
                                     <div className='nav-item-footer col'>默弗里斯伯勒</div>
                                     <div className='nav-item-footer col'>孟菲斯</div>
-                                    <div className='nav-item-footer col'>大爱诗兰城</div>
-                                    <div className='nav-item-footer col'>大迪哥家</div>
+                                    <div className='nav-item-footer col'>阿什兰市</div>
+                                    <div className='nav-item-footer col'>克拉克斯维尔</div>
                                 </div>
 
 

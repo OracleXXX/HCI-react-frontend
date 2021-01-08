@@ -8,7 +8,7 @@ import avatar7 from '../../../statics/imgs/ourTeam/8.png';
 import avatar8 from '../../../statics/imgs/ourTeam/7.png';
 
 
-export const TEAM_MEMBERS = ["王钦田", "Eric Hurst", "薛冠雄", "Alejandro Mercado", "孙迪", "Morris Eguakun", "Nick Holton", "Isaac Lopez"];
+export const TEAM_MEMBERS = ["Qintian Wang", "Eric Hurst", "薛冠雄", "Alejandro Mercado", "孙迪", "Morris Eguakun", "Nick Holton", "Isaac Lopez"];
 
 export const TEAM_POSITION = ["HCI创始人", "财务主管", "技术主管", "投资主管", "客户主管", "市场主管", "律师顾问", "项目经理"];
 export const TEAM_INTRO = ["多年在北美从事房地产及金融行业，会计与金融双学位，曾带领Home CapitalInvestment 团队创造了两年内市值翻倍的佳绩。",

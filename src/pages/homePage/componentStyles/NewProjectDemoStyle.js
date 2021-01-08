@@ -167,13 +167,14 @@ export const MoreInfo = styled.div`
   padding: 0 1.2rem;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; 
   align-items: center;
   white-space: nowrap;
   background: rgba(0,0,0,0.20);
   font-family: SourceHanSansSC-Regular;
   font-size: 1.4rem;
   line-height: 3rem;
+  color: #FFFFFF;
   & img {
     width: 0.7rem;
     height: 1.2rem;

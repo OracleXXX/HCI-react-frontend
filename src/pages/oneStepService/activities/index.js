@@ -113,7 +113,6 @@ class Activity extends PureComponent {
                             <ExitButton onClick={()=>{changePopIndex(-1)}}>
                                 <img src={constants.EXIT_BUTTON} alt="" className="exit-button"/>
                             </ExitButton>
-
                         </Register>
 
                     </PopupItem>

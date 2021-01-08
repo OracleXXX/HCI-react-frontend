@@ -9,15 +9,16 @@ const getPages = (page)=>({
 
 const changeNewProjectList = (result)=> ({
     type: constants.CHANGE_NEW_PROJECT_LIST,
-    newProjectList: fromJS(result.newProjectList),
-    totalPage: Math.ceil(result.newProjectList.length/6)
+    newProjectList: fromJS(result),
+    totalPage: Math.ceil(result.length/6)
 
 });
 
 export const getNewProject = ()=> {
     return (dispatch) => {
-        axios.get('/api/newProjectList.json').then((res)=> {
-            const result =res.data.data;
+
+        axios.get(constants.PROXY_URL+'api/new-project').then((res)=> {
+            const result =res.data;
 
             dispatch(changeNewProjectList(result));
             }

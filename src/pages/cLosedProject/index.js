@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 import {actionCreators} from './store';
 import {
@@ -17,7 +17,12 @@ import {
     ItemMid,
     ItemBottom,
     DivLine,
-    MoreInfo
+    MoreInfo,
+    PopSliderWrapper,
+    PopSliderTop,
+    PopSliderBottom,
+    PopSliderItemTop,
+    PopSliderItemBottom
 
 } from './style'
 import Slider from "react-slick";
@@ -26,6 +31,7 @@ import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import * as constants from "./store/constants";
 import {constants as activityConstants} from '../oneStepService/activities/store';
 import {PopupItem, PopupWrapper} from "../../common/popup/style";
+import {ExitButton} from "../oneStepService/activities/style";
 
 class ClosedProject extends PureComponent {
     constructor(props) {
@@ -34,6 +40,10 @@ class ClosedProject extends PureComponent {
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.ScrollTo = React.createRef()   // Create a ref object
+        this.state = {
+            nav1: null,
+            nav2: null
+        };
 
     }
 
@@ -41,53 +51,43 @@ class ClosedProject extends PureComponent {
 
     render() {
 
-        const {flippingSlider, noFlippingList, flippingList, popIndex, changePopIndex} = this.props;
+        const {flippingSlider, noFlippingList, flippingList, detailList} = this.props;
         return (
             <ClosedProjectDemoWrapper className='scale-control' ref={this.ScrollTo}>
                 {/* 图轮播图title */}
                 <ClosedProjectTitle>
-                    <div className='title' onClick={() => this.props.handleSliderChange(true)}>翻新后出租/出售房屋</div>
+                    <div className='title no-select' onClick={() => this.props.handleSliderChange(true)}>翻新后出租/出售房屋
+                    </div>
                     <VerticalDivLine/>
-                    <div className='title' onClick={() => this.props.handleSliderChange(false)}>可直接出租/出售房屋</div>
+                    <div className='title no-select' onClick={() => this.props.handleSliderChange(false)}>可直接出租/出售房屋
+                    </div>
+                    {/* float rec bar */}
                     <Rec>{this.getMoveBar()}</Rec>
                 </ClosedProjectTitle>
                 {/* 轮播图 */}
                 <SliderWrapper>
-                    {/* 左右指针 */}
+                    {/* 左指针 */}
                     <PrevArrow className="button" onClick={this.previous}/>
+                    {/* 轮播图item */}
                     <div className="slider">
                         <Slider ref={c => (this.slider = c)} {...constants.SETTINGS} className="slider">
                             {flippingSlider ? this.getSlider(flippingList) : this.getSlider(noFlippingList)}
                         </Slider>
                     </div>
+                    {/* 右指针 */}
                     <NextArrow className="button" onClick={this.next}/>
                 </SliderWrapper>
-                {popIndex>=0? <PopupWrapper><PopupItem><img src={addrIcon} alt="" onClick={()=>changePopIndex(-1, popIndex)}/></PopupItem></PopupWrapper> : null}
+                {/* 弹出框 */}
+                {detailList.size > 0 ? <PopupWrapper>{this.getPopupItem()}</PopupWrapper> : null}
             </ClosedProjectDemoWrapper>
         )
     };
 
-    getMoveBar() {
-        const {flippingSlider} = this.props;
-        return (
-            <div className='move-bar-container'>
-                <div className={flippingSlider ? 'move-bar' : 'move-bar right'}/>
-            </div>
-        )
-    }
-
-    next() {
-        this.slider.slickNext();
-    }
-
-    previous() {
-        this.slider.slickPrev();
-    }
-
+    // 轮播图
     getSlider(list) {
-        const {flippingSlider, popIndex, changePopIndex} = this.props;
+        const {flippingSlider, getDetail} = this.props;
         return (
-            list.map((item, index) => {
+            list.map((item) => {
                 return (
                     <div className="slider" key={item.get("id")}>
                         <Item>
@@ -95,11 +95,18 @@ class ClosedProject extends PureComponent {
                                 <img src={activityConstants.PROXY_URL + item.get("avatar")} alt=""
                                      className="item-top-img"/>
                                 <FixedBottom>
-                                    <div className="fixed-bottom-left"><img src={addrIcon}
-                                                                            alt=""/>{item.get("location")}</div>
-                                    <MoreInfo className="button" onClick={() => {
-                                        changePopIndex(index, popIndex)
-                                    }}>详情<img src={moreInfoIcon} alt=""/></MoreInfo>
+                                    <div className="fixed-bottom-left">
+                                        <img src={addrIcon} alt=""/>
+                                        {item.get("location")}
+                                    </div>
+                                    <MoreInfo
+                                        className="button"
+                                        onClick={() => {
+                                            getDetail(item.get("id"));
+                                        }}
+                                    >详情
+                                        <img src={moreInfoIcon} alt=""/>
+                                    </MoreInfo>
 
                                 </FixedBottom>
                             </ItemTop>
@@ -147,11 +154,72 @@ class ClosedProject extends PureComponent {
         )
     }
 
+    getPopupItem() {
+        const {getDetail, detailList, curID} = this.props;
+        this.setState({
+            nav1: this.slider1,
+            nav2: this.slider2
+        });
+        const {nav1, nav2} = this.state;
+        return (
+            <PopupItem><PopSliderWrapper>
+                <PopSliderTop><Slider asNavFor={nav2} ref={slider => (this.slider1 = slider)} arrows={false}
+                                      swipeToSlide={true}>
+                    {
+                        detailList.map((item, index) => {
+                            return (
+                                <PopSliderItemTop>
+                                    <img src={constants.PROXY_URL + curID + "/" + item} alt="" key={index}/>
+                                </PopSliderItemTop>
+                            )
+                        })
+                    }
+                </Slider></PopSliderTop>
+                <PopSliderBottom><Slider asNavFor={nav1} ref={slider => (this.slider2 = slider)} slidesToShow={5}
+                                         swipeToSlide={true} focusOnSelect={true} arrows={false}>
+                    {
+                        detailList.map((item, index) => {
+                            return (
+                                <PopSliderItemBottom>
+                                    <img src={constants.PROXY_URL + curID + "/" + item} alt="" key={index}/>
+                                </PopSliderItemBottom>
+                            )
+                        })
+                    }
+                </Slider></PopSliderBottom>
+                <ExitButton onClick={() => getDetail(-1)}>
+                    <img src={activityConstants.EXIT_BUTTON} alt="" className="exit-button no-select"/>
+                </ExitButton>
+            </PopSliderWrapper></PopupItem>
+        )
+    }
+
+    /* float rec bar */
+    getMoveBar() {
+        const {flippingSlider} = this.props;
+        return (
+            <div className='move-bar-container'>
+                <div className={flippingSlider ? 'move-bar' : 'move-bar right'}/>
+            </div>
+        )
+    }
+
+    /* 右指针 */
+    next() {
+        this.slider.slickNext();
+    }
+
+    /* 左指针 */
+    previous() {
+        this.slider.slickPrev();
+    }
+
 
     componentDidMount() {
         this.props.getNoFlippingList();
         this.props.getFlippingList();
-        this.scrollToMyRef()
+        this.scrollToMyRef();
+
 
     };
 
@@ -164,7 +232,8 @@ const mapState = (state) => ({
     flippingList: state.getIn(["closedProject", "flippingList"]),
     flippingSlider: state.getIn(["closedProject", "flippingSlider"]),
     detailList: state.getIn(["closedProject", "detailList"]),
-    popIndex: state.getIn(["closedProject", "popIndex"])
+    curID: state.getIn(["closedProject", "curID"]),
+
 });
 const mapDispatch = (dispatch) => ({
     getNoFlippingList() {
@@ -179,10 +248,6 @@ const mapDispatch = (dispatch) => ({
     getDetail(id) {
         dispatch(actionCreators.getDetail(id));
     },
-    changePopIndex(index, popindex) {
-        console.log(popindex)
-        dispatch(actionCreators.changePopIndex(index))
-    }
 
 });
 
