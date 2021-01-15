@@ -139,6 +139,7 @@ export const ItemPriceContainer = styled.div`
 export const MarginContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: inherit ;
   height: 15.1rem;
   background-color: #F7FBFF;
@@ -155,16 +156,19 @@ export const MarginContainer = styled.div`
 
 `;
 export const MarginContainerLeft = styled.div`
-    width: 70%;
+    width: fit-content;
 `;
 export const MarginContainerRight = styled.div`
-    width: 30%;
+    width: fit-content;
+    
 `;
 
 
 export const MarginItem = styled.div`
     font-size: 1.5rem;
     color: #333333;
+    display: flex;
+    flex-direction: row;
     & .margin-item-name {
       font-family: SourceHanSansSC-Medium;
     }

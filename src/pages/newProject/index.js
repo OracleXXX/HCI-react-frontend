@@ -80,18 +80,28 @@ class NewProject extends PureComponent {
             demoList.push(
                 <ContainerItem key={item.get("id")}>
                     {/*图*/}
-                    {this.getItemImgContainer(item.get("id"), constants.PROXY_URL+item.get("avatar"), item.get("location"))}
+                    {this.getItemImgContainer(item.get("id"), constants.PROXY_URL+item.get("avatar"), item.get("city"))}
                     {/*价格和租金*/}
                     {this.getItemPriceContaner(item.get("price"), item.get("status"), item.get("area"), item.get("status"))}
                     {/*预期数据*/}
-                    {this.getMarginContainer(item.get("full_addr"), item.get("flipping_cost"), item.get("leasing_fee"), item.get("cash_flow_loan"), item.get("cash_flow_cash"), item.get("platform_loan"))}
+                    {this.getMarginContainer(
+                        item.get("full_addr"),
+                        item.get("city"),
+                        item.get("state"),
+                        item.get("zip_code"),
+                        item.get("flipping_cost"),
+                        item.get("leasing_fee"),
+                        item.get("cash_flow_loan"),
+                        item.get("cash_flow_cash"),
+                        item.get("platform_loan")
+                    )}
                 </ContainerItem>
             )
             return null;
         })
     }
     //图
-    getItemImgContainer(id, imgUrl, location) {
+    getItemImgContainer(id, imgUrl, city) {
         return (
             <ItemImgContainer>
                 <img src={imgUrl} alt="" className='house-img no-select'/>
@@ -99,7 +109,7 @@ class NewProject extends PureComponent {
                     <div className='addition-info-content'>
                         <City>
                             <img src={constants.ADDR_ICON} alt="" className='addr-icon'/>
-                            <span className='city-name'>{location}</span>
+                            <span className='city-name'>{city}</span>
                         </City>
                         <Link to={'/new-project/detail/'+id}>
                         <MoreInfo className='no-select button'>
@@ -128,11 +138,12 @@ class NewProject extends PureComponent {
     };
 
     // 预期数据
-    getMarginContainer(full_addr, flipping_cost, leasing_fee, cash_flow_loan, cash_flow_cash, platform_loan) {
+    getMarginContainer(full_addr, city, state, zip_code, flipping_cost, leasing_fee, cash_flow_loan, cash_flow_cash, platform_loan) {
         return (
             <MarginContainer>
                 <MarginContainerLeft className='margin-container'>
-                    {this.getMarginItem(constants.FULL_ADDR, full_addr)}
+                    {this.getMarginItem(constants.FULL_ADDR, full_addr, city, state, zip_code)}
+
                     {this.getMarginItem(constants.FLIPPING_BUDGET, flipping_cost)}
                     {this.getMarginItem(constants.CASH_FLOW_CASH, cash_flow_cash)}
 
@@ -148,11 +159,14 @@ class NewProject extends PureComponent {
     }
 
     // 每个预期数内容
-    getMarginItem(name, content) {
+    getMarginItem(name, content, city="", state="", zip_code="") {
         return (
             <MarginItem>
-                <span className='margin-item-name'>{name}：</span>
-                <span className='margin-item-info'>{content}</span>
+                <div className='margin-item-name'>{name}：</div>
+                <div className='margin-item-info'>
+                    {content} {name === constants.FULL_ADDR ? ", " + state + ", " + zip_code : " "}
+                </div>
+
             </MarginItem>
         )
     };

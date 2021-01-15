@@ -7,7 +7,7 @@ export const FooterWrapper = styled.div`
   overflow: hidden;
   & .footer-img {
     width: inherit;
-    height: auto;
+    height: 76rem;
   }    
   & .pointer:hover{
     font-weight: bolder;

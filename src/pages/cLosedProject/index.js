@@ -97,7 +97,7 @@ class ClosedProject extends PureComponent {
                                 <FixedBottom>
                                     <div className="fixed-bottom-left">
                                         <img src={addrIcon} alt=""/>
-                                        {item.get("location")}
+                                        {item.get("city")}
                                     </div>
                                     <MoreInfo
                                         className="button"
@@ -122,7 +122,16 @@ class ClosedProject extends PureComponent {
                                     <div className="item-info">
                                         <div className="item-info-1">
                                             <span className="item-info-title">具体地址：</span>
-                                            <div className="item-info-content">{item.get("full_addr")}</div>
+                                            <div className="item-info-content">
+                                                <div>{item.get("full_addr")},</div>
+                                                <div>{item.get("state")}, {item.get("zip_code")}</div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <span className="item-info-title">买入价格：</span>
+                                            <span
+                                                className="item-info-content">{item.get("purchase_price")}</span>
                                         </div>
                                         {
                                             flippingSlider
@@ -131,13 +140,8 @@ class ClosedProject extends PureComponent {
                                                 : null
                                         }
                                         <div>
-                                            <span className="item-info-title">租金回报率：</span>
-                                            <span
-                                                className="item-info-content">{item.get("rental_rate_of_return")}</span>
-                                        </div>
-                                        <div>
-                                            <span className="item-info-title">现金回报率：</span>
-                                            <span className="item-info-content">{item.get("cash_rate_of_return")}</span>
+                                            <span className="item-info-title">卖出价格：</span>
+                                            <span className="item-info-content">{item.get("sell_price")}</span>
                                         </div>
                                         <div>
                                             <span className="item-info-title">项目总回报率：</span>

@@ -64,7 +64,7 @@ class NewProjectDemo extends PureComponent {
                                         <ImgBottom>
                                             <div className="img-bottom-left">
                                                 <img src={constants.ADDR_ICON} alt=""/>
-                                                {item.get("location")}
+                                                {item.get("city")}
                                             </div>
                                             <Link to={'/new-project/detail/'+item.get("id")}>
                                                 <MoreInfo className="button">

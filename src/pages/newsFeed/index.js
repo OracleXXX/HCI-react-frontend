@@ -42,7 +42,7 @@ class NewsFeed extends PureComponent {
             <NewsFeedWrapper ref={this.ScrollTo}>
                 <NewsFeedTitle>
 
-                    <span className='title'>最近动态</span>
+                    <span className='title'>新闻咨询</span>
                     <div className='rec'/>
                 </NewsFeedTitle>
                 <NewsFeedContainer>

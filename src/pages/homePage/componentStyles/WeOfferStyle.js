@@ -62,11 +62,13 @@ export const WeOfferRight = styled.div`
   display: inline-block;
   width: 60rem;
   height: 100%;
+  border-radius: 0.8rem;
   //border: 1px dashed black;
   overflow: hidden;
   & img {
     width: 60rem;
     height: 34rem;
+    border-radius: 0.8rem;
   }
 `;
   /*  三个图标  */
