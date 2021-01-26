@@ -61,18 +61,26 @@ export const SliderItemTop = styled.div`
   }
 `;
 export const SliderBottom = styled.div`
-  width: inherit;
+  width: 110rem;
   height: 16rem;
+  margin: 0 auto;
 `;
 
 export const SliderItemBottom = styled.div`
-  width: 20rem;
+  width: auto;
   height: inherit;
   border-radius: 0.8rem;
   overflow: hidden;
+
   & img {
     width: 20rem;
     height: 16rem;
     border-radius: 0.8rem;
   }
 `;
+
+export class NextArrow {
+}
+
+export class PrevArrow {
+}

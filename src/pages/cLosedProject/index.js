@@ -108,7 +108,6 @@ class ClosedProject extends PureComponent {
                                     >详情
                                         <img src={moreInfoIcon} alt=""/>
                                     </MoreInfo>
-
                                 </FixedBottom>
                             </ItemTop>
                             <div className="mid-bottom">

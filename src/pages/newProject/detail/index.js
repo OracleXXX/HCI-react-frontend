@@ -13,7 +13,9 @@ import {
     SliderTop,
     SliderItemTop,
     SliderBottom,
-    SliderItemBottom
+    SliderItemBottom,
+    NextArrow,
+    PrevArrow
 
 
 } from './style';
@@ -26,6 +28,8 @@ class NewProjectDetail extends PureComponent {
         super(props);
         //绑定this
         this.id = this.props.match.params.id
+        this.next = this.next.bind(this);
+        this.previous = this.previous.bind(this);
         this.ScrollTo = React.createRef()   // Create a ref object
         this.state = {
             nav1: null,
@@ -73,34 +77,41 @@ class NewProjectDetail extends PureComponent {
         return (
             <SliderWrapper>
                 <SliderTop>
-                    <Slider asNavFor={nav2} ref={slider => (this.slider1 = slider)} arrows={false} dot={true}
-                                   swipeToSlide={true}>
-                    {
-                        imageList.map((item, index) => {
-                            return (
-                                <SliderItemTop key={index}>
-                                    <img src={file.PROXY_URL.NEW_PROJECT_IMAGES  + this.props.match.params.id + "/" + item} alt=""
-                                         key={index}/>
-                                </SliderItemTop>
-                            )
-                        })
-                    }
-                </Slider>
+                    <PrevArrow className="button" onClick={this.previous}/>
+                    <Slider asNavFor={nav2} ref={slider => (this.slider1 = slider)} arrows={false} dots={true}
+                            lazyLoad={true}
+                            swipeToSlide={true}>
+                        {
+                            imageList.map((item, index) => {
+                                return (
+                                    <SliderItemTop key={index}>
+                                        <img
+                                            src={file.PROXY_URL.NEW_PROJECT_IMAGES + this.props.match.params.id + "/" + item}
+                                            alt=""
+                                            key={index}/>
+                                    </SliderItemTop>
+                                )
+                            })
+                        }
+                    </Slider>
+                    <NextArrow className="button" onClick={this.next}/>
                 </SliderTop>
                 <SliderBottom>
                     <Slider asNavFor={nav1} ref={slider => (this.slider2 = slider)} slidesToShow={5}
-                                      swipeToSlide={true} focusOnSelect={true} arrows={false}>
-                    {
-                        imageList.map((item, index) => {
-                            return (
-                                <SliderItemBottom key={index}>
-                                    <img src={file.PROXY_URL.NEW_PROJECT_IMAGES + "/" + this.props.match.params.id + "/" + item} alt=""
-                                         key={index}/>
-                                </SliderItemBottom>
-                            )
-                        })
-                    }
-                </Slider>
+                            swipeToSlide={true} focusOnSelect={true} arrows={false}>
+                        {
+                            imageList.map((item, index) => {
+                                return (
+                                    <SliderItemBottom key={index}>
+                                        <img
+                                            src={file.PROXY_URL.NEW_PROJECT_IMAGES + "/" + this.props.match.params.id + "/" + item}
+                                            alt=""
+                                            key={index}/>
+                                    </SliderItemBottom>
+                                )
+                            })
+                        }
+                    </Slider>
                 </SliderBottom>
             </SliderWrapper>
         )
@@ -108,12 +119,12 @@ class NewProjectDetail extends PureComponent {
     };
 
     next() {
-        this.slider.slickNext();
+        this.slider1.slickNext();
     }
 
     /* 左指针 */
     previous() {
-        this.slider.slickPrev();
+        this.slider1.slickPrev();
     }
 
     getDataDescription() {
