@@ -14,6 +14,11 @@ const changeNewProjectList = (result)=> ({
 
 });
 
+const changeNewProjectDetail = (result) => ({
+    type: constants.CHANGE_NEW_PROJECT_DETAIL,
+    newProjectDetail: fromJS(result)
+});
+
 export const getNewProject = ()=> {
     return (dispatch) => {
 
@@ -30,3 +35,13 @@ export const getMorePages = (page) => {
         dispatch(getPages(page));
     }
 };
+export const getNewProjectDetail = (id) => {
+    return (dispatch) => {
+        axios.get(constants.PROXY_URL+'api/new-project/detail/'+id).then((res)=>{
+            const result = res.data;
+            dispatch(changeNewProjectDetail(result));
+        })
+    }
+
+
+}

@@ -6,7 +6,7 @@ const defaultState = fromJS({
     expectationName: ["具体地址", "预期收益", "预期回报率", "预期租金", "预期装修费用", "平台贷款"],
     page: 1,
     totalPage: 1,
-    newProjectDetailMap:{}
+    newProjectDetailList:[]
 
 
 });
@@ -23,14 +23,21 @@ const getMorePages = (state, action) => {
     })
 }
 
+const changeNewProjectDetail = (state, action) => {
+    return state.merge({
+        NewProjectDetailList: fromJS(action.newProjectDetailList)
+    })
+}
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action) => {
     switch (action.type) {
         case constants.CHANGE_NEW_PROJECT_LIST:
             return newProjectListData(state, action);
-
         case constants.GET_MORE_PAGES:
             return getMorePages(state, action);
+        case constants.CHANGE_NEW_PROJECT_DETAIL:
+            return changeNewProjectDetail(state, action);
 
         default:
             return state;

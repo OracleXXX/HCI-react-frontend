@@ -37,8 +37,7 @@ class App extends Component {
                     <Header/>
                     <div>
                         <Route path='/' exact component={HomePage}/>
-                        <Route path='/new-project' exact component={NewProject}>
-                        </Route>
+                        <Route path='/new-project' exact component={NewProject}/>
                         <Route path='/new-project/detail/:id' exact component={NewProjectDetail}/>
                         <Route path='/one-step/management' exact component={Management}/>
                         <Route path='/one-step/long-short' exact component={LongShort}/>

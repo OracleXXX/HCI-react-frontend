@@ -11,3 +11,5 @@ CMD ["npm", "start"]
 FROM nginx:stable-alpine
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+
+#docker run -p3000:3000 --name -d imagename
