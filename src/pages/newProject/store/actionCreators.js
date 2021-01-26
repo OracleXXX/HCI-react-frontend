@@ -16,7 +16,9 @@ const changeNewProjectList = (result)=> ({
 
 const changeNewProjectDetail = (result) => ({
     type: constants.CHANGE_NEW_PROJECT_DETAIL,
-    newProjectDetail: fromJS(result)
+    newProjectDetail: fromJS(result.info),
+    imageList: fromJS(result.images)
+
 });
 
 export const getNewProject = ()=> {

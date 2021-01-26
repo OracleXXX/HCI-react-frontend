@@ -4,8 +4,8 @@ import seeMoreIcon from "../../../statics/imgs/newProject/seeMoreIcon.png"
 
 export const CHANGE_NEW_PROJECT_DETAIL= 'newProject/CHANGE_NEW_PROJECT_DETAIL';
 export const TITLE_PATH = {
-  CURR : "当前位置",
-  PREV_PATH: "精选房源",
+  CURR : "当前位置: ",
+  PREV_PATH: "精选房源 > ",
   CONNECT_IMG: null,
   CURR_PATH: "内容详情"
 }

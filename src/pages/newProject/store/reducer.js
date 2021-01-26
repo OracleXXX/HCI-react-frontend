@@ -6,7 +6,8 @@ const defaultState = fromJS({
     expectationName: ["具体地址", "预期收益", "预期回报率", "预期租金", "预期装修费用", "平台贷款"],
     page: 1,
     totalPage: 1,
-    newProjectDetailList:[]
+    newProjectDetail:[],
+    imageList: []
 
 
 });
@@ -25,7 +26,8 @@ const getMorePages = (state, action) => {
 
 const changeNewProjectDetail = (state, action) => {
     return state.merge({
-        NewProjectDetailList: fromJS(action.newProjectDetailList)
+        newProjectDetail: fromJS(action.newProjectDetail),
+        imageList: fromJS(action.imageList)
     })
 }
 

@@ -34,6 +34,7 @@ import {PopupItem, PopupWrapper} from "../../common/popup/style";
 import {ExitButton} from "../oneStepService/activities/style";
 
 class ClosedProject extends PureComponent {
+
     constructor(props) {
         super(props);
         //绑定this
