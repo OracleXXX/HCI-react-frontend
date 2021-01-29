@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 import Slider from "react-slick";
-
+import Map from "../../../common/map";
 import {actionCreators} from "../store";
 import {
 
@@ -15,7 +15,17 @@ import {
     SliderBottom,
     SliderItemBottom,
     NextArrow,
-    PrevArrow
+    PrevArrow,
+    DataDescription,
+    DataContainer,
+    Prices,
+    Size,
+    Location,
+    EmbeddedMap,
+    LoanPayment,
+    Calculator,
+    Status
+
 
 
 } from './style';
@@ -40,12 +50,14 @@ class NewProjectDetail extends PureComponent {
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
 
     render() {
+
+        const {newProjectOverview, newProjectDetail, imageList} = this.props;
         return (
             <NewProjectDetailWrapper ref={this.ScrollTo}>
                 <NewProjectDetailContainer>
                     {this.getTitlePath()}
-                    {this.getSlider()}
-                    {this.getDataDescription()}
+                    {this.getSlider(imageList)}
+                    {this.getDataDescription(newProjectOverview, newProjectDetail)}
                     {this.getTextDescription()}
                     {this.getBasicInfo()}
                     {this.getEmbeddedContactUs()}
@@ -64,20 +76,21 @@ class NewProjectDetail extends PureComponent {
                     <span className="title-path">{constants.TITLE_PATH.PREV_PATH}</span>
                 </Link>
                 <Link to={router.PATH.NEW_PROJECT_DETAIL + this.props.match.params.id}>
-                    <span className="title-path">{constants.TITLE_PATH.CURR_PATH}</span>
+                    <span className="title-path-curr">{constants.TITLE_PATH.CURR_PATH}</span>
                 </Link>
             </TitlePath>
         )
 
     };
 
-    getSlider() {
+    getSlider(imageList) {
         const {nav1, nav2} = this.state;
-        const {imageList} = this.props
         return (
             <SliderWrapper>
                 <SliderTop>
-                    <PrevArrow className="button" onClick={this.previous}/>
+                    <PrevArrow className="button" onClick={this.previous}>
+                        <img src={constants.ARROWS.PREV} alt=""/>
+                    </PrevArrow>
                     <Slider asNavFor={nav2} ref={slider => (this.slider1 = slider)} arrows={false} dots={true}
                             lazyLoad={true}
                             swipeToSlide={true}>
@@ -94,7 +107,9 @@ class NewProjectDetail extends PureComponent {
                             })
                         }
                     </Slider>
-                    <NextArrow className="button" onClick={this.next}/>
+                    <NextArrow className="button" onClick={this.next}>
+                        <img src={constants.ARROWS.NEXT} alt=""/>
+                    </NextArrow>
                 </SliderTop>
                 <SliderBottom>
                     <Slider asNavFor={nav1} ref={slider => (this.slider2 = slider)} slidesToShow={5}
@@ -127,8 +142,38 @@ class NewProjectDetail extends PureComponent {
         this.slider1.slickPrev();
     }
 
-    getDataDescription() {
+    getDataDescription(newProjectOverview, newProjectDetail) {
 
+        return (
+            <DataDescription>
+                <DataContainer>
+                    <div className="prices">
+                        <Prices>{newProjectOverview.get("price")}</Prices>
+                        <LoanPayment>(按揭$4,691/月)</LoanPayment>
+                        <Calculator>
+                            <img src="" alt=""/>
+                            <span className="calculator-name">投资计算器</span>
+                            </Calculator>
+                    </div>
+                    <div>
+                        <Size>
+                            {newProjectDetail.get("num_of_bedroom")}/{newProjectDetail.get("num_of_bath_room")}/{newProjectOverview.get("price")}
+                        </Size>
+                        <Status>
+                            在售
+                        </Status>
+                    </div>
+                    <Location>{newProjectOverview.get("city")}, {newProjectOverview.get("state")}</Location>
+                </DataContainer>
+                <EmbeddedMap>
+                    <Map/>
+
+
+
+                </EmbeddedMap>
+
+            </DataDescription>
+        )
     };
 
     getTextDescription() {
@@ -144,8 +189,10 @@ class NewProjectDetail extends PureComponent {
     };
 
     componentDidMount() {
+        const {id} = this.props.match.params;
         this.scrollToMyRef();
-        this.props.getNewProjectDetail(this.props.match.params.id)
+        this.props.getNewProjectDetail(id);
+        this.props.getNewProjectOverview(id);
         this.setState({
             nav1: this.slider1,
             nav2: this.slider2
@@ -158,12 +205,16 @@ class NewProjectDetail extends PureComponent {
 //用connect + mapstate 就可以直接取出store中的数据
 const mapState = (state) => ({
     newProjectDetail: state.getIn(['newProject', 'newProjectDetail']),
-    imageList: state.getIn(['newProject', 'imageList'])
+    imageList: state.getIn(['newProject', 'imageList']),
+    newProjectOverview: state.getIn(['newProject', 'newProjectOverview'])
 });
 const mapDispatch = (dispatch) => ({
     getNewProjectDetail(id) {
-        dispatch(actionCreators.getNewProjectDetail(id))
-    }
+        dispatch(actionCreators.getNewProjectDetail(id));
+    },
+    getNewProjectOverview(id) {
+        dispatch(actionCreators.getNewProjectOverview(id));
+    },
 });
 
 export default connect(mapState, mapDispatch)(withRouter(NewProjectDetail));

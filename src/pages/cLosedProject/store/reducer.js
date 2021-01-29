@@ -25,7 +25,7 @@ const changeFlippingList = (state, action) => {
 };
 const changeDetailList = (state, action)=> {
     return state.merge({
-        detailList: fromJS(action.detailList),
+        detailList: fromJS(action.detailList.sort()),
         curID: action.id
     })
 };

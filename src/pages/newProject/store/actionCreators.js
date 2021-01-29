@@ -20,7 +20,10 @@ const changeNewProjectDetail = (result) => ({
     imageList: fromJS(result.images)
 
 });
-
+const changeNewProjectOverview = (result) =>({
+    type: constants.CHANGE_NEW_PROJECT_OVERVIEW,
+    newProjectOverview: fromJS(result)
+})
 export const getNewProject = ()=> {
     return (dispatch) => {
 
@@ -32,6 +35,15 @@ export const getNewProject = ()=> {
         );
     }
 };
+export const getNewProjectOverview = (id) => {
+    return (dispatch) => {
+        axios.get(constants.PROXY_URL+"api/new-project/" + id).then((res)=>{
+            const result = res.data;
+            dispatch(changeNewProjectOverview(result));
+        })
+
+    }
+}
 export const getMorePages = (page) => {
     return (dispatch) => {
         dispatch(getPages(page));

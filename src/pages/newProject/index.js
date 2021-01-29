@@ -22,8 +22,9 @@ import {
 } from '../homePage/componentStyles/NewProjectDemoStyle';
 import {actionCreators} from './store';
 import {constants} from './store'
+import {fromJS} from "immutable";
 
-const demoList = [];
+const demo_list = [];
 
 class NewProject extends PureComponent {
     constructor(props) {
@@ -31,11 +32,13 @@ class NewProject extends PureComponent {
         this.ScrollTo = React.createRef()   // Create a ref object
     }
 
-    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop-100)
+    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     // 渲染
     render() {
         const {page, totalPage} = this.props;
         this.changeDemoList()
+
         return (
             <NewProjectWrapper ref={this.ScrollTo}>
                 <NewProjectTitle>
@@ -66,21 +69,23 @@ class NewProject extends PureComponent {
     //所有房源
     getNewProjectContainer(page, totalPage) {
         if (page <= totalPage) {
-            return demoList.slice(0, page * 6)
+            return demo_list.slice(0, page * 6)
         }
     }
 
     //把数据放入totalList
     changeDemoList() {
         const {newProjectList} = this.props;
-        if (demoList.length > 0) {
+        if (demo_list.length > 0) {
             return
         }
         newProjectList.map((item) => {
-            demoList.push(
+            demo_list.push(
                 <ContainerItem key={item.get("id")}>
                     {/*图*/}
-                    {this.getItemImgContainer(item.get("id"), constants.PROXY_URL+item.get("avatar"), item.get("city"))}
+                    {this.getItemImgContainer(
+                        item,
+                        constants.PROXY_URL+item.get("avatar"), )}
                     {/*价格和租金*/}
                     {this.getItemPriceContaner(item.get("price"), item.get("status"), item.get("area"), item.get("status"))}
                     {/*预期数据*/}
@@ -100,8 +105,9 @@ class NewProject extends PureComponent {
             return null;
         })
     }
+
     //图
-    getItemImgContainer(id, imgUrl, city) {
+    getItemImgContainer(params, imgUrl) {
         return (
             <ItemImgContainer>
                 <img src={imgUrl} alt="" className='house-img no-select'/>
@@ -109,13 +115,13 @@ class NewProject extends PureComponent {
                     <div className='addition-info-content'>
                         <City>
                             <img src={constants.ADDR_ICON} alt="" className='addr-icon'/>
-                            <span className='city-name'>{city}</span>
+                            <span className='city-name'>{params.get("city")}</span>
                         </City>
-                        <Link to={'/new-project/detail/'+id}>
-                        <MoreInfo className='no-select button'>
-                            <span>详情</span>
-                            <img src={constants.MORE_INFO_ICON} alt=""/>
-                        </MoreInfo></Link>
+                        <Link to={'/new-project/detail/' + params.get("id")} >
+                            <MoreInfo className='no-select button'>
+                                <span>详情</span>
+                                <img src={constants.MORE_INFO_ICON} alt=""/>
+                            </MoreInfo></Link>
                     </div>
                 </AdditionInfo>
             </ItemImgContainer>
@@ -129,10 +135,10 @@ class NewProject extends PureComponent {
             <ItemPriceContainer>
                 <div className='leasing-fee'>
                     <span className='price'>{price}</span>
-                    <span className='per-month'>{month==="正在出租"?"/月":""}</span>
+                    <span className='per-month'>{month === "正在出租" ? "/月" : ""}</span>
                 </div>
                 <div className='area rental'>
-                    <span>{area + "/"+status}</span></div>
+                    <span>{area + "/" + status}</span></div>
             </ItemPriceContainer>
         )
     };
@@ -159,7 +165,7 @@ class NewProject extends PureComponent {
     }
 
     // 每个预期数内容
-    getMarginItem(name, content, city="", state="", zip_code="") {
+    getMarginItem(name, content, city = "", state = "", zip_code = "") {
         return (
             <MarginItem>
                 <div className='margin-item-name'>{name}：</div>
@@ -181,7 +187,6 @@ class NewProject extends PureComponent {
 //用connect + mapstate 就可以直接取出store中的数据
 const mapState = (state) => ({
     newProjectList: state.getIn(['newProject', 'newProjectList']),
-    names: state.getIn(['newProject', 'expectationName']),
     page: state.getIn(['newProject', 'page']),
     totalPage: state.getIn(['newProject', 'totalPage'])
 });

@@ -1,15 +1,20 @@
 import addrIcon from "../../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import seeMoreIcon from "../../../statics/imgs/newProject/seeMoreIcon.png"
-
+import prevArrow from "../../../statics/imgs/newProject/detail/prevArrow.png";
+import nextArrow from "../../../statics/imgs/newProject/detail/nextArrow.png";
 export const CHANGE_NEW_PROJECT_DETAIL= 'newProject/CHANGE_NEW_PROJECT_DETAIL';
+export const CHANGE_NEW_PROJECT_OVERVIEW= 'newProject/CHANGE_NEW_PROJECT_OVERVIEW';
 export const TITLE_PATH = {
   CURR : "当前位置: ",
   PREV_PATH: "精选房源 > ",
   CONNECT_IMG: null,
   CURR_PATH: "内容详情"
 }
-
+export const ARROWS = {
+  PREV: prevArrow,
+  NEXT: nextArrow
+}
 export const FULL_ADDR = "具体地址";
 export const LEASING_FEE = "租金";
 export const CASH_FLOW_LOAN = "预期现金流（贷款）";

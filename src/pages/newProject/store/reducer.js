@@ -3,11 +3,11 @@ import * as constants from './constants'
 
 const defaultState = fromJS({
     newProjectList: [],
-    expectationName: ["具体地址", "预期收益", "预期回报率", "预期租金", "预期装修费用", "平台贷款"],
     page: 1,
     totalPage: 1,
     newProjectDetail:[],
-    imageList: []
+    imageList: [],
+    newProjectOverview: []
 
 
 });
@@ -21,6 +21,11 @@ const newProjectListData = (state, action) => {
 const getMorePages = (state, action) => {
     return state.merge({
         page: action.page
+    });
+};
+const changeNewProjectOverview = (state, action) => {
+    return state.merge({
+        newProjectOverview: fromJS(action.newProjectOverview)
     })
 }
 
@@ -40,6 +45,8 @@ export default (state = defaultState, action) => {
             return getMorePages(state, action);
         case constants.CHANGE_NEW_PROJECT_DETAIL:
             return changeNewProjectDetail(state, action);
+        case constants.CHANGE_NEW_PROJECT_OVERVIEW:
+            return changeNewProjectOverview(state, action);
 
         default:
             return state;
