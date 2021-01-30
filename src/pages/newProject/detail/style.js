@@ -370,3 +370,12 @@ export const BasicInfoItem = styled.div`
     color: #666666;
   }
 `;
+
+export class EmbeddedContactUsWrapper {
+}
+
+export class ContactUsContainer {
+}
+
+export class ContactUsTitle {
+}

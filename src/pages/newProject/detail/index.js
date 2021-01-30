@@ -34,7 +34,11 @@ import {
     BasicInfoTitle,
     BasicInfo,
     BasicInfoCol,
-    BasicInfoItem
+    BasicInfoItem,
+
+    EmbeddedContactUsWrapper,
+    ContactUsContainer,
+    ContactUsTitle
 
 
 } from './style';
@@ -90,6 +94,7 @@ class NewProjectDetail extends PureComponent {
             </TitlePath>
         )
     };
+
     getSlider(imageList) {
         const {nav1, nav2} = this.state;
         return (
@@ -246,8 +251,8 @@ class NewProjectDetail extends PureComponent {
             basicInfoItems[currIndex].push(
                 <BasicInfoItem key={param}>
 
-                        <span className="basic-info-item-name">{name}</span>
-                        <span className="basic-info-item-data">{database[pos].get(param)}</span>
+                    <span className="basic-info-item-name">{name}</span>
+                    <span className="basic-info-item-data">{database[pos].get(param)}</span>
 
                 </BasicInfoItem>
             )
@@ -257,6 +262,7 @@ class NewProjectDetail extends PureComponent {
         })
         return basicInfoItems;
     };
+
 
     getEmbeddedContactUs() {
         return (
