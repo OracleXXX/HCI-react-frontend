@@ -152,23 +152,22 @@ export const DataDescription = styled.div`
 
 export const DataContainer = styled.div`
   width: 32.3rem;
-  height: inherit;
+  height: 12rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  & .prices {
+  & .data {
     width: inherit;
     height: fit-content;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items:center;
-
   }
   
 `;
 
-export const Prices = styled.span`
+export const Price = styled.span`
   width: fit-content;
   height: 3.6rem;
   line-height: 3.6rem;
@@ -176,6 +175,7 @@ export const Prices = styled.span`
   font-size: 2.4rem;
   color: #DE2F2F;
   white-space: nowrap;
+  margin-right: 0.8rem;
   
 `;
 export const LoanPayment = styled.span`
@@ -186,24 +186,187 @@ export const LoanPayment = styled.span`
   font-size: 1.4rem;
   color: #333333;
   white-space: nowrap;
+  margin-right: 0.8rem;
+
   
 `;
 
 export const Calculator = styled.span`
+  width: 7.1rem;
+  height: 2rem;
   white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.8rem;
+  & img {
+    width: 1.1rem;
+    height: 1.5rem;
+  }
+  & span {
+    width: 5.6rem;
+    height: inherit;
+    white-space: nowrap;
+    font-family: SourceHanSansSC-Regular;
+    font-size: 1.4rem;
+    color: #2D84FF;
+    line-height: 2rem;
+  }
 `;
-export const Size = styled.span`
+export const Size = styled.div`
+  width: fit-content;
+  height: 2rem;
+  line-height: 2rem;
+  font-family: SourceHanSansSC-Medium;
+  font-size: 2rem;
+  text-align: center;
+  margin-right: 0.4rem;
   
 `;
 
 
-export const Status = styled.span``;
-export const Location = styled.span`
-  
+export const Status = styled.div`
+  width: 3rem;
+  height: 1.8rem;
+  border-radius: 0.4rem;
+  background-image: linear-gradient(-60deg, #7F55FF 0%, #26A3FF 100%);
+  color: #FFFFFF;
+  font-family: SourceHanSansSC-Medium;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  text-align: center;
+
+
+`;
+export const Location = styled.div`
+  width: fit-content;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  & img {
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-right: 0.8rem;
+  }
+  & span {
+    width: fit-content;
+    height: inherit;
+    white-space: nowrap;
+    font-family: SourceHanSansSC-Regular;
+    font-size: 1.6rem;
+    color: #333333;
+    line-height: 2.4rem;
+  }  
 `;
 
 export const EmbeddedMap = styled.div`
+  margin-top: 0.5rem;
+  width: 12rem;
+  height: 12rem;
+  & iframe {
+    width: inherit;
+    height: inherit;
+    frameborder: 0;
+    border: 0;
+    allowfullscreen: '';
+    aria-hidden: false;
+    tab-index: 0;
+}
+`;
+
+export const HouseInfoWrapper = styled.div`
+  width: inherit;
+  height: fit-content;
+  margin-top: 6rem;
+  box-sizing: border-box;
   
 `;
 
+export const HouseInfoTitle = styled.div`
+  width: 10rem;
+  height: 2.9rem;
+  font-family: SourceHanSansSC-Medium;
+  font-size: 2rem;
+  line-height: 2.9rem;
+  margin-bottom: 1.2rem;
+  color: #333333;
+  white-space: nowrap;
+  box-sizing: border-box;
+`;
 
+export const HouseInfo = styled.div`
+  width: inherit;
+  height: fit-content;
+  line-height: 3rem;
+  font-family: SourceHanSansSC-Regular;
+  font-size: 1.6rem;
+  color: #666666;
+  box-sizing: border-box;
+  
+`;
+
+export const BasicInfoWrapper = styled.div`
+   width: inherit;
+   height: fit-content;
+   padding: 3rem 4rem;
+   margin: 3.8rem auto 4.8rem;
+   background-color: #F6F8F9;
+   border-radius: 0.8rem;
+   box-sizing: border-box;
+`;
+
+export const BasicInfoTitle = styled.div`
+   width: 12rem;
+   height: 2.9rem;
+   font-family: SourceHanSansSC-Medium;
+   font-size: 2rem;
+   line-height: 2.9rem;
+   white-space: nowrap;
+   margin-bottom: 3rem;
+   box-sizing: border-box;
+   
+`;
+
+export const BasicInfo = styled.div`
+   width: 100%;
+   height: fit-content;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   box-sizing: border-box;
+   
+`;
+
+export const BasicInfoCol = styled.div`
+  width: fit-content;
+  height: 19rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+`;
+
+export const BasicInfoItem = styled.div`
+  width: fit-content;
+  height: 2.2rem;
+  font-size: 1.5rem;
+  color: #333333;
+  line-height: 2.2rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+  & .basic-info-item-name {
+    width: fit-content;
+    height: inherit;
+    font-family: SourceHanSansSC-Medium;
+  }
+  & .basic-info-item-data {
+    width: fit-content;
+    height: inherit;
+    font-family: SourceHanSansSC-Normal;
+    color: #666666;
+  }
+`;

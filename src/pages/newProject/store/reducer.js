@@ -7,7 +7,8 @@ const defaultState = fromJS({
     totalPage: 1,
     newProjectDetail:[],
     imageList: [],
-    newProjectOverview: []
+    newProjectOverview: [],
+    basicInfoItems:[[], [], []]
 
 
 });

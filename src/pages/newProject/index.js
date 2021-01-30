@@ -85,7 +85,7 @@ class NewProject extends PureComponent {
                     {/*图*/}
                     {this.getItemImgContainer(
                         item,
-                        constants.PROXY_URL+item.get("avatar"), )}
+                        constants.PROXY_URL + item.get("avatar"),)}
                     {/*价格和租金*/}
                     {this.getItemPriceContaner(item.get("price"), item.get("status"), item.get("area"), item.get("status"))}
                     {/*预期数据*/}
@@ -117,7 +117,7 @@ class NewProject extends PureComponent {
                             <img src={constants.ADDR_ICON} alt="" className='addr-icon'/>
                             <span className='city-name'>{params.get("city")}</span>
                         </City>
-                        <Link to={'/new-project/detail/' + params.get("id")} >
+                        <Link to={'/new-project/detail/' + params.get("id")}>
                             <MoreInfo className='no-select button'>
                                 <span>详情</span>
                                 <img src={constants.MORE_INFO_ICON} alt=""/>

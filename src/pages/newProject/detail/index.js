@@ -18,14 +18,23 @@ import {
     PrevArrow,
     DataDescription,
     DataContainer,
-    Prices,
+    Price,
     Size,
     Location,
     EmbeddedMap,
     LoanPayment,
     Calculator,
-    Status
+    Status,
 
+    HouseInfoWrapper,
+    HouseInfoTitle,
+    HouseInfo,
+
+    BasicInfoWrapper,
+    BasicInfoTitle,
+    BasicInfo,
+    BasicInfoCol,
+    BasicInfoItem
 
 
 } from './style';
@@ -58,8 +67,8 @@ class NewProjectDetail extends PureComponent {
                     {this.getTitlePath()}
                     {this.getSlider(imageList)}
                     {this.getDataDescription(newProjectOverview, newProjectDetail)}
-                    {this.getTextDescription()}
-                    {this.getBasicInfo()}
+                    {this.getHouseInfo(newProjectDetail.get("house_info"))}
+                    {this.getBasicInfo(newProjectOverview, newProjectDetail)}
                     {this.getEmbeddedContactUs()}
                 </NewProjectDetailContainer>
             </NewProjectDetailWrapper>
@@ -68,28 +77,26 @@ class NewProjectDetail extends PureComponent {
 
     getTitlePath() {
         return (
-            <TitlePath>
+            <TitlePath className="no-select">
                 <Link to={router.PATH.NEW_PROJECT_DETAIL + this.props.match.params.id}>
-                    <span className="title-path">{constants.TITLE_PATH.CURR}</span>
+                    <span className="title-path">{constants.PROJECT_DETAIL_STATIC.TITLE_PATH.CURR}</span>
                 </Link>
                 <Link to={router.PATH.NEW_PROJECT}>
-                    <span className="title-path">{constants.TITLE_PATH.PREV_PATH}</span>
+                    <span className="title-path">{constants.PROJECT_DETAIL_STATIC.TITLE_PATH.PREV_PATH}</span>
                 </Link>
                 <Link to={router.PATH.NEW_PROJECT_DETAIL + this.props.match.params.id}>
-                    <span className="title-path-curr">{constants.TITLE_PATH.CURR_PATH}</span>
+                    <span className="title-path-curr">{constants.PROJECT_DETAIL_STATIC.TITLE_PATH.CURR_PATH}</span>
                 </Link>
             </TitlePath>
         )
-
     };
-
     getSlider(imageList) {
         const {nav1, nav2} = this.state;
         return (
-            <SliderWrapper>
+            <SliderWrapper className="no-select">
                 <SliderTop>
                     <PrevArrow className="button" onClick={this.previous}>
-                        <img src={constants.ARROWS.PREV} alt=""/>
+                        <img src={constants.PROJECT_DETAIL_IMAGES.PREV_ARROW} alt=""/>
                     </PrevArrow>
                     <Slider asNavFor={nav2} ref={slider => (this.slider1 = slider)} arrows={false} dots={true}
                             lazyLoad={true}
@@ -108,7 +115,7 @@ class NewProjectDetail extends PureComponent {
                         }
                     </Slider>
                     <NextArrow className="button" onClick={this.next}>
-                        <img src={constants.ARROWS.NEXT} alt=""/>
+                        <img src={constants.PROJECT_DETAIL_IMAGES.NEXT_ARROW} alt=""/>
                     </NextArrow>
                 </SliderTop>
                 <SliderBottom>
@@ -130,7 +137,6 @@ class NewProjectDetail extends PureComponent {
                 </SliderBottom>
             </SliderWrapper>
         )
-
     };
 
     next() {
@@ -147,27 +153,35 @@ class NewProjectDetail extends PureComponent {
         return (
             <DataDescription>
                 <DataContainer>
-                    <div className="prices">
-                        <Prices>{newProjectOverview.get("price")}</Prices>
+                    <div className="data">
+                        <Price>{newProjectOverview.get("price")}</Price>
                         <LoanPayment>(按揭$4,691/月)</LoanPayment>
                         <Calculator>
-                            <img src="" alt=""/>
-                            <span className="calculator-name">投资计算器</span>
-                            </Calculator>
+                            <img src={constants.PROJECT_DETAIL_IMAGES.CALCULATOR} alt="" className="no-select"/>
+                            <span className="calculator-name">计算贷款</span>
+                        </Calculator>
                     </div>
-                    <div>
+                    <div className="data">
                         <Size>
-                            {newProjectDetail.get("num_of_bedroom")}/{newProjectDetail.get("num_of_bath_room")}/{newProjectOverview.get("price")}
+                            {newProjectDetail.get("num_of_bedroom")}室/{newProjectDetail.get("num_of_bath_room")}浴/{newProjectOverview.get("price")}平方英尺
                         </Size>
                         <Status>
                             在售
                         </Status>
                     </div>
-                    <Location>{newProjectOverview.get("city")}, {newProjectOverview.get("state")}</Location>
+                    <Location>
+                        <img src={constants.PROJECT_DETAIL_IMAGES.LOCATION} alt=""/>
+                        <span>
+                            {newProjectOverview.get("city")}, {newProjectOverview.get("state")}
+                        </span>
+                    </Location>
                 </DataContainer>
-                <EmbeddedMap>
-                    <Map/>
+                <EmbeddedMap className="no-select">
 
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.8153476059288!2d-86.4620463843852!3d35.82900592946002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8863f7ad27260429%3A0x536a357b3d6f125f!2s1609%20Damascus%20Rd%2C%20Murfreesboro%2C%20TN%2037128!5e0!3m2!1sen!2sus!4v1612009737150!5m2!1sen!2sus"
+
+                    />
 
 
                 </EmbeddedMap>
@@ -176,15 +190,85 @@ class NewProjectDetail extends PureComponent {
         )
     };
 
-    getTextDescription() {
+    getHouseInfo(house_info) {
+        return (
+            <HouseInfoWrapper>
+                <HouseInfoTitle>
+                    {constants.PROJECT_DETAIL_STATIC.HOUSE_INFO.HOUSE_INFO_TITLE}
+                </HouseInfoTitle>
+                <HouseInfo>
+                    {house_info}
+                </HouseInfo>
+            </HouseInfoWrapper>
+        )
 
     };
 
-    getBasicInfo() {
+    getBasicInfo(newProjectOverview, newProjectDetail) {
+        return (
+            <BasicInfoWrapper>
+                <BasicInfoTitle>
+                    {constants.PROJECT_DETAIL_STATIC.BASIC_INFO.BASIC_INFO_TITLE}
+                </BasicInfoTitle>
+                <BasicInfo>
+                    {this.getBasicInfoCols([newProjectOverview, newProjectDetail])}
+                </BasicInfo>
+            </BasicInfoWrapper>
+        )
 
+    };
+
+    getBasicInfoCols(database) {
+        let basicInfoItems = this.initBasicInfoItems(database, [[], [], []]);
+        const res = [];
+        let curr_index = 0;
+        for (let i = 0; i < 3; i++) {
+            res.push(
+                <BasicInfoCol key={i}>
+                    {basicInfoItems[curr_index]}
+                </BasicInfoCol>
+            );
+            curr_index += 1;
+        }
+        return res;
+    };
+
+    initBasicInfoItems(database, basicInfoItems) {
+        const dataList = constants.PROJECT_DETAIL_STATIC.BASIC_INFO.DATA
+        let currIndex = 0;
+        let name = "";
+        let param = "";
+        let pos = 0;
+        dataList.map((item) => {
+            name = item.NAME;
+            param = item.PARAM;
+            pos = item.INDEX;
+            basicInfoItems[currIndex].push(
+                <BasicInfoItem key={param}>
+
+                        <span className="basic-info-item-name">{name}</span>
+                        <span className="basic-info-item-data">{database[pos].get(param)}</span>
+
+                </BasicInfoItem>
+            )
+            if (basicInfoItems[currIndex].length === 5) {
+                currIndex += 1;
+            }
+        })
+        return basicInfoItems;
     };
 
     getEmbeddedContactUs() {
+        return (
+            <EmbeddedContactUsWrapper>
+                <ContactUsContainer>
+                    <ContactUsTitle>
+
+                    </ContactUsTitle>
+
+                </ContactUsContainer>
+            </EmbeddedContactUsWrapper>
+        )
 
     };
 
@@ -206,7 +290,8 @@ class NewProjectDetail extends PureComponent {
 const mapState = (state) => ({
     newProjectDetail: state.getIn(['newProject', 'newProjectDetail']),
     imageList: state.getIn(['newProject', 'imageList']),
-    newProjectOverview: state.getIn(['newProject', 'newProjectOverview'])
+    newProjectOverview: state.getIn(['newProject', 'newProjectOverview']),
+    basicInfoItems: state.getIn(['newProject', 'basicInfoItems'])
 });
 const mapDispatch = (dispatch) => ({
     getNewProjectDetail(id) {
