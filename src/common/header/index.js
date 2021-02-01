@@ -20,6 +20,7 @@ class Header extends PureComponent {
     scrollToTop = () => window.scrollTo(0, 0)
 
     render() {
+        const {showBanner} = this.props;
         return (
             <div>
                 <HeaderWrapper className='no-select'>
@@ -27,7 +28,8 @@ class Header extends PureComponent {
                     <Nav>{this.getNavBar()}</Nav>
                 </HeaderWrapper>
                 {/* slide Banner */}
-                <Banner/>
+                { showBanner? <Banner/> : null}
+
             </div>
         )
     }
@@ -99,7 +101,8 @@ class Header extends PureComponent {
 const mapStateToProps = (state) => {
     return {
         displayMenu: state.getIn(['header', 'displayMenu']),
-        navItems: state.getIn(['header', 'navItems'])
+        navItems: state.getIn(['header', 'navItems']),
+        showBanner: state.getIn(['header', 'showBanner'])
     }
 }
 const mapDispatchToProps = (dispatch) => {

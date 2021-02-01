@@ -13,6 +13,7 @@ import {
     Position,
     Introduction
 } from './style';
+import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 class OurTeam extends PureComponent {
     constructor(props) {
@@ -52,7 +53,13 @@ class OurTeam extends PureComponent {
         )
     }
     componentDidMount() {
+        this.props.hideShowBanner()
         this.scrollToMyRef()
     }
 }
-export default connect(null, null)(withRouter(OurTeam));
+const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    }
+});
+export default connect(null, mapDispatch)(withRouter(OurTeam));

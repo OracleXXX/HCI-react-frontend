@@ -24,6 +24,7 @@ import {
 
 } from './style'
 import {DivLine, Pagination} from "../oneStepService/activities/style";
+import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 const popularList = []
 const demoList = [];
@@ -177,7 +178,7 @@ class NewsFeed extends PureComponent {
 
 
     componentDidMount() {
-
+        this.props.hideShowBanner()
         this.props.getNewsFeedList();
         this.scrollToMyRef()
     };
@@ -194,6 +195,9 @@ const mapState = (state) => ({
 
 });
 const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    },
     getNewsFeedList() {
 
         dispatch(actionCreators.getNewsFeed())

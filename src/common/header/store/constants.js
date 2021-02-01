@@ -7,7 +7,7 @@ import Banner4 from '../../../statics/imgs/headerImgs/2.jpg'
 
 export const TRIANGLE = triangle;
 export const CHANGE_DROPDOWN = 'headerImgs/CHANGE_DROPDOWN';
-
+export const CHANGE_SHOW_BANNER = 'header/CHANGE_SHOW_BANNER';
 export const NAV_BAR = [
     {
         id: 1,

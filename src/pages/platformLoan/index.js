@@ -25,6 +25,7 @@ import loanPic from '../../statics/imgs/PlatformLoan/loanPic.png'
 import arrowToBot from '../../statics/imgs/PlatformLoan/arrowToBot.png'
 import arrowToLB from '../../statics/imgs/PlatformLoan/arrowToLB.png'
 import arrowToRB from '../../statics/imgs/PlatformLoan/arrowToRB.png'
+import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 
 class PlatformLoan extends PureComponent {
@@ -133,7 +134,13 @@ class PlatformLoan extends PureComponent {
         )
     }
     componentDidMount() {
+        this.props.hideShowBanner()
         this.scrollToMyRef()
     }
 }
-export default connect(null, null)(withRouter(PlatformLoan));
+const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    }
+});
+export default connect(null, mapDispatch)(withRouter(PlatformLoan));

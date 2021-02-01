@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const NewProjectDetailWrapper = styled.div`
   width: calc(192rem - 17px);
   height: 211.4rem;
-  margin: 0 auto;
+  margin: 9.2rem auto 0;
   box-sizing: border-box;
   letter-spacing: 0;
   & .button:hover {
@@ -371,11 +371,127 @@ export const BasicInfoItem = styled.div`
   }
 `;
 
-export class EmbeddedContactUsWrapper {
-}
+export const EmbeddedContactUsWrapper = styled.div`
+  position: relative;
+  width: inherit;
+  height: 56rem;
+  padding: 6rem 8rem;
+  box-sizing: border-box;
+  border-radius: 0.8rem;
+  background: rgba(74, 101, 131, 0.96);
+  & img {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
+`;
 
-export class ContactUsContainer {
-}
 
-export class ContactUsTitle {
-}
+export const ContactUsContainer = styled.div`
+  z-index: 200;
+  width: 100%;
+  height: 44rem;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  border-radius: inherit;
+  padding : 4.4rem 0;
+  position: relative;
+
+`;
+
+
+export const ContactUsTitle = styled.div`
+  width: 9.6rem;
+  height: 3.6rem;
+  font-family: SourceHanSansSC-Medium;
+  font-size: 2.4rem;
+  color: #333333;
+  line-height: 3.6rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+`;
+
+export const FormContainer = styled.div`
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  
+
+  & .container-form {
+    
+    width: inherit;
+    height: 20rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+  }
+  & .form-group {
+    width: 38rem;
+    height: 8rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+  & .form-label {
+    width: fit-content;
+    height: 2.2rem;
+    display: block;
+    font-family: SourceHanSansSC-Medium;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    white-space: nowrap;
+    
+  }
+  & .star {
+    color: #EA3C3C;
+  }
+
+  & input {
+    width: inherit;
+    height: 4.8rem;
+    background: #FFFFFF;
+    border: 0.1rem solid #D8D8D8;
+    border-radius: 0.4rem;
+    font-size: 1.5rem;
+    outline: none;
+    box-sizing: border-box;
+  }
+  & input:focus {
+    border: 1px solid rgba(45, 132, 255);
+    box-shadow: 0 0 0 0.3rem rgba(45, 132, 255, 0.2);
+
+  }
+  & .form-button {
+    position: absolute;
+    right: calc(25% - 19rem);
+    bottom: 4.4rem;
+    width: 20rem;
+    height: 4.8rem;
+    line-height: 2.2rem;
+    background-image: linear-gradient(-45deg, #7F55FF 0%, #5DBBFF 100%);
+    border-radius: 0.4rem;
+    font-family: HiraginoSans-W6;
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  & .form-button:hover {
+    border: 1px solid #2D84FF;
+    outline: 0.2rem solid rgba(45, 132, 255, 0.2);
+    font-size: 2.2rem;
+    transition: 0.2s;
+  }
+    
+`;

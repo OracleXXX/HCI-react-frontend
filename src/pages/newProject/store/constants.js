@@ -5,9 +5,14 @@ import prevArrow from "../../../statics/imgs/newProject/detail/prevArrow.png";
 import nextArrow from "../../../statics/imgs/newProject/detail/nextArrow.png";
 import calculator from "../../../statics/imgs/newProject/detail/calculator.png";
 import location from "../../../statics/imgs/newProject/detail/location.png";
+import contactUsBackground from "../../../statics/imgs/newProject/detail/contactUsBG.png";
+import {Form} from "react-bootstrap";
+import React from "react";
+
 
 export const CHANGE_NEW_PROJECT_DETAIL = 'newProject/CHANGE_NEW_PROJECT_DETAIL';
 export const CHANGE_NEW_PROJECT_OVERVIEW = 'newProject/CHANGE_NEW_PROJECT_OVERVIEW';
+
 export const PROJECT_DETAIL_STATIC = {
     TITLE_PATH: {
         CURR: "当前位置: ",
@@ -98,26 +103,46 @@ export const PROJECT_DETAIL_STATIC = {
             },
 
         ],
-        /*    NUM_OF_BEDROOM: "卧室数量：",
-            AREA: "建筑面积：",
-            BUILT_YEAR: "建筑年代：",
-            ELEVATOR: "电梯：",
-            HAS_WIFI: "免费WIFI：",
-            NUM_OF_BATH_ROOM: "浴室数量：",
-            TYPE_OF_HOUSE: "房屋类型：",
-            HEATING: "加热：",
-            APPEARANCE: "外观：",
-            FIRE_PLACE: "壁炉：",
-            FLIPPING_COST: "预期装修费用：",
-            RENTAL_RATE_OF_RETURN: "预期租金：",
-            CASH_FLOW_CASH: "预期现金流(全款)：",
-            CASH_FLOW_LOAN: "预期现金流(贷款)：",
-            PLATFORM_LOAN: "平台贷款：",*/
     },
+
     CONTACT_US: {
-        CONTACT_US_TITLE: "联系我们"
-    }
-}
+        CONTACT_US_TITLE: "联系我们",
+        BUTTON: "联系经纪人",
+        IMAGES: {
+            BG: contactUsBackground
+        },
+        DATA: [
+            {
+                CONTROL_ID: "exampleForm.ControlInput1",
+                LABEL: "性名",
+                TYPE: "name",
+                ARIA_DESCRIBEDBY: "nameInfo",
+                PLACEHOLDER: "请输入您的姓名"
+            },
+            {
+                CONTROL_ID: "formBasicEmail",
+                LABEL: "邮箱",
+                TYPE: "email",
+                ARIA_DESCRIBEDBY: "emailInfo",
+                PLACEHOLDER: "请输入您的邮箱"
+            },
+            {
+                CONTROL_ID: "formBasicPhoneNumber",
+                LABEL: "电话号码",
+                TYPE: "name",
+                ARIA_DESCRIBEDBY: "phone",
+                PLACEHOLDER: "请输入您的电话号码"
+            },
+            {
+                CONTROL_ID: "formBasicWechat",
+                LABEL: "微信号",
+                TYPE: "text",
+                ARIA_DESCRIBEDBY: "wechatInfo",
+                PLACEHOLDER: "请输入您的微信号"
+            },
+        ],
+    },
+};
 export const PROJECT_DETAIL_IMAGES = {
     PREV_ARROW: prevArrow,
     NEXT_ARROW: nextArrow,

@@ -19,6 +19,7 @@ import {
     DivLine
 } from './style';
 import {constants} from "./store";
+import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 
 class ContactUs extends PureComponent {
@@ -129,13 +130,20 @@ class ContactUs extends PureComponent {
     }
 
     componentDidMount() {
+        this.props.hideShowBanner()
         this.scrollToMyRef()
     }
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({});
-const mapDispatch = (dispatch) => ({})
+const mapState = (state) => ({
+
+});
+const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    },
+})
 
 export default connect(mapState, mapDispatch)(withRouter(ContactUs));
 

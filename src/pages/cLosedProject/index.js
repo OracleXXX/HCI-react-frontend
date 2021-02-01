@@ -32,6 +32,7 @@ import * as constants from "./store/constants";
 import {constants as activityConstants} from '../oneStepService/activities/store';
 import {PopupItem, PopupWrapper} from "../../common/popup/style";
 import {ExitButton} from "../oneStepService/activities/style";
+import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 class ClosedProject extends PureComponent {
 
@@ -220,6 +221,7 @@ class ClosedProject extends PureComponent {
 
 
     componentDidMount() {
+        this.props.hideShowBanner()
         this.props.getNoFlippingList();
         this.props.getFlippingList();
         this.scrollToMyRef();
@@ -240,6 +242,9 @@ const mapState = (state) => ({
 
 });
 const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    },
     getNoFlippingList() {
         dispatch(actionCreators.getNoFlippingList());
     },

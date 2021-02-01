@@ -23,6 +23,7 @@ import {
 import {actionCreators} from './store';
 import {constants} from './store'
 import {fromJS} from "immutable";
+import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 const demo_list = [];
 
@@ -179,6 +180,7 @@ class NewProject extends PureComponent {
 
 
     componentDidMount() {
+        this.props.hideShowBanner()
         this.props.getNewProject(this.props.newProjectList);
         this.scrollToMyRef()
     }
@@ -193,13 +195,12 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
     getNewProject(newProjectList) {
         newProjectList.size === 0 && dispatch(actionCreators.getNewProject());
-
     },
     handleGetMorePages(page) {
-
         dispatch(actionCreators.getMorePages(page + 1));
-
-
+    },
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
     },
 })
 

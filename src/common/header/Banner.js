@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+
 import Slider from 'react-slick';
 import {
     BannerWrapper,
@@ -18,7 +19,6 @@ import {constants} from './store'
 class Banner extends PureComponent {
 
     render() {
-
         return (
             <BannerWrapper className='no-select'>
                 {/*<img className="banner" src={BannerPic} alt=''/>*/}

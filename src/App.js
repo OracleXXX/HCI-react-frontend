@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Provider} from 'react-redux'
 import {BrowserRouter, Route} from 'react-router-dom';
+
 /*common part*/
 import Header from "./common/header";
 import Footer from "./common/footer";
@@ -28,6 +29,7 @@ import GlobalStyle from './style';
 
 class App extends Component {
     render() {
+
         return (
 
             <Provider store={store}>

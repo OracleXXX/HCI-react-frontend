@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
     z-index: 10000;
-    background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     height: 6rem;
+    background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     width: calc(192rem - 17px);
     box-sizing: border-box;   
     position: fixed;

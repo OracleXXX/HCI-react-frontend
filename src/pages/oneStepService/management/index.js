@@ -10,6 +10,7 @@ import {
 
 } from './style'
 import {ActivityTitle as ManagementTitle} from "../../oneStepService/activities/style";
+import {actionCreators as HeaderActionCreators} from "../../../common/header/store";
 
 class Management extends PureComponent {
     constructor(props) {
@@ -47,9 +48,14 @@ class Management extends PureComponent {
         )
     }
     componentDidMount() {
+        this.props.hideShowBanner()
         this.scrollToMyRef()
     }
 }
-
-export default connect(null, null)(withRouter(Management));
+const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    }
+});
+export default connect(null, mapDispatch)(withRouter(Management));
 

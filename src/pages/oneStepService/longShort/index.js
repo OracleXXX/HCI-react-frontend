@@ -8,6 +8,7 @@ import {
     LongShortFlowChart,
     FlowChartItem
 } from "./style";
+import {actionCreators as HeaderActionCreators} from "../../../common/header/store";
 
 
 class LongShort extends PureComponent {
@@ -15,7 +16,9 @@ class LongShort extends PureComponent {
         super(props)
         this.ScrollTo = React.createRef()   // Create a ref object
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     render() {
         return (
             <LongShortWrapper ref={this.ScrollTo}>
@@ -27,6 +30,7 @@ class LongShort extends PureComponent {
             </LongShortWrapper>
         )
     }
+
     getFLowChart() {
         return (
             constants.FLOW_CHART_IMG.map((item, index) => {
@@ -42,9 +46,19 @@ class LongShort extends PureComponent {
             })
         )
     }
+
     componentDidMount() {
+        this.props.hideShowBanner()
         this.scrollToMyRef()
     }
+
 }
-export default connect(null, null)(withRouter(LongShort));
+
+const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    }
+});
+
+export default connect(null, mapDispatch)(withRouter(LongShort));
 

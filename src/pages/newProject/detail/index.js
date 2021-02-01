@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 import Slider from "react-slick";
 import Map from "../../../common/map";
+import {actionCreators as HeaderActionCreators} from "../../../common/header/store/";
 import {actionCreators} from "../store";
 import {
 
@@ -38,13 +39,16 @@ import {
 
     EmbeddedContactUsWrapper,
     ContactUsContainer,
-    ContactUsTitle
+    ContactUsTitle,
+
+    FormContainer
 
 
 } from './style';
 import * as constants from "../store/constants";
 import * as router from "../../../common/api/router";
 import * as file from "../../../common/api/file";
+import {Button, Form} from "react-bootstrap";
 
 class NewProjectDetail extends PureComponent {
     constructor(props) {
@@ -60,10 +64,9 @@ class NewProjectDetail extends PureComponent {
         };
     }
 
-    scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+    scrollToMyRef = () => window.scrollTo(0, 0)
 
     render() {
-
         const {newProjectOverview, newProjectDetail, imageList} = this.props;
         return (
             <NewProjectDetailWrapper ref={this.ScrollTo}>
@@ -161,16 +164,16 @@ class NewProjectDetail extends PureComponent {
                     <div className="data">
                         <Price>{newProjectOverview.get("price")}</Price>
                         <LoanPayment>(按揭$4,691/月)</LoanPayment>
-                        <Calculator>
-                            <img src={constants.PROJECT_DETAIL_IMAGES.CALCULATOR} alt="" className="no-select"/>
+                        <Calculator className="no-select">
+                            <img src={constants.PROJECT_DETAIL_IMAGES.CALCULATOR} alt="" />
                             <span className="calculator-name">计算贷款</span>
                         </Calculator>
                     </div>
                     <div className="data">
                         <Size>
-                            {newProjectDetail.get("num_of_bedroom")}室/{newProjectDetail.get("num_of_bath_room")}浴/{newProjectOverview.get("price")}平方英尺
+                            {newProjectDetail.get("num_of_bedroom")}室/{newProjectDetail.get("num_of_bath_room")}浴/{newProjectOverview.get("area")}
                         </Size>
-                        <Status>
+                        <Status className="no-select">
                             在售
                         </Status>
                     </div>
@@ -250,10 +253,8 @@ class NewProjectDetail extends PureComponent {
             pos = item.INDEX;
             basicInfoItems[currIndex].push(
                 <BasicInfoItem key={param}>
-
                     <span className="basic-info-item-name">{name}</span>
                     <span className="basic-info-item-data">{database[pos].get(param)}</span>
-
                 </BasicInfoItem>
             )
             if (basicInfoItems[currIndex].length === 5) {
@@ -265,12 +266,20 @@ class NewProjectDetail extends PureComponent {
 
 
     getEmbeddedContactUs() {
+        const {CONTACT_US} = constants.PROJECT_DETAIL_STATIC
         return (
             <EmbeddedContactUsWrapper>
+                <img src={CONTACT_US.IMAGES.BG} alt=""/>
                 <ContactUsContainer>
-                    <ContactUsTitle>
-
-                    </ContactUsTitle>
+                    <ContactUsTitle>{CONTACT_US.CONTACT_US_TITLE}</ContactUsTitle>
+                    <FormContainer>
+                        <Form className='container-form'>
+                            {this.getFormGroup()}
+                            <Button variant="primary" type="submit" className='form-button no-select'>
+                                联系经纪人
+                            </Button>
+                        </Form>
+                    </FormContainer>
 
                 </ContactUsContainer>
             </EmbeddedContactUsWrapper>
@@ -278,7 +287,21 @@ class NewProjectDetail extends PureComponent {
 
     };
 
+    getFormGroup() {
+        const dataList = constants.PROJECT_DETAIL_STATIC.CONTACT_US.DATA;
+        let formGroupList = []
+        dataList.map((item) => {
+            formGroupList.push (
+                <Form.Group controlId={item.CONTROL_ID} className='form-group'>
+                    <Form.Label className='form-label'><span className="star">* </span>{item.LABEL}</Form.Label>
+                    <Form.Control required type={item.TYPE} aria-describedby={item.ARIA_DESCRIBEDBY} placeholder={item.PLACEHOLDER}/>
+                </Form.Group>
+            )
+        });
+        return formGroupList;
+    }
     componentDidMount() {
+        this.props.hideShowBanner()
         const {id} = this.props.match.params;
         this.scrollToMyRef();
         this.props.getNewProjectDetail(id);
@@ -300,6 +323,9 @@ const mapState = (state) => ({
     basicInfoItems: state.getIn(['newProject', 'basicInfoItems'])
 });
 const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(false));
+    },
     getNewProjectDetail(id) {
         dispatch(actionCreators.getNewProjectDetail(id));
     },

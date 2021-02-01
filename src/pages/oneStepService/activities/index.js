@@ -25,6 +25,7 @@ import {
 } from './style';
 import {PopupItem, PopupWrapper} from "../../../common/popup/style";
 import {constants as contactUsConstants} from '../../contactUs/store';
+import {actionCreators as HeaderActionCreators} from "../../../common/header/store";
 const demoList = [];
 const popList = [];
 
@@ -152,6 +153,7 @@ class Activity extends PureComponent {
 
 
     componentDidMount() {
+        this.props.hideShowBanner()
         this.props.getActivityList(this.props.activityList);
         this.scrollToMyRef()
 
@@ -170,6 +172,9 @@ const mapState = (state) => ({
 
 });
 const mapDispatch = (dispatch) => ({
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
+    },
     getActivityList(list) {
         list.size === 0 && dispatch(actionCreators.getActivity());
     },

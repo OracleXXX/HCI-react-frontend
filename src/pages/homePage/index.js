@@ -9,6 +9,7 @@ import {HomePageWrapper} from "./style";
 import {actionCreators} from './store';
 import {actionCreators as NewProjectActionCreator} from '../newProject/store';
 import {actionCreators as NewsFeedActionCreator} from '../newsFeed/store';
+import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 /*cpc tigersniffsrose*/
 class homePage extends PureComponent {
@@ -29,6 +30,7 @@ class homePage extends PureComponent {
     }
 
     componentDidMount() {
+        this.props.hideShowBanner()
         this.props.changeHomePageData();
         this.scrollToTop()
     }
@@ -43,6 +45,9 @@ const mapDispatch = (dispatch) => ({
         dispatch(actionCreators.getHomePageInfo());
         dispatch(NewProjectActionCreator.getNewProject());
         dispatch(NewsFeedActionCreator.getNewsFeed());
+    },
+    hideShowBanner() {
+        dispatch(HeaderActionCreators.changeShowBanner(true));
     },
 
 })
