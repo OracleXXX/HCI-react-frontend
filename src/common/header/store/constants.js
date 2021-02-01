@@ -35,7 +35,7 @@ export const NAV_BAR = [
         name: "团队背景"
     }, {
         id: 7,
-        link: '/news-feed',
+        link: '/news',
         name: "新闻咨询"
     }, {
         id: 8,

@@ -1,4 +1,11 @@
 export const PATH = {
-  NEW_PROJECT: '/new-project',
-  NEW_PROJECT_DETAIL: '/new-project/detail/'
+    NEW_PROJECT: {
+        INDEX: '/new-project',
+        DETAIL: '/new-project/detail/'
+    },
+    NEWS_FEED: {
+        INDEX: '/news',
+        DETAIL: '/news/detail/'
+    }
+
 }

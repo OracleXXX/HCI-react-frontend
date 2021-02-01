@@ -13,7 +13,7 @@ import React from "react";
 export const CHANGE_NEW_PROJECT_DETAIL = 'newProject/CHANGE_NEW_PROJECT_DETAIL';
 export const CHANGE_NEW_PROJECT_OVERVIEW = 'newProject/CHANGE_NEW_PROJECT_OVERVIEW';
 
-export const PROJECT_DETAIL_STATIC = {
+export const STATIC = {
     TITLE_PATH: {
         CURR: "当前位置: ",
         PREV_PATH: "精选房源 > ",

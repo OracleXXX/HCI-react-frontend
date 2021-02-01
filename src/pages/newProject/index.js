@@ -122,7 +122,8 @@ class NewProject extends PureComponent {
                             <MoreInfo className='no-select button'>
                                 <span>详情</span>
                                 <img src={constants.MORE_INFO_ICON} alt=""/>
-                            </MoreInfo></Link>
+                            </MoreInfo>
+                        </Link>
                     </div>
                 </AdditionInfo>
             </ItemImgContainer>

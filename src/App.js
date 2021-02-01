@@ -15,6 +15,7 @@ import NewProjectDetail from "./pages/newProject/detail/loadable";
 import PlatformLoan from "./pages/platformLoan/loadable";
 import ClosedProject from "./pages/cLosedProject/loadable";
 import NewsFeed from "./pages/newsFeed/loadable";
+import NewsFeedDetail from "./pages/newsFeed/detail/loadable";
 import ContactUs from "./pages/contactUs/loadable";
 import Management from "./pages/oneStepService/management/loadable";
 import LongShort from "./pages/oneStepService/longShort/loadable";
@@ -47,7 +48,8 @@ class App extends Component {
                         <Route path='/platform-loan' exact component={PlatformLoan}/>
                         <Route path='/closed-project' exact component={ClosedProject}/>
                         <Route path='/our-team' exact component={OurTeam}/>
-                        <Route path='/news-feed' exact component={NewsFeed}/>
+                        <Route path='/news' exact component={NewsFeed}/>
+                        <Route path='/news/detail/:id' exact component={NewsFeedDetail}/>
                         <Route path='/contact-us' exact component={ContactUs}/>
 
                     </div>

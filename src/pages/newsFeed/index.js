@@ -1,6 +1,6 @@
 import React, {PureComponent, Fragment} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {actionCreators} from './store';
 import {
     Data,
@@ -34,27 +34,38 @@ class NewsFeed extends PureComponent {
         super(props)
         this.ScrollTo = React.createRef()   // Create a ref object
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     //渲染
     render() {
         const {page, totalPage} = this.props;
         this.getArticleItems()
         return (
             <NewsFeedWrapper ref={this.ScrollTo}>
-                <NewsFeedTitle>
 
+                <NewsFeedTitle>
                     <span className='title'>新闻咨询</span>
                     <div className='rec'/>
                 </NewsFeedTitle>
+
                 <NewsFeedContainer>
-                    <PopularArticleContainer>
-                        {this.getPopularArticleContainer()}
-                    </PopularArticleContainer>
-                    <RestArticleContainer>{this.getRestArticleContainer(page)}</RestArticleContainer>
+                    {
+                        page === 1
+                            ? <PopularArticleContainer>
+                                {this.getPopularArticleContainer()}
+                            </PopularArticleContainer>
+                            : null
+                    }
+                    <RestArticleContainer>
+                        {this.getRestArticleContainer(page)}
+                    </RestArticleContainer>
                 </NewsFeedContainer>
+
                 <Pagination>
                     {this.getPagination(totalPage)}
                 </Pagination>
+
             </NewsFeedWrapper>
         )
     }
@@ -70,12 +81,15 @@ class NewsFeed extends PureComponent {
             count += 1;
             /*置顶文章*/
             count < 3 && popularList.push(
-                <PopularArticleItem className={count ? "article-item-right" : "article-item-left"} key={item.get("id")}>
-                    {this.getArticleData(item.get("day"), item.get("year-month"))}
-                    <img src={item.get("imgUrl")} alt="" className="popular-img"/>
-                    <ArticleItemBottom
-                        className={count ? "popular-article-title-right" : "popular-article-title-left"}>{item.get("title")}</ArticleItemBottom>
-                </PopularArticleItem>
+                <Link to={'/news/detail/' + item.get("id")}>
+                    <PopularArticleItem className={count ? "article-item-right" : "article-item-left"}
+                                        key={item.get("id")}>
+                        {this.getArticleData(item.get("day"), item.get("year-month"))}
+                        <img src={item.get("imgUrl")} alt="" className="popular-img"/>
+                        <ArticleItemBottom
+                            className={count ? "popular-article-title-right" : "popular-article-title-left"}>{item.get("title")}</ArticleItemBottom>
+                    </PopularArticleItem>
+                </Link>
             );
 
             /* 剩余文章 */
@@ -84,16 +98,21 @@ class NewsFeed extends PureComponent {
                     <ArticleItem>
                         <ArticleItemLeft>
                             {this.getArticleData(item.get("day"), item.get("year-month"))}
-                            <img src={item.get("imgUrl")} alt="" className="item-left-img no-select"/>
+                            <Link to={'/news/detail/' + item.get("id")}><img src={item.get("imgUrl")} alt=""
+                                                                          className="item-left-img no-select"/></Link>
                         </ArticleItemLeft>
                         <ArticleItemRight>
                             <ArticleItemRightTop>
-                                <div className="article-title">{item.get("title")}</div>
+                                <Link to={'/news/detail/' + item.get("id")}>
+                                    <div className="article-title">{item.get("title")}</div>
+                                </Link>
                                 <div className="article-tags no-select">{this.getTag(item.get("tags"))}</div>
                                 <div className="article-content">{item.get("content")}</div>
                             </ArticleItemRightTop>
                             <ArticleItemRightBottom>
-                                <ReadMore className="right-bottom-read-more no-select">{this.getReadMore()}</ReadMore>
+                                <ReadMore
+                                    className="right-bottom-read-more no-select">{this.getReadMore(item.get("id"))}
+                                </ReadMore>
                             </ArticleItemRightBottom>
                         </ArticleItemRight>
                     </ArticleItem>
@@ -131,7 +150,8 @@ class NewsFeed extends PureComponent {
                     key={"news-feed-page-" + i}
                 >{i}</span>
             )
-        };
+        }
+        ;
         pages.push(
             <span
                 onClick={() => handlePageChange(page + 1, totalPage, this.scrollToMyRef)}
@@ -154,16 +174,17 @@ class NewsFeed extends PureComponent {
 
 
     //查看更多按钮组件
-    getReadMore() {
+    getReadMore(id) {
         return (
             <Fragment>
-                <div className='readMore'>查看更多</div>
-                <Arrow>
+                <Link to={'/news/detail/' + id}>
+                    <div className='readMore'>查看更多</div>
+                </Link>
+                <Link to={'/news/detail/' + id}><Arrow>
                     <div className='arrowStart'/>
                     <div className='arrowEnd'/>
-                </Arrow>
+                </Arrow></Link>
             </Fragment>
-
         )
     };
 

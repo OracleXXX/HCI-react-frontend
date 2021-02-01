@@ -85,14 +85,14 @@ class NewProjectDetail extends PureComponent {
     getTitlePath() {
         return (
             <TitlePath className="no-select">
-                <Link to={router.PATH.NEW_PROJECT_DETAIL + this.props.match.params.id}>
-                    <span className="title-path">{constants.PROJECT_DETAIL_STATIC.TITLE_PATH.CURR}</span>
+                <Link to={router.PATH.NEW_PROJECT.DETAIL + this.props.match.params.id}>
+                    <span className="title-path">{constants.STATIC.TITLE_PATH.CURR}</span>
                 </Link>
-                <Link to={router.PATH.NEW_PROJECT}>
-                    <span className="title-path">{constants.PROJECT_DETAIL_STATIC.TITLE_PATH.PREV_PATH}</span>
+                <Link to={router.PATH.NEW_PROJECT.INDEX}>
+                    <span className="title-path">{constants.STATIC.TITLE_PATH.PREV_PATH}</span>
                 </Link>
-                <Link to={router.PATH.NEW_PROJECT_DETAIL + this.props.match.params.id}>
-                    <span className="title-path-curr">{constants.PROJECT_DETAIL_STATIC.TITLE_PATH.CURR_PATH}</span>
+                <Link to={router.PATH.NEW_PROJECT.DETAIL + this.props.match.params.id}>
+                    <span className="title-path-curr">{constants.STATIC.TITLE_PATH.CURR_PATH}</span>
                 </Link>
             </TitlePath>
         )
@@ -202,7 +202,7 @@ class NewProjectDetail extends PureComponent {
         return (
             <HouseInfoWrapper>
                 <HouseInfoTitle>
-                    {constants.PROJECT_DETAIL_STATIC.HOUSE_INFO.HOUSE_INFO_TITLE}
+                    {constants.STATIC.HOUSE_INFO.HOUSE_INFO_TITLE}
                 </HouseInfoTitle>
                 <HouseInfo>
                     {house_info}
@@ -216,7 +216,7 @@ class NewProjectDetail extends PureComponent {
         return (
             <BasicInfoWrapper>
                 <BasicInfoTitle>
-                    {constants.PROJECT_DETAIL_STATIC.BASIC_INFO.BASIC_INFO_TITLE}
+                    {constants.STATIC.BASIC_INFO.BASIC_INFO_TITLE}
                 </BasicInfoTitle>
                 <BasicInfo>
                     {this.getBasicInfoCols([newProjectOverview, newProjectDetail])}
@@ -242,7 +242,7 @@ class NewProjectDetail extends PureComponent {
     };
 
     initBasicInfoItems(database, basicInfoItems) {
-        const dataList = constants.PROJECT_DETAIL_STATIC.BASIC_INFO.DATA
+        const dataList = constants.STATIC.BASIC_INFO.DATA
         let currIndex = 0;
         let name = "";
         let param = "";
@@ -266,17 +266,17 @@ class NewProjectDetail extends PureComponent {
 
 
     getEmbeddedContactUs() {
-        const {CONTACT_US} = constants.PROJECT_DETAIL_STATIC
+        const {CONTACT_US} = constants.STATIC
         return (
-            <EmbeddedContactUsWrapper>
+            <EmbeddedContactUsWrapper className="no-select">
                 <img src={CONTACT_US.IMAGES.BG} alt=""/>
                 <ContactUsContainer>
                     <ContactUsTitle>{CONTACT_US.CONTACT_US_TITLE}</ContactUsTitle>
-                    <FormContainer>
+                    <FormContainer >
                         <Form className='container-form'>
                             {this.getFormGroup()}
-                            <Button variant="primary" type="submit" className='form-button no-select'>
-                                联系经纪人
+                            <Button variant="primary" type="submit" className='form-button'>
+                                {CONTACT_US.BUTTON}
                             </Button>
                         </Form>
                     </FormContainer>
@@ -288,11 +288,11 @@ class NewProjectDetail extends PureComponent {
     };
 
     getFormGroup() {
-        const dataList = constants.PROJECT_DETAIL_STATIC.CONTACT_US.DATA;
+        const dataList = constants.STATIC.CONTACT_US.DATA;
         let formGroupList = []
         dataList.map((item) => {
             formGroupList.push (
-                <Form.Group controlId={item.CONTROL_ID} className='form-group'>
+                <Form.Group controlId={item.CONTROL_ID} className='form-group no-select'>
                     <Form.Label className='form-label'><span className="star">* </span>{item.LABEL}</Form.Label>
                     <Form.Control required type={item.TYPE} aria-describedby={item.ARIA_DESCRIBEDBY} placeholder={item.PLACEHOLDER}/>
                 </Form.Group>

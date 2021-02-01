@@ -164,7 +164,7 @@ export const ReadMore = styled.div`
   font-family: SourceHanSansSC-Normal;
   font-size: 1.4rem;
   line-height: 2rem;
-  cursor: pointer;
+  
   display: flex;
   flex-direction: row;
   white-space: nowrap;
@@ -173,11 +173,13 @@ export const ReadMore = styled.div`
   
   & .readMore {
     width: fit-content;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     -webkit-background-clip: text;
-    white-space:nowrap;
     color: transparent;
+    cursor: pointer;
   }
   & .readMore:hover {
     font-weight: bolder;
@@ -192,8 +194,7 @@ export const Arrow = styled.div`
   height: 2rem;
   overflow: hidden;
   vertical-align: bottom;
-  
-  
+  cursor: pointer;
   & .arrowStart {
     position: absolute;
     right: 0;

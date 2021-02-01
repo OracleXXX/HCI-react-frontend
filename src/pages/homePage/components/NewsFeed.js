@@ -27,7 +27,7 @@ class NewsFeed extends PureComponent {
         return (
             <NewsFeedWrapper className='scale-control'>
                 <NewsFeedTitle>
-                    <Link to='/news-feed'><span className='title'>新闻咨询</span></Link>
+                    <span className='title'>新闻咨询</span>
                     <div className='rec'/>
                 </NewsFeedTitle>
                 <NewsFeedArticle>
@@ -53,12 +53,17 @@ class NewsFeed extends PureComponent {
                             {/* 置顶文章图片 */}
                             <LeftPart>
                                 {this.getArticleData()}
-                                <img src={item.get('imgUrl')} alt="" className='LeftPartImg no-select'/>
+                                <Link to={'/news/detail/' + item.get("id")}>
+                                    <img src={item.get('imgUrl')} alt="" className='LeftPartImg no-select'/>
+                                </Link>
+
                             </LeftPart>
                             {/* 置顶文章内容 */}
                             <RightPart>
                                 {/* 置顶文章标题 */}
-                                <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
+                                <Link to={'/news/detail/' + item.get("id")}>
+                                    <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
+                                </Link>
                                 {/* 标签 */}
                                 <Tag>
                                     {item.get('tags') === 11 || 10 ? <div className='tag'>时事热点</div> : null}
@@ -68,7 +73,7 @@ class NewsFeed extends PureComponent {
                                 <div className='divLine'/>
                                 {/* 文章 */}
                                 <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
-                                <ReadMore className="button">{this.getReadMore()}</ReadMore>
+                                <Link to={'/news/detail/'+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
                             </RightPart>
                         </FixedTopArticle>
                     ))
@@ -89,14 +94,14 @@ class NewsFeed extends PureComponent {
                         <RestArticle key={item.get("id")}>
                             <TopPart>
                                 {this.getArticleData()}
-                                <img src={item.get('imgUrl')} alt="" className='TopPartImg no-select'/>
+                                <Link to={'/news/detail/'+ item.get("id")}><img src={item.get('imgUrl')} alt="" className='TopPartImg no-select'/></Link>
                             </TopPart>
                             <BottomPart>
-                                <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
+                                <Link to={'/news/detail/'+ item.get("id")}><ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle></Link>
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
                                 <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
-                                <ReadMore className="button" >{this.getReadMore()}</ReadMore>
+                                <Link to={'/news/detail/'+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
                             </BottomPart>
                         </RestArticle>
                     ))
@@ -137,6 +142,7 @@ class NewsFeed extends PureComponent {
             </Data>
         )
     }
+
     componentDidMount() {
     }
 

@@ -22,7 +22,7 @@ export const NewProjectDetailContainer = styled.div`
 `;
 /* TitlePath */
 export const TitlePath = styled.div`
-  width: fit-content;
+  width: 100%;
   height: 20px;
   white-space: nowrap;
   margin: 3.2rem auto 3.2rem 0;
