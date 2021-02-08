@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.div`
     z-index: 10000;
     height: 6rem;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
-    width: calc(192rem - 17px);
+    width: 100%;
     box-sizing: border-box;   
     position: fixed;
     top: 0;

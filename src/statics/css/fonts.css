@@ -7,16 +7,6 @@
     }
 
 @font-face {
-    font-family: SourceHanSansSC-ExtraLight;
-    src: url("fonts/SourceHanSansSC-ExtraLight.otf");
-    }
-
-@font-face {
-    font-family: SourceHanSansSC-Heavy;
-    src: url("fonts/SourceHanSansSC-Heavy.otf");
-    }
-
-@font-face {
     font-family: SourceHanSansSC-Light;
     src: url("fonts/SourceHanSansSC-Light.otf");
     }
