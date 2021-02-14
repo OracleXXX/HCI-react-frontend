@@ -1,104 +1,13 @@
-## 分工
+### 安装 
+```npm install```
+### 运行
+```npm run start```
+### 打包+上传到远程docker仓库
+```npm auto-package```
 
-|                         人名                         | WMY  | XGX  |
-| :--------------------------------------------------: | :--: | :--: |
-| 一站式管理，一站式买卖，平台贷款，团队背景，联系我们 | WMY  |      |
-|        精选房源，平台活动，项目展示，投资攻略        |      | XGX  |
-|                         后端                         | 待定 | 待定 |
-|                         部署                         |      | XGX  |
-
-
-
-## 前端` src/pages`
-
-所有组件store中已经写好，reducer都合并到了根组件的reducer: `src/reducer`
-
-`axios`请求的的`api`目录在 `public/api`
-
-需要crud的图片在`public/upload`
-
-写死的的静态图片字体文件在 `src/statics`
-
-### 一层 (没有子网页)
-
-- 一站式管理： 组件路径`onestep/management`
-- 一站式买卖： 组件路径  `oneStep/longShort`
-- 平台贷款： 组件路径 `platformLoan`
-- 团队背景 ： 组件路径  `ourTeam`
-- 联系我们： 组件路径 `contactUs`
-
-### 两层（都有一个子网页，以后有可能有两个）
-
-- 精选房源： 组件路径 `newProject`
-- 平台活动： 组件路径 `oneStep/activities`
-- 项目展示： 组件路径 `closedProject`
-- 投资攻略： 组件路径 `newsFeed`
-
-### 后台管理系统（目前先不用管）
-
-- 管理员登录
-- 上传房源信息、已完成项目信息、团队背景
-- 发布投资攻略（最近动态） 文章
-
-## 后端
-
-- 框架：我就会`flask`和`springboot`，或者其他主流框架
-- 数据库： `mysql`?
-- 自动收发邮件
-- 具体需要讨论 一下
-
-## 部署
-
-- docker/docker-compose
-- 服务器：AWS-EC2
-
-## 当前计划
-
-- 11.21 之前, 也就是下周六：做完所有页面，
-  - 可以没有任何动画效果。
-  - 可以先不兼容手机尺寸
-  - 但是正常的电脑屏幕尺寸都要兼容。
-- 11.28 之前，也就是下下周六：完成后台，并连接前后台
-- 最后几天部署并上传真实数据测试
-
-
-
-## 未来计划XGX
-
-- SEO优化XGX
-- 兼容所有尺寸
-- 优化细节的动画效果（ex：鼠标悬停切换动画， 弹窗弹出动画）
-- 添加后台管理系统以及后台登录，登出上传功能。不需要注册功能
-- 添加用户注册登录功能并且可以在网页中发表评论，以及管理用户信息的数据库
-- 添加订金支付功能，用户可以直接支付定金锁定房源（每个房源只能同时被一个人锁）
-
-## 后端
-- 目前springboot已经建好
-- 数据库 34.214.246.43:3306/hci_db
-- root，123456
-### 项目拆分：
-    - controller, entity, repository, service, config
-    - yml配置：application.yml
-- API（controller层）
-    - 精选房源
-    - 项目展示
-    - 最近动态
-    - 平台活动
-    - 联系我们 MY
-- 数据库（entity）
-     - 精选房源
-     - 项目展示
-     - 最近动态
-     - 平台活动
-- 持久层(repository)
-     - 同上
-- service
-     - 精选房源
-     - 项目展示
-     - 最近动态
-     - 平台活动
-     - 联系我们 MY
-- config
-     - 跨域请求
-     - 上传图片
-     - 收发邮件 MY
+### ec2操作
+```
+docker-compose down hci-frontend
+docker-compose pull hci-frontend
+docker-compose up -d hci-frontend
+```
