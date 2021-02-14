@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
 import {actionCreators, constants} from './store';
+import {domain} from "../../../common/api/api";
 //css
 import {
     ActivityWrapper,
@@ -73,7 +74,7 @@ class Activity extends PureComponent {
                 <div key={item.get("id")}>
                     <ActivityItem>
                         <ItemLeft>
-                            <img src={constants.PROXY_URL + item.get("avatar")} alt=""
+                            <img src={domain + item.get("avatar")} alt=""
                                  className="item-left-img no-select"/>
                         </ItemLeft>
                         <ItemRight>
@@ -86,7 +87,9 @@ class Activity extends PureComponent {
                                 <div className='activity-time'>活动时间：{item.get("time")}</div>
                                 <div className='activity-deadline'>截止日期：{item.get("deadline")}</div>
                                 <Apply className='apply no-select button'
-                                       onClick={() => changePopIndex(index)}>我要报名</Apply>
+                                       onClick={() => changePopIndex(index)}>
+                                    我要报名
+                                </Apply>
                             </ItemRightBottom>
                         </ItemRight>
                     </ActivityItem>

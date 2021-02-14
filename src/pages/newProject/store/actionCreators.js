@@ -1,6 +1,7 @@
 import axios from 'axios'
 import * as constants from './constants'
 import {fromJS} from "immutable";
+import {domain, new_project as newProjectApi} from "../../../common/api/api";
 
 const getPages = (page)=>({
     type: constants.GET_MORE_PAGES,
@@ -27,7 +28,7 @@ const changeNewProjectOverview = (result) =>({
 export const getNewProject = ()=> {
     return (dispatch) => {
 
-        axios.get(constants.PROXY_URL+'api/new-project').then((res)=> {
+        axios.get(domain+newProjectApi.list).then((res)=> {
             const result =res.data;
 
             dispatch(changeNewProjectList(result));
@@ -37,7 +38,7 @@ export const getNewProject = ()=> {
 };
 export const getNewProjectOverview = (id) => {
     return (dispatch) => {
-        axios.get(constants.PROXY_URL+"api/new-project/" + id).then((res)=>{
+        axios.get(domain + newProjectApi.list + id).then((res)=>{
             const result = res.data;
             dispatch(changeNewProjectOverview(result));
         })
@@ -51,7 +52,7 @@ export const getMorePages = (page) => {
 };
 export const getNewProjectDetail = (id) => {
     return (dispatch) => {
-        axios.get(constants.PROXY_URL+'api/new-project/detail/'+id).then((res)=>{
+        axios.get(domain + newProjectApi.detailList + id).then((res)=>{
             const result = res.data;
             dispatch(changeNewProjectDetail(result));
         })

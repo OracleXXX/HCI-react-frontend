@@ -6,10 +6,7 @@ import nextArrow from "../../../statics/imgs/newProject/detail/nextArrow.png";
 import calculator from "../../../statics/imgs/newProject/detail/calculator.png";
 import location from "../../../statics/imgs/newProject/detail/location.png";
 import contactUsBackground from "../../../statics/imgs/newProject/detail/contactUsBG.png";
-import {Form} from "react-bootstrap";
 import React from "react";
-
-
 export const CHANGE_NEW_PROJECT_DETAIL = 'newProject/CHANGE_NEW_PROJECT_DETAIL';
 export const CHANGE_NEW_PROJECT_OVERVIEW = 'newProject/CHANGE_NEW_PROJECT_OVERVIEW';
 
@@ -165,5 +162,3 @@ export const CHANGE_NEW_PROJECT_LIST = 'newProject/CHANGE_NEW_PROJECT_LIST';
 export const ADDR_ICON = addrIcon;
 export const MORE_INFO_ICON = moreInfoIcon;
 export const SEE_MORE_ICON = seeMoreIcon;
-export const PROXY_URL = "http://52.34.204.235:8080/";
-export const PROXY_URL_IMAGES = "http://52.34.204.235:8080/images";

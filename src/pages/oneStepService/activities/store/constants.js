@@ -1,5 +1,4 @@
 import ExitButton from '../../../../statics/imgs/oneStep/activity/exitButton.png';
-export const PROXY_URL = "//52.34.204.235:8080/";
 
 
 export const CHANGE_ACTIVITY = 'activity/CHANGE_ACTIVITY';

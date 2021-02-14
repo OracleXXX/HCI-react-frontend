@@ -30,6 +30,7 @@ import addrIcon from "../../statics/imgs/homePageImgs/addrIcon.png";
 import moreInfoIcon from "../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import * as constants from "./store/constants";
 import {constants as activityConstants} from '../oneStepService/activities/store';
+import * as api from '../../common/api/api'
 import {PopupItem, PopupWrapper} from "../../common/popup/style";
 import {ExitButton} from "../oneStepService/activities/style";
 import {actionCreators as HeaderActionCreators} from "../../common/header/store";
@@ -94,7 +95,7 @@ class ClosedProject extends PureComponent {
                     <div className="slider" key={item.get("id")}>
                         <Item>
                             <ItemTop>
-                                <img src={activityConstants.PROXY_URL + item.get("avatar")} alt=""
+                                <img src={api.domain + item.get("avatar")} alt=""
                                      className="item-top-img"/>
                                 <FixedBottom>
                                     <div className="fixed-bottom-left">
@@ -174,7 +175,7 @@ class ClosedProject extends PureComponent {
                         detailList.map((item, index) => {
                             return (
                                 <PopSliderItemTop>
-                                    <img src={constants.PROXY_URL + curID + "/" + item} alt="" key={index}/>
+                                    <img src={api.images_domain + curID + "/" + item} alt="" key={index}/>
                                 </PopSliderItemTop>
                             )
                         })
@@ -186,7 +187,7 @@ class ClosedProject extends PureComponent {
                         detailList.map((item, index) => {
                             return (
                                 <PopSliderItemBottom>
-                                    <img src={constants.PROXY_URL + curID + "/" + item} alt="" key={index}/>
+                                    <img src={api.images_domain + curID + "/" + item} alt="" key={index}/>
                                 </PopSliderItemBottom>
                             )
                         })

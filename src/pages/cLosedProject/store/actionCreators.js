@@ -1,8 +1,7 @@
 import axios from 'axios'
 import * as constants from './constants'
 import {fromJS} from "immutable";
-
-
+import {domain, closed_project as closedProjectApi} from '../../../common/api/api';
 
 
 const changeNoFlippingList = (result) => ({
@@ -26,7 +25,7 @@ const getDetailList = (id, result) =>({
 });
 export const getNoFlippingList = (id) => {
     return (dispatch) => {
-        axios.get('http://52.34.204.235:8080/api/closed-project/noFlippingList').then((res) => {
+        axios.get(domain + closedProjectApi.noFlipping.list).then((res) => {
             const result = res.data;
             dispatch(changeNoFlippingList(result));
         });
@@ -35,7 +34,7 @@ export const getNoFlippingList = (id) => {
 export const getFlippingList = (id) => {
 
     return (dispatch) => {
-        axios.get('http://52.34.204.235:8080/api/closed-project/flippingList').then((res) => {
+        axios.get(domain + closedProjectApi.flipping.list).then((res) => {
             const result = res.data;
             dispatch(changeFlippingList(result));
         });
@@ -49,7 +48,7 @@ export const handleSliderChange = (flipping) => {
 export const getDetail = (id) => {
     if (id===-1){return dispatch => dispatch(getDetailList(id, []))}
     return (dispatch)=> {
-        axios.get('http://52.34.204.235:8080/api/closed-project/detail/'+id).then((res) => {
+        axios.get(domain + closedProjectApi.detailList+id).then((res) => {
             const result = res.data;
             dispatch(getDetailList(id, result));
         });

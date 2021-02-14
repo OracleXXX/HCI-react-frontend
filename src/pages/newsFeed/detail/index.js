@@ -9,8 +9,8 @@ import {
     TitlePath
 } from './style';
 import * as constants from "../store/constants";
-import * as router from "../../../common/api/router";
-import * as file from "../../../common/api/file";
+
+import {news_feed as newsFeedRouter} from '../../../router/router';
 
 class NewsFeedDetail extends PureComponent {
     render() {
@@ -25,13 +25,13 @@ class NewsFeedDetail extends PureComponent {
     getTitlePath() {
         return (
             <TitlePath className="no-select">
-                <Link to={router.PATH.NEW_PROJECT.DETAIL + this.props.match.params.id}>
+                <Link to={newsFeedRouter.detail + this.props.match.params.id}>
                     <span className="title-path">{constants.STATIC.TITLE_PATH.CURR}</span>
                 </Link>
-                <Link to={router.PATH.NEW_PROJECT.INDEX}>
+                <Link to={newsFeedRouter.path}>
                     <span className="title-path">{constants.STATIC.TITLE_PATH.PREV_PATH}</span>
                 </Link>
-                <Link to={router.PATH.NEW_PROJECT.DETAIL + this.props.match.params.id}>
+                <Link to={newsFeedRouter.detail + this.props.match.params.id}>
                     <span className="title-path-curr">{constants.STATIC.TITLE_PATH.CURR_PATH}</span>
                 </Link>
             </TitlePath>

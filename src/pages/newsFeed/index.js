@@ -25,6 +25,8 @@ import {
 } from './style'
 import {DivLine, Pagination} from "../oneStepService/activities/style";
 import {actionCreators as HeaderActionCreators} from "../../common/header/store";
+import {news_feed as newFeedRouter} from "../../router/router";
+import {domain, news_feed as newsFeedApi} from "../../common/api/api";
 
 const popularList = []
 const demoList = [];
@@ -81,11 +83,11 @@ class NewsFeed extends PureComponent {
             count += 1;
             /*置顶文章*/
             count < 3 && popularList.push(
-                <Link to={'/news/detail/' + item.get("id")}>
+                <Link to={newFeedRouter.detail + item.get("id")}>
                     <PopularArticleItem className={count ? "article-item-right" : "article-item-left"}
                                         key={item.get("id")}>
-                        {this.getArticleData(item.get("day"), item.get("year-month"))}
-                        <img src={item.get("imgUrl")} alt="" className="popular-img"/>
+                        {this.getArticleData(item.get("day"), item.get("year_and_month"))}
+                        <img src={domain + item.get("avatar")} alt="" className="popular-img"/>
                         <ArticleItemBottom
                             className={count ? "popular-article-title-right" : "popular-article-title-left"}>{item.get("title")}</ArticleItemBottom>
                     </PopularArticleItem>
@@ -97,13 +99,13 @@ class NewsFeed extends PureComponent {
                 <Fragment key={item.get("id")}>
                     <ArticleItem>
                         <ArticleItemLeft>
-                            {this.getArticleData(item.get("day"), item.get("year-month"))}
-                            <Link to={'/news/detail/' + item.get("id")}><img src={item.get("imgUrl")} alt=""
+                            {this.getArticleData(item.get("day"), item.get("year_and_month"))}
+                            <Link to={newFeedRouter.detail + item.get("id")}><img src={domain + item.get("avatar")} alt=""
                                                                           className="item-left-img no-select"/></Link>
                         </ArticleItemLeft>
                         <ArticleItemRight>
                             <ArticleItemRightTop>
-                                <Link to={'/news/detail/' + item.get("id")}>
+                                <Link to={newFeedRouter.detail + item.get("id")}>
                                     <div className="article-title">{item.get("title")}</div>
                                 </Link>
                                 <div className="article-tags no-select">{this.getTag(item.get("tags"))}</div>

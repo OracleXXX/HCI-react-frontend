@@ -17,7 +17,9 @@ import {
 } from '../componentStyles/NewProjectDemoStyle';
 // 导入页面静态资源
 import {constants} from '../store'
+import {new_project as newProjectApi} from "../../../router/router";
 import {withRouter, Link} from "react-router-dom";
+import {domain} from "../../../common/api/api";
 
 
 class NewProjectDemo extends PureComponent {
@@ -46,7 +48,7 @@ class NewProjectDemo extends PureComponent {
             <NewProjectDemoWrapper>
                 {/* 图轮播图title */}
                 <SliderTitle>
-                    <Link to='/new-project'><div className='title'>精选房源</div></Link>
+                    <Link to={newProjectApi.path}><div className='title'>精选房源</div></Link>
                     <div className='rec'/>
                     <div><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
                 </SliderTitle>
@@ -60,13 +62,13 @@ class NewProjectDemo extends PureComponent {
                             this.props.newProjectList.map((item) => (
                                 <div key={item.get('id')}>
                                     <Item>
-                                        <img src={constants.PROXY_URL + item.get('avatar')} alt="" className=''/>
+                                        <img src={domain + item.get('avatar')} alt="" className=''/>
                                         <ImgBottom>
                                             <div className="img-bottom-left">
                                                 <img src={constants.ADDR_ICON} alt=""/>
                                                 {item.get("city")}
                                             </div>
-                                            <Link to={'/new-project/detail/'+item.get("id")}>
+                                            <Link to={newProjectApi.detail+item.get("id")}>
                                                 <MoreInfo className="button">
                                                 <span>详情</span>
                                                 <img src={constants.MORE_INFO_ICON} alt=""/>

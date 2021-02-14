@@ -15,7 +15,6 @@ import logoPic from '../../statics/imgs/headerImgs/Inc-Logo-0.jpg';
 import './addtionStyle.css';
 import {constants} from "./store";
 
-
 class Header extends PureComponent {
     scrollToTop = () => window.scrollTo(0, 0)
 
@@ -33,7 +32,6 @@ class Header extends PureComponent {
             </div>
         )
     }
-
     getDropDown() {
         const {displayMenu} = this.props;
         return (
@@ -49,9 +47,7 @@ class Header extends PureComponent {
                 }
             </DropDownServices>
         )
-
     };
-
     getNavBar() {
         const {handleDropDown, displayMenu} = this.props;
         return (
@@ -92,10 +88,7 @@ class Header extends PureComponent {
                 }
             })
         )
-
     }
-
-
 }
 
 const mapStateToProps = (state) => {

@@ -3,6 +3,7 @@ import Banner1 from '../../../statics/imgs/headerImgs/1.jpg'
 import Banner2 from '../../../statics/imgs/headerImgs/4.jpg'
 import Banner3 from '../../../statics/imgs/headerImgs/9.jpg'
 import Banner4 from '../../../statics/imgs/headerImgs/2.jpg'
+import * as router from '../../../router/router'
 
 
 export const TRIANGLE = triangle;
@@ -15,47 +16,47 @@ export const NAV_BAR = [
         name: "HCI"
     }, {
         id: 2,
-        link: '/new-project',
-        name: "精选房源"
+        link: router.new_project.path,
+        name: router.new_project.name,
     }, {
         id: 3,
         link: '',
-        name: "一站式服务"
+        name: router.one_step.name,
     }, {
         id: 4,
-        link: '/platform-loan',
-        name: "平台贷款"
+        link: router.platform_loan.path,
+        name: router.platform_loan.name,
     }, {
         id: 5,
-        link: '/closed-project',
-        name: "项目展示"
+        link: router.closed_project.path,
+        name: router.closed_project.name,
     }, {
         id: 6,
-        link: '/our-team',
-        name: "团队背景"
+        link: router.our_team.path,
+        name: router.our_team.name,
     }, {
         id: 7,
-        link: '/news',
-        name: "新闻咨询"
+        link: router.news_feed.path,
+        name: router.news_feed.name
     }, {
         id: 8,
-        link: '/contact-us',
-        name: "联系我们"
+        link: router.contact_us.path,
+        name: router.contact_us.name
     },
 ];
 export const DROP_DOWN_BAR = [
     {
         id: 1,
-        link: "/one-step/management",
-        name: "一站式房屋管理"
+        link: router.one_step.path + router.management.path,
+        name: router.management.name,
     }, {
         id: 2,
-        link: "/one-step/long-short",
-        name: "一站式房屋买卖"
+        link: router.one_step.path + router.long_short.path,
+        name: router.long_short.name
     }, {
         id: 3,
-        link: "/one-step/activities",
-        name: "平台活动"
+        link: router.one_step.path + router.activities.path,
+        name: router.activities.name
     },
 ]
 

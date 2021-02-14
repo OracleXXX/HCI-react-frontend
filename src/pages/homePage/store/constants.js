@@ -21,7 +21,6 @@ import RealEstateRecmdPic from '../../../statics/imgs/homePageImgs/RealEstateRec
 import LoanPic from '../../../statics/imgs/homePageImgs/loan.svg';
 import INVTPic from '../../../statics/imgs/homePageImgs/NAInvestment.svg';
 export const CHANGE_HOMEPAGE_DATA = 'homePageImgs/CHANGE_HOMEPAGE_DATA';
-export const PROXY_URL = "http://52.34.204.235:8080/";
 /*flowchart constants*/
 export const ODD_DASH = oddDash;
 export const EVEN_DASH = evenDash;

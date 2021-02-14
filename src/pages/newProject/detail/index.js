@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 import Slider from "react-slick";
-import Map from "../../../common/map";
 import {actionCreators as HeaderActionCreators} from "../../../common/header/store/";
 import {actionCreators} from "../store";
 import {
@@ -42,13 +41,11 @@ import {
     ContactUsTitle,
 
     FormContainer
-
-
 } from './style';
 import * as constants from "../store/constants";
-import * as router from "../../../common/api/router";
-import * as file from "../../../common/api/file";
+import {new_project as newProjectRouter} from '../../../router/router';
 import {Button, Form} from "react-bootstrap";
+import {images_domain} from "../../../common/api/api";
 
 class NewProjectDetail extends PureComponent {
     constructor(props) {
@@ -85,13 +82,13 @@ class NewProjectDetail extends PureComponent {
     getTitlePath() {
         return (
             <TitlePath className="no-select">
-                <Link to={router.PATH.NEW_PROJECT.DETAIL + this.props.match.params.id}>
+                <Link to={newProjectRouter.detail + this.props.match.params.id}>
                     <span className="title-path">{constants.STATIC.TITLE_PATH.CURR}</span>
                 </Link>
-                <Link to={router.PATH.NEW_PROJECT.INDEX}>
+                <Link to={newProjectRouter.path}>
                     <span className="title-path">{constants.STATIC.TITLE_PATH.PREV_PATH}</span>
                 </Link>
-                <Link to={router.PATH.NEW_PROJECT.DETAIL + this.props.match.params.id}>
+                <Link to={newProjectRouter.detail + this.props.match.params.id}>
                     <span className="title-path-curr">{constants.STATIC.TITLE_PATH.CURR_PATH}</span>
                 </Link>
             </TitlePath>
@@ -114,7 +111,7 @@ class NewProjectDetail extends PureComponent {
                                 return (
                                     <SliderItemTop key={index}>
                                         <img
-                                            src={file.PROXY_URL.NEW_PROJECT_IMAGES + this.props.match.params.id + "/" + item}
+                                            src={images_domain + this.props.match.params.id + "/" + item}
                                             alt=""
                                             key={index}/>
                                     </SliderItemTop>
@@ -134,7 +131,7 @@ class NewProjectDetail extends PureComponent {
                                 return (
                                     <SliderItemBottom key={index}>
                                         <img
-                                            src={file.PROXY_URL.NEW_PROJECT_IMAGES + "/" + this.props.match.params.id + "/" + item}
+                                            src={images_domain + "/" + this.props.match.params.id + "/" + item}
                                             alt=""
                                             key={index}/>
                                     </SliderItemBottom>

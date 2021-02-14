@@ -13,7 +13,7 @@ import {
     PopularCities,
     CopyRight
 } from './style';
-
+import * as router from '../../router/router';
 
 class Footer extends PureComponent {
     /* 全局size是16px 16 * em应该等于目标size */
@@ -36,17 +36,17 @@ class Footer extends PureComponent {
                     <FooterMain>
                         <FooterNav>
                             <div className="nav-items-footer">
-                                <Link to={'/'}><div className="nav-title-footer pointer">网站导航</div></Link>
-                                <Link to='/new-project'><div className='nav-item-footer pointer'>精选房源</div></Link>
-                                <Link to='/one-step/management'><div className='nav-item-footer pointer'>一站式房屋管理</div></Link>
-                                <Link to='/one-step/long-short'><div className='nav-item-footer pointer'>一站式房屋买卖</div></Link>
-                                <Link to='/platform-loan'><div className='nav-item-footer pointer'>平台贷款</div></Link>
+                                <Link to={router.index.path}><div className="nav-title-footer pointer">网站导航</div></Link>
+                                <Link to={router.new_project.path}><div className='nav-item-footer pointer'>{router.new_project.name}</div></Link>
+                                <Link to={router.one_step.path + router.management.path}><div className='nav-item-footer pointer'>{router.management.name}</div></Link>
+                                <Link to={router.one_step.path + router.long_short.path}><div className='nav-item-footer pointer'>{router.long_short.name}</div></Link>
+                                <Link to={router.platform_loan.path}><div className='nav-item-footer pointer'>{router.platform_loan.name}</div></Link>
                             </div>
                         </FooterNav>
                         <div className='vertical-div-line'/>
                         <FooterContactUs>
                             <div className="nav-items-footer">
-                                <Link to='/contact-us' ><div className="nav-title-footer pointer">联系我们</div></Link>
+                                <Link to={router.contact_us.path}><div className="nav-title-footer pointer">{router.contact_us.name}</div></Link>
                                 <div className='nav-item-footer'>(615)-423-2284</div>
                                 <div className='nav-item-footer'><p>1609 Damascus Rd, Murfreesboro, TN, 37128</p></div>
                                 <div className='nav-item-footer'>homecapus@gmail.com</div>
@@ -74,13 +74,11 @@ class Footer extends PureComponent {
                             </div>
                         </PopularCities>
                     </FooterMain>
-
                     <CopyRight>
                         <div className='horiz-div-line'/>
                         <div className='copyright-content'>&#169;2020 HOME CAP INC-All Rights Reserved</div>
                     </CopyRight>
                 </FooterContent>
-
             </FooterWrapper>
         )
 

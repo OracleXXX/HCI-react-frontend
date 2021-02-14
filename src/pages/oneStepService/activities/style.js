@@ -109,6 +109,7 @@ export const ItemRightBottom = styled.div`
   font-size: 1.4rem;
   line-height: 2rem;
   color: #666666;
+  box-sizing: border-box;
   
   & .activity-location {
     height: 2rem;
@@ -140,6 +141,7 @@ export const Apply = styled.div`
   line-height: 4rem;
   cursor: pointer;
   border: 0.1rem solid transparent;
+  box-sizing: border-box;
 `;
 
 

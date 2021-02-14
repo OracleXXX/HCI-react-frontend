@@ -21,6 +21,8 @@ import {
 
 } from '../componentStyles/NewFeedStyle';
 import {Link} from "react-router-dom";
+import {news_feed as newsApi} from "../../../router/router";
+import {domain} from "../../../common/api/api";
 
 class NewsFeed extends PureComponent {
     render() {
@@ -53,15 +55,15 @@ class NewsFeed extends PureComponent {
                             {/* 置顶文章图片 */}
                             <LeftPart>
                                 {this.getArticleData()}
-                                <Link to={'/news/detail/' + item.get("id")}>
-                                    <img src={item.get('imgUrl')} alt="" className='LeftPartImg no-select'/>
+                                <Link to={newsApi.detail + item.get("id")}>
+                                    <img src={domain + item.get('avatar')} alt="" className='LeftPartImg no-select'/>
                                 </Link>
 
                             </LeftPart>
                             {/* 置顶文章内容 */}
                             <RightPart>
                                 {/* 置顶文章标题 */}
-                                <Link to={'/news/detail/' + item.get("id")}>
+                                <Link to={newsApi.detail + item.get("id")}>
                                     <ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle>
                                 </Link>
                                 {/* 标签 */}
@@ -73,7 +75,7 @@ class NewsFeed extends PureComponent {
                                 <div className='divLine'/>
                                 {/* 文章 */}
                                 <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
-                                <Link to={'/news/detail/'+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
+                                <Link to={newsApi.detail+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
                             </RightPart>
                         </FixedTopArticle>
                     ))
@@ -94,14 +96,14 @@ class NewsFeed extends PureComponent {
                         <RestArticle key={item.get("id")}>
                             <TopPart>
                                 {this.getArticleData()}
-                                <Link to={'/news/detail/'+ item.get("id")}><img src={item.get('imgUrl')} alt="" className='TopPartImg no-select'/></Link>
+                                <Link to={newsApi.detail+ item.get("id")}><img src={domain + item.get('avatar')} alt="" className='TopPartImg no-select'/></Link>
                             </TopPart>
                             <BottomPart>
-                                <Link to={'/news/detail/'+ item.get("id")}><ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle></Link>
+                                <Link to={newsApi.detail+ item.get("id")}><ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle></Link>
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
                                 <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
-                                <Link to={'/news/detail/'+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
+                                <Link to={newsApi.detail+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
                             </BottomPart>
                         </RestArticle>
                     ))
@@ -151,7 +153,6 @@ class NewsFeed extends PureComponent {
 const mapStataToProps = (state) => ({
     popularArticleList: state.getIn(['newsFeed', 'newsFeedList']).slice(0, 1),
     restArticleList: state.getIn(['newsFeed', 'newsFeedList']).slice(1, 4),
-
 
 });
 

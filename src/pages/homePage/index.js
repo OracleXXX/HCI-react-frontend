@@ -6,7 +6,6 @@ import WeOffer from "./components/WeOffer";
 import InvestmtFLowChart from "./components/InvestmtFLowChart";
 import NewsFeed from "./components/NewsFeed";
 import {HomePageWrapper} from "./style";
-import {actionCreators} from './store';
 import {actionCreators as NewProjectActionCreator} from '../newProject/store';
 import {actionCreators as NewsFeedActionCreator} from '../newsFeed/store';
 import {actionCreators as HeaderActionCreators} from "../../common/header/store";
@@ -42,7 +41,6 @@ class homePage extends PureComponent {
 const mapState = (state) => ({});
 const mapDispatch = (dispatch) => ({
     changeHomePageData() {
-        dispatch(actionCreators.getHomePageInfo());
         dispatch(NewProjectActionCreator.getNewProject());
         dispatch(NewsFeedActionCreator.getNewsFeed());
     },

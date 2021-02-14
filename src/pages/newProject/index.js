@@ -22,7 +22,7 @@ import {
 } from '../homePage/componentStyles/NewProjectDemoStyle';
 import {actionCreators} from './store';
 import {constants} from './store'
-import {fromJS} from "immutable";
+import {images_domain, domain} from "../../common/api/api";
 import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 
 const demo_list = [];
@@ -86,7 +86,7 @@ class NewProject extends PureComponent {
                     {/*图*/}
                     {this.getItemImgContainer(
                         item,
-                        constants.PROXY_URL + item.get("avatar"),)}
+                        domain + item.get("avatar"),)}
                     {/*价格和租金*/}
                     {this.getItemPriceContaner(item.get("price"), item.get("status"), item.get("area"), item.get("status"))}
                     {/*预期数据*/}
