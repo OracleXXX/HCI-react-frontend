@@ -19,7 +19,7 @@ import {
 //导入图片
 import {constants} from '../store'
 import {Link} from "react-router-dom";
-
+import * as router from '../../../router/router'
 class InvestmtFLowChart extends PureComponent {
 
     render() {
@@ -124,7 +124,7 @@ class InvestmtFLowChart extends PureComponent {
 
     getMoreInfo(index) {
         return (
-            <Link to={index === 6 ? '/closed-project' : index === 5 ? '/one-step/management' : '/one-step/long-short'}>
+            <Link to={index === 6 ? router.closed_project.path : index === 5 ? router.one_step.path + router.management.path: router.one_step.path + router.long_short.path}>
                 <MoreInfo className="button">
                     <span>了解详情</span>
                     <img src={constants.MORE_INFO_ICON} alt="" className='moreInfoIcon-blue'/>
