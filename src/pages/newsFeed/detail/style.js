@@ -80,23 +80,32 @@ export const QRContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-radius: 4px;
+  color: #333333;
+  letter-spacing: 0;
+  white-space: nowrap;
   & .qr-title {
     width: fit-content;
     height: 2rem;
-    white-space: nowrap;
+    
     font-family: SourceHanSansSC-Medium;
     font-size: 1.6rem;
-    color: #333333;
-    letter-spacing: 0;
+    
     line-height: 2rem;
   }
   & img {
     width: 16rem;
     height: 16rem;
     border-radius: 4px;
+    margin: 1.6rem auto;
+  }
+  & .qr-detail {
+    width: fit-content;
+    height: 2.1rem;
+    font-family: PingFangSC-Regular;
+    font-size: 1.5rem;
   }
 `;
 
