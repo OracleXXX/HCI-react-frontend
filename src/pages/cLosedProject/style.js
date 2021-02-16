@@ -110,6 +110,7 @@ export const Item = styled.div`
   height: 53.9rem;
   border-radius: 0.8rem;
   box-sizing: border-box;
+  overflow: hidden;
 
   margin: 0 1.6rem;
   & .mid-bottom {
@@ -125,9 +126,12 @@ export const ItemTop = styled.div`
   width: 27.6rem;
   height: 20rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  
   & .item-top-img {
-  width: inherit;
   height: inherit;
+  margin: 0 auto;
   border-radius: 0.8rem 0.8rem 0 0;
   };
 `;
@@ -308,23 +312,31 @@ export const PopSliderItemTop = styled.div`
     height: 32.8rem;
     margin: 0 auto;
     box-sizing: border-box;
-    
-
   }  
 `;
 
 export const PopSliderBottom = styled.div`
-  width: 74.1rem;
+  width: 73.9rem;
   height: 9.6rem;
+  margin: 0 auto;
 `;
 
 export const PopSliderItemBottom = styled.div`
+  height: 9.6rem;
   cursor: pointer;
   box-sizing: border-box;
-
+`;
+export const ImgContainer = styled.div`
+  width: 12.8rem;
+  height: 9.6rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.4rem;
   & img{
-    width: 12.8rem;
-    height: 9.6rem;
+    height: inherit;
     margin: 0 auto;
     border-radius: 0.4rem;
     border: 1px solid transparent;
@@ -332,6 +344,7 @@ export const PopSliderItemBottom = styled.div`
   }
   & img:hover{
       border: 2px solid rgba(45, 132, 255);
-
   }
+
 `;
+

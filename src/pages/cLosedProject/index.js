@@ -22,7 +22,8 @@ import {
     PopSliderTop,
     PopSliderBottom,
     PopSliderItemTop,
-    PopSliderItemBottom
+    PopSliderItemBottom,
+    ImgContainer
 
 } from './style'
 import Slider from "react-slick";
@@ -187,7 +188,10 @@ class ClosedProject extends PureComponent {
                         detailList.map((item, index) => {
                             return (
                                 <PopSliderItemBottom>
-                                    <img src={api.images_domain + curID + "/" + item} alt="" key={index}/>
+                                    <ImgContainer>
+                                        <img src={api.images_domain + curID + "/" + item} alt="" key={index}/>
+                                    </ImgContainer>
+
                                 </PopSliderItemBottom>
                             )
                         })

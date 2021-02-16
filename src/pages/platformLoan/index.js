@@ -87,17 +87,31 @@ class PlatformLoan extends PureComponent {
         return (
             <FLowCharLeft>
                 <FlowChartItem>
-                    <div className="flow-chart-content">Owner of Real Estate Owner</div>
+                    <div className="flow-chart-content">买方</div>
                 </FlowChartItem>
                 <img src={arrowToBot} alt="" className='arrow-to-bot'/>
                 <FlowChartItem>
-                    <div className="flow-chart-content">Real Estate Owner</div>
+                    <div className="flow-chart-content">买方拥有房屋支配及使用权</div>
                 </FlowChartItem>
                 <img src={arrowToBot} alt="" className='arrow-to-bot'/>
                 <FlowChartItem>
-                    <div className="flow-chart-content">Real Estate</div>
+                    <div className="flow-chart-content">私人贷款交易完成</div>
                 </FlowChartItem>
             </FLowCharLeft>
+        )
+    }
+    /*right 2 steps in flow chart*/
+    getFlowChartRight() {
+        return (
+            <FlowChartRight>
+                <FlowChartItem>
+                    <div className="flow-chart-content">贷款合同</div>
+                </FlowChartItem>
+                <FlowChartItem>
+                    <div className="flow-chart-content">房契转换合同</div>
+                </FlowChartItem>
+
+            </FlowChartRight>
         )
     }
     /* mid in flow chart, only arrows*/
@@ -119,20 +133,7 @@ class PlatformLoan extends PureComponent {
             </MidItem>
         )
     }
-    /*right 2 steps in flow chart*/
-    getFlowChartRight() {
-        return (
-            <FlowChartRight>
-                <FlowChartItem>
-                    <div className="flow-chart-content">Pledge of Ownership Interests</div>
-                </FlowChartItem>
-                <FlowChartItem>
-                    <div className="flow-chart-content">Mortgage</div>
-                </FlowChartItem>
 
-            </FlowChartRight>
-        )
-    }
     componentDidMount() {
         this.props.hideShowBanner()
         this.scrollToMyRef()

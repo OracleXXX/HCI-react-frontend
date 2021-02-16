@@ -68,7 +68,7 @@ export const SliderItemTop = styled.div`
   border-radius: 0.8rem;
   background-color: #D8D8D8;
   & img {
-    width: inherit;
+    width: auto;
     height: inherit;
     margin: 0 auto;
 
@@ -82,18 +82,31 @@ export const SliderBottom = styled.div`
 `;
 
 export const SliderItemBottom = styled.div`
-  width: auto;
   height: inherit;
   border-radius: 0.8rem;
   overflow: hidden;
-
+`;
+export const ImgContainer = styled.div`
+  width: 20rem;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  background-color: #999999;
   & img {
-    width: 20rem;
     height: 16rem;
-    border-radius: 0.8rem;
-    
+    border-radius: 0.8rem;  
+    border: 1px solid transparent;
+    box-sizing: border-box;
+  }
+  & img:hover{
+      border: 2px solid rgba(45, 132, 255);
   }
 `;
+
 
 export const PrevArrow = styled.div`
   z-index: 100;

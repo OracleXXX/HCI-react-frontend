@@ -14,6 +14,7 @@ import {
     SliderItemTop,
     SliderBottom,
     SliderItemBottom,
+    ImgContainer,
     NextArrow,
     PrevArrow,
     DataDescription,
@@ -130,10 +131,13 @@ class NewProjectDetail extends PureComponent {
                             imageList.map((item, index) => {
                                 return (
                                     <SliderItemBottom key={index}>
-                                        <img
+                                        <ImgContainer>
+                                            <img
                                             src={images_domain + "/" + this.props.match.params.id + "/" + item}
                                             alt=""
-                                            key={index}/>
+                                            />
+                                        </ImgContainer>
+
                                     </SliderItemBottom>
                                 )
                             })
