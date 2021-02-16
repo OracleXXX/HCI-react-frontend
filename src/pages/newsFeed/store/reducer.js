@@ -4,7 +4,8 @@ import * as constants from './constants'
 const defaultState = fromJS({
     newsFeedList: [],
     page: 1,
-    totalPage: 0
+    totalPage: 0,
+    detailList: []
 
 
 });
@@ -13,6 +14,11 @@ const changeNewsFeedList = (state, action) => {
     return state.merge({
         newsFeedList: fromJS(action.newsFeedList),
         totalPage: action.totalPage
+    })
+}
+const changeDetailList = (state, action) => {
+    return state.merge({
+        detailList: fromJS(action.data)
     })
 }
 const changePage = (state, action) => {
@@ -28,6 +34,8 @@ export default (state = defaultState, action) => {
             return changeNewsFeedList(state, action);
         case constants.CHANGE_PAGE:
             return changePage(state, action);
+        case constants.CHANGE_DETAIL_LIST:
+            return changeDetailList(state, action)
 
 
         default:

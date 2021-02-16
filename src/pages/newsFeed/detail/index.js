@@ -3,10 +3,14 @@ import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 import {actionCreators} from "../store";
 import {actionCreators as HeaderActionCreators} from "../../../common/header/store";
-
 import {
     NewsFeedDetailWrapper,
-    TitlePath
+    NewsFeedDetailContainer,
+    TitlePath,
+    ArticleContainer,
+    ReferContainer,
+    PopularArticles,
+    QRContainer
 } from './style';
 import * as constants from "../store/constants";
 
@@ -16,7 +20,13 @@ class NewsFeedDetail extends PureComponent {
     render() {
         return (
             <NewsFeedDetailWrapper>
-                {this.getTitlePath()}
+                <NewsFeedDetailContainer>
+                    {this.getTitlePath()}
+                    {this.getArticle()}
+                    {this.getRefer()}
+
+                </NewsFeedDetailContainer>
+
 
             </NewsFeedDetailWrapper>
         )
@@ -37,20 +47,59 @@ class NewsFeedDetail extends PureComponent {
             </TitlePath>
         )
     };
+    getArticle() {
+        return (
+            <ArticleContainer>
+
+            </ArticleContainer>
+        )
+    };
+    getRefer() {
+        return (
+            <ReferContainer>
+                <PopularArticles>
+
+                </PopularArticles>
+
+                {this.getQRCode()}
+            </ReferContainer>
+        )
+    };
+    getQRCode() {
+        return (
+            <QRContainer>
+                <div className='qr-title'>{constants.QR.TITLE}</div>
+                <img src={constants.QR.IMG} alt=""/>
+                <div className='qr-detail'>{constants.QR.DETAIL}</div>
+
+            </QRContainer>
+        )
+    };
+
+
+
 
     componentDidMount() {
+        const {id} = this.props.match.params;
         this.props.hideShowBanner()
+        this.props.getDetailList(id)
     }
 
 
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({});
+const mapState = (state) => ({
+    newFeedDetail: state.getIn(["newsFeed", "detailList"])
+});
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(false));
     },
+    getDetailList(id) {
+        dispatch(actionCreators.getDetailList);
+
+    }
 
 });
 

@@ -287,9 +287,9 @@ class NewProjectDetail extends PureComponent {
     getFormGroup() {
         const dataList = constants.STATIC.CONTACT_US.DATA;
         let formGroupList = []
-        dataList.map((item) => {
+        dataList.map((item, index) => {
             formGroupList.push (
-                <Form.Group controlId={item.CONTROL_ID} className='form-group no-select'>
+                <Form.Group controlId={item.CONTROL_ID} className='form-group no-select' key={index}>
                     <Form.Label className='form-label'><span className="star">* </span>{item.LABEL}</Form.Label>
                     <Form.Control required type={item.TYPE} aria-describedby={item.ARIA_DESCRIBEDBY} placeholder={item.PLACEHOLDER}/>
                 </Form.Group>
