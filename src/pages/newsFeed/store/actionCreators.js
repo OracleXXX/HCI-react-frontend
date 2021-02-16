@@ -22,9 +22,10 @@ const changeNewsFeedList = (result)=> ({
 
 });
 
-const changeDetailList = (reselt) => ({
-    tpye: constants.CHANGE_DETAIL_LIST,
-    DetailList: fromJS(reselt),
+const changeDetailList = (result) => ({
+    type: constants.CHANGE_DETAIL_LIST,
+    detailList: fromJS(result.info),
+    popularArticleTitles: fromJS(result.popularArticleTitles)
 })
 export const getNewsFeed=()=> {
     return (dispatch) => {
@@ -40,7 +41,7 @@ export const getDetailList = (id) => {
     return (dispatch) => {
         axios.get(domain + news_feed.detailList + id).then((res) => {
             const result = res.data;
-            dispatch(changeDetailList);
+            dispatch(changeDetailList(result));
         })
     }
 }

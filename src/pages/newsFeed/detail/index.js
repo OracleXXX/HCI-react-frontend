@@ -10,11 +10,18 @@ import {
     ArticleContainer,
     ReferContainer,
     PopularArticles,
-    QRContainer
+    QRContainer,
+
+    ArticleTitle,
+    ArticleDescription,
+    ArticleImage,
+    ArticleContent,
+    TitleItem
 } from './style';
 import * as constants from "../store/constants";
 
 import {news_feed as newsFeedRouter} from '../../../router/router';
+import {domain} from "../../../common/api/api";
 
 class NewsFeedDetail extends PureComponent {
     render() {
@@ -24,7 +31,6 @@ class NewsFeedDetail extends PureComponent {
                     {this.getTitlePath()}
                     {this.getArticle()}
                     {this.getRefer()}
-
                 </NewsFeedDetailContainer>
 
 
@@ -47,17 +53,42 @@ class NewsFeedDetail extends PureComponent {
             </TitlePath>
         )
     };
+
     getArticle() {
+        const {newFeedDetail} = this.props;
         return (
             <ArticleContainer>
-
+                <ArticleTitle>
+                    {newFeedDetail.get("title")}
+                </ArticleTitle>
+                <ArticleDescription>
+                    <div>{newFeedDetail.get("year_and_month")}</div>
+                    <div>{newFeedDetail.get("day")}</div>
+                    <div>{newFeedDetail.get("views")}</div>
+                    <div>{newFeedDetail.get("tags")}</div>
+                </ArticleDescription>
+                <ArticleImage>
+                    <img src={domain + newFeedDetail.get("avatar")} alt=""/>
+                </ArticleImage>
+                <ArticleContent>
+                    <div>{newFeedDetail.get("content")}</div>
+                </ArticleContent>
             </ArticleContainer>
         )
     };
+
     getRefer() {
         return (
             <ReferContainer>
                 <PopularArticles>
+                    {
+                    this.props.popularArticleTitles.map((item, index) => {
+                        return (
+
+                            this.getReferContent(item.get(0), item.get(1), index)
+                        )
+                    })
+                }
 
                 </PopularArticles>
 
@@ -65,6 +96,15 @@ class NewsFeedDetail extends PureComponent {
             </ReferContainer>
         )
     };
+    getReferContent(title, views, index) {
+        return (
+            <TitleItem key = {index}>
+                <div>{title}</div>
+                <div>{views}</div>
+            </TitleItem>
+        )
+    }
+
     getQRCode() {
         return (
             <QRContainer>
@@ -75,8 +115,6 @@ class NewsFeedDetail extends PureComponent {
             </QRContainer>
         )
     };
-
-
 
 
     componentDidMount() {
@@ -90,14 +128,15 @@ class NewsFeedDetail extends PureComponent {
 
 //用connect + mapstate 就可以直接取出store中的数据
 const mapState = (state) => ({
-    newFeedDetail: state.getIn(["newsFeed", "detailList"])
+    newFeedDetail: state.getIn(["newsFeed", "detailList"]),
+    popularArticleTitles: state.getIn(["newsFeed", "popularArticleTitles"])
 });
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(false));
     },
     getDetailList(id) {
-        dispatch(actionCreators.getDetailList);
+        dispatch(actionCreators.getDetailList(id));
 
     }
 

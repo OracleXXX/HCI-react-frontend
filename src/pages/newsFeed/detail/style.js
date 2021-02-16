@@ -110,3 +110,23 @@ export const QRContainer = styled.div`
 `;
 
 
+export const ArticleTitle = styled.div`
+  
+`;
+
+
+export const ArticleDescription = styled.div`
+  
+`;
+
+
+export const ArticleImage = styled.div`
+  
+`;
+
+
+export const ArticleContent = styled.div`
+  
+`;
+
+export const TitleItem = styled.div``;

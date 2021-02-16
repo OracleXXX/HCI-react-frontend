@@ -5,7 +5,8 @@ const defaultState = fromJS({
     newsFeedList: [],
     page: 1,
     totalPage: 0,
-    detailList: []
+    detailList: [],
+    popularArticleTitles: []
 
 
 });
@@ -18,7 +19,8 @@ const changeNewsFeedList = (state, action) => {
 }
 const changeDetailList = (state, action) => {
     return state.merge({
-        detailList: fromJS(action.data)
+        detailList: fromJS(action.detailList),
+        popularArticleTitles: fromJS(action.popularArticleTitles)
     })
 }
 const changePage = (state, action) => {
