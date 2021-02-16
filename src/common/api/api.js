@@ -16,6 +16,7 @@ export const closed_project = {
 };
 export const news_feed = {
     list: '/api/news-feed/',
+    detailList: 'api/news-feed/'
 };
 export const activity = {
     list: '/api/one-step/activities/',

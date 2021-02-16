@@ -80,18 +80,26 @@ class NewsFeedDetail extends PureComponent {
 
 
     componentDidMount() {
+        const {id} = this.props.match.params;
         this.props.hideShowBanner()
+        this.props.getDetailList(id)
     }
 
 
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({});
+const mapState = (state) => ({
+    newFeedDetail: state.getIn(["newsFeed", "detailList"])
+});
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(false));
     },
+    getDetailList(id) {
+        dispatch(actionCreators.getDetailList);
+
+    }
 
 });
 
