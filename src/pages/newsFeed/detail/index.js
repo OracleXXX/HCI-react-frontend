@@ -18,7 +18,9 @@ import {
     DivLine,
     ArticleImage,
     ArticleContent,
-    TitleItem
+    TitleItem,
+    TopItem,
+    Dot
 } from './style';
 import * as constants from "../store/constants";
 
@@ -132,12 +134,18 @@ class NewsFeedDetail extends PureComponent {
                         <img src={constants.IMAGES.FIRE} alt=""/>
                         <span>{constants.STATIC.REFER.TITLE}</span>
                     </PopularArticleTitle>
-
                     {
                         popularArticleTitles.map((item, index) => {
-
+                            if (index === 7) { return null }
                             return (
-                                this.getReferContent(item.get(0), item.get(1), item.get(2), item.get(3), item.get(4), item.get(5), index)
+                                this.getReferContent(
+                                    item.get(0),
+                                    item.get(1),
+                                    item.get(2),
+                                    item.get(3),
+                                    item.get(4),
+                                    item.get(5),
+                                    index)
                             )
                         })
                     }
@@ -152,14 +160,19 @@ class NewsFeedDetail extends PureComponent {
             return (
                 <TitleItem key={index}>
                     <DivLine/>
-                    <div>asdasd</div>
+                    <TopItem>
+                        <img src={domain + avatar} alt=""/>
+                        <div className='top-item-bottom'><span>{title}</span></div>
+                    </TopItem>
+
+
                 </TitleItem>
             )
         }
         return (
             <TitleItem key={index}>
                 <DivLine/>
-                <div className='refer-title'>{title}</div>
+                <div className='refer-title'><Dot/>{title}</div>
                 <div className='refer-description'>
                     <div className= 'refer-date'>{this.handleDateFormatChange(day, month_and_year)}</div>
                     <div className='refer-views'>

@@ -118,7 +118,10 @@ export const DivLine = styled.div`
 export const ArticleImage = styled.div`
   margin: 1.6rem auto 2rem;
   & img {
-    width: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 32rem;
   }
 `;
 
@@ -154,6 +157,7 @@ export const PopularArticles = styled.div`
 export const PopularArticleTitle = styled.div`
   width: fit-content;
   height: 2rem;
+  margin-bottom: 1.3rem;
   & img {
     width: 1.4rem;
     height: 1.9rem;
@@ -222,6 +226,10 @@ export const TitleItem = styled.div`
     margin-top: 1.3rem;
     color: #333333;
     font-family: SourceHanSansSC-Medium;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
   };
   & .refer-description {
     margin-top: 0.85rem;
@@ -251,7 +259,52 @@ export const TitleItem = styled.div`
       margin-right: 0.66rem;
     }
   }
-
+`;
+export const TopItem = styled.div`
+  width: 100%;
+  height: 14.2rem;
+  position: relative;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  margin: 1.3rem auto;
+  
+  & img {
+    z-index: -1;
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+  }
+  & .top-item-bottom {
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4.9rem;
+    opacity: 0.85;
+    padding: 1.45rem;
+    box-sizing: border-box;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.02) 7%, rgba(0,0,0,0.70) 53%, #000000 100%);
+  }
+  & span {
+    font-family: SourceHanSansSC-Medium;
+    width: 100%;
+    height: 2rem;
+    overflow: hidden;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;    
+    -webkit-box-orient: vertical;
+  }
 `;
 
+export const Dot = styled.div`
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #A1A1A1;
+  border-radius: 0.4rem;
+  margin-right: 0.6rem;
+`;
 

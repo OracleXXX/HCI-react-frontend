@@ -64,11 +64,9 @@ export const LeftPart = styled.div`
   border-radius: 0.8rem;
 //  border: 1px solid red;
   overflow: hidden;
-  & .LeftPartImg {
+  & img {
     width: 68rem;
     height: 36rem;
-    max-width: 68rem;
-    max-height: 36rem;
     
   }
 `;
@@ -195,18 +193,22 @@ export const ArticleContent = styled.div`
 
 `;
 export const ReadMore = styled.div`
-  margin-top: 2rem;
   width: inherit;
+  height: 2rem;
   font-size: 1.4rem;
   cursor: pointer;
+  margin-top: 2rem;
+  box-sizing: border-box;
   & .readMore {
     width: fit-content;
+    height: 1.4rem;
     display: inline-block;
     margin-right: 0.5rem;
     background-image: linear-gradient(270deg, #7F55FF 0%, #5DBBFF 100%);
     -webkit-background-clip: text;
     white-space:nowrap;
     color: transparent;
+    box-sizing: border-box;
   }
 `;
 export const Arrow = styled.div`
