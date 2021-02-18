@@ -42,10 +42,8 @@ class NewProjectDemo extends PureComponent {
 
     render() {
         // 轮播图设置
-
-
         return (
-            <NewProjectDemoWrapper>
+            <NewProjectDemoWrapper className='scale-control'>
                 {/* 图轮播图title */}
                 <SliderTitle>
                     <Link to={newProjectApi.path}><div className='title'>精选房源</div></Link>

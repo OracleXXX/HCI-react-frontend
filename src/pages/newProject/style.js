@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const NewProjectWrapper = styled.div`
-  width: 100%;
+  width: calc(192rem - 17px);
+  height: fit-content;
+  box-sizing: border-box;
   & .button:hover {
     border: 0.1rem solid #2D84FF;
     box-shadow: 0 0 0 0.2rem  rgba(45, 132, 255, 0.5);

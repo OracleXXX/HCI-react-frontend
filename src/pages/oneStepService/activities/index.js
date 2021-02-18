@@ -43,7 +43,7 @@ class Activity extends PureComponent {
         const {page, totalPage, popIndex} = this.props;
         this.getActivityItems()
         return (
-            <ActivityWrapper>
+            <ActivityWrapper className='scale-control'>
                 <ActivityTitle ref={this.ScrollTo}>
                     <div className='title'>平台活动</div>
                     <div className='rec'/>

@@ -41,7 +41,7 @@ class NewProject extends PureComponent {
         this.changeDemoList()
 
         return (
-            <NewProjectWrapper ref={this.ScrollTo}>
+            <NewProjectWrapper ref={this.ScrollTo} className='scale-control'>
                 <NewProjectTitle>
                     <div className='title'>精选房源</div>
                     <div className='rec no-select'/>

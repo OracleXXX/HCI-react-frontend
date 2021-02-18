@@ -14,6 +14,7 @@ import {
 
     ArticleTitle,
     ArticleDescription,
+    DivLine,
     ArticleImage,
     ArticleContent,
     TitleItem
@@ -24,9 +25,15 @@ import {news_feed as newsFeedRouter} from '../../../router/router';
 import {domain} from "../../../common/api/api";
 
 class NewsFeedDetail extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.ScrollTo = React.createRef()   // Create a ref object
+    }
+
     render() {
+
         return (
-            <NewsFeedDetailWrapper>
+            <NewsFeedDetailWrapper ref={this.ScrollTo} className='scale-control'>
                 <NewsFeedDetailContainer>
                     {this.getTitlePath()}
                     {this.getArticle()}
@@ -37,6 +44,8 @@ class NewsFeedDetail extends PureComponent {
             </NewsFeedDetailWrapper>
         )
     }
+
+    scrollToMyRef = () => window.scrollTo(0, 0)
 
     getTitlePath() {
         return (
@@ -62,43 +71,72 @@ class NewsFeedDetail extends PureComponent {
                     {newFeedDetail.get("title")}
                 </ArticleTitle>
                 <ArticleDescription>
-                    <div>{newFeedDetail.get("year_and_month")}</div>
-                    <div>{newFeedDetail.get("day")}</div>
-                    <div>{newFeedDetail.get("views")}</div>
-                    <div>{newFeedDetail.get("tags")}</div>
+                    <div className='desc-left'>
+                        <div className='date'>
+                            <img src={constants.IMAGES.DATE} alt=""/>
+                            <span>{this.handleDateFormatChange(newFeedDetail.get("day"), newFeedDetail.get("year_and_month"))}</span>
+                        </div>
+                        <div className='views'>
+                            <img src={constants.IMAGES.VIEWS} alt=""/>
+                            <span>{newFeedDetail.get("views")}</span>
+                        </div>
+                    </div>
+                    <div className='desc-right'>{this.getTags(newFeedDetail.get("tags"))}</div>
                 </ArticleDescription>
+                <DivLine/>
                 <ArticleImage>
-                    <img src={domain + newFeedDetail.get("avatar")} alt=""/>
+                    <img src={newFeedDetail.get("avatar") !== undefined ? domain + newFeedDetail.get("avatar") : ""}
+                         alt=""/>
                 </ArticleImage>
                 <ArticleContent>
-                    <div>{newFeedDetail.get("content")}</div>
+                    <div className='article-content'>{newFeedDetail.get("content")}</div>
                 </ArticleContent>
             </ArticleContainer>
         )
     };
+    handleDateFormatChange(day, year_and_month) {
+        if (day === undefined || year_and_month === undefined){ return "";}
+        return year_and_month.split("/").join("-") + "-" + day;
 
+    }
+    getTags(tags) {
+        if (tags === undefined) {
+            return
+        }
+        let tagsDemoList = [];
+        const tagList = constants.STATIC.TAGS;
+        let str = tags.toString().split("").reverse();
+        for (let i = 0; i < str.length; i++) {
+            str[i] === "1" ?
+                tagsDemoList.push(
+                    <span key={i}>
+                        {tagList[str.length - i - 1]}
+                    </span>
+                )
+                : console.log("")
+        }
+        return tagsDemoList;
+    }
     getRefer() {
         return (
             <ReferContainer>
                 <PopularArticles>
                     {
-                    this.props.popularArticleTitles.map((item, index) => {
-                        return (
-
-                            this.getReferContent(item.get(0), item.get(1), index)
-                        )
-                    })
-                }
-
+                        this.props.popularArticleTitles.map((item, index) => {
+                            return (
+                                this.getReferContent(item.get(0), item.get(1), index)
+                            )
+                        })
+                    }
                 </PopularArticles>
-
                 {this.getQRCode()}
             </ReferContainer>
         )
     };
+
     getReferContent(title, views, index) {
         return (
-            <TitleItem key = {index}>
+            <TitleItem key={index}>
                 <div>{title}</div>
                 <div>{views}</div>
             </TitleItem>
@@ -108,9 +146,9 @@ class NewsFeedDetail extends PureComponent {
     getQRCode() {
         return (
             <QRContainer>
-                <div className='qr-title'>{constants.QR.TITLE}</div>
-                <img src={constants.QR.IMG} alt=""/>
-                <div className='qr-detail'>{constants.QR.DETAIL}</div>
+                <div className='qr-title'>{constants.STATIC.QR.TITLE}</div>
+                <img src={constants.STATIC.QR.IMG} alt=""/>
+                <div className='qr-detail'>{constants.STATIC.QR.DETAIL}</div>
 
             </QRContainer>
         )
@@ -119,8 +157,9 @@ class NewsFeedDetail extends PureComponent {
 
     componentDidMount() {
         const {id} = this.props.match.params;
+        this.scrollToMyRef();
         this.props.hideShowBanner()
-        this.props.getDetailList(id)
+        this.props.getDetailList(id, this.props.newsFeedDetail)
     }
 
 
@@ -135,9 +174,10 @@ const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(false));
     },
-    getDetailList(id) {
-        dispatch(actionCreators.getDetailList(id));
-
+    getDetailList(id, newFeedDetail) {
+        if (newFeedDetail == null) {
+            dispatch(actionCreators.getDetailList(id));
+        }
     }
 
 });

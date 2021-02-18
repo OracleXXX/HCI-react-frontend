@@ -2,7 +2,6 @@ import styled from "styled-components";
 import prevArrow from "../../statics/imgs/homePageImgs/prevArrow.png";
 import nextArrow from "../../statics/imgs/homePageImgs/nextArrow.png";
 
-//global
 export const ClosedProjectDemoWrapper = styled.div`
   width: calc(192rem - 17px);
   height: 89.6rem;

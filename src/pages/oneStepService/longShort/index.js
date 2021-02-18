@@ -21,7 +21,7 @@ class LongShort extends PureComponent {
 
     render() {
         return (
-            <LongShortWrapper ref={this.ScrollTo}>
+            <LongShortWrapper ref={this.ScrollTo} className='scale-control'>
                 <LongShortTitle>
                     <div className='title'>一站式房屋买卖流程</div>
                     <div className='rec no-select'/>

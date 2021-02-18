@@ -23,7 +23,7 @@ class OurTeam extends PureComponent {
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <OurTeamWrapper ref={this.ScrollTo}>
+            <OurTeamWrapper ref={this.ScrollTo} className='scale-control'>
                 <OurTeamTitle>
                     <div className='title'>团队背景</div>
                     <div className='rec'/>

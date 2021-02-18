@@ -4,14 +4,15 @@ export const BannerWrapper = styled.div`
     position: relative;
     width: calc(192rem - 17px);
     height: 74rem;
+    margin: 0 auto;
 
 `
 export const DemoWrapper = styled.div`
-  width: calc(192rem - 17px);
+  width: 100%;
   height: 100%;  
   box-sizing: border-box;
   & .banner {
-    width:calc(192rem - 17px);
+    width: 100%;
     height:74rem;
     margin: 0;
   }

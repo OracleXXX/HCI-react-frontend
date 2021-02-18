@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NewsFeedDetailWrapper = styled.div`
-  width: cacl(192rme - 17px);
+  width: calc(192rem - 17px);
   height: fit-content;
   background-color: #F6F8F9;
   padding-top: 8rem;
@@ -49,13 +49,89 @@ export const TitlePath = styled.div`
 
 export const ArticleContainer = styled.div`
   width: 71.6%;
-  height: 1000px;
+  height: fit-content;
   box-sizing: border-box;
   background-color: #FFFFFF;
   margin-bottom: 1.6rem;
   border-radius: 4px;
+  padding: 4rem
+`;
+export const ArticleTitle = styled.div`
+  width: 100%;
+  height: fit-content;
+  font-family: SourceHanSansSC-Medium;
+  font-size: 2.4rem;
+  color: #333333;
+  text-align: justify;
+  margin-bottom: 1.6rem;
 `;
 
+
+export const ArticleDescription = styled.div`
+  width: 100%;
+  height: 1.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  font-family: PingFangSC-Regular;
+  opacity: 0.85;
+  color: #A1A1A1;
+  & .desc-left {
+    width: fit-content;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    & .date {
+      margin-right: 3.8rem;
+      display: flex;
+      align-items: center;
+    }
+    & .date img{
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.6rem;
+    }
+    & .views {
+      display: flex;
+      align-items: center;
+    }
+    & .views img {
+      width: 1.936rem;
+      height: 1.251rem;
+      margin-right: 0.6rem;
+    }
+  }
+  & .desc-right {
+  }
+`;
+export const DivLine = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #D8D8D8;
+  margin: 2.4rem auto 1.6rem;
+`;
+
+export const ArticleImage = styled.div`
+  margin: 0 auto 2rem;
+  & img {
+    width: 100%;
+  }
+`;
+
+export const ArticleContent = styled.div`
+  & .article-content{
+    width: 100%;
+    height: fit-content;
+    line-height: 2.4rem;
+    font-size: 1.5rem;
+    font-family: SourceHanSansSC-Normal;
+    color: #333333;
+    white-space: pre-wrap;
+  }
+`;
 
 export const ReferContainer = styled.div`
   width: 26.6%;
@@ -89,7 +165,6 @@ export const QRContainer = styled.div`
   & .qr-title {
     width: fit-content;
     height: 2rem;
-    
     font-family: SourceHanSansSC-Medium;
     font-size: 1.6rem;
     
@@ -110,23 +185,7 @@ export const QRContainer = styled.div`
 `;
 
 
-export const ArticleTitle = styled.div`
-  
-`;
 
-
-export const ArticleDescription = styled.div`
-  
-`;
-
-
-export const ArticleImage = styled.div`
-  
-`;
-
-
-export const ArticleContent = styled.div`
-  
-`;
 
 export const TitleItem = styled.div``;
+

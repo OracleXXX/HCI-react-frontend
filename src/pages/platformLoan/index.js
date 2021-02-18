@@ -36,7 +36,7 @@ class PlatformLoan extends PureComponent {
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <PlatformLoanWrapper ref={this.ScrollTo}>
+            <PlatformLoanWrapper ref={this.ScrollTo} className='scale-control'>
                 {/*title*/}
                 <PlatformLoanTitle>
                     <div className='title'>平台贷款</div>
@@ -59,7 +59,7 @@ class PlatformLoan extends PureComponent {
                     </FlowChartImg>
                 </LoanFlowChart>
                 {/*bottom part additional info*/}
-                <AdditionInfo>
+{/*                <AdditionInfo>
                     <AdditionInfoContainer>
                         <AdditionInfoContainerItem>
                             <div className="circle-content"><Circle/><span>Not Real Property</span></div>
@@ -78,7 +78,7 @@ class PlatformLoan extends PureComponent {
                             <div className="circle-content"><Circle/><span>Moratorium</span></div>
                         </AdditionInfoContainerItem>
                     </AdditionInfoContainer>
-                </AdditionInfo>
+                </AdditionInfo>*/}
             </PlatformLoanWrapper>
         )
     }

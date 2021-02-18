@@ -20,7 +20,7 @@ class Management extends PureComponent {
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
     render() {
         return (
-            <ManagementWrapper ref={this.ScrollTo}>
+            <ManagementWrapper ref={this.ScrollTo} className='scale-control'>
                 <ManagementTitle>
                     <div className='title'>一站式房屋管理流程</div>
                     <div className='rec no-select'/>

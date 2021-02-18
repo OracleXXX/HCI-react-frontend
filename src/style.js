@@ -21,7 +21,6 @@ const GlobalStyle=createGlobalStyle`
         border: 0;
         vertical-align: baseline;
         text-decoration: none;
-
     }
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, 

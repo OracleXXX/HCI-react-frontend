@@ -33,7 +33,7 @@ class ContactUs extends PureComponent {
     render() {
         return (
 
-            <ContactUsWrapper ref={this.ScrollTo}>
+            <ContactUsWrapper ref={this.ScrollTo} className='scale-control'>
                 <ContactUsTitle>
                     <div className='title'>联系我们</div>
                     <div className='rec'/>

@@ -1,12 +1,8 @@
 import styled from "styled-components";
-
-
-
 // 最近动态 news feed
 export const NewsFeedWrapper = styled.div`
   width: calc(192rem - 17px);
   height: 106.1rem;
-
   padding: 8.6rem 0 0;
   box-sizing: border-box;
   background-color: #F6F8F9;
@@ -14,8 +10,6 @@ export const NewsFeedWrapper = styled.div`
     font-weight: bolder;
   }
   & .button:active{ -moz-transform: translate(0.1rem,0.1rem); -webkit-transform: translate(0.1rem,0.1rem); -o-transform: translate(0.1rem,0.1rem); }
-  
- 
 `;
 
 export const NewsFeedTitle = styled.div`

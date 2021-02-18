@@ -44,7 +44,7 @@ class NewsFeed extends PureComponent {
         const {page, totalPage} = this.props;
         this.getArticleItems()
         return (
-            <NewsFeedWrapper ref={this.ScrollTo}>
+            <NewsFeedWrapper ref={this.ScrollTo} className='scale-control'>
 
                 <NewsFeedTitle>
                     <span className='title'>新闻咨询</span>
@@ -83,9 +83,8 @@ class NewsFeed extends PureComponent {
             count += 1;
             /*置顶文章*/
             count < 3 && popularList.push(
-                <Link to={newFeedRouter.detail + item.get("id")}>
-                    <PopularArticleItem className={count ? "article-item-right" : "article-item-left"}
-                                        key={item.get("id")}>
+                <Link to={newFeedRouter.detail + item.get("id")} key={item.get("id")}>
+                    <PopularArticleItem className={count ? "article-item-right" : "article-item-left"}>
                         {this.getArticleData(item.get("day"), item.get("year_and_month"))}
                         <img src={domain + item.get("avatar")} alt="" className="popular-img"/>
                         <ArticleItemBottom
@@ -100,8 +99,9 @@ class NewsFeed extends PureComponent {
                     <ArticleItem>
                         <ArticleItemLeft>
                             {this.getArticleData(item.get("day"), item.get("year_and_month"))}
-                            <Link to={newFeedRouter.detail + item.get("id")}><img src={domain + item.get("avatar")} alt=""
-                                                                          className="item-left-img no-select"/></Link>
+                            <Link to={newFeedRouter.detail + item.get("id")}><img src={domain + item.get("avatar")}
+                                                                                  alt=""
+                                                                                  className="item-left-img no-select"/></Link>
                         </ArticleItemLeft>
                         <ArticleItemRight>
                             <ArticleItemRightTop>

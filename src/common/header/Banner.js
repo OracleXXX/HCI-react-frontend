@@ -20,7 +20,7 @@ class Banner extends PureComponent {
 
     render() {
         return (
-            <BannerWrapper className='no-select'>
+            <BannerWrapper className='no-select scale-control'>
                 {/*<img className="banner" src={BannerPic} alt=''/>*/}
                 <DemoWrapper>
                     <FixBannerSearch>
