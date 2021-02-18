@@ -73,6 +73,7 @@ export const ArticleDescription = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 2.4rem;
   
   font-size: 1.3rem;
   line-height: 1.9rem;
@@ -109,13 +110,13 @@ export const ArticleDescription = styled.div`
 `;
 export const DivLine = styled.div`
   width: 100%;
-  height: 1px;
+  height: 0.1rem;
   background-color: #D8D8D8;
-  margin: 2.4rem auto 1.6rem;
+  margin: 0 auto;
 `;
 
 export const ArticleImage = styled.div`
-  margin: 0 auto 2rem;
+  margin: 1.6rem auto 2rem;
   & img {
     width: 100%;
   }
@@ -143,10 +144,30 @@ export const ReferContainer = styled.div`
 `;
 export const PopularArticles = styled.div`
   width: 100%;
-  height: 100px;
+  height: fit-content;
   background-color: #FFFFFF;
   margin-bottom: 2rem;
   border-radius: 4px;
+  padding: 1.35rem 1.8rem;
+  box-sizing: border-box;
+`;
+export const PopularArticleTitle = styled.div`
+  width: fit-content;
+  height: 2rem;
+  & img {
+    width: 1.4rem;
+    height: 1.9rem;
+    margin-right: 0.75rem;
+  }
+  span {
+    width: fit-content;
+    height: 2rem;
+    line-height: 2rem;
+    font-family: SourceHanSansSC-Medium;
+    font-size: 1.6rem;
+    color: #333333;
+  }
+  
 `;
 
 export const QRContainer = styled.div`
@@ -187,5 +208,50 @@ export const QRContainer = styled.div`
 
 
 
-export const TitleItem = styled.div``;
+export const TitleItem = styled.div`
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  color: #A1A1A1;
+  line-height: 2rem;
+  & .refer-title {
+    width: fit-content;
+    height: fit-content;
+    font-size: 1.4rem;
+    margin-top: 1.3rem;
+    color: #333333;
+    font-family: SourceHanSansSC-Medium;
+  };
+  & .refer-description {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  & .refer-date {
+    width: fit-content;
+    height: 2.5rem;
+    font-family: SourceHanSansSC-Normal;
+  
+  };
+  & .refer-views {
+    width: fit-content;
+    height: 2.5rem;
+    font-family: PingFangSC-Regular;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.3rem;
+    
+    & img {
+      width: 1.696rem;
+      height: 1.161rem;
+      margin-right: 0.66rem;
+    }
+  }
+
+`;
+
 

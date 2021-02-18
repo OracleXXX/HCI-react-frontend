@@ -27,6 +27,9 @@ export const STATIC = {
     TAGS: {
         "0": '时事热点',
         "1": '市场趋势',
+    },
+    REFER: {
+        TITLE: "热门文章",
     }
 }
 

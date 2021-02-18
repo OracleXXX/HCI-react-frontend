@@ -10,6 +10,7 @@ import {
     ArticleContainer,
     ReferContainer,
     PopularArticles,
+    PopularArticleTitle,
     QRContainer,
 
     ArticleTitle,
@@ -94,11 +95,15 @@ class NewsFeedDetail extends PureComponent {
             </ArticleContainer>
         )
     };
+
     handleDateFormatChange(day, year_and_month) {
-        if (day === undefined || year_and_month === undefined){ return "";}
+        if (day === undefined || year_and_month === undefined) {
+            return "";
+        }
         return year_and_month.split("/").join("-") + "-" + day;
 
     }
+
     getTags(tags) {
         if (tags === undefined) {
             return
@@ -117,14 +122,22 @@ class NewsFeedDetail extends PureComponent {
         }
         return tagsDemoList;
     }
+
     getRefer() {
+        const {popularArticleTitles} = this.props;
         return (
             <ReferContainer>
                 <PopularArticles>
+                    <PopularArticleTitle>
+                        <img src={constants.IMAGES.FIRE} alt=""/>
+                        <span>{constants.STATIC.REFER.TITLE}</span>
+                    </PopularArticleTitle>
+
                     {
-                        this.props.popularArticleTitles.map((item, index) => {
+                        popularArticleTitles.map((item, index) => {
+
                             return (
-                                this.getReferContent(item.get(0), item.get(1), index)
+                                this.getReferContent(item.get(0), item.get(1), item.get(2), item.get(3), item.get(4), item.get(5), index)
                             )
                         })
                     }
@@ -134,11 +147,26 @@ class NewsFeedDetail extends PureComponent {
         )
     };
 
-    getReferContent(title, views, index) {
+    getReferContent(id, title, views, avatar, day, month_and_year, index) {
+        if (index === 0) {
+            return (
+                <TitleItem key={index}>
+                    <DivLine/>
+                    <div>asdasd</div>
+                </TitleItem>
+            )
+        }
         return (
             <TitleItem key={index}>
-                <div>{title}</div>
-                <div>{views}</div>
+                <DivLine/>
+                <div className='refer-title'>{title}</div>
+                <div className='refer-description'>
+                    <div className= 'refer-date'>{this.handleDateFormatChange(day, month_and_year)}</div>
+                    <div className='refer-views'>
+                        <img src={constants.IMAGES.VIEWS} alt=""/>
+                        <span>{views}</span>
+                    </div>
+                </div>
             </TitleItem>
         )
     }
