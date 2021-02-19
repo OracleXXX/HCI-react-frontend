@@ -118,7 +118,7 @@ class ClosedProject extends PureComponent {
                                     <div className="price-month">
                                         <span className="price">{item.get("price")}</span>
                                     </div>
-                                    <div className="area-rental">{item.get("area") + item.get("status")}</div>
+                                    <div className="area-rental">{item.get("area") +"/" + item.get("status")}</div>
                                 </ItemMid>
                                 <ItemBottom>
                                     <DivLine/>

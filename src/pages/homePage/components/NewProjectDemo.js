@@ -78,7 +78,7 @@ class NewProjectDemo extends PureComponent {
                                                 <span>{item.get('price')}</span>
                                                 <span className='perMonth'>{item.get('month')}</span>
                                             </div>
-                                            <span className='intro-right'>{item.get('area') + item.get('rental')}</span>
+                                            <span className='intro-right'>{item.get('area') + "/" + item.get('status')}</span>
                                         </div>
                                     </Item>
                                 </div>
