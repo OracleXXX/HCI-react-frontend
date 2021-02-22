@@ -107,11 +107,14 @@ class NewProjectDetail extends PureComponent {
                     </PrevArrow>
                     <Slider asNavFor={nav2} ref={slider => (this.slider1 = slider)} arrows={false} dots={true}
                             lazyLoad={true}
-                            swipeToSlide={true}>
+                            swipeToSlide={true}
+                            className='slider'
+
+                    >
                         {
                             imageList.map((item, index) => {
                                 return (
-                                    <SliderItemTop key={index}>
+                                    <SliderItemTop key={index} className='slider'>
                                         <img
                                             src={images_domain + this.props.match.params.id + "/" + item}
                                             alt=""
@@ -127,11 +130,11 @@ class NewProjectDetail extends PureComponent {
                 </SliderTop>
                 <SliderBottom>
                     <Slider asNavFor={nav1} ref={slider => (this.slider2 = slider)} slidesToShow={5}
-                            swipeToSlide={true} focusOnSelect={true} arrows={false}>
+                            swipeToSlide={true} focusOnSelect={true} arrows={false} >
                         {
                             imageList.map((item, index) => {
                                 return (
-                                    <SliderItemBottom key={index}>
+                                    <SliderItemBottom key={index} className='slider'>
                                         <ImgContainer>
                                             <img
                                             src={images_domain + "/" + this.props.match.params.id + "/" + item}

@@ -78,13 +78,10 @@ export const SliderWrapper = styled.div`
   align-items: center; 
   
   & .slider{
-
     margin: 0 auto;
     width: 123.2rem;
     outline: none;
-    
   }
-
 `;
 
 export const PrevArrow = styled.div`

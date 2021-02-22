@@ -55,10 +55,10 @@ class NewProjectDemo extends PureComponent {
                     {/* 左右指针 */}
                     <PrevArrow className="button hovered" onClick={this.previous}/>
                     <NextArrow className="button" onClick={this.next}/>
-                    <Slider ref={c => (this.slider = c)} {...constants.NEW_PROJECT_SETTINGS}>
+                    <Slider ref={c => (this.slider = c)} {...constants.NEW_PROJECT_SETTINGS} >
                         {
                             this.props.newProjectList.map((item) => (
-                                <div key={item.get('id')}>
+                                <div key={item.get('id')} className='slider'>
                                     <Item>
                                         <img src={domain + item.get('avatar')} alt="" className=''/>
                                         <ImgBottom>
