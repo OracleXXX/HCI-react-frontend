@@ -146,9 +146,15 @@ class ClosedProject extends PureComponent {
                                             <span className="item-info-title">卖出价格：</span>
                                             <span className="item-info-content">{item.get("sell_price")}</span>
                                         </div>
-                                        <div>
-                                            <span className="item-info-title">项目总回报率：</span>
-                                            <span className="item-info-content">{item.get("net_rate_of_return")}</span>
+                                        <div>{
+                                            flippingSlider
+                                            ? <span className="item-info-title">项目总回报率：
+                                            <span className="item-info-content">{item.get("net_rate_of_return")}</span></span>
+                                            :
+                                             <span className="item-info-title">租金回报率：
+                                            <span className="item-info-content">{item.get("rental_rate_of_return")}</span></span>
+                                        }
+
                                         </div>
 
                                     </div>
