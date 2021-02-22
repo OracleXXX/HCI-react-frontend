@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // 最近动态 news feed
 export const NewsFeedWrapper = styled.div`
-  width: calc(192rem - 17px);
+  width: 100vw;
   height: 106.1rem;
   padding: 8.6rem 0 0;
   box-sizing: border-box;

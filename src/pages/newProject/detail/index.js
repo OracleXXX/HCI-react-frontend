@@ -44,6 +44,7 @@ import {
     FormContainer
 } from './style';
 import * as constants from "../store/constants";
+import {constants as contactUsConstants} from '../../contactUs/store';
 import {new_project as newProjectRouter} from '../../../router/router';
 import {Button, Form} from "react-bootstrap";
 import {images_domain} from "../../../common/api/api";
@@ -267,12 +268,12 @@ class NewProjectDetail extends PureComponent {
 
 
     getEmbeddedContactUs() {
-        const {CONTACT_US} = constants.STATIC
+        const {CONTACT_US} = contactUsConstants
         return (
             <EmbeddedContactUsWrapper className="no-select">
                 <img src={CONTACT_US.IMAGES.BG} alt=""/>
                 <ContactUsContainer>
-                    <ContactUsTitle>{CONTACT_US.CONTACT_US_TITLE}</ContactUsTitle>
+                    <ContactUsTitle>{CONTACT_US.TITLE}</ContactUsTitle>
                     <FormContainer >
                         <Form className='container-form'>
                             {this.getFormGroup()}

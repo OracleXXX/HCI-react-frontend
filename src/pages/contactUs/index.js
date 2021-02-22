@@ -46,54 +46,9 @@ class ContactUs extends PureComponent {
                 <FormContainer>
                     <img src={contactUsImg} alt="" className="top-right-img no-select"/>
                     <Form className='container-form'>
-                        <Form.Group controlId="exampleForm.ControlInput1" className='form-group'>
-                            <Form.Label className='form-label'>姓名</Form.Label>
+                        {this.getFormGroups()}
+                        {this.getCommentsFormGroups()}
 
-                            <Form.Control required type="name" aria-describedby="nameInfo"/>
-
-                            <Form.Text id="nameInfo" muted className='form-text'>
-                                {Constants.NAME_HELP_TEXT}
-                            </Form.Text>
-                        </Form.Group>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>电子邮箱</Form.Label>
-
-                            <Form.Control required type="email" aria-describedby="emailInfo"/>
-
-                            <Form.Text id="emailInfo" muted className='help-text'>
-                                {Constants.EMAIL_HELP_TEXT}
-                            </Form.Text>
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicPhoneNumber">
-                            <Form.Label>电话号码</Form.Label>
-
-                            <Form.Control type="name" aria-describedby="phone"/>
-
-                            <Form.Text id="phone" muted>
-                                {Constants.PHONE_HELP_TEXT}
-                            </Form.Text>
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicWechat">
-                            <Form.Label>微信号</Form.Label>
-
-                            <Form.Control type="text" aria-describedby="wechatInfo"/>
-
-                            <Form.Text id="wechatInfo" muted>
-                                {Constants.WECHAT_HELP_TEXT}
-                            </Form.Text>
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicComments">
-                            <Form.Label>您的留言</Form.Label>
-
-                            <Form.Control as="textarea" rows={4} className='comments'/>
-
-                            <Form.Text id="commentsInfo" muted>
-                                {Constants.COMMENT_HELP_TEXT}
-                            </Form.Text>
-                        </Form.Group>
 
                         <Button variant="primary" type="submit" className='form-button no-select'>
                             提交
@@ -129,6 +84,37 @@ class ContactUs extends PureComponent {
         )
     }
 
+    getFormGroups() {
+        const dataList = constants.CONTACT_US.DATA;
+        let formGroupList = [];
+        dataList.map((item, index) => {
+            formGroupList.push(
+                <Form.Group controlId={item.CONTROL_ID} className='form-group no-select' key={index}>
+                    <Form.Label className='form-label'><span className="star">* </span>{item.LABEL}</Form.Label>
+                    <Form.Control required type={item.TYPE} aria-describedby={item.ARIA_DESCRIBEDBY}
+                                  placeholder={item.PLACEHOLDER}/>
+                    <Form.Text id={item.ARIA_DESCRIBEDBY} muted className='form-text'>
+                        {item.HELP_TEXT}
+                    </Form.Text>
+                </Form.Group>
+            )
+        });
+        return formGroupList;
+    }
+
+    getCommentsFormGroups() {
+        const {COMMENTS} = constants.CONTACT_US;
+        return (
+            <Form.Group controlId={COMMENTS.CONTROL_ID} className='form-group no-select form-group-comments'>
+                <Form.Label className='form-label'><span className="star">* </span>{COMMENTS.LABEL}</Form.Label>
+                <Form.Control className='comments' as={COMMENTS.AS} rows={4} aria-describedby={COMMENTS.ARIA_DESCRIBEDBY} placeholder={COMMENTS.PLACEHOLDER}/>
+                <Form.Text id={COMMENTS.ARIA_DESCRIBEDBY} muted>
+                    {Constants.COMMENT_HELP_TEXT}
+                </Form.Text>
+            </Form.Group>
+        )
+    }
+
     componentDidMount() {
         this.props.hideShowBanner()
         this.scrollToMyRef()
@@ -136,9 +122,7 @@ class ContactUs extends PureComponent {
 }
 
 //用connect + mapstate 就可以直接取出store中的数据
-const mapState = (state) => ({
-
-});
+const mapState = (state) => ({});
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(true));

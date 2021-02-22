@@ -102,7 +102,7 @@ export const QRCodeItem = styled.div`
 export const FormContainer = styled.div`
   position: relative;
   width: 120rem;
-  height: 104.7rem;
+  height: 96.7rem;
   box-sizing: border-box;
   margin: 14.1rem auto 9.1rem;
   & .top-right-img {
@@ -113,7 +113,7 @@ export const FormContainer = styled.div`
     height: 35.4rem;
   }
   & .container-form {
-    height: 104.7rem;
+    height: inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -125,6 +125,10 @@ export const FormContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
   }
+  & .form-group-comments {
+    height: fit-content;
+    
+  }
   & .form-label {
     height: 2.2rem;
     font-family: SourceHanSansSC-Bold;
@@ -133,15 +137,19 @@ export const FormContainer = styled.div`
     letter-spacing:0;
     border-radius: 0.4rem;
   }
+  & .form-label {
+    margin-bottom: 0.2rem;
+  }
   & input {
     width: 72rem;
-    height: 5.6rem;
+    height: 4rem;
     background: #FFFFFF;
     border: 0.1rem solid #D8D8D8;
     border-radius: 0.4rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     outline: none;
     box-sizing: border-box;
+    padding-left: 10px;
   }
   & input:focus {
     border: 1px solid rgba(45, 132, 255);
@@ -160,10 +168,12 @@ export const FormContainer = styled.div`
   & .comments {
     width: 96rem;
     padding-bottom: 7rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border: 0.1rem solid #D8D8D8;
     border-radius: 0.4rem;
     outline: none;
+    margin: 2rem 0;
+    padding-left: 10px;
   }
   & .comments:focus {
     border: 1px solid rgba(45, 132, 255);

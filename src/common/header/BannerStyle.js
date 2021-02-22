@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BannerWrapper = styled.div`
     position: relative;
-    width: calc(192rem - 17px);
+    width: 100vw;
     height: 74rem;
     margin: 0 auto;
 

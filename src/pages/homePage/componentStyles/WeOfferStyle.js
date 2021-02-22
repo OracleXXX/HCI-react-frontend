@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 /*  我们提供什么, We offer  */
 export const WeOfferFragment = styled.div`
-  width: calc(192rem - 17px);
+  width: 100vw;
   height: fit-content;
   
 

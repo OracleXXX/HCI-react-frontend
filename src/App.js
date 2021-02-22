@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Provider} from 'react-redux'
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 /*common part*/
 import Header from "./common/header";
@@ -21,6 +21,8 @@ import Management from "./pages/oneStepService/management/loadable";
 import LongShort from "./pages/oneStepService/longShort/loadable";
 import Activity from "./pages/oneStepService/activities/loadable";
 import OurTeam from "./pages/ourTeam/loadable";
+import Error from "./pages/error/error"
+
 import store from "./store";
 import GlobalStyle from './style';
 
@@ -38,7 +40,7 @@ class App extends Component {
                 <GlobalStyle/>
                 <BrowserRouter>
                     <Header/>
-                    <div>
+                    <Switch>
                         <Route path='/' exact component={HomePage}/>
                         <Route path='/new-project' exact component={NewProject}/>
                         <Route path='/new-project/detail/:id' exact component={NewProjectDetail}/>
@@ -51,10 +53,9 @@ class App extends Component {
                         <Route path='/news' exact component={NewsFeed}/>
                         <Route path='/news/detail/:id' exact component={NewsFeedDetail}/>
                         <Route path='/contact-us' exact component={ContactUs}/>
-
-                    </div>
+                        <Route exact component={Error}/>
+                    </Switch>
                     <Footer/>
-
                 </BrowserRouter>
 
             </Provider>
