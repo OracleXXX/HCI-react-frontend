@@ -76,10 +76,13 @@ export const SliderWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center; 
+  
   & .slider{
 
     margin: 0 auto;
     width: 123.2rem;
+    outline: none;
+    
   }
 
 `;
