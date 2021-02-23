@@ -6,7 +6,7 @@
 
 ### 部署
 
-#### 1. 登录远程docker仓库
+#### 1. 登录远程docker仓库(需要安装docker)
 
 ```bash
 $ docker login --username=xueguanxiong@gmail.com registry-intl.us-west-1.aliyuncs.com
