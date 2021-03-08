@@ -4,40 +4,44 @@
 @font-face {
     font-family: SourceHanSansSC-Bold;
     src: url("fonts/SourceHanSansSC-Bold.otf");
-    }
+}
 
 @font-face {
     font-family: SourceHanSansSC-Light;
     src: url("fonts/SourceHanSansSC-Light.otf");
-    }
+}
 
 @font-face {
     font-family: SourceHanSansSC-Medium;
     src: url("fonts/SourceHanSansSC-Medium.otf");
-    }
+}
 
 @font-face {
     font-family: SourceHanSansSC-Normal;
     src: url("fonts/SourceHanSansSC-Normal.otf");
-    }
+}
 
 @font-face {
     font-family: SourceHanSansSC-Regular;
     src: url("fonts/SourceHanSansSC-Regular.otf");
-    }
+}
 
 @font-face {
     font-family: HyShangWeiShouShuW-regular;
     src: url("fonts/hyshangweishoushuw-regular.ttf");
-    }
+}
+
 @font-face {
     font-family: HiraginoSans-W6;
     src: url("fonts/HiraginoSans-W6.otf");
 }
+
 @font-face {
     font-family: PingFangSC-Regular;
     src: url("fonts/PingFangSC/PingFang-SC-Regular.ttf");
-}@font-face {
+}
+
+@font-face {
     font-family: PingFangSC-Semibold;
     src: url("fonts/PingFangSC/PingFang-SC-Semibold.ttf");
 }

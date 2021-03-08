@@ -29,11 +29,13 @@ import {actionCreators as HeaderActionCreators} from "../../common/header/store"
 
 
 class PlatformLoan extends PureComponent {
-     constructor(props) {
+    constructor(props) {
         super(props)
         this.ScrollTo = React.createRef()   // Create a ref object
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     render() {
         return (
             <PlatformLoanWrapper ref={this.ScrollTo} className='scale-control'>
@@ -48,7 +50,7 @@ class PlatformLoan extends PureComponent {
                 {/*main area*/}
                 <LoanFlowChart className='no-select'>
                     {/*flow chart*/}
-                    <FlowChartMain >
+                    <FlowChartMain>
                         {this.getFlowChartLeft()}
                         {this.getFlowChartMid()}
                         {this.getFlowChartRight()}
@@ -59,7 +61,7 @@ class PlatformLoan extends PureComponent {
                     </FlowChartImg>
                 </LoanFlowChart>
                 {/*bottom part additional info*/}
-{/*                <AdditionInfo>
+                {/*                <AdditionInfo>
                     <AdditionInfoContainer>
                         <AdditionInfoContainerItem>
                             <div className="circle-content"><Circle/><span>Not Real Property</span></div>
@@ -82,6 +84,7 @@ class PlatformLoan extends PureComponent {
             </PlatformLoanWrapper>
         )
     }
+
     /* left 3 steps in flow chart */
     getFlowChartLeft() {
         return (
@@ -100,6 +103,7 @@ class PlatformLoan extends PureComponent {
             </FLowCharLeft>
         )
     }
+
     /*right 2 steps in flow chart*/
     getFlowChartRight() {
         return (
@@ -114,6 +118,7 @@ class PlatformLoan extends PureComponent {
             </FlowChartRight>
         )
     }
+
     /* mid in flow chart, only arrows*/
     getFlowChartMid() {
         return (
@@ -123,6 +128,7 @@ class PlatformLoan extends PureComponent {
             </FlowChartMid>
         )
     }
+
     /*arrow*/
     getMidItem() {
         return (
@@ -139,6 +145,7 @@ class PlatformLoan extends PureComponent {
         this.scrollToMyRef()
     }
 }
+
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(true));

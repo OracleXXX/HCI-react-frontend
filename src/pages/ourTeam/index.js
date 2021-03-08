@@ -20,7 +20,9 @@ class OurTeam extends PureComponent {
         super(props)
         this.ScrollTo = React.createRef()   // Create a ref object
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     render() {
         return (
             <OurTeamWrapper ref={this.ScrollTo} className='scale-control'>
@@ -32,31 +34,34 @@ class OurTeam extends PureComponent {
             </OurTeamWrapper>
         )
     }
+
     getOurTeamContainer() {
         return (
             constants.TEAM_MEMBERS.map((item, index) => {
                 return (
                     <ContainerItem key={index}>
                         <ItemWrapper>
-                        <Avatar>
-                            <div className='avatar'>
-                                <img src={constants.TEAM_AVATAR[index]} alt=""/>
-                            </div>
-                        </Avatar>
-                        <Name>{item}</Name>
-                        <Position>{constants.TEAM_POSITION[index]}</Position>
-                        <Introduction>{constants.TEAM_INTRO[index]}</Introduction>
-                            </ItemWrapper>
+                            <Avatar>
+                                <div className='avatar'>
+                                    <img src={constants.TEAM_AVATAR[index]} alt=""/>
+                                </div>
+                            </Avatar>
+                            <Name>{item}</Name>
+                            <Position>{constants.TEAM_POSITION[index]}</Position>
+                            <Introduction>{constants.TEAM_INTRO[index]}</Introduction>
+                        </ItemWrapper>
                     </ContainerItem>
                 )
             })
         )
     }
+
     componentDidMount() {
         this.props.hideShowBanner()
         this.scrollToMyRef()
     }
 }
+
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(true));

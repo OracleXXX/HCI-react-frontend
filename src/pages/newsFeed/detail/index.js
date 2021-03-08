@@ -136,7 +136,9 @@ class NewsFeedDetail extends PureComponent {
                     </PopularArticleTitle>
                     {
                         popularArticleTitles.map((item, index) => {
-                            if (index === 7) { return null }
+                            if (index === 7) {
+                                return null
+                            }
                             return (
                                 this.getReferContent(
                                     item.get(0),
@@ -174,7 +176,7 @@ class NewsFeedDetail extends PureComponent {
                 <DivLine/>
                 <div className='refer-title'><Dot/>{title}</div>
                 <div className='refer-description'>
-                    <div className= 'refer-date'>{this.handleDateFormatChange(day, month_and_year)}</div>
+                    <div className='refer-date'>{this.handleDateFormatChange(day, month_and_year)}</div>
                     <div className='refer-views'>
                         <img src={constants.IMAGES.VIEWS} alt=""/>
                         <span>{views}</span>

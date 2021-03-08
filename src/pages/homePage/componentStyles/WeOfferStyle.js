@@ -11,39 +11,49 @@ export const WeOfferFragment = styled.div`
 export const WeOfferWrapper = styled.div`
   position: relative;
   width: 120.4rem;
-  height: 46.1rem;
+  height: fit-content;
   //border: 1px solid red;
-  margin: 8.6rem auto;
+  margin: 8.6rem auto 5.6rem;
   font-size: 0;
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
-    /*  左边文字部分  */
+/*  左边文字部分  */
 export const WeOfferLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 60rem;
-  height: 19.8rem;
+  height: 46rem;
   //border: 1px dashed greenyellow;
   overflow: hidden; //让行内块元素的基准线变为一起
-  & .offerTitle {
+  & .offer-title {
     position: relative;
-    width: 19.2rem;
-    height: 5rem;
-    padding-top: 1.5rem;
-    font-family: SourceHanSansSC-Bold;
-    font-size: 3.2rem;
-    color: #333333;
-    text-align: center;  
-    white-space: nowrap;   
+    width: fit-content;
+    height: fit-content;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & .title {
+      width: fit-content;
+      height: 4.7rem;
+      line-height: 4.7rem;
+      font-family: SourceHanSansSC-Bold;
+      font-size: 3.2rem;
+      color: #333333;
+      text-align: center;  
+      white-space: nowrap;
+    }   
     & .rec {
-      position: absolute;
-      bottom: 0;
       width: 5rem;
       height: 0.3rem;
       border-radius: 0.15rem;
       background-color: #2D84FF;
+      margin-top: 1.6rem;
     }
   }
   & .offerContent {
@@ -53,34 +63,30 @@ export const WeOfferLeft = styled.div`
     color:#555555;
     line-height:2.6rem;
     text-align:left;
-  
   }
 `;
 
-    /*  右边图片部分  */
+/*  右边图片部分  */
 export const WeOfferRight = styled.div`
-  display: inline-block;
   width: 60rem;
-  height: 100%;
+  height: fit-content;
   border-radius: 0.8rem;
   //border: 1px dashed black;
   overflow: hidden;
   & img {
     width: 60rem;
-    height: 34rem;
+    height: 46rem;
     border-radius: 0.8rem;
   }
 `;
-  /*  三个图标  */
+/*  三个图标  */
 export const WeOfferIcons = styled.div`
-  position: absolute;
-  left: 0;
-  top: 25.2rem;
   width: 73rem;
   height: 20.9rem;
   background-color: #FFFFFF;
   box-shadow: 0 0.4rem 1.8rem 0 #E6E6E6;
   border-radius: 0.8rem;
+  margin-top: 5.6rem;
 `;
 
 export const IconItem = styled.div`

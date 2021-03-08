@@ -11,7 +11,6 @@ const testreact = (result) => ({
 
 })
 
-
 export const handleTest = () => {
     return (dispatch) => {
         axios.get('http://localhost:8080/api/test').then((res) => {

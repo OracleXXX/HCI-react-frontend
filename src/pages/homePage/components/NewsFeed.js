@@ -51,7 +51,6 @@ class NewsFeed extends PureComponent {
                 {
                     popularArticleList.map((item) => (
                         <FixedTopArticle key={item.get("id")}>
-
                             {/* 置顶文章图片 */}
                             <LeftPart>
                                 {this.getArticleData()}
@@ -75,7 +74,8 @@ class NewsFeed extends PureComponent {
                                 <div className='divLine'/>
                                 {/* 文章 */}
                                 <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
-                                <Link to={newsApi.detail+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
+                                <Link to={newsApi.detail + item.get("id")}><ReadMore
+                                    className="button">{this.getReadMore()}</ReadMore></Link>
                             </RightPart>
                         </FixedTopArticle>
                     ))
@@ -96,14 +96,17 @@ class NewsFeed extends PureComponent {
                         <RestArticle key={item.get("id")}>
                             <TopPart>
                                 {this.getArticleData()}
-                                <Link to={newsApi.detail+ item.get("id")}><img src={domain + item.get('avatar')} alt="" className='TopPartImg no-select'/></Link>
+                                <Link to={newsApi.detail + item.get("id")}><img src={domain + item.get('avatar')} alt=""
+                                                                                className='TopPartImg no-select'/></Link>
                             </TopPart>
                             <BottomPart>
-                                <Link to={newsApi.detail+ item.get("id")}><ArticleTitle className='articleTitle'>{item.get('title')}</ArticleTitle></Link>
+                                <Link to={newsApi.detail + item.get("id")}><ArticleTitle
+                                    className='articleTitle'>{item.get('title')}</ArticleTitle></Link>
                                 {this.getTag(item.get('tags'))}
                                 <div className='divLine'/>
                                 <ArticleContent className='articleContent'>{item.get('content')}</ArticleContent>
-                                <Link to={newsApi.detail+ item.get("id")}><ReadMore className="button">{this.getReadMore()}</ReadMore></Link>
+                                <Link to={newsApi.detail + item.get("id")}><ReadMore
+                                    className="button">{this.getReadMore()}</ReadMore></Link>
                             </BottomPart>
                         </RestArticle>
                     ))

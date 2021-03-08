@@ -143,7 +143,6 @@ export const PopularCities = styled.div`
 `;
 
 
-
 export const CopyRight = styled.div`
   position: absolute;
   bottom: 0;

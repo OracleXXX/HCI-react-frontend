@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTable } from 'react-table';
+import {useTable} from 'react-table';
 
 export const columns = [
     {
@@ -23,7 +23,7 @@ export const data = [
     },
 ];
 
-function AppHook({ columns, data }) {
+function AppHook({columns, data}) {
 
     const {
         getTableProps,

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const PlatformLoanWrapper = styled.div`
   width: calc(192rem - 17px);
   margin-bottom: 12.1rem;

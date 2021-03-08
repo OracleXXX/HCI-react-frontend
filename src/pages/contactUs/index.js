@@ -18,9 +18,8 @@ import {
     FormContainer,
     DivLine
 } from './style';
-import {constants} from "./store";
+import {actionCreators, constants} from "./store";
 import {actionCreators as HeaderActionCreators} from "../../common/header/store";
-
 
 class ContactUs extends PureComponent {
     constructor(props) {
@@ -61,7 +60,6 @@ class ContactUs extends PureComponent {
 
         )
     }
-
     getLocationContent() {
         return (
             <LocationContent>
@@ -92,7 +90,7 @@ class ContactUs extends PureComponent {
                 <Form.Group controlId={item.CONTROL_ID} className='form-group no-select' key={index}>
                     <Form.Label className='form-label'><span className="star">* </span>{item.LABEL}</Form.Label>
                     <Form.Control required type={item.TYPE} aria-describedby={item.ARIA_DESCRIBEDBY}
-                                  placeholder={item.PLACEHOLDER}/>
+                                  placeholder={item.PLACEHOLDER} />
                     <Form.Text id={item.ARIA_DESCRIBEDBY} muted className='form-text'>
                         {item.HELP_TEXT}
                     </Form.Text>
@@ -107,7 +105,8 @@ class ContactUs extends PureComponent {
         return (
             <Form.Group controlId={COMMENTS.CONTROL_ID} className='form-group no-select form-group-comments'>
                 <Form.Label className='form-label'><span className="star">* </span>{COMMENTS.LABEL}</Form.Label>
-                <Form.Control className='comments' as={COMMENTS.AS} rows={4} aria-describedby={COMMENTS.ARIA_DESCRIBEDBY} placeholder={COMMENTS.PLACEHOLDER}/>
+                <Form.Control className='comments' as={COMMENTS.AS} rows={4}
+                              aria-describedby={COMMENTS.ARIA_DESCRIBEDBY} placeholder={COMMENTS.PLACEHOLDER}/>
                 <Form.Text id={COMMENTS.ARIA_DESCRIBEDBY} muted>
                     {Constants.COMMENT_HELP_TEXT}
                 </Form.Text>
@@ -126,7 +125,7 @@ const mapState = (state) => ({});
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(true));
-    },
+    }
 })
 
 export default connect(mapState, mapDispatch)(withRouter(ContactUs));

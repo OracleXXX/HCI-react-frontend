@@ -1,9 +1,6 @@
-
 import styled from "styled-components";
 import nextArrow from '../../../statics/imgs/homePageImgs/nextArrow.png';
 import prevArrow from '../../../statics/imgs/homePageImgs/prevArrow.png';
-
-
 
 
 //精选房源 New Project Demo

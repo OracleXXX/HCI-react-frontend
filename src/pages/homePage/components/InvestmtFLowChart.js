@@ -20,6 +20,7 @@ import {
 import {constants} from '../store'
 import {Link} from "react-router-dom";
 import * as router from '../../../router/router'
+
 class InvestmtFLowChart extends PureComponent {
 
     render() {
@@ -112,10 +113,10 @@ class InvestmtFLowChart extends PureComponent {
                     <EvenIndexContent>
                         <div className='evenContentTitle'>{title}</div>
                         {/* 判断是否为参数空 */}
-                        { {subTitle} ? <div className='evenContentTitle'>{subTitle}</div> : null }
-                        { {content1} ? <div className='evenContent'>{content1}</div> : null }
-                        { {content2} ? <div className='evenContent'>{content2}</div> : null }
-                        { this.getMoreInfo(index) }
+                        {{subTitle} ? <div className='evenContentTitle'>{subTitle}</div> : null}
+                        {{content1} ? <div className='evenContent'>{content1}</div> : null}
+                        {{content2} ? <div className='evenContent'>{content2}</div> : null}
+                        {this.getMoreInfo(index)}
                     </EvenIndexContent>
                 </div>
             </EvenImgToIndex>
@@ -124,7 +125,8 @@ class InvestmtFLowChart extends PureComponent {
 
     getMoreInfo(index) {
         return (
-            <Link to={index === 6 ? router.closed_project.path : index === 5 ? router.one_step.path + router.management.path: router.one_step.path + router.long_short.path}>
+            <Link
+                to={index === 6 ? router.closed_project.path : index === 5 ? router.one_step.path + router.management.path : router.one_step.path + router.long_short.path}>
                 <MoreInfo className="button">
                     <span>了解详情</span>
                     <img src={constants.MORE_INFO_ICON} alt="" className='moreInfoIcon-blue'/>

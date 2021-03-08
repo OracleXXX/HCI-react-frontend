@@ -84,8 +84,6 @@ export const RightPart = styled.div`
     -webkit-line-clamp: 5;
   }
 `;
-    
-    
 
 
 export const RestArticles = styled.div`

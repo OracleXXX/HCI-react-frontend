@@ -7,6 +7,7 @@ import calculator from "../../../statics/imgs/newProject/detail/calculator.png";
 import location from "../../../statics/imgs/newProject/detail/location.png";
 import contactUsBackground from "../../../statics/imgs/newProject/detail/contactUsBG.png";
 import React from "react";
+
 export const CHANGE_NEW_PROJECT_DETAIL = 'newProject/CHANGE_NEW_PROJECT_DETAIL';
 export const CHANGE_NEW_PROJECT_OVERVIEW = 'newProject/CHANGE_NEW_PROJECT_OVERVIEW';
 

@@ -11,9 +11,6 @@ import {
 import {connect} from 'react-redux';
 import {constants} from "../store";
 
-//import images
-
-
 class WeOffer extends PureComponent {
     render() {
         return (
@@ -21,10 +18,20 @@ class WeOffer extends PureComponent {
                 <WeOfferWrapper>
                     {/* 左边区域 */}
                     <WeOfferLeft>
-                        <div className='offerTitle'>我们提供什么
+                        <div className='offer-title'>
+                            <div className='title'>我们提供的服务</div>
                             <div className='rec'/>
                         </div>
+
                         <p className='offerContent'>{constants.WE_OFFER}</p>
+                        <div className='offer-title'>
+                            <div className='title'>我们的四个坚持原则</div>
+                            <div className='rec'/>
+                        </div>
+                        <p className='offerContent'>{constants.OUR_PRINCIPALS.OP1}</p>
+                        <p className='offerContent'>{constants.OUR_PRINCIPALS.OP2}</p>
+                        <p className='offerContent'>{constants.OUR_PRINCIPALS.OP3}</p>
+                        <p className='offerContent'>{constants.OUR_PRINCIPALS.OP4}</p>
                     </WeOfferLeft>
                     {/* 右边区域 */}
                     <WeOfferRight>

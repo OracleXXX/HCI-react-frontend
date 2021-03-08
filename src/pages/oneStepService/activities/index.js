@@ -27,6 +27,7 @@ import {
 import {PopupItem, PopupWrapper} from "../../../common/popup/style";
 import {constants as contactUsConstants} from '../../contactUs/store';
 import {actionCreators as HeaderActionCreators} from "../../../common/header/store";
+
 const demoList = [];
 const popList = [];
 
@@ -98,23 +99,28 @@ class Activity extends PureComponent {
             )
             //弹出框内容列表
             popList.push(
-                <PopupWrapper >
+                <PopupWrapper>
                     <PopupItem className="popup-item">
                         <Register>
                             <RegisterTitle className="no-select">我要报名</RegisterTitle>
                             <RegisterContent>
-                                <div className="register-content-title"><div className="over">活动详情：</div><div className="register-content-title-bg"/></div>
-                                    <div className='register-content'>时间：{item.get("time")}</div>
-                                    <div className='register-content'>地点：{item.get("location")}</div>
-                                    <div className='register-content'>主题：{item.get("title")}</div>
-                                    <div className='register-content'>报名截止日期：{item.get("deadline")}</div>
+                                <div className="register-content-title">
+                                    <div className="over">活动详情：</div>
+                                    <div className="register-content-title-bg"/>
+                                </div>
+                                <div className='register-content'>时间：{item.get("time")}</div>
+                                <div className='register-content'>地点：{item.get("location")}</div>
+                                <div className='register-content'>主题：{item.get("title")}</div>
+                                <div className='register-content'>报名截止日期：{item.get("deadline")}</div>
                             </RegisterContent>
                             <DivLinePopup/>
                             <RegisterQRCode>
                                 <div className="register-qr-title">了解详情请扫码</div>
                                 <img src={contactUsConstants.QR_CODE} alt="" className="qr-code"/>
                             </RegisterQRCode>
-                            <ExitButton onClick={()=>{changePopIndex(-1)}}>
+                            <ExitButton onClick={() => {
+                                changePopIndex(-1)
+                            }}>
                                 <img src={constants.EXIT_BUTTON} alt="" className="exit-button"/>
                             </ExitButton>
                         </Register>
