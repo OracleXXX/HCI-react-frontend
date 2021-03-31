@@ -6,26 +6,13 @@ import {
     PlatformLoanWrapper,
     Comment,
     LoanFlowChart,
-    FlowChartMain,
-    FLowCharLeft,
-    FlowChartMid,
-    MidItem,
-    FlowChartRight,
-    FlowChartImg,
-    FlowChartItem,
-    AdditionInfo,
-    AdditionInfoContainer,
-    AdditionInfoContainerItem,
-    Circle
+    Steps, Info
 
 } from './style'
 import {ActivityTitle as PlatformLoanTitle} from "../oneStepService/activities/style";
 
-import loanPic from '../../statics/imgs/PlatformLoan/loanPic.png'
-import arrowToBot from '../../statics/imgs/PlatformLoan/arrowToBot.png'
-import arrowToLB from '../../statics/imgs/PlatformLoan/arrowToLB.png'
-import arrowToRB from '../../statics/imgs/PlatformLoan/arrowToRB.png'
 import {actionCreators as HeaderActionCreators} from "../../common/header/store";
+import {actionCreators, constants} from "./store";
 
 
 class PlatformLoan extends PureComponent {
@@ -41,19 +28,43 @@ class PlatformLoan extends PureComponent {
             <PlatformLoanWrapper ref={this.ScrollTo} className='scale-control'>
                 {/*title*/}
                 <PlatformLoanTitle>
-                    <div className='title'>平台贷款</div>
+                    <div className='title'>{constants.data.title}</div>
                     <div className='rec'/>
                 </PlatformLoanTitle>
                 {/*sub title*/}
-                <Comment><p>平台作为房屋的所有者以房屋作为抵押向买方提供贷款。</p>
-                    <p>买方向卖方支付不低于15%的首付，买卖双方商定其利率及分期付款的方式。（例：平台提供30年固定利率贷款，3年后将余额一次性付清）</p></Comment>
+                <Comment>
+                    <p>{constants.data.shortDescription1}</p>
+                    <p>{constants.data.shortDescription2}</p>
+                </Comment>
                 {/*main area*/}
                 <LoanFlowChart className='no-select'>
                     {/*flow chart*/}
+                    <Steps>
+                        {this.getSteps()}
+                    </Steps>
+                    <Info>
+                        <p className={'info-title'}>{constants.data.steps[this.props.currentStep].title}</p>
+                        <p className={'info-content'}>{constants.data.steps[this.props.currentStep].info}</p>
+                    </Info>
 
                 </LoanFlowChart>
             </PlatformLoanWrapper>
         )
+    }
+    getSteps() {
+        const res = []
+        for (let i = 0; i < 5; i++) {
+            res.push(
+                this.props.currentStep === i ?
+                    <img src={constants.data.steps[i].img_focus} className='step' alt=""  key={i}/>
+                    : <img src={constants.data.steps[i].img} className='step' alt="" key={i} onClick={() => {this.props.handleStepChange(i)}}/>
+            )
+            if (i < 4) {
+                res.push(<img src={constants.ARROW} alt="" className='arrow'/>)
+            }
+
+        }
+        return res
     }
 
 
@@ -70,12 +81,16 @@ class PlatformLoan extends PureComponent {
     }
 }
 const mapStateToProps = (state) => ({
-
+    currentStep: state.getIn(['platformLoan', 'currentStep'])
 })
 
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(true));
+    },
+    handleStepChange(index) {
+        dispatch(actionCreators.handleStepChange(index))
+
     }
 });
 export default connect(mapStateToProps, mapDispatch)(withRouter(PlatformLoan));
