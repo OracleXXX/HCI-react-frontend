@@ -18,7 +18,6 @@ export const DemoWrapper = styled.div`
   }
   & .slick-dots {
     bottom: 0;
-    
   }
   
 /*  & .slick-dots li button:before{
