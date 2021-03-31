@@ -29,7 +29,7 @@ class NewsFeed extends PureComponent {
         return (
             <NewsFeedWrapper className='scale-control'>
                 <NewsFeedTitle>
-                    <span className='title'>新闻咨询</span>
+                    <span className='title'>新闻资讯</span>
                     <div className='rec'/>
                 </NewsFeedTitle>
                 <NewsFeedArticle>

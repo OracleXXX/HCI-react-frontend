@@ -43,31 +43,31 @@ export const data = {
             title: "买方",
             img: step1,
             img_focus: step1_focus,
-            info: "啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的啊实打实大苏打实打实的"
+            info: ""
         },
         {
-            title: "买方",
+            title: "贷款合同",
             img: step2,
             img_focus: step2_focus,
-            info: "啊实打实大苏打实打实的"
+            info: ""
         },
         {
-            title: "买方",
+            title: "买方拥有房屋支配及使用权",
             img: step3,
             img_focus: step3_focus,
-            info: "啊实打实大苏打实打实的"
+            info: ""
         },
         {
-            title: "买方",
+            title: "放弃转换合同",
             img: step4,
             img_focus: step4_focus,
-            info: "啊实打实大苏打实打实的"
+            info: ""
         },
         {
-            title: "买方",
+            title: "平台贷款交易完成",
             img: step5,
             img_focus: step5_focus,
-            info: "啊实打实大苏打实打实的"
+            info: ""
         }
     ]
 }

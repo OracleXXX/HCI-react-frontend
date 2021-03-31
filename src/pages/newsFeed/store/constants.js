@@ -14,7 +14,7 @@ export const CHANGE_DETAIL_LIST = 'newsFeed/CHANGE_DETAIL_LIST'
 export const STATIC = {
     TITLE_PATH: {
         CURR: "当前位置: ",
-        PREV_PATH: "新闻咨询 > ",
+        PREV_PATH: "新闻资讯 > ",
         CONNECT_IMG: null,
         CURR_PATH: "内容详情",
     },
