@@ -40,7 +40,6 @@ class NewsFeedDetail extends PureComponent {
                 <NewsFeedDetailContainer>
                     {this.getTitlePath()}
                     {this.getArticle()}
-
                     {this.getRefer()}
 
                 </NewsFeedDetailContainer>
@@ -90,7 +89,7 @@ class NewsFeedDetail extends PureComponent {
                 </ArticleDescription>
                 <DivLine/>
                 <ArticleImage>
-                    <img src={newFeedDetail.get("imgUrl") !== undefined ? domain + newFeedDetail.get("avatar") : ""}
+                    <img src={newFeedDetail.get("imgUrl") !== undefined ? newFeedDetail.get("imgUrl") : ""}
                          alt=""/>
                 </ArticleImage>
                 <ArticleContent>
@@ -112,19 +111,11 @@ class NewsFeedDetail extends PureComponent {
         if (tags === undefined) {
             return
         }
-        let tagsDemoList = [];
-        const tagList = constants.STATIC.TAGS;
-        let str = tags.toString().split("").reverse();
-        for (let i = 0; i < str.length; i++) {
-            str[i] === "1" ?
-                tagsDemoList.push(
-                    <span key={i}>
-                        {tagList[str.length - i - 1]}
-                    </span>
-                )
-                : console.log("")
-        }
-        return tagsDemoList;
+        const res = [];
+        tags.map((item, index) => {
+            res.push(<span key={index} className={'tag'}> {item.get("name")}</span>)
+        })
+        return res
     }
 
     getRefer() {

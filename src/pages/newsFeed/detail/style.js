@@ -106,6 +106,9 @@ export const ArticleDescription = styled.div`
     }
   }
   & .desc-right {
+    width: fit-content;
+    height: fit-content;
+    white-space: nowrap;
   }
 `;
 export const DivLine = styled.div`
@@ -116,13 +119,13 @@ export const DivLine = styled.div`
 `;
 
 export const ArticleImage = styled.div`
-  margin: 1.6rem auto 2rem;
+  margin: 1.6rem auto;
   & img {
-    width: auto;
+    width: 100%;
     height: auto;
-    max-width: 100%;
-    max-height: 32rem;
+    border-radius: 8px;
   }
+  
 `;
 
 export const ArticleContent = styled.div`
@@ -134,6 +137,12 @@ export const ArticleContent = styled.div`
     font-family: "Microsoft YaHei";
     color: #333333;
     white-space: pre-wrap;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.6rem auto;
   }
 `;
 

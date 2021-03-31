@@ -28,7 +28,6 @@ export const LoanFlowChart = styled.div`
   align-items: center;
   background-image: url(${background});
   background-size: 100%;
-  border: 1px solid red;
   padding: 14rem 0;
   
 `;

@@ -64,7 +64,7 @@ export const data = {
             info: ""
         },
         {
-            title: "平台贷款交易完成",
+            title: "放弃转换合同",
             img: step5,
             img_focus: step5_focus,
             info: ""
