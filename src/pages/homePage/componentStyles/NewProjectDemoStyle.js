@@ -5,7 +5,7 @@ import prevArrow from '../../../statics/imgs/homePageImgs/prevArrow.png';
 
 //精选房源 New Project Demo
 export const NewProjectDemoWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 64rem;
 
   border-top: 1px solid #ffffff;

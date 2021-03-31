@@ -17,6 +17,7 @@ import evenDash from '../../../statics/imgs/homePageImgs/InvestmtFLowChartImgs/e
 import moreInfoIcon from "../../../statics/imgs/homePageImgs/moreInfoIcon.png";
 import addrIcon from '../../../statics/imgs/homePageImgs/addrIcon.png';
 import WeOfferPic from '../../../statics/imgs/homePageImgs/offerBG.png';
+import principalImg from '../../../statics/imgs/homePageImgs/principal.png'
 import RealEstateRecmdPic from '../../../statics/imgs/homePageImgs/RealEstateRecmd.svg';
 import LoanPic from '../../../statics/imgs/homePageImgs/loan.svg';
 import INVTPic from '../../../statics/imgs/homePageImgs/NAInvestment.svg';
@@ -52,6 +53,7 @@ export const NEW_PROJECT_SETTINGS = {
 /*news feed constants*/
 /*we offer constants*/
 export const WE_OFFER_IMG = WeOfferPic;
+export const PRINCIPAL_IMG = principalImg;
 export const LOAN_IMG = LoanPic;
 export const INVT_IMG = INVTPic;
 export const REAL_ESTATE_RECMD_IMG = RealEstateRecmdPic;

@@ -55,9 +55,8 @@ class NewsFeed extends PureComponent {
                             <LeftPart>
                                 {this.getArticleData()}
                                 <Link to={newsApi.detail + item.get("id")}>
-                                    <img src={domain + item.get('avatar')} alt="" className='LeftPartImg no-select'/>
+                                    <img src={item.get('imgUrl')} alt="" className='LeftPartImg no-select'/>
                                 </Link>
-
                             </LeftPart>
                             {/* 置顶文章内容 */}
                             <RightPart>

@@ -50,105 +50,32 @@ class PlatformLoan extends PureComponent {
                 {/*main area*/}
                 <LoanFlowChart className='no-select'>
                     {/*flow chart*/}
-                    <FlowChartMain>
-                        {this.getFlowChartLeft()}
-                        {this.getFlowChartMid()}
-                        {this.getFlowChartRight()}
-                    </FlowChartMain>
-                    {/*the image, right over flow chart*/}
-                    <FlowChartImg>
-                        <img src={loanPic} alt=""/>
-                    </FlowChartImg>
+
                 </LoanFlowChart>
-                {/*bottom part additional info*/}
-                {/*                <AdditionInfo>
-                    <AdditionInfoContainer>
-                        <AdditionInfoContainerItem>
-                            <div className="circle-content"><Circle/><span>Not Real Property</span></div>
-                            <div className="circle-content"><Circle/><span>UCC Foreclosure Process</span></div>
-                        </AdditionInfoContainerItem>
-                        <AdditionInfoContainerItem>
-                            <div className="circle-content"><Circle/><span>&lt;3 Months to foreclose</span></div>
-                            <div className="circle-content"><Circle/><span>Nonjudicial Proceeding</span></div>
-                        </AdditionInfoContainerItem>
-                        <AdditionInfoContainerItem>
-                            <div className="circle-content"><Circle/><span>Interest in Real Property</span></div>
-                            <div className="circle-content"><Circle/><span>18-24 Months to Foreclose</span></div>
-                        </AdditionInfoContainerItem>
-                        <AdditionInfoContainerItem>
-                            <div className="circle-content"><Circle/><span>Judicial Proceeding</span></div>
-                            <div className="circle-content"><Circle/><span>Moratorium</span></div>
-                        </AdditionInfoContainerItem>
-                    </AdditionInfoContainer>
-                </AdditionInfo>*/}
             </PlatformLoanWrapper>
         )
     }
 
-    /* left 3 steps in flow chart */
-    getFlowChartLeft() {
-        return (
-            <FLowCharLeft>
-                <FlowChartItem>
-                    <div className="flow-chart-content">买方</div>
-                </FlowChartItem>
-                <img src={arrowToBot} alt="" className='arrow-to-bot'/>
-                <FlowChartItem>
-                    <div className="flow-chart-content">买方拥有房屋支配及使用权</div>
-                </FlowChartItem>
-                <img src={arrowToBot} alt="" className='arrow-to-bot'/>
-                <FlowChartItem>
-                    <div className="flow-chart-content">私人贷款交易完成</div>
-                </FlowChartItem>
-            </FLowCharLeft>
-        )
-    }
 
-    /*right 2 steps in flow chart*/
-    getFlowChartRight() {
-        return (
-            <FlowChartRight>
-                <FlowChartItem>
-                    <div className="flow-chart-content">贷款合同</div>
-                </FlowChartItem>
-                <FlowChartItem>
-                    <div className="flow-chart-content">房契转换合同</div>
-                </FlowChartItem>
 
-            </FlowChartRight>
-        )
-    }
 
-    /* mid in flow chart, only arrows*/
-    getFlowChartMid() {
-        return (
-            <FlowChartMid>
-                {this.getMidItem()}
-                {this.getMidItem()}
-            </FlowChartMid>
-        )
-    }
 
-    /*arrow*/
-    getMidItem() {
-        return (
-            <MidItem>
-                <img src={arrowToRB} alt=""/>
-                <img src={arrowToLB} alt=""/>
 
-            </MidItem>
-        )
-    }
+
+
 
     componentDidMount() {
         this.props.hideShowBanner()
         this.scrollToMyRef()
     }
 }
+const mapStateToProps = (state) => ({
+
+})
 
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(true));
     }
 });
-export default connect(null, mapDispatch)(withRouter(PlatformLoan));
+export default connect(mapStateToProps, mapDispatch)(withRouter(PlatformLoan));

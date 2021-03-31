@@ -3,32 +3,32 @@ import styled from "styled-components";
 
 /*  我们提供什么, We offer  */
 export const WeOfferFragment = styled.div`
-  width: 100vw;
+  width: 100%;
   height: fit-content;
-  
-
 `;
 export const WeOfferWrapper = styled.div`
   position: relative;
   width: 120.4rem;
   height: fit-content;
   //border: 1px solid red;
-  margin: 8.6rem auto 5.6rem;
+  margin: 3.8rem auto 5.6rem;
   font-size: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 `;
 /*  左边文字部分  */
-export const WeOfferLeft = styled.div`
+export const Service = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  width: 60rem;
-  height: 46rem;
+  width: 116rem;
+  height: fit-content;
   //border: 1px dashed greenyellow;
   overflow: hidden; //让行内块元素的基准线变为一起
+  margin: 3.6rem auto;
   & .offer-title {
     position: relative;
     width: fit-content;
@@ -38,6 +38,7 @@ export const WeOfferLeft = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 2.4rem;
     & .title {
       width: fit-content;
       height: 4.7rem;
@@ -58,40 +59,44 @@ export const WeOfferLeft = styled.div`
   }
   & .offerContent {
     width: 56.4rem;
-    font-family:SourceHanSansSC-Regular;
-    font-size:1.5rem;
-    color:#555555;
+    font-family: SourceHanSansSC-Regular;
+    font-size: 1.5rem;
+    color: #555555;
     line-height:2.6rem;
     text-align:left;
   }
 `;
+export const ServiceContent = styled.div`
+  margin-top: 4.2rem;
+    
+`;
 
 /*  右边图片部分  */
-export const WeOfferRight = styled.div`
-  width: 60rem;
+export const ServiceImg = styled.div`
+  width: fit-content;
   height: fit-content;
   border-radius: 0.8rem;
   //border: 1px dashed black;
   overflow: hidden;
   & img {
-    width: 60rem;
-    height: 46rem;
+    width: 56rem;
+    height: 28rem;
     border-radius: 0.8rem;
   }
 `;
 /*  三个图标  */
 export const WeOfferIcons = styled.div`
-  width: 73rem;
+  width: 116rem;
   height: 20.9rem;
   background-color: #FFFFFF;
   box-shadow: 0 0.4rem 1.8rem 0 #E6E6E6;
   border-radius: 0.8rem;
-  margin-top: 5.6rem;
+  margin-top: 2.0rem;
 `;
 
 export const IconItem = styled.div`
   display: inline-block;
-  width: 23.9rem;
+  width: 33%;
   height: 20.9rem;
   margin: 4rem auto 0;
   overflow: hidden;
@@ -120,4 +125,5 @@ export const DivLine = styled.div`
   margin-top: 6.9rem;
 
 `;
+
 
