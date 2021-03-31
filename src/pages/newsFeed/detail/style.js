@@ -131,7 +131,7 @@ export const ArticleContent = styled.div`
     height: fit-content;
     line-height: 2.4rem;
     font-size: 1.5rem;
-    font-family: SourceHanSansSC-Normal;
+    font-family: "Microsoft YaHei";
     color: #333333;
     white-space: pre-wrap;
   }

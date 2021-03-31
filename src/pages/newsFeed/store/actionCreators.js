@@ -17,30 +17,36 @@ export const updatePage = (page) => {
 
 const changeNewsFeedList = (result) => ({
     type: constants.CHANGE_NEWS_FEED_LIST,
-    newsFeedList: fromJS(result),
+    newsFeedList: fromJS(result.data.news),
     totalPage: Math.ceil((result.length - 3) / 5)
 
 });
 
 const changeDetailList = (result) => ({
     type: constants.CHANGE_DETAIL_LIST,
-    detailList: fromJS(result.info),
-    popularArticleTitles: fromJS(result.popularArticleTitles)
+    detailList: fromJS(result.data),
+    //popularArticleTitles: fromJS(result.popularArticleTitles)
 })
 export const getNewsFeed = () => {
     return (dispatch) => {
-        axios.get(domain + news_feed.list).then((res) => {
+        axios.get('https://api.homecapus.com/api/news').then((res) => {
+
+            dispatch(changeNewsFeedList(res.data))
+
+        })
+        /*axios.get(domain + news_feed.list).then((res) => {
                 const result = res.data;
 
                 dispatch(changeNewsFeedList(result));
             }
-        );
+        );*/
     }
 };
 export const getDetailList = (id) => {
     return (dispatch) => {
-        axios.get(domain + news_feed.detailList + id).then((res) => {
+        axios.get('https://api.homecapus.com/api/news/' + id).then((res) => {
             const result = res.data;
+            console.log(res.data)
             dispatch(changeDetailList(result));
         })
     }

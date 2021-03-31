@@ -40,7 +40,9 @@ class NewsFeedDetail extends PureComponent {
                 <NewsFeedDetailContainer>
                     {this.getTitlePath()}
                     {this.getArticle()}
+
                     {this.getRefer()}
+
                 </NewsFeedDetailContainer>
 
 
@@ -77,7 +79,7 @@ class NewsFeedDetail extends PureComponent {
                     <div className='desc-left'>
                         <div className='date'>
                             <img src={constants.IMAGES.DATE} alt=""/>
-                            <span>{this.handleDateFormatChange(newFeedDetail.get("day"), newFeedDetail.get("year_and_month"))}</span>
+                            <span>{this.handleDateFormatChange(newFeedDetail.get("day"), newFeedDetail.get("yearAndMonth"))}</span>
                         </div>
                         <div className='views'>
                             <img src={constants.IMAGES.VIEWS} alt=""/>
@@ -88,11 +90,11 @@ class NewsFeedDetail extends PureComponent {
                 </ArticleDescription>
                 <DivLine/>
                 <ArticleImage>
-                    <img src={newFeedDetail.get("avatar") !== undefined ? domain + newFeedDetail.get("avatar") : ""}
+                    <img src={newFeedDetail.get("imgUrl") !== undefined ? domain + newFeedDetail.get("avatar") : ""}
                          alt=""/>
                 </ArticleImage>
                 <ArticleContent>
-                    <div className='article-content'>{newFeedDetail.get("content")}</div>
+                    <div className='article-content' dangerouslySetInnerHTML={{ __html: newFeedDetail.get("content")}}/>
                 </ArticleContent>
             </ArticleContainer>
         )
@@ -133,8 +135,9 @@ class NewsFeedDetail extends PureComponent {
                     <PopularArticleTitle>
                         <img src={constants.IMAGES.FIRE} alt=""/>
                         <span>{constants.STATIC.REFER.TITLE}</span>
+
                     </PopularArticleTitle>
-                    {
+{/*                    {
                         popularArticleTitles.map((item, index) => {
                             if (index === 7) {
                                 return null
@@ -150,7 +153,9 @@ class NewsFeedDetail extends PureComponent {
                                     index)
                             )
                         })
-                    }
+                    }*/}
+
+
                 </PopularArticles>
                 {this.getQRCode()}
             </ReferContainer>

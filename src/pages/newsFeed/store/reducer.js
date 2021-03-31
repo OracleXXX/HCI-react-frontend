@@ -6,7 +6,7 @@ const defaultState = fromJS({
     page: 1,
     totalPage: 0,
     detailList: [],
-    popularArticleTitles: []
+    popularArticleTitles: [],
 
 
 });
