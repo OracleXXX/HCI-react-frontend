@@ -1,11 +1,12 @@
 import {fromJS} from "immutable";
 import * as constants from './constants'
+
 const defaultState = fromJS({
-    test:[]
+    test: []
 
 
 });
-const changeTestList = (state, action) =>{
+const changeTestList = (state, action) => {
     return state.merge({
         test: action.list
     })

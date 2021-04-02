@@ -17,7 +17,9 @@ class Management extends PureComponent {
         super(props)
         this.ScrollTo = React.createRef()   // Create a ref object
     }
+
     scrollToMyRef = () => window.scrollTo(0, this.ScrollTo.current.offsetTop - 100)
+
     render() {
         return (
             <ManagementWrapper ref={this.ScrollTo} className='scale-control'>
@@ -47,11 +49,13 @@ class Management extends PureComponent {
             })
         )
     }
+
     componentDidMount() {
         this.props.hideShowBanner()
         this.scrollToMyRef()
     }
 }
+
 const mapDispatch = (dispatch) => ({
     hideShowBanner() {
         dispatch(HeaderActionCreators.changeShowBanner(true));

@@ -4,8 +4,8 @@ import * as constants from './constants'
 const defaultState = fromJS({
     noFlippingList: [],
     flippingList: [],
-    curID:-1,
-    detailList:[],
+    curID: -1,
+    detailList: [],
     flippingSlider: true
 
 
@@ -23,7 +23,7 @@ const changeFlippingList = (state, action) => {
     })
 
 };
-const changeDetailList = (state, action)=> {
+const changeDetailList = (state, action) => {
     return state.merge({
         detailList: fromJS(action.detailList.sort()),
         curID: action.id

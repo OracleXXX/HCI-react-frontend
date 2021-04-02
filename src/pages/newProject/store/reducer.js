@@ -5,10 +5,10 @@ const defaultState = fromJS({
     newProjectList: [],
     page: 1,
     totalPage: 1,
-    newProjectDetail:[],
+    newProjectDetail: [],
     imageList: [],
     newProjectOverview: [],
-    basicInfoItems:[[], [], []]
+    basicInfoItems: [[], [], []]
 
 
 });

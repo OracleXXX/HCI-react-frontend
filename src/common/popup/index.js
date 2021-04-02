@@ -6,23 +6,18 @@ import {PopupWrapper, PopupItem} from './style';
 class Popup extends PureComponent {
     render() {
         return (
-            <PopupWrapper className="" >
+            <PopupWrapper className="">
                 <PopupItem className="popup-item">
-
-                </PopupItem>
-
+                </PopupItem>=
             </PopupWrapper>
         )
     }
-
-
 }
 
 const mapStateToProps = (state) => {
 
 }
 const mapDispatchToProps = (dispatch) => {
-
 
 
 };

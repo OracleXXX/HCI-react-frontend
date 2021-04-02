@@ -47,7 +47,7 @@ class NewsFeed extends PureComponent {
             <NewsFeedWrapper ref={this.ScrollTo} className='scale-control'>
 
                 <NewsFeedTitle>
-                    <span className='title'>新闻咨询</span>
+                    <span className='title'>新闻资讯</span>
                     <div className='rec'/>
                 </NewsFeedTitle>
 
@@ -83,12 +83,12 @@ class NewsFeed extends PureComponent {
             count += 1;
             /*置顶文章*/
             count < 3 && popularList.push(
-                <Link to={newFeedRouter.detail + item.get("id")} key={item.get("id")}>
+                <Link to={newFeedRouter.detail + item.get('id')} key={item.get('id')}>
                     <PopularArticleItem className={count ? "article-item-right" : "article-item-left"}>
-                        {this.getArticleData(item.get("day"), item.get("year_and_month"))}
-                        <img src={domain + item.get("avatar")} alt="" className="popular-img"/>
+                        {this.getArticleData(item.get("day"), item.get("yearAndMonth"))}
+                        <img src={item.get('imgUrl')} alt="" className="popular-img"/>
                         <ArticleItemBottom
-                            className={count ? "popular-article-title-right" : "popular-article-title-left"}>{item.get("title")}</ArticleItemBottom>
+                            className={count ? "popular-article-title-right" : "popular-article-title-left"}>{item.get('title')}</ArticleItemBottom>
                     </PopularArticleItem>
                 </Link>
             );

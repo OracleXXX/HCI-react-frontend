@@ -51,7 +51,8 @@ export const CONTACT_US = {
             TYPE: "name",
             ARIA_DESCRIBEDBY: "nameInfo",
             PLACEHOLDER: "请输入您的姓名",
-            HELP_TEXT: '您可以使用任何名字，包括昵称或者英文名'
+            HELP_TEXT: '您可以使用任何名字，包括昵称或者英文名',
+            NAME: 'name'
         },
         {
             CONTROL_ID: "formBasicEmail",
@@ -59,7 +60,8 @@ export const CONTACT_US = {
             TYPE: "email",
             ARIA_DESCRIBEDBY: "emailInfo",
             PLACEHOLDER: "请输入您的邮箱",
-            HELP_TEXT: '您的常用邮箱，用于回复您的消息，如需要快速回复，请填写微信号或者电话号码。'
+            HELP_TEXT: '您的常用邮箱，用于回复您的消息，如需要快速回复，请填写微信号或者电话号码。',
+            NAME: 'email'
         },
         {
             CONTROL_ID: "formBasicPhoneNumber",
@@ -67,7 +69,8 @@ export const CONTACT_US = {
             TYPE: "name",
             ARIA_DESCRIBEDBY: "phone",
             PLACEHOLDER: "请输入您的电话号码",
-            HELP_TEXT: '我们不会将您的电话号码泄露给任何人。填写电话号码，获得最快速最直接的回复。'
+            HELP_TEXT: '我们不会将您的电话号码泄露给任何人。填写电话号码，获得最快速最直接的回复。',
+            NAME: 'phone'
 
         },
         {
@@ -76,7 +79,8 @@ export const CONTACT_US = {
             TYPE: "text",
             ARIA_DESCRIBEDBY: "wechatInfo",
             PLACEHOLDER: "请输入您的微信号",
-            HELP_TEXT: '填写微信号码，客服将会第一时间通过微信与您沟通。'
+            HELP_TEXT: '填写微信号码，客服将会第一时间通过微信与您沟通。',
+            NAME: 'wechat'
         },
     ],
     COMMENTS:
@@ -87,7 +91,8 @@ export const CONTACT_US = {
             ROWS: 4,
             ARIA_DESCRIBEDBY: "commentsInfo",
             PLACEHOLDER: "请输入您的留言",
-            COMMENT_HELP_TEXT: '感谢您的留言，我们会最快时间内为您解答一切问题。如果您有任何意见或者建议，欢迎您随时联系我们。'
+            COMMENT_HELP_TEXT: '感谢您的留言，我们会最快时间内为您解答一切问题。如果您有任何意见或者建议，欢迎您随时联系我们。',
+            NAME: 'comments'
         }
 
 }

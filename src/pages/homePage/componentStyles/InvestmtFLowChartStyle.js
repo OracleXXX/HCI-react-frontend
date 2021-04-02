@@ -38,7 +38,7 @@ export const FlowChartTitle = styled.div`
   }
 `;
 
-export const FlowChart =styled.div`
+export const FlowChart = styled.div`
   position: relative;
   left: -8rem;
   width: 87.5rem;

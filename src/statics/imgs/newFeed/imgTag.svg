@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="90px" height="91px" viewBox="0 0 90 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="90px" height="91px" viewBox="0 0 90 91" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>xhdpi/编组 19</title>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="投资攻略详情页" transform="translate(-1232.000000, -172.000000)">
             <g id="编组-5" transform="translate(1240.000000, 140.000000)">
                 <g id="位图复制-4" transform="translate(19.000000, 60.000000)">
                     <g id="编组-19" transform="translate(-26.750000, -27.805826)">
-                        <polygon id="矩形" fill="#FF8A2B" transform="translate(44.500000, 45.000000) rotate(-45.000000) translate(-44.500000, -45.000000) " points="-7 34 81.7931034 34 96 44.824676 81.7931034 56 -7 56"></polygon>
-                        <text id="NO.1" transform="translate(41.457107, 47.098719) rotate(-45.000000) translate(-41.457107, -47.098719) " font-family="PingFangSC-Medium, PingFang SC" font-size="10" font-weight="400" fill="#FFFFFF">
+                        <polygon id="矩形" fill="#FF8A2B"
+                                 transform="translate(44.500000, 45.000000) rotate(-45.000000) translate(-44.500000, -45.000000) "
+                                 points="-7 34 81.7931034 34 96 44.824676 81.7931034 56 -7 56"></polygon>
+                        <text id="NO.1"
+                              transform="translate(41.457107, 47.098719) rotate(-45.000000) translate(-41.457107, -47.098719) "
+                              font-family="PingFangSC-Medium, PingFang SC" font-size="10" font-weight="400"
+                              fill="#FFFFFF">
                             <tspan x="30.4571068" y="51.0987194">NO.1</tspan>
                         </text>
                     </g>

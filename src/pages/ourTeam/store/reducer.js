@@ -1,10 +1,7 @@
 import {fromJS} from "immutable";
 
 
-const defaultState = fromJS({
-
-
-});
+const defaultState = fromJS({});
 
 
 // eslint-disable-next-line import/no-anonymous-default-export

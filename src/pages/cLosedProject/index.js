@@ -118,7 +118,7 @@ class ClosedProject extends PureComponent {
                                     <div className="price-month">
                                         <span className="price">{item.get("price")}</span>
                                     </div>
-                                    <div className="area-rental">{item.get("area") +"/" + item.get("status")}</div>
+                                    <div className="area-rental">{item.get("area") + "/" + item.get("status")}</div>
                                 </ItemMid>
                                 <ItemBottom>
                                     <DivLine/>
@@ -148,11 +148,12 @@ class ClosedProject extends PureComponent {
                                         </div>
                                         <div>{
                                             flippingSlider
-                                            ? <span className="item-info-title">项目总回报率：
+                                                ? <span className="item-info-title">项目总回报率：
                                             <span className="item-info-content">{item.get("net_rate_of_return")}</span></span>
-                                            :
-                                             <span className="item-info-title">租金回报率：
-                                            <span className="item-info-content">{item.get("rental_rate_of_return")}</span></span>
+                                                :
+                                                <span className="item-info-title">租金回报率：
+                                            <span
+                                                className="item-info-content">{item.get("rental_rate_of_return")}</span></span>
                                         }
 
                                         </div>

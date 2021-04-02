@@ -2,11 +2,9 @@ import axios from 'axios'
 import * as constants from './constants'
 
 
-const changeHomePageData = (result) =>({
+const changeHomePageData = (result) => ({
     type: constants.CHANGE_HOMEPAGE_DATA
 })
-
-
 
 
 export const getHomePageInfo = () => {

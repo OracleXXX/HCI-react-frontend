@@ -1,22 +1,23 @@
 import {fromJS} from "immutable";
+import {constants} from "./index";
 
 const defaultState = fromJS({
-    additionInfoList: [
-        ["Not Real Property", "UCC Foreclosure Process"],
-        ["&lt;3 Months to foreclose", "Nonjudicial Proceeding"],
-        ["Interest in Real Property", "18-24 Months to Foreclose"],
-        ["Judicial Proceeding", "Moratorium"]
-    ]
-
-
+    currentStep: 0
 });
 
+const changeStep = (state, action) => {
+    return state.merge({
+        currentStep: action.currentStep
+    })
+}
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action) => {
     switch (action.type) {
-
+        case constants.CHANGE_STEP:
+            return changeStep(state, action)
         default:
             return state;
+
     }
 }

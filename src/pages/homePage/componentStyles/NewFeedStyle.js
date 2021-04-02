@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // 最近动态 news feed
 export const NewsFeedWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 106.1rem;
   padding: 8.6rem 0 0;
   box-sizing: border-box;
@@ -84,8 +84,6 @@ export const RightPart = styled.div`
     -webkit-line-clamp: 5;
   }
 `;
-    
-    
 
 
 export const RestArticles = styled.div`

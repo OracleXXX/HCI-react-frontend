@@ -130,15 +130,15 @@ class NewProjectDetail extends PureComponent {
                 </SliderTop>
                 <SliderBottom>
                     <Slider asNavFor={nav1} ref={slider => (this.slider2 = slider)} slidesToShow={5}
-                            swipeToSlide={true} focusOnSelect={true} arrows={false} >
+                            swipeToSlide={true} focusOnSelect={true} arrows={false}>
                         {
                             imageList.map((item, index) => {
                                 return (
                                     <SliderItemBottom key={index} className='slider'>
                                         <ImgContainer>
                                             <img
-                                            src={images_domain + "/" + this.props.match.params.id + "/" + item}
-                                            alt=""
+                                                src={images_domain + "/" + this.props.match.params.id + "/" + item}
+                                                alt=""
                                             />
                                         </ImgContainer>
 
@@ -170,7 +170,7 @@ class NewProjectDetail extends PureComponent {
                         <Price>{newProjectOverview.get("price")}</Price>
                         <LoanPayment>(按揭$4,691/月)</LoanPayment>
                         <Calculator className="no-select">
-                            <img src={constants.PROJECT_DETAIL_IMAGES.CALCULATOR} alt="" />
+                            <img src={constants.PROJECT_DETAIL_IMAGES.CALCULATOR} alt=""/>
                             <span className="calculator-name">计算贷款</span>
                         </Calculator>
                     </div>
@@ -277,7 +277,7 @@ class NewProjectDetail extends PureComponent {
                 <img src={CONTACT_US.IMAGES.BG} alt=""/>
                 <ContactUsContainer>
                     <ContactUsTitle>{CONTACT_US.TITLE}</ContactUsTitle>
-                    <FormContainer >
+                    <FormContainer>
                         <Form className='container-form'>
                             {this.getFormGroup()}
                             <Button variant="primary" type="submit" className='form-button'>
@@ -296,15 +296,17 @@ class NewProjectDetail extends PureComponent {
         const dataList = constants.STATIC.CONTACT_US.DATA;
         let formGroupList = []
         dataList.map((item, index) => {
-            formGroupList.push (
+            formGroupList.push(
                 <Form.Group controlId={item.CONTROL_ID} className='form-group no-select' key={index}>
                     <Form.Label className='form-label'><span className="star">* </span>{item.LABEL}</Form.Label>
-                    <Form.Control required type={item.TYPE} aria-describedby={item.ARIA_DESCRIBEDBY} placeholder={item.PLACEHOLDER}/>
+                    <Form.Control required type={item.TYPE} aria-describedby={item.ARIA_DESCRIBEDBY}
+                                  placeholder={item.PLACEHOLDER}/>
                 </Form.Group>
             )
         });
         return formGroupList;
     }
+
     componentDidMount() {
         this.props.hideShowBanner()
         const {id} = this.props.match.params;

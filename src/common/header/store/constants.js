@@ -73,7 +73,7 @@ export const BANNER_CONTENT = [
         id: 3,
         imgUrl: Banner3,
         content: "我们坚持传统行业互联网化的理念，建立专属资产配置的社群，让资源得到充分分享"
-    },{
+    }, {
         id: 4,
         imgUrl: Banner4,
         content: "我们将借助平台优势 提供平台自身房地产贷款服务 为客户撬动更大资本价值 "

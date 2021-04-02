@@ -27,11 +27,12 @@ class Header extends PureComponent {
                     <Nav>{this.getNavBar()}</Nav>
                 </HeaderWrapper>
                 {/* slide Banner */}
-                { showBanner? <Banner/> : null}
+                {showBanner ? <Banner/> : null}
 
             </div>
         )
     }
+
     getDropDown() {
         const {displayMenu} = this.props;
         return (
@@ -48,6 +49,7 @@ class Header extends PureComponent {
             </DropDownServices>
         )
     };
+
     getNavBar() {
         const {handleDropDown, displayMenu} = this.props;
         return (

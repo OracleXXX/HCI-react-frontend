@@ -2,7 +2,6 @@ import React, {PureComponent} from "react";
 import {GoogleMap, withScriptjs, withGoogleMap} from "react-google-maps";
 
 
-
 function getMap() {
     return (
         <GoogleMap
@@ -11,6 +10,7 @@ function getMap() {
         />
     );
 }
+
 const WrappedMap = withScriptjs(withGoogleMap(getMap));
 
 export default function Map() {
@@ -18,9 +18,9 @@ export default function Map() {
         <div style={{width: '12rem', height: '12rem'}}>
             <WrappedMap
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&`}
-                loadingElement={<div style={{height:"12rem", width:"12rem"}}/>}
-                containerElement={<div style={{height:"12rem", width:"12rem"}}/>}
-                mapElement={<div style={{height:"12rem", width:"12rem"}}/>}
+                loadingElement={<div style={{height: "12rem", width: "12rem"}}/>}
+                containerElement={<div style={{height: "12rem", width: "12rem"}}/>}
+                mapElement={<div style={{height: "12rem", width: "12rem"}}/>}
             />
 
         </div>

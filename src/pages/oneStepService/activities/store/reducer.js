@@ -2,7 +2,7 @@ import {fromJS} from "immutable";
 import * as constants from './constants'
 
 const defaultState = fromJS({
-    activityList:[],
+    activityList: [],
     page: 1,
     totalPage: 0,
     popIndex: -1
@@ -14,8 +14,8 @@ const changePage = (state, action) => {
         page: action.page
     })
 }
-const changeActivityList = (state, action)=> {
-     return state.merge({
+const changeActivityList = (state, action) => {
+    return state.merge({
         activityList: fromJS(action.activityList),
         totalPage: action.totalPage
 

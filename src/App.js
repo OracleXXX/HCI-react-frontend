@@ -27,9 +27,6 @@ import store from "./store";
 import GlobalStyle from './style';
 
 
-
-
-
 class App extends Component {
     render() {
 

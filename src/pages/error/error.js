@@ -5,7 +5,7 @@ class Error extends React.Component {
     render() {
         return (
             <div id='page-wrapper'>
-                <h1 >出错啦！</h1>
+                <h1>出错啦！</h1>
                 <div className="row" style={{marginTop: '30px'}}>
                     <div className="col-md-12">
                         <h1>页面被狗狗叼走啦～～～</h1>
@@ -17,4 +17,5 @@ class Error extends React.Component {
         )
     }
 }
+
 export default Error;

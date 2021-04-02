@@ -46,7 +46,9 @@ class NewProjectDemo extends PureComponent {
             <NewProjectDemoWrapper className='scale-control'>
                 {/* 图轮播图title */}
                 <SliderTitle>
-                    <Link to={newProjectApi.path}><div className='title'>精选房源</div></Link>
+                    <Link to={newProjectApi.path}>
+                        <div className='title'>精选房源</div>
+                    </Link>
                     <div className='rec'/>
                     <div><p className='subTitle'>进行深入研究并浏览附近的原始照片，无人机画面，居民评论和当地见解，以了解待售房屋是否适合您。</p></div>
                 </SliderTitle>
@@ -66,11 +68,11 @@ class NewProjectDemo extends PureComponent {
                                                 <img src={constants.ADDR_ICON} alt=""/>
                                                 {item.get("city")}
                                             </div>
-                                            <Link to={newProjectApi.detail+item.get("id")}>
+                                            <Link to={newProjectApi.detail + item.get("id")}>
                                                 <MoreInfo className="button">
-                                                <span>详情</span>
-                                                <img src={constants.MORE_INFO_ICON} alt=""/>
-                                            </MoreInfo>
+                                                    <span>详情</span>
+                                                    <img src={constants.MORE_INFO_ICON} alt=""/>
+                                                </MoreInfo>
                                             </Link>
                                         </ImgBottom>
                                         <div className='intro'>
@@ -78,7 +80,8 @@ class NewProjectDemo extends PureComponent {
                                                 <span>{item.get('price')}</span>
                                                 <span className='perMonth'>{item.get('month')}</span>
                                             </div>
-                                            <span className='intro-right'>{item.get('area') + "/" + item.get('status')}</span>
+                                            <span
+                                                className='intro-right'>{item.get('area') + "/" + item.get('status')}</span>
                                         </div>
                                     </Item>
                                 </div>

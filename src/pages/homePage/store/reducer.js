@@ -4,13 +4,12 @@ import * as constants from './constants'
 const defaultState = fromJS({
     popularNewsFeedList: [],
     restNewsFeedList: [],
-    tempList:[]
+    tempList: []
 
 
 });
 const changeHomePageData = (state, action) => {
-    return state.merge({
-    });
+    return state.merge({});
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

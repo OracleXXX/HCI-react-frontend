@@ -18,7 +18,7 @@ const sliderChange = (flipping) => ({
     type: constants.CHANGE_SLIDER,
     flipping
 });
-const getDetailList = (id, result) =>({
+const getDetailList = (id, result) => ({
     type: constants.GET_DETAIL_LIST,
     detailList: fromJS(result),
     id
@@ -46,9 +46,11 @@ export const handleSliderChange = (flipping) => {
     }
 }
 export const getDetail = (id) => {
-    if (id===-1){return dispatch => dispatch(getDetailList(id, []))}
-    return (dispatch)=> {
-        axios.get(domain + closedProjectApi.detailList+id).then((res) => {
+    if (id === -1) {
+        return dispatch => dispatch(getDetailList(id, []))
+    }
+    return (dispatch) => {
+        axios.get(domain + closedProjectApi.detailList + id).then((res) => {
             const result = res.data;
             dispatch(getDetailList(id, result));
         });
