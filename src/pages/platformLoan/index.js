@@ -13,8 +13,10 @@ import {ActivityTitle as PlatformLoanTitle} from "../oneStepService/activities/s
 
 import {actionCreators as HeaderActionCreators} from "../../common/header/store";
 import {actionCreators, constants} from "./store";
+import {get} from "immutable";
 
-
+let names = []
+let descriptions = []
 class PlatformLoan extends PureComponent {
     constructor(props) {
         super(props)
@@ -43,8 +45,8 @@ class PlatformLoan extends PureComponent {
                         {this.getSteps()}
                     </Steps>
                     <Info>
-                        <p className={'info-title'}>{constants.data.steps[this.props.currentStep].title}</p>
-                        <p className={'info-content'}>{constants.data.steps[this.props.currentStep].info}</p>
+                        <p className={'info-title'}>{names[this.props.currentStep]}</p>
+                        <div className={'info-content'} dangerouslySetInnerHTML={{ __html: descriptions[this.props.currentStep]}}/>
                     </Info>
 
                 </LoanFlowChart>
@@ -56,32 +58,30 @@ class PlatformLoan extends PureComponent {
         for (let i = 0; i < 5; i++) {
             res.push(
                 this.props.currentStep === i ?
-                    <img src={constants.data.steps[i].img_focus} className='step' alt=""  key={i}/>
-                    : <img src={constants.data.steps[i].img} className='step' alt="" key={i} onClick={() => {this.props.handleStepChange(i)}}/>
+                    <img src={constants.data.steps[i].img_focus} className='step' alt=""  key={constants.data.steps[i].img_focus}/>
+                    : <img src={constants.data.steps[i].img} className='step' alt="" key={constants.data.steps[i].img} onClick={() => {this.props.handleStepChange(i)}}/>
             )
             if (i < 4) {
-                res.push(<img src={constants.ARROW} alt="" className='arrow'/>)
+                res.push(<img src={constants.ARROW} alt="" className='arrow' key={i}/>)
             }
 
         }
+        this.props.steps.map(item => {
+            names.push(item.get('name'))
+            descriptions.push(item.get('description'))
+        })
+        console.log(names[0])
         return res
     }
-
-
-
-
-
-
-
-
-
     componentDidMount() {
         this.props.hideShowBanner()
         this.scrollToMyRef()
+        this.props.getSteps()
     }
 }
 const mapStateToProps = (state) => ({
-    currentStep: state.getIn(['platformLoan', 'currentStep'])
+    currentStep: state.getIn(['platformLoan', 'currentStep']),
+    steps: state.getIn(['platformLoan', 'steps']),
 })
 
 const mapDispatch = (dispatch) => ({
@@ -90,7 +90,9 @@ const mapDispatch = (dispatch) => ({
     },
     handleStepChange(index) {
         dispatch(actionCreators.handleStepChange(index))
-
+    },
+    getSteps() {
+        dispatch(actionCreators.getSteps())
     }
 });
 export default connect(mapStateToProps, mapDispatch)(withRouter(PlatformLoan));

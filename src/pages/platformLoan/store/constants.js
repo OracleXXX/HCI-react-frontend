@@ -1,11 +1,3 @@
-/*
-1. 买方
-                            2. 贷款合同
-3.买方拥有房屋支配及使用权
-                            4. 房契转换合同
-5。 私人贷款交易完成
-
-*/
 import step1 from '../../../statics/imgs/PlatformLoan/step1.png';
 import step2 from '../../../statics/imgs/PlatformLoan/step2.png';
 import step3 from '../../../statics/imgs/PlatformLoan/step3.png';
@@ -58,13 +50,13 @@ export const data = {
             info: ""
         },
         {
-            title: "放弃转换合同",
+            title: "房契转换合同",
             img: step4,
             img_focus: step4_focus,
             info: ""
         },
         {
-            title: "放弃转换合同",
+            title: "私人贷款交易完成",
             img: step5,
             img_focus: step5_focus,
             info: ""
@@ -73,3 +65,4 @@ export const data = {
 }
 
 export const CHANGE_STEP = 'platformLoan/CHANGE_STEP'
+export const GET_STEPS = 'platformLoan/GET_STEPS'
