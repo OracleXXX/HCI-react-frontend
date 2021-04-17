@@ -8,7 +8,7 @@ class Popup extends PureComponent {
         return (
             <PopupWrapper className="">
                 <PopupItem className="popup-item">
-                </PopupItem>=
+                </PopupItem>
             </PopupWrapper>
         )
     }

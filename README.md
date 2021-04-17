@@ -13,8 +13,6 @@
 ```bash
 $ docker login --username=xueguanxiong@gmail.com registry-intl.us-west-1.aliyuncs.com
 
-# <username>xueguanxiong@gmail.com</username>
-# <password>TalentisTF313</password>
 ```
 
 #### 2. 打包并且上传到远程docker仓库
